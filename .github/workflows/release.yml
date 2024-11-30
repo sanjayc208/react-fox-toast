@@ -27,4 +27,4 @@ jobs:
       - name: Run semantic-release
         run: npx semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for release
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_FOX_TOAST }}  # GitHub token for release
