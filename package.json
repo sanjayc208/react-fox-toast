@@ -1,0 +1,95 @@
+{
+  "name": "react-fox-toast",
+  "version": "0.1.0",
+  "description": "This toast for UI which is very flexible to use",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "start": "tsup --watch && postcss src/styles.css -o dist/styles.css --watch",
+    "lint": "tsc",
+    "test": "jest",
+    "link": "pnpm link ../site/node_modules/react && pnpm link ../site/node_modules/react-dom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjayc208/react-fox-toast.git"
+  },
+  "author": "sanjay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sanjayc208/react-fox-toast/issues"
+  },
+  "homepage": "https://github.com/sanjayc208/react-fox-toast#readme",
+  "keywords": [
+    "react",
+    "toast",
+    "notification",
+    "snackbar",
+    "nextjs",
+    "react-toast",
+    "toast-notification",
+    "react-ui",
+    "ui-component",
+    "ui-library",
+    "react-component",
+    "tailwindcss",
+    "tailwind-ui",
+    "css",
+    "notification-toast",
+    "react-notification",
+    "nextjs-toast",
+    "frontend",
+    "frontend-components",
+    "web-ui",
+    "website-ui",
+    "notification-system",
+    "alert",
+    "alert-toast",
+    "popup",
+    "web-notification",
+    "ui-kit"
+  ],
+  "peerDependencies": {
+    "goober": "^2.1.16",
+    "react": ">16.0.0",
+    "react-dom": ">16.0.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.1",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "goober": "^2.1.16",
+    "postcss": "^8.4.49",
+    "postcss-modules": "^6.0.1",
+    "semantic-release": "^24.2.0",
+    "ts-loader": "^9.5.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  },
+  "dependencies": {
+    "esbuild-css-modules-plugin": "^3.1.2"
+  }
+}
