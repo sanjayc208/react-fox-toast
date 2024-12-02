@@ -112,6 +112,8 @@ toast.custom(
     <div className="flex flex-col items-center">
       <img src="/placeholder.svg" alt="Custom content" className="w-16 h-16 mb-2" />
       <span>This is a toast with custom content!</span>
+
+      /** Example on how to Update functionality inside the toast  */
       <button
         onClick={() => update({ message: 'Updated message with different width!' })}
         className="mt-2 px-2 py-1 bg-blue-100 text-black rounded"
@@ -119,6 +121,7 @@ toast.custom(
         Update
       </button>
 
+      /** Example on how to remove functionality inside the toast  */
       <button
         onClick={() => remove()}
         className="mt-2 px-2 py-1 bg-red-200 text-black rounded"
@@ -126,6 +129,7 @@ toast.custom(
         Close
       </button>
 
+      /** Example on how to remove all functionality inside the toast  */
       <button
         onClick={() => dismiss()}
         className="mt-2 px-2 py-1 bg-red-300 text-black rounded"
@@ -142,11 +146,15 @@ toast.custom(
 ```
 
 ## Customization
-- You can pass additional customization options as the second parameter for all toast types (success, error, info, promise, custom). These options include:
+- You can pass additional customization options as the 2nd parameter for all toast types (success, error, info, promise, custom). These options include:
 
 Customization Options
 
 ```typescript
+
+const TOAST_TYPE = "success" // You can use options to toast types like 'success' , 'error', 'custom' ,'info'
+
+toast.[TOAST_TYPE](MESSAGE,
 {
   position: 'top-left', // Position of the toast. Options: 'top-left', 'top-right', 'top-center', 'bottom-left', 'bottom-right', 'bottom-center'
   duration: 5000, // Duration in milliseconds. Set to `Infinity` for indefinite display.
@@ -159,7 +167,8 @@ Customization Options
   ),
   className: 'text-black', // Additional CSS classes (e.g., TailwindCSS classes).
   icon: <span className="text-purple-500 text-xl">🚀</span> // Custom icon (can be any JSX).
-}
+  }
+)
 ```
 ### Example with Customization
 
