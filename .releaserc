@@ -16,7 +16,6 @@
         "npmPublish": false
       }
     ],
-    "@semantic-release/git",
-    "@semantic-release/github"
+    "@semantic-release/git"
   ]
 }
