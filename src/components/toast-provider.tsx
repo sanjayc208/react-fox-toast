@@ -84,7 +84,6 @@ import ToastContainer from './toast-container';
 import { ToastContextType, ToastProps } from './types';
 
 const ToastContext = createContext<ToastContextType | null>(null);
-const defaultPosition = 'bottom-center'
 
 export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [toasts, setToasts] = useState<any[]>([]);
@@ -92,11 +91,9 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     // Function to add a toast
     const addToast = useCallback((toast: Omit<ToastProps, 'id'>): string => {
         const id = Math.random().toString(36).substr(2, 9);
-
-        toast.position ??= defaultPosition; // Default to 'bottom-right' if not provided
-
+        const position = toast.position || 'bottom-right'; // Default to 'bottom-right' if not provided
         setToasts((prevToasts) =>
-            toast.position?.includes('top')
+            position?.includes('top')
                 ? [{ ...toast, id, isClosing: false }, ...prevToasts]
                 : [...prevToasts, { ...toast, id, isClosing: false }]
         );
