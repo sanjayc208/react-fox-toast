@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.0.0...v1.0.1) (2024-12-02)
+
+
+### Bug Fixes
+
+* Reaadme file changes ([96f8906](https://github.com/sanjayc208/react-fox-toast/commit/96f8906ad1d3de38c37f6e089e76fe7a25a326c2))
+
 # 1.0.0 (2024-12-02)
 
 
