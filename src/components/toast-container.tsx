@@ -1,152 +1,24 @@
-// 'use client';
-
-// import React, { useEffect, useRef, useState } from 'react';
-// import Toast from './toast';
-// import { useToastContext } from './toast-provider';
-
-
-// const ToastContainer: React.FC = () => {
-//     const { toasts, removeToast } = useToastContext()!;
-//     const [isExpansion, setIsExpansion] = useState(false); // Tracks if a toast is being expanded
-//     const [enableTransition, setEnableTransition] = useState(true); // Controls transition application
-//     const [toastHeights, setToastHeights] = useState<Record<string, number>>({});
-//     const toastRefs = useRef<Record<string, HTMLDivElement | null>>({});
-
-//     const updateToastHeights = () => {
-//         const newHeights: Record<string, number> = {};
-//         Object.keys(toastRefs.current).forEach((id) => {
-//             const el = toastRefs.current[id];
-//             if (el) {
-//                 newHeights[id] = el.offsetHeight;
-//             }
-//         });
-//         setToastHeights(newHeights);
-//     };
-
-//     // Use ResizeObserver to handle height changes dynamically
-//     useEffect(() => {
-//         const resizeObserver = new ResizeObserver(() => {
-//             updateToastHeights();
-//         });
-
-//         Object.values(toastRefs.current).forEach((el:any) => {
-//             if (el) resizeObserver.observe(el);
-//         });
-        
-//         return () => {
-//             resizeObserver.disconnect();
-//         };
-//     }, [toasts]);
-
-//     // Handle transition enablement on collapse
-//     useEffect(() => {
-//         if (!isExpansion) {
-//             // Re-enable transition after expansion/collapse ends
-//             const timeout = setTimeout(() => {
-//                 setEnableTransition(true);
-//             }, 300); // Match the duration of your CSS transition
-//             return () => clearTimeout(timeout);
-//         }
-//     }, [isExpansion]);
-
-//     const calculatePositions = (
-//         positionToasts: Array<{ id: string }>,
-//         isBottom: boolean
-//     ) => {
-//         let cumulativeHeight = 0;
-//         const positions = isBottom ? [...positionToasts].reverse() : positionToasts;
-
-//         return positions.map((toast) => {
-//             const height = toastHeights[toast.id] || 80; // Default height
-//             const positionValue = isBottom
-//                 ? cumulativeHeight
-//                 : cumulativeHeight;
-//             cumulativeHeight += height + 8; // Add spacing
-//             return { id: toast.id, positionValue };
-//         });
-//     };
-
-//     const positionClasses: Record<string, string> = {
-//         "top-left": "top-4 left-4 flex items-start justify-start",
-//         "top-center":
-//             "top-4 left-1/2 transform -translate-x-1/2 flex items-center justify-center",
-//         "top-right": "top-4 right-4 flex items-start justify-end",
-//         "bottom-left": "bottom-4 left-4 flex items-end justify-start",
-//         "bottom-center":
-//             "bottom-4 left-1/2 transform -translate-x-1/2 flex items-center justify-center",
-//         "bottom-right": "bottom-4 right-4 flex items-end justify-end",
-//     };
-
-//     return (
-//         <>
-//             {Object.entries(positionClasses).map(([position, classes]:any) => {
-//                 const isBottom = position.includes("bottom");
-//                 const positionToasts = toasts.filter(
-//                     (toast) => toast.position === position
-//                 );
-//                 const toastPositions = calculatePositions(positionToasts, isBottom);
-
-//                 return (
-//                     <div key={position} className={`fixed z-50 ${classes}`}>
-//                         {toastPositions.map(({ id, positionValue }) => (
-//                             <div
-//                                 key={id}
-//                                 ref={(el): any => (toastRefs.current[id] = el)}
-//                                 className={`toast-${id} ${enableTransition
-//                                         ? "transition-all duration-300 ease-in-out"
-//                                         : ""
-//                                     } m-2`}
-//                                 style={{
-//                                     top: isBottom ? undefined : `${positionValue}px`,
-//                                     bottom: isBottom ? `${positionValue}px` : undefined,
-//                                     position: "absolute",
-//                                     width: "max-content",
-//                                 }}
-//                             >
-//                                 <Toast
-//                                     {...toasts.find((toast) => toast.id === id)!}
-//                                     onClose={() => {
-//                                         removeToast(id);
-//                                     }}
-//                                     onExpand={(isExpanded: any) => {
-
-//                                         // The logic here is disable transition on expansion because that removes transition for all
-//                                         setIsExpansion(isExpanded);
-//                                         if (isExpanded) {
-//                                             // Disable transition during expansion
-//                                             setEnableTransition(false);
-
-//                                             // Then Again Enable transition during collapse
-//                                             setTimeout(() => {
-//                                                 setEnableTransition(true);
-
-//                                             }, 300);
-//                                         }else{
-//                                             // Disable transition during collapse also
-//                                             setEnableTransition(false);
-//                                         }
-//                                     }}
-//                                 />
-//                             </div>
-//                         ))}
-//                     </div>
-//                 );
-//             })}
-//         </>
-//     );
-// };
-
-// export default ToastContainer;
-
-// ToastContainer.tsx
+// src/toast/toast-container.tsx
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import Toast from './toast';
-import { useToastContext } from './toast-provider';
+import React, { useEffect, useState, useRef } from 'react';
+import { subscribeToToasts, removeToast, Toast } from './toast-store';
+import ToastComponent from './toast-component';
 
-const ToastContainer: React.FC = () => {
-    const { toasts, removeToast } = useToastContext()!;
+type ToastTypeTheming = {
+    success: { style: React.CSSProperties, className: string };
+    error: { style: React.CSSProperties, className: string };
+    info: { style: React.CSSProperties, className: string };
+    custom: { style: React.CSSProperties, className: string };
+  };
+
+  interface ToastContainerProps {
+    toastTypeTheming?: ToastTypeTheming;
+    spacing?: number
+  }  
+
+export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {} , spacing = 0 }) => {
+    const [toasts, setToasts] = useState<Toast[]>([]);
     const [isExpansion, setIsExpansion] = useState(false); // Tracks if a toast is being expanded
     const [enableTransition, setEnableTransition] = useState(true); // Controls transition application
     const [toastHeights, setToastHeights] = useState<Record<string, number>>({});
@@ -162,6 +34,11 @@ const ToastContainer: React.FC = () => {
         });
         setToastHeights(newHeights);
     };
+
+    useEffect(() => {
+        const unsubscribe = subscribeToToasts(setToasts);
+        return () => unsubscribe();
+    }, []);
 
     useEffect(() => {
         const resizeObserver = new ResizeObserver(() => {
@@ -188,7 +65,9 @@ const ToastContainer: React.FC = () => {
 
     const calculatePositions = (
         positionToasts: Array<{ id: string }>,
-        isBottom: boolean
+        isBottom: boolean,
+        spacing: number // New parameter for spacing
+
     ) => {
         let cumulativeHeight = 0;
         const positions = isBottom ? [...positionToasts].reverse() : positionToasts;
@@ -198,7 +77,7 @@ const ToastContainer: React.FC = () => {
             const positionValue = isBottom
                 ? cumulativeHeight
                 : cumulativeHeight;
-            cumulativeHeight += height + 8; // Add spacing
+            cumulativeHeight += height + (spacing || 8) ; // Add spacing
             return { id: toast.id, positionValue };
         });
     };
@@ -219,8 +98,8 @@ const ToastContainer: React.FC = () => {
                 const positionToasts = toasts.filter(
                     (toast) => toast.position === position
                 );
-                const toastPositions = calculatePositions(positionToasts, isBottom);
-
+                const toastPositions = calculatePositions(positionToasts, isBottom, spacing);
+                
                 return (
                     <div key={position} style={{ ...style, position: "fixed", zIndex: 50 }}>
                         {toastPositions.map(({ id, positionValue }) => (
@@ -234,12 +113,15 @@ const ToastContainer: React.FC = () => {
                                     position: "absolute",
                                     width: "max-content",
                                     transition: enableTransition
-                                        ? "all 0.3s ease-in-out"
-                                        : undefined,
+                                        ? "all 0.2s ease-in-out"
+                                        : undefined, 
                                 }}
                             >
-                                <Toast
+                                <ToastComponent
                                     {...toasts.find((toast) => toast.id === id)!}
+
+                                    toastTypeTheming={toastTypeTheming}  /* Pass it down */
+
                                     onClose={() => {
                                         removeToast(id);
                                     }}
@@ -263,5 +145,3 @@ const ToastContainer: React.FC = () => {
         </>
     );
 };
-
-export default ToastContainer;

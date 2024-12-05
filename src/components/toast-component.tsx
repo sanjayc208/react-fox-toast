@@ -3,20 +3,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ToastProps } from './types';
 import { defaultIcons } from './default-icons';
-import { useToastContext } from './toast-provider';
+import { removeToast, updateToast, dismissToast, pauseToastTimer, resumeToastTimer } from './toast-store';
 import { styled } from 'goober';
 
 // Styled Components for Toast
 const ToastContainer = styled('div')(
     (props: any) => {
       const { isvisible, isclosing, position, type, style } = props; // Extract non-DOM props
-  
-      const backgroundColors: Record<string, string> = {
-        success: '#D1FAE5',
-        error: '#FEE2E2',
-        info: '#DBEAFE',
-        custom: '#F3F4F6',
-      };
   
       return `
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -103,13 +96,14 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = ({
   expandedContent,
   onExpand,
   isClosing,
-  expandedClassName
+  expandedClassName,
+  toastTypeTheming ={},
+  isPause = true, // Default is true to pause on hover
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const toastRef = useRef<HTMLDivElement>(null);
   const expandedContentRef = useRef<HTMLDivElement>(null);
-  const { updateToast, removeToast, dismissToast } = useToastContext();
 
   useEffect(() => {
     setIsVisible(true);
@@ -119,6 +113,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = ({
       padding: 0.55rem 0.85rem;
       border-radius: 0.5rem;
       background-color: ${backgroundColors[type] || backgroundColors.custom};
+      color : black;
       `)
   }, [type]);
 
@@ -129,6 +124,19 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = ({
       onExpand(!isExpanded);
     }
   };
+
+  const handleMouseEnter = () => {
+    if (isPause) {
+      pauseToastTimer(id); // Pause if isPause is true
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (isPause) {
+      resumeToastTimer(id); // Resume if isPause is true
+    }
+  };
+
   const backgroundColors: Record<string, string> = {
     success: '#D1FAE5',
     error: '#FEE2E2',
@@ -137,23 +145,30 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = ({
   };
 
   const toastFunctions = {
-    update: (updates: Partial<ToastProps>) => updateToast(id, updates),
+    update: (updates: Partial<any>) => updateToast(id, updates),
     remove: () => removeToast(id),
     dismiss: () => dismissToast(),
   };
 
   const expandedHeight = expandedContentRef.current?.scrollHeight + 'px';
 
+  // Global Theme styles and class from Toast Container
+  const typeThemeStyle = toastTypeTheming[type]?.style || {};
+  const typeThemeClass = `${toastTypeTheming[type]?.className || ''}`
+
   return (
     <ToastContainer
       ref={toastRef}
       onClick={handleClick}
-      className={`toast-container-default-${id} ` + className}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={`toast-container-default-${id} ${className} ${typeThemeClass}`}
       type={type}
       position={position}
       isvisible={isVisible.toString()}
       isclosing={isClosing.toString()}
-      style={style}
+      style={{...style,...typeThemeStyle}}
+
     >
       {typeof message === 'function' ? (
         <>{message(toastFunctions)}</>
