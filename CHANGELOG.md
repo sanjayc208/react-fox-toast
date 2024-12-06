@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.1...v1.1.2) (2024-12-06)
+
+
+### Bug Fixes
+
+* Added LICENSE and few fixes on readme ([543eb00](https://github.com/sanjayc208/react-fox-toast/commit/543eb00c196efcb6778fa40862a8910008518f6f))
+
 ## [1.1.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.0...v1.1.1) (2024-12-06)
 
 
