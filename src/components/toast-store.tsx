@@ -1,4 +1,4 @@
-// src/toast/toast-store.ts
+// src/component/toast-store.ts
 'use client';
 import {ToastPosition, ToastType} from './types'
 

@@ -1,3 +1,4 @@
+// src/components/toast-component.tsx
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';

@@ -6,6 +6,8 @@
 
 `react-fox-toast` is a flexible, customizable, and easy-to-use toast/notification bar component for ReactJS and NextJS. It supports various customization options, including styles, classes, icons, expandable content, and even integrates with libraries like TailwindCSS.
 
+> **_NOTE:_** : this package works only on Client Side . So if using any SSR frameworks like NEXT.JS see to it that you have 'use client'; on top of component
+
 ## Features
 - **Highly Customizable**: You can customize the position, duration, content, icons, and more.
 - **Supports Promises**: Show success/error messages based on the result of promises.
@@ -38,6 +40,8 @@ To enable toast notifications in your app, wrap your root component with ToastCo
 
 
 ```typescript
+'use client'; //Add if you are using NextJs
+
 import { ToastContainer } from "react-fox-toast";
 
 function App() {
@@ -55,6 +59,8 @@ export default App;
 To display toasts, use the toast hook inside your components. This hook gives you access to toast functions like toast.success(), toast.error(), and more.
 
 ```typescript
+'use client'; //Add if you are using NextJs
+
 import { toast } from "react-fox-toast";
 
 function MyComponent() {
@@ -237,6 +243,7 @@ toast.success(
 ### Example Usage
 Here's a complete example showing how to use the toast notifications in a React component:
 ```typescript
+'use client'; //Add if you are using NextJs
 
 import React from 'react';
 import { useToast } from 'react-fox-toast';
