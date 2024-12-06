@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.0.1...v1.1.0) (2024-12-06)
+
+
+### Features
+
+* created stores and new features for toast ([d7c4c80](https://github.com/sanjayc208/react-fox-toast/commit/d7c4c80bf3b383eca65589a41e9ba356b0bf1df6))
+* created toast-store simplified toast and its usage for developers ([c4555b1](https://github.com/sanjayc208/react-fox-toast/commit/c4555b178ca49de625556f951dd05e2516ac0b9b))
+
 ## [1.0.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.0.0...v1.0.1) (2024-12-02)
 
 
