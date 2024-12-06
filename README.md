@@ -1,4 +1,4 @@
-![Description of GIF](./assets/example-usage.gif)
+![Description of GIF](./assets/RFT_v1.1.0.gif)
 
 # React Fox Toast - Toast for ReactJS and NextJS
 
@@ -8,12 +8,17 @@
 - **Highly Customizable**: You can customize the position, duration, content, icons, and more.
 - **Supports Promises**: Show success/error messages based on the result of promises.
 - **Custom Content**: Render custom components inside the toast.
-- **Global Toast Provider**: A single provider to manage toasts globally.
+- **Global Toast Container**: A single container to manage toasts globally.
 - **TailwindCSS Support**: Works seamlessly with TailwindCSS for styling.
+- **Pause on Hover**: Pauses the toast’s auto-dismiss timer when the user hovers over it for better control.
+- **Expandable Toasts**: Click to expand and reveal more content when there’s additional information to display.
+- **Global Theme Support**: Easily apply a global theme to your toasts for consistent styling across your app.
+- **Super Lightweight**: The lightest toast solution available, with minimal impact on your app’s performance.
+- **Smooth Transitions**: Enjoy smooth and simple transitions for toast animations, including expand, slide in, and slide out effects.
 
 ## Installation
 
-First, install the package via npm or yarn:
+First, install the package via npm or yarn or pnpm:
 
 ```bash
 npm install react-fox-toast
@@ -25,33 +30,32 @@ pnpm add react-fox-toast
 
 ## Setup
 
-### Step 1: Add ToastProvider to your Root Component
+### Step 1: Add ToastContainer to your Root Component
 
-To enable toast notifications in your app, wrap your root component with ToastProvider. This will allow the toasts to be displayed anywhere within your component tree.
+To enable toast notifications in your app, wrap your root component with ToastContainer. This will allow the toasts to be displayed anywhere within your component tree.
 
 
 ```typescript
-import { ToastProvider } from "react-fox-toast";
+import { ToastContainer } from "react-fox-toast";
 
 function App() {
   return (
-    <ToastProvider>
-      {/* Your app content */}
-    </ToastProvider>
+    <>
+      <ToastContainer>
+    </>
   );
 }
 
 export default App;
 ```
 
-### Step 2: Use the useToast Hook in Your Components
-To display toasts, use the useToast hook inside your components. This hook gives you access to toast functions like toast.success(), toast.error(), and more.
+### Step 2: Use the toast Hook in Your Components
+To display toasts, use the toast hook inside your components. This hook gives you access to toast functions like toast.success(), toast.error(), and more.
 
 ```typescript
-import { useToast } from "react-fox-toast";
+import { toast } from "react-fox-toast";
 
 function MyComponent() {
-  const toast = useToast();
 
   const showToast = () => {
     toast.success("Success! The action was completed.");

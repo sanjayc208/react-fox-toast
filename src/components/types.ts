@@ -20,8 +20,11 @@ export interface ToastProps {
     isClosing?: any
     isCloseBtn?:any
     expandedClassName?: string
-}
+    toastTypeTheming? : any,
+    spacingToast?: React.CSSProperties,
+    isPause?: boolean,
 
+}
 
 export interface ToastContextType {
   toasts: ToastProps[]

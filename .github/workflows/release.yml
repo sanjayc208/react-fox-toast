@@ -22,7 +22,7 @@ jobs:
         run: npm install -g pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Print package.json version before
         run: cat package.json | jq .version  
