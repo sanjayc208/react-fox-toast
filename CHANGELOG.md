@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.0...v1.1.1) (2024-12-06)
+
+
+### Bug Fixes
+
+* build script added in workflow ([46ff10c](https://github.com/sanjayc208/react-fox-toast/commit/46ff10c719518d773ec37e2b0d4833c29ece5387))
+
 # [1.1.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.0.1...v1.1.0) (2024-12-06)
 
 
