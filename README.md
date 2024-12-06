@@ -43,7 +43,7 @@ import { ToastContainer } from "react-fox-toast";
 function App() {
   return (
     <>
-      <ToastContainer>
+      <ToastContainer />
     </>
   );
 }
