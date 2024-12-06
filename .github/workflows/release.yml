@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Build package (tsup)
+        run: pnpm run build  # Make sure this step builds the dist folder  
+
       - name: Print package.json version before
         run: cat package.json | jq .version  
 

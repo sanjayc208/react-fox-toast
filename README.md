@@ -1,4 +1,6 @@
-![Description of GIF](./assets/RFT_v1.1.0.gif)
+<p align="center">
+  <img src="./assets/RFT_v1.1.0.gif" alt="Description of GIF">
+</p>
 
 # React Fox Toast - Toast for ReactJS and NextJS
 
