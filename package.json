@@ -20,15 +20,15 @@
   "scripts": {
     "build": "tsup",
     "start": "tsup --watch && postcss src/styles.css -o dist/styles.css --watch",
+    "test": "echo\"Error: no test specified\" && exit 1",
     "lint": "tsc",
-    "test": "jest",
     "link": "pnpm link ../site/node_modules/react && pnpm link ../site/node_modules/react-dom"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sanjayc208/react-fox-toast.git"
   },
-  "author": "sanjay",
+  "author": "Sanjay Rajeev",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sanjayc208/react-fox-toast/issues"

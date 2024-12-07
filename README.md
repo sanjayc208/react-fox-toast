@@ -1,6 +1,19 @@
+<a href="">
 <p align="center">
   <img src="./assets/RFT_v1.1.0.gif" alt="Description of GIF">
 </p>
+</a>
+
+<div align="center">
+  <img src="https://badgen.net/npm/v/react-fox-toast" alt="NPM Version">
+  <img src="https://badgen.net/packagephobia/publish/react-fox-toast" alt="NPM Package Size"> 
+  <img src="https://badgen.net/static/license/MIT/yellow" alt="NPM Package Size">   
+     
+</div>
+<div align="center" style="margin-bottom:30px">
+<img src="https://badgen.net/bundlephobia/min/react-fox-toast" alt="Min Size">  
+</div>
+
 
 # React Fox Toast - Toast for ReactJS and NextJS
 

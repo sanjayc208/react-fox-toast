@@ -4,7 +4,7 @@ import {ToastPosition, ToastType} from './types'
 
 export interface Toast {
   id: string;
-  message: string | React.ReactNode;
+  message: React.ReactNode;
   type: ToastType;
   duration?: number;  // Custom duration before auto-dismiss (in ms)
   position?: ToastPosition;

@@ -5,22 +5,41 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ToastProps } from './types';
 import { defaultIcons } from './default-icons';
 import { removeToast, updateToast, dismissToast, pauseToastTimer, resumeToastTimer } from './toast-store';
-import { styled } from 'goober';
+import { styled , keyframes} from 'goober';
+
+// Enter Animation (Zoom out to Zoom in)
+const fadeIn = (position: string) => keyframes`
+  0% { 
+    opacity: 0; 
+    transform: ${position.includes('top') ? 'translateY(-200%) scale(0.8)' : 'translateY(200%) scale(0.8)'}; /* Move from top or bottom */
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); /* Zoom in and position at center */
+  }
+`;
+
+// Exit Animation (Zoom in to Fade Away)
+const fadeOut = (position: string) => keyframes`
+  0% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: ${position.includes('top') ? 'translateY(-30%) scale(0.8)' : 'translateY(30%) scale(0.8)'}; /* Move to top or bottom */
+  }
+`;
 
 // Styled Components for Toast
 const ToastContainer = styled('div')(
     (props: any) => {
       const { isvisible, isclosing, position, type, style } = props; // Extract non-DOM props
-  
+
       return `
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease-in-out;
-        opacity: ${isvisible === "true" && isclosing === "false" ? 1 : 0};
-        transform: ${isvisible === "true" && isclosing === "false"
-          ? 'translateY(0)'
-          : position?.includes('top')
-          ? 'translateY(-2rem)'
-          : 'translateY(2rem)'};
+        will-change: transform;
+        animation: ${isclosing === "false" ? fadeIn(position) : fadeOut(position)} 0.35s ease-in-out;
         max-width: 400px;
         ${style}
       `;
@@ -83,7 +102,7 @@ const ExpandedContent = styled('div')(
 );
 
 
-const Toast: React.FC<ToastProps & { onClose: () => void }> = ({
+const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   id,
   message,
   type = 'custom',
@@ -107,8 +126,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = ({
   const expandedContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setIsVisible(true);
-
+      // requestAnimationFrame(() => setIsVisible(true));
     // create default class for toastContainer
     createDynamicClass(`toast-container-default-${id}` , `
       padding: 0.55rem 0.85rem;
@@ -198,7 +216,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = ({
       )}
     </ToastContainer>
   );
-};
+});
 
 export default Toast;
 
