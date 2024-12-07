@@ -18,7 +18,7 @@ export default function Home() {
     <div className="">
       <div className="relative flex min-h-[400px] max-h-fit w-full flex-col items-center justify-center overflow-hidden">
         <header></header>
-        <Meteors number={30} />
+        <Meteors number={40} />
         <span
           className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent max-w-3xl mx-auto block"
         >
@@ -62,7 +62,7 @@ export default function Home() {
       <div className="max-w-fit mx-auto my-4">
         <div className="flex flex-col lg:flex-row gap-4">
           {/* <FeatureGrid /> */}
-          <div className="max-w-[400px] min-w-[400px] p-3">
+          <div className="xs:w-[22rem] xs:max-w-[22rem] lg:max-w-[400px] lg:min-w-[400px] p-3">
 
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">
             Supercharge Your UI with React Toast
