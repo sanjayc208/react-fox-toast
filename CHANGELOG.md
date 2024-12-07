@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.2...v1.1.3) (2024-12-07)
+
+
+### Bug Fixes
+
+* using goober keyframe for animation and removed isVisible state from toast ([040dc3e](https://github.com/sanjayc208/react-fox-toast/commit/040dc3edf875f6245dbc38ada5c9b5c4fefd62e4))
+
 ## [1.1.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.1...v1.1.2) (2024-12-06)
 
 
