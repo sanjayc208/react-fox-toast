@@ -36,7 +36,7 @@ const GettingStarted = () => {
 
               STEP 1 :- Install package with npm / pnpm / yarn
             </h3>
-            <CustomSyntaxHighlighter className="xs:w-[22rem] xs:max-w-[22rem] lg:max-w-[33rem] lg:w-[33rem] border rounded-lg overflow-x-auto shadow-lg"
+            <CustomSyntaxHighlighter className="xs:w-[20rem] xs:max-w-[22rem] lg:max-w-[33rem] lg:w-[33rem] border rounded-lg overflow-x-auto shadow-lg"
               codeSyntax={`npm i react-fox-toast`} />
           </div>
         </div>
@@ -56,7 +56,7 @@ const GettingStarted = () => {
               </h3>
               <p>Adding ToastContainer on the Component where 'toast' hook will be used also works</p>
             </div>
-            <CustomSyntaxHighlighter className="xs:w-[22rem] xs:max-w-[22rem] lg:max-w-[33rem] lg:w-[33rem] border rounded-lg overflow-x-auto shadow-lg"
+            <CustomSyntaxHighlighter className="xs:w-[20rem] xs:max-w-[22rem] lg:max-w-[33rem] lg:w-[33rem] border rounded-lg overflow-x-auto shadow-lg"
               codeSyntax={secondStepInstallation} />
           </div>
         </div>
@@ -78,7 +78,7 @@ const GettingStarted = () => {
                 client side
               </p>
             </div>
-            <CustomSyntaxHighlighter className="xs:w-[22rem] xs:max-w-[22rem] lg:max-w-[33rem] lg:w-[33rem] border rounded-lg overflow-x-auto shadow-lg"
+            <CustomSyntaxHighlighter className="xs:w-[20rem] xs:max-w-[22rem] lg:max-w-[33rem] lg:w-[33rem] border rounded-lg overflow-x-auto shadow-lg"
               codeSyntax={thirdStepInstallation} />
           </div>
         </div>
