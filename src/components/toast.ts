@@ -1,15 +1,14 @@
 // src/toast/toast.ts
 import { addToast, removeToast, updateToast } from './toast-store';
-import {ToastPosition} from './types'
 
 export const toast = {
-  success: (message: string, options?: Partial<any>) =>
+  success: (message: React.ReactNode, options?: Partial<any>) =>
     addToast({ ...options, message, type: 'success' }),
-  error: (message: string, options?: Partial<any>) =>
+  error: (message: React.ReactNode, options?: Partial<any>) =>
     addToast({ ...options, message, type: 'error' }),
-  info: (message: string, options?: Partial<any>) =>
+  info: (message: React.ReactNode, options?: Partial<any>) =>
     addToast({ ...options, message, type: 'info' }),
-  custom: (message: string, options?: Partial<any>) =>
+  custom: (message: React.ReactNode, options?: Partial<any>) =>
     addToast({ ...options, message, type: 'custom' }),
   remove: (id: string) => removeToast(id),
   update: (id: string, updates: Partial<any>) => updateToast(id, updates),
@@ -20,7 +19,7 @@ export const toast = {
       success: string, 
       error: string, 
       duration?: number,
-      position?: ToastPosition, 
+      position?: any, 
       toastOptions?: Partial<any>
     }
   ) => {

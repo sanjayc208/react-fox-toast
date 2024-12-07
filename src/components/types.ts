@@ -6,7 +6,7 @@ export type ToastPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-le
 
 export interface ToastProps {
     id: string
-    message: ReactNode | Function | string
+    message: ReactNode | any
     type: ToastType
     position?: ToastPosition
     duration?: number
