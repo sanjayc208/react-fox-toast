@@ -15,11 +15,11 @@
 </div>
 <br />
 <div align="center">
-<h3>
+<h2>
 <a href="https://react-fox-toast.vercel.app/">
     <strong>Click to Try the Demo!</strong>
 </a>
-</h3>
+</h2>
 </div>
 <br />
 
