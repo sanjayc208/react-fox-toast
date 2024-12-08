@@ -48,7 +48,7 @@ export default function Home() {
           onClick={() => toast.custom(<>Custom JSX component</>, 
             {  position: 'top-center',icon: 
                 <div
-                    className="flex size-8 items-center justify-center rounded-xl bg-yellow-100"
+                    className="flex size-8 items-center justify-center rounded-lg bg-yellow-300"
                 >
                     <span className='text-lg'>🦊</span>
                 </div>

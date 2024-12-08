@@ -101,7 +101,7 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
                 const toastPositions = calculatePositions(positionToasts, isBottom, spacing);
                 
                 return (
-                    <div key={position} style={{ ...style, position: "fixed", zIndex: 50 }}>
+                    <div key={position} style={{ ...style, position: "fixed", zIndex: 9999 }}>
                         {toastPositions.map(({ id, positionValue }) => (
                             <div
                                 key={id}
