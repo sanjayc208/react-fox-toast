@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.3...v1.1.4) (2024-12-08)
+
+
+### Bug Fixes
+
+* added demp link in readme and some UI alignments and improvements ([d2332f3](https://github.com/sanjayc208/react-fox-toast/commit/d2332f3c2bc9b33e40bc757ff5840fbaadceae11))
+
 ## [1.1.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.2...v1.1.3) (2024-12-07)
 
 
