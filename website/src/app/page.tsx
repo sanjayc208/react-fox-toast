@@ -1,6 +1,5 @@
 
 "use client";
-import { redirect } from 'next/navigation'
 import { toast } from "react-fox-toast"
 import Meteors from "@/components/ui/meteors";
 import { RainbowButton } from "@/components/ui/rainbow-button";
@@ -34,7 +33,7 @@ export default function Home() {
       </div>
       <div className="flex justify-center items-center space-x-4">
         <RainbowButton
-          onClick={() => redirect("https://github.com/sanjayc208/react-fox-toast")}
+          onClick={() => window.open("https://github.com/sanjayc208/react-fox-toast", "_blank")}
         >
           <div className="flex justify-center items-center space-x-4"><img
             src={'/static/github-mark-white.svg'}
@@ -45,10 +44,11 @@ export default function Home() {
           </div>
         </RainbowButton>
         <div>
-          <ShinyButton onClick={() => toast.custom(<>Custom JSX component</>, 
+          <ShinyButton className="h-[2.6rem]"
+          onClick={() => toast.custom(<>Custom JSX component</>, 
             {  position: 'top-center',icon: 
                 <div
-                    className="flex size-8 items-center justify-center rounded-2xl bg-yellow-100"
+                    className="flex size-8 items-center justify-center rounded-xl bg-yellow-100"
                 >
                     <span className='text-lg'>🦊</span>
                 </div>

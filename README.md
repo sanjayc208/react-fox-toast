@@ -1,4 +1,4 @@
-<a href="">
+<a href="https://react-fox-toast.vercel.app/">
 <p align="center">
   <img src="./assets/RFT_v1.1.0.gif" alt="Description of GIF">
 </p>
@@ -6,14 +6,18 @@
 
 <div align="center">
   <img src="https://badgen.net/npm/v/react-fox-toast" alt="NPM Version">
-  <img src="https://badgen.net/packagephobia/publish/react-fox-toast" alt="NPM Package Size"> 
+  <img src="https://packagephobia.com/badge?p=react-fox-toast" alt="NPM Package Size"> 
   <img src="https://badgen.net/static/license/MIT/yellow" alt="NPM Package Size">   
      
 </div>
 <div align="center" style="margin-bottom:30px">
 <img src="https://badgen.net/bundlephobia/min/react-fox-toast" alt="Min Size">  
 </div>
-
+<div align="center" style="margin-bottom:30px">
+<a href="https://react-fox-toast.vercel.app/" target="_blank" style="display: inline-block; padding: 12px 24px; font-size: 18px; color: white; background: linear-gradient(45deg, #c0392b, #8e44ad); border-radius: 15px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s;">
+    Click to Try the Demo!
+</a>
+</div>
 
 # React Fox Toast - Toast for ReactJS and NextJS
 
@@ -59,9 +63,9 @@ import { ToastContainer } from "react-fox-toast";
 
 function App() {
   return (
-    <>
+    <div>
       <ToastContainer />
-    </>
+    </div>
   );
 }
 
@@ -289,6 +293,48 @@ function App() {
 }
 
 export default App;
+```
+
+## Theming Globally
+ You can globally theme your default toast in ToastContainer, while still allowing custom styles for specific toast types like success, error, or info.
+
+
+### Example Usage
+```tsx
+<ToastContainer 
+
+  <! -- Add for global theming -->
+   toastTypeTheming = {{
+     success: {
+      style: {
+        backgroundColor: 'blue',
+        color: '#155E00',
+      },
+       className: 'bg-blue-10'
+     },
+     error: {
+       style: {
+         backgroundColor: 'green',
+         color: '#B91C1C',
+       },
+       className: 'error-toast-class',
+     },
+     info: {
+       style: {
+         backgroundColor: '#white',
+         color: '#1D4ED8',
+       },
+       className: 'info-toast-class',
+     },
+     custom: {
+       style: {
+         backgroundColor: 'yellow',
+         color: '#6B7280',
+       },
+       className: 'custom-toast-class',
+     },
+   }}
+/> 
 ```
 ## Conclusion
 react-fox-toast is a powerful and customizable toast notification library for ReactJS and NextJS. With features like promise-based toasts, custom content, expandable details, and full control over appearance and behavior, it offers a flexible solution for showing notifications in your app.

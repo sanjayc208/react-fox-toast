@@ -1,9 +1,8 @@
 'use client';
 
-// import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ToastContainer} from "react-fox-toast"
+import { ToastContainer } from "react-fox-toast"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,6 +15,15 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+// Define metadata
+const metadata: any = {
+  title: "react-fox-toast",
+  description: "A Toast / notifcation UI library for react",
+  keywords: "toast, notification, fox, react-fox, fox-toast, react fox toast",
+  author: "Sanjay Rajeev",
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,6 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta name="author" content={metadata.author} />
+        {/* Add more meta tags as needed */}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 
@@ -30,10 +45,6 @@ export default function RootLayout({
           background:'#efefea'
         }}
       >
-              {/* <Toaster /> */}
-
-        {/* <CustomToast /> */}
-        {/* <ToastProvider> */}
         <ToastContainer />
         {children}
         {/* <ToastContainer 
@@ -69,7 +80,6 @@ export default function RootLayout({
         //   },
         // }}
         /> */}
-        {/* </ToastProvider> */}
       </body>
     </html>
   );
