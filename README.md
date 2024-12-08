@@ -10,14 +10,20 @@
   <img src="https://badgen.net/static/license/MIT/yellow" alt="NPM Package Size">   
      
 </div>
-<div align="center" style="margin-bottom:30px">
+<div align="center">
 <img src="https://badgen.net/bundlephobia/min/react-fox-toast" alt="Min Size">  
 </div>
-<div align="center" style="margin-bottom:30px">
-<a href="https://react-fox-toast.vercel.app/" target="_blank" style="display: inline-block; padding: 12px 24px; font-size: 18px; color: white; background: linear-gradient(45deg, #c0392b, #8e44ad); border-radius: 15px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s;">
-    Click to Try the Demo!
+<br />
+<div align="center">
+<h3>
+<a href="https://react-fox-toast.vercel.app/">
+    <strong>Click to Try the Demo!</strong>
 </a>
+</h3>
 </div>
+<br />
+
+<!-- [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/) -->
 
 # React Fox Toast - Toast for ReactJS and NextJS
 

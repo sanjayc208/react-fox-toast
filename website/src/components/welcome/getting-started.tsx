@@ -29,7 +29,7 @@ const GettingStarted = () => {
         <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
-                <span className="text-white text-lg font-semibold">1</span>
+                <span className="text-defaultBase text-lg font-semibold">1</span>
               </div>
             </div>
           </div>
@@ -51,14 +51,14 @@ const GettingStarted = () => {
           <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
-                <span className="text-white text-lg font-semibold">2</span>
+                <span className="text-defaultBase text-lg font-semibold">2</span>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-4 pt-0.5 pb-8">
 
-            <div className="max-w-[368px]">
+            <div className="w-[368px] max-w-[368px]">
               <h3 className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
                 Add 'ToastContainer' on top of the Application
               </h3>
@@ -73,13 +73,13 @@ const GettingStarted = () => {
           <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
-                <span className="text-white text-lg font-semibold">3</span>
+                <span className="text-defaultBase text-lg font-semibold">3</span>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-4 pt-0.5 pb-8">
-            <div className="max-w-[368px]">
+            <div className="w-[368px] max-w-[368px]">
               <h3 className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
                 Import 'toast' from 'react-fox-toast'
               </h3>

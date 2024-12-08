@@ -10,9 +10,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-radio-group": "^1.2.1",
+    "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.1",
+    "@radix-ui/react-tooltip": "^1.1.4",
     "add": "^2.0.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -21,7 +25,7 @@
     "next": "15.0.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-fox-toast": "1.1.3",
+    "react-fox-toast": "1.1.4",
     "react-syntax-highlighter": "^15.6.1",
     "tailwind-merge": "^2.5.5"
   },

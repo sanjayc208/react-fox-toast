@@ -37,10 +37,10 @@ const CustomSyntaxHighlighter = ({ codeSyntax, className, language = 'JSX' }: { 
                     
                     {/* Animated Button switch when copy clicked */}
                     <Button
-                        variant="ghost"
+                        // variant="ghost"
                         size="icon"
                         onClick={copyToClipboard}
-                        className="w-10 h-10 relative"
+                        className="w-10 h-10 relative bg-[#1F2937] hover:bg-[#1F2937] focus:ring-0 focus:outline-none"
                     >
                         <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out ${copied ? 'opacity-0 scale-50' : 'opacity-100 scale-100'}`}>
                             <Copy className="h-4 w-4" />

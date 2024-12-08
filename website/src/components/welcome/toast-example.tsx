@@ -73,9 +73,11 @@ toast.info('Information Generated Toast'${selectedPosition ? `,
 toast.custom(
   <>Custom JSX component</>,${selectedPosition ? `
   position: '${selectedPosition}',` : ''}
-  icon: <div className="flex size-8 items-center justify-center rounded-xl bg-yellow-200">
-          <span className='text-lg'>🦊</span>
-        </div>
+  icon: (
+    <div className="flex size-8 items-center justify-center rounded-lg bg-yellow-300">
+        <span className='text-lg'>🦊</span>
+    </div>
+  )
 )
 `)
     }
