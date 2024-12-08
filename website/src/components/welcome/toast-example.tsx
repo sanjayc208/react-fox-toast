@@ -217,7 +217,7 @@ toast.success('Success data with Tailwind Css',{
                     <Button className="bg-white text-black hover:bg-gray-100" onClick={showDefaultClostButton}>
                         <X />Close Button</Button>
                 </div>
-                <CustomSyntaxHighlighter className="flex-none lg:w-1/2" codeSyntax={codeSyntax} />
+                <CustomSyntaxHighlighter language='JSX' className="flex-none lg:w-1/2" codeSyntax={codeSyntax} />
             </div>
         </>
     )
