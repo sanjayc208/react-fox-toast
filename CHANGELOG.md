@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.4...v1.1.5) (2024-12-08)
+
+
+### Bug Fixes
+
+* zindex for container , readme click btn changes and added few pages for website ([501bd71](https://github.com/sanjayc208/react-fox-toast/commit/501bd716addc2f94e3fa7fa59209b88c089bb478))
+
 ## [1.1.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.3...v1.1.4) (2024-12-08)
 
 
