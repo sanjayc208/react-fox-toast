@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.5...v1.1.6) (2024-12-08)
+
+
+### Bug Fixes
+
+* readme click button size changed ([6bfbca2](https://github.com/sanjayc208/react-fox-toast/commit/6bfbca297235b478c77e23bfb510d4034e7b6d7c))
+
 ## [1.1.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.4...v1.1.5) (2024-12-08)
 
 
