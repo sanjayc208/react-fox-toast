@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.6...v1.1.7) (2024-12-09)
+
+
+### Bug Fixes
+
+* Republishing Readme for missing readme issue ([3377829](https://github.com/sanjayc208/react-fox-toast/commit/337782944b57a19aa39899c2f7e1bd7ef370cf6b))
+
 ## [1.1.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.5...v1.1.6) (2024-12-08)
 
 
