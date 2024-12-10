@@ -26,7 +26,7 @@ const GettingStarted = () => {
     return (<div className="max-w-fit mx-auto my-4">
 
         <div className="flex gap-x-3">
-        <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+        <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
                 <span className="text-defaultBase text-lg font-semibold">1</span>
@@ -42,13 +42,26 @@ const GettingStarted = () => {
             </h3>
             </div>
             <CustomSyntaxHighlighter className="xs:w-[20rem] xs:max-w-[22rem] lg:max-w-[31rem] lg:w-[31rem] border rounded-lg overflow-x-auto shadow-lg"
-              codeSyntax={`npm i react-fox-toast`}
-              language='Terminal'  />
+              // codeSyntax={`npm i react-fox-toast`}
+              // language='Terminal' 
+              tabs={[{
+                codeSyntax:`npm i react-fox-toast`,
+                language:'NPM'
+              },
+              {
+                codeSyntax:`pnpm add react-fox-toast`,
+                language:'PNPM'
+              },
+              {
+                codeSyntax:`yarn i react-fox-toast`,
+                language:'YARN'
+              }]}
+              />
           </div>
         </div>
 
         <div className="flex gap-x-3">
-          <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+          <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
                 <span className="text-defaultBase text-lg font-semibold">2</span>
@@ -65,12 +78,16 @@ const GettingStarted = () => {
               <p>Adding ToastContainer on the Component where 'toast' hook will be used also works</p>
             </div>
             <CustomSyntaxHighlighter className="xs:w-[20rem] xs:max-w-[22rem] lg:max-w-[31rem] lg:w-[31rem] border rounded-lg overflow-x-auto shadow-lg"
-              codeSyntax={secondStepInstallation} />
+              // codeSyntax={secondStepInstallation}
+              tabs={[{
+                codeSyntax: secondStepInstallation
+              }]}
+              />
           </div>
         </div>
 
         <div className="flex gap-x-3">
-          <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+          <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
                 <span className="text-defaultBase text-lg font-semibold">3</span>
@@ -88,7 +105,11 @@ const GettingStarted = () => {
               </p>
             </div>
             <CustomSyntaxHighlighter className="xs:w-[20rem] xs:max-w-[22rem] lg:max-w-[31rem] lg:w-[31rem] border rounded-lg overflow-x-auto shadow-lg"
-              codeSyntax={thirdStepInstallation} />
+              // codeSyntax={thirdStepInstallation}
+              tabs={[{
+                codeSyntax: thirdStepInstallation
+              }]}
+              />
           </div>
         </div>
       </div>)

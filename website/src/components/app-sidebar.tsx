@@ -25,10 +25,10 @@ const data = {
           title: "Installation",
           url: "#",
         },
-        {
-          title: "Project Structure",
-          url: "#",
-        },
+        // {
+        //   title: "Project Structure",
+        //   url: "#",
+        // },
       ],
     },
     {
