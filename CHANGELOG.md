@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.0...v1.2.1) (2024-12-10)
+
+
+### Bug Fixes
+
+* Readme will have website and documentation clicks ([185ae45](https://github.com/sanjayc208/react-fox-toast/commit/185ae45a22ca5b52d1d32722971023d769d3fedb))
+
 # [1.2.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.7...v1.2.0) (2024-12-10)
 
 
