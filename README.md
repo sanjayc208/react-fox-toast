@@ -16,7 +16,7 @@
 <br />
 <div align="center">
 <a href="https://react-fox-toast.vercel.app/">
-    Click to Try the Demo!
+  <h2><strong>Click to Try the Demo!</strong></h2>
 </a>
 </div>
 <br />
