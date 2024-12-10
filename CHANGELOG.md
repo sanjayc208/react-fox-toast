@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.7...v1.2.0) (2024-12-10)
+
+
+### Features
+
+* new configurable  position in ToastContainer ([c6892f4](https://github.com/sanjayc208/react-fox-toast/commit/c6892f4ac617d30b1336871704fff097d736f789))
+
 ## [1.1.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.1.6...v1.1.7) (2024-12-09)
 
 
