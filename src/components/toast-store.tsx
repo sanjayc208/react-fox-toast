@@ -26,12 +26,28 @@ export interface Toast {
 const toastSubscribers: Array<(toasts: Toast[]) => void> = [];
 let toastList: Toast[] = [];
 
-const defaultDuration = 3000
-const defaultPosition = 'bottom-center'
+let defaultDuration: any = 3000
+let defaultPosition: ToastPosition
+
+// Setter functions to modify default values
+export const setToastDefaults = (duration?: number, position?: ToastPosition) => {
+  if (duration !== undefined) {
+    defaultDuration = duration;
+  }
+  if (position !== undefined) {
+    defaultPosition = position;
+  }
+};
+
+// Getter functions to retrieve default values (optional)
+export const getToastDefaults = () => ({
+  duration: defaultDuration,
+  position: defaultPosition,
+});
 
 export const addToast = (toast: Omit<Toast, 'id'>): string => {
   const id = Math.random().toString(36).substr(2, 9);
-  toast.position ??= defaultPosition; // Default to 'bottom-right' if not provided
+  toast.position ??= (defaultPosition); // Default to 'bottom-right' if not provided
   const newToast = { ...toast, id, isClosing: false, isVisible: true, isExpanded: false, 
     isPause: toast.isPause ?? true  // Default to true for pausing
   };

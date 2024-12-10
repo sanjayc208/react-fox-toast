@@ -2,8 +2,9 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-import { subscribeToToasts, removeToast, Toast } from './toast-store';
+import { subscribeToToasts, removeToast, Toast, setToastDefaults } from './toast-store';
 import ToastComponent from './toast-component';
+import {ToastPosition} from './types'
 
 type ToastTypeTheming = {
     success: { style: React.CSSProperties, className: string };
@@ -14,10 +15,16 @@ type ToastTypeTheming = {
 
   interface ToastContainerProps {
     toastTypeTheming?: ToastTypeTheming;
-    spacing?: number
+    spacing?: number,
+    position? : ToastPosition
   }  
 
-export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {} , spacing = 0 }) => {
+// const DEFAULT_POSITION: ToastPosition = 'bottom-center'
+
+export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {} , spacing = 0, position = 'bottom-center' }) => {
+    // Set new default values
+    setToastDefaults(3000, position);
+
     const [toasts, setToasts] = useState<Toast[]>([]);
     const [isExpansion, setIsExpansion] = useState(false); // Tracks if a toast is being expanded
     const [enableTransition, setEnableTransition] = useState(true); // Controls transition application
@@ -93,15 +100,15 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
 
     return (
         <>
-            {Object.entries(positionStyles).map(([position, style]: any) => {
-                const isBottom = position.includes("bottom");
+            {Object.entries(positionStyles).map(([pos, style]: any) => {
+                const isBottom = pos.includes("bottom");
                 const positionToasts = toasts.filter(
-                    (toast) => toast.position === position
+                    (toast) => toast.position === pos
                 );
                 const toastPositions = calculatePositions(positionToasts, isBottom, spacing);
                 
                 return (
-                    <div key={position} style={{ ...style, position: "fixed", zIndex: 9999 }}>
+                    <div key={pos} style={{ ...style, position: "fixed", zIndex: 9999 }}>
                         {toastPositions.map(({ id, positionValue }) => (
                             <div
                                 key={id}
