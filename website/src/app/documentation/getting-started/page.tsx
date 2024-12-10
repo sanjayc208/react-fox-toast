@@ -28,12 +28,6 @@ export default function GettingStartedPage() {
       </ul>
       <h2 className="mt-8 mb-2 text-2xl font-semibold">Installation</h2>
       <p className="mb-4">To get started, install our library using npm:</p>
-      <pre className="bg-muted p-4 rounded-md">
-        <code>npm install @your-library/toast</code>
-      </pre>
-      <p className="mt-4">
-        Once installed, you can import and use the components as needed. Check out the API section for more details on usage.
-      </p>
       <GettingStarted />
 
     </div>

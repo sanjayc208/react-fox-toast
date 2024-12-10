@@ -14,10 +14,11 @@
 <img src="https://badgen.net/bundlephobia/min/react-fox-toast" alt="Min Size">  
 </div>
 <br />
+
 <div align="center">
-<a href="https://react-fox-toast.vercel.app/">
-  <h2><strong>Click to Try the Demo!</strong></h2>
-</a>
+<h2><strong><a href="https://react-fox-toast.vercel.app/">Website</a> 
+<span> | </span>
+<a href="https://react-fox-toast.vercel.app//documentation/getting-started">Documentation</a> 
 </div>
 <br />
 

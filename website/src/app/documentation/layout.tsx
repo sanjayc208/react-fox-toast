@@ -1,4 +1,3 @@
-import { redirect } from 'next/navigation'
 import { Sidebar, SidebarContent, SidebarHeader, SidebarProvider } from "@/components/ui/sidebar"
 import { Header } from "./components/header"
 import { DocSidebar } from "./components/doc-sidebar"
@@ -8,10 +7,6 @@ export default function DocumentationLayout({
 }: {
   children: React.ReactNode
 }) {
-  // Redirect to getting-started if we're at the root of documentation
-  if (typeof window !== 'undefined' && window.location.pathname === '/documentation') {
-    redirect('/documentation/getting-started')
-  }
 
   return (
     <div className="flex h-screen overflow-hidden">

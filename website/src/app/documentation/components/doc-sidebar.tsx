@@ -1,5 +1,11 @@
+'use client';
 import * as React from "react"
-
+import { usePathname, useRouter } from 'next/navigation'
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
 import {
   Sidebar,
   SidebarContent,
@@ -11,6 +17,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
+  SidebarFooter,
   SidebarGroupLabel
 } from "@/components/ui/sidebar"
 
@@ -25,14 +32,14 @@ const data = {
           title: "Installation",
           url: "/documentation/getting-started",
         },
-        {
-          title: "Project Structure",
-          url: "#",
-        },
+        // {
+        //   title: "Project Structure",
+        //   url: "#",
+        // },
       ],
     },
     {
-      title: "Api",
+      title: "API",
       url: "#",
       items: [
         {
@@ -52,52 +59,45 @@ const data = {
       items: [
         {
           title: "Theming",
-          url: "/documentation/theming",
+          url: "/documentation/styling/theming",
         }
       ],
-    },
-    {
-      title: "Architecture",
-      url: "#",
-      items: [
-        {
-          title: "Accessibility",
-          url: "#",
-        }
-      ],
-    },
-    {
-      title: "Community",
-      url: "#",
-      items: [
-        {
-          title: "Contribution Guide",
-          url: "#",
-        },
-      ],
-    },
+    }
   ],
 }
 
 export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname()
+  const router = useRouter()
+
+  // Function to check if the current path matches the URL of the sidebar item
+  const isActive = (url: string) => {
+    return pathname === url
+  }
+
+  // Function to handle click and navigate
+  const onClickRedirect = (url: string) => {
+    router.push(url)  // Programmatically navigate to the new route
+  }
+
   return (
     <Sidebar variant="floating" className="bg-defaultBase" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <a onClick={() => onClickRedirect('/')}>
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-yellow-300 text-sidebar-primary-foreground">
                   {/* <GalleryVerticalEnd className="size-4" /> */}
                   <div
                     className="flex size-8 items-center justify-center rounded-lg"
-                >
+                  >
                     <span className='text-lg'>🦊</span>
-                </div>
+                  </div>
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-semibold">react-fox-toast</span>
-                  <span className="">v1.1.4</span>
+                  <span className="">v1.2.0</span>
                 </div>
               </a>
             </SidebarMenuButton>
@@ -110,17 +110,21 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
-                <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
-                  {/* <a href={item.url} className="font-medium">
-                    {item.title}
-                  </a> */}
+                  <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
                 </SidebarMenuButton>
                 {item.items?.length ? (
                   <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
-                    {item.items.map((item) => (
-                      <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton asChild isActive={item.isActive}>
-                          <a href={item.url}>{item.title}</a>
+                    {item.items.map((subItem) => (
+                      <SidebarMenuSubItem key={subItem.title}>
+                        <SidebarMenuSubButton asChild>
+                          <button
+                            onClick={() => onClickRedirect(subItem.url)}  // Trigger navigation on click
+                            onKeyDown={(e) => e.key === 'Enter' && onClickRedirect(subItem.url)} // Trigger navigation on Enter key press
+                            className={`${isActive(subItem.url) ? 'bg-defaultBase' : ''
+                              } w-full text-left px-4 py-2 rounded focus:outline-none`}
+                          >
+                            {subItem.title}
+                          </button>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                     ))}
@@ -131,8 +135,24 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
+      
+      {/* Sidebar Footer Content */}
+      <SidebarFooter >
+        <SidebarMenuButton
+          size="lg"
+          className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+        >
+          <Avatar className="h-8 w-8 rounded-lg">
+            <AvatarImage src={'/static/user-icon.svg'} alt={'User Avatar'} />
+            <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+          </Avatar>
+          <div className="grid flex-1 text-left text-sm leading-tight">
+            <span className="truncate font-semibold">Creator: {'Sanjay Rajeev'}</span>
+            {/* <span className="truncate text-xs">{'sanjayc208@gmail.com'}</span> */}
+            <span className="truncate text-xs">© {new Date().getFullYear()}</span>
+          </div>
+        </SidebarMenuButton>
+      </SidebarFooter>
     </Sidebar>
   )
 }
-
-
