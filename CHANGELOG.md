@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.2...v1.2.3) (2024-12-12)
+
+
+### Bug Fixes
+
+* web, doc link with few web UI syntax fixes ([67ee5af](https://github.com/sanjayc208/react-fox-toast/commit/67ee5af9a0d97462f9ab4fb8df361f7a589cb17b))
+
 ## [1.2.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.1...v1.2.2) (2024-12-12)
 
 
