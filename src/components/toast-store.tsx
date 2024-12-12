@@ -19,14 +19,14 @@ export interface Toast {
   startTime?: number; // Time when toast was first displayed
   remainingTime?: number; // Remaining time for the toast
   isPaused?: boolean; // To track if the toast timer is paused
-  isPause?: boolean; // Optional prop to disable hover pause functionality
+  isPausedOnHover?: boolean; // Optional prop to disable hover pause functionality
 
 }
 
 const toastSubscribers: Array<(toasts: Toast[]) => void> = [];
 let toastList: Toast[] = [];
 
-let defaultDuration: any = 3000
+let defaultDuration: number
 let defaultPosition: ToastPosition
 
 // Setter functions to modify default values
@@ -49,7 +49,7 @@ export const addToast = (toast: Omit<Toast, 'id'>): string => {
   const id = Math.random().toString(36).substr(2, 9);
   toast.position ??= (defaultPosition); // Default to 'bottom-right' if not provided
   const newToast = { ...toast, id, isClosing: false, isVisible: true, isExpanded: false, 
-    isPause: toast.isPause ?? true  // Default to true for pausing
+    isPausedOnHover: toast.isPausedOnHover ?? true  // Default to true for pausing
   };
 
   toastList = toast.position?.includes('top') ?[newToast, ...toastList] : [...toastList, newToast];
@@ -99,7 +99,7 @@ export const removeToast = (id: string) => {
 };
 
 // Remove all toasts
-export const dismissToast = () => {
+export const removeAllToast = () => {
   toastList = toastList.map((toast) => ({
     ...toast,
     isClosing: true,
