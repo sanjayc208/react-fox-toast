@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ToastProps } from './types';
 import { defaultIcons } from './default-icons';
-import { removeToast, updateToast, dismissToast, pauseToastTimer, resumeToastTimer } from './toast-store';
+import { removeToast, updateToast, removeAllToast, pauseToastTimer, resumeToastTimer } from './toast-store';
 import { styled , keyframes} from 'goober';
 
 // Enter Animation (Zoom out to Zoom in)
@@ -118,7 +118,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   isClosing,
   expandedClassName,
   toastTypeTheming ={},
-  isPause = true, // Default is true to pause on hover
+  isPausedOnHover = true, // Default is true to pause on hover
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -145,14 +145,14 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   };
 
   const handleMouseEnter = () => {
-    if (isPause) {
-      pauseToastTimer(id); // Pause if isPause is true
+    if (isPausedOnHover) {
+      pauseToastTimer(id); // Pause if isPausedOnHover is true
     }
   };
 
   const handleMouseLeave = () => {
-    if (isPause) {
-      resumeToastTimer(id); // Resume if isPause is true
+    if (isPausedOnHover) {
+      resumeToastTimer(id); // Resume if isPausedOnHover is true
     }
   };
 
@@ -166,7 +166,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   const toastFunctions = {
     update: (updates: Partial<any>) => updateToast(id, updates),
     remove: () => removeToast(id),
-    dismiss: () => dismissToast(),
+    removeAll: () => removeAllToast(),
   };
 
   const expandedHeight = expandedContentRef.current?.scrollHeight + 'px';

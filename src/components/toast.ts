@@ -1,5 +1,5 @@
 // src/toast/toast.ts
-import { addToast, removeToast, updateToast } from './toast-store';
+import { addToast, removeToast, updateToast, removeAllToast } from './toast-store';
 
 export const toast = {
   success: (message: React.ReactNode, options?: Partial<any>) =>
@@ -11,6 +11,7 @@ export const toast = {
   custom: (message: React.ReactNode, options?: Partial<any>) =>
     addToast({ ...options, message, type: 'custom' }),
   remove: (id: string) => removeToast(id),
+  removeAll: (id: string) => removeAllToast(),
   update: (id: string, updates: Partial<any>) => updateToast(id, updates),
   promise: (
     promise: Promise<any>,

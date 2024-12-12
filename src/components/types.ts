@@ -22,7 +22,7 @@ export interface ToastProps {
     expandedClassName?: string
     toastTypeTheming? : any,
     spacingToast?: React.CSSProperties,
-    isPause?: boolean,
+    isPausedOnHover?: boolean,
 
 }
 

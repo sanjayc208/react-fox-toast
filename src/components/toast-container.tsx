@@ -16,14 +16,15 @@ type ToastTypeTheming = {
   interface ToastContainerProps {
     toastTypeTheming?: ToastTypeTheming;
     spacing?: number,
-    position? : ToastPosition
+    position? : ToastPosition,
+    duration? : number
   }  
 
 // const DEFAULT_POSITION: ToastPosition = 'bottom-center'
 
-export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {} , spacing = 0, position = 'bottom-center' }) => {
+export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {} , spacing = 0, position = 'bottom-center', duration = 3000 }) => {
     // Set new default values
-    setToastDefaults(3000, position);
+    setToastDefaults(duration, position);
 
     const [toasts, setToasts] = useState<Toast[]>([]);
     const [isExpansion, setIsExpansion] = useState(false); // Tracks if a toast is being expanded
