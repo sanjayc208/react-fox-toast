@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.1...v1.2.2) (2024-12-12)
+
+
+### Bug Fixes
+
+* removeAll function, isPausedOnHover, global duration ([804a60d](https://github.com/sanjayc208/react-fox-toast/commit/804a60d477189708362f588fb805355f534786cc))
+
 ## [1.2.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.0...v1.2.1) (2024-12-10)
 
 
