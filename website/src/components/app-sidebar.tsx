@@ -168,7 +168,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-semibold">Documentation</span>
-                  <span className="">v1.0.0</span>
+                  <span className="">v1.2.2</span>
                 </div>
               </a>
             </SidebarMenuButton>

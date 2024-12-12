@@ -17,8 +17,8 @@ const positions = [
 ]
 
 const ToastDemo = () => {
-    const [codeSyntax, setCodeSyntax] = useState<string>("\ntoast.success('Successfully Generated Toast')")
-    const [selectedPosition, setSelectedPosition] = useState<string>("")
+    const [codeSyntax, setCodeSyntax] = useState<string>("\ntoast.success('Successfully Generated Toast,'{\n    position:'bottom-center'\n})")
+    const [selectedPosition, setSelectedPosition] = useState<string>("bottom-center")
 
     const showSuccess = () => {
         toast.success('Successfully Generated Toast',
@@ -26,9 +26,9 @@ const ToastDemo = () => {
         )
 
         setCodeSyntax(`
-toast.success('Successfully Generated Toast'${selectedPosition ? `,
-    position: '${selectedPosition}
-)` : ')'}
+toast.success('Successfully Generated Toast'${selectedPosition ? `, {
+    position: '${selectedPosition}'
+})` : ')'}
 `)
     }
 
@@ -38,9 +38,9 @@ toast.success('Successfully Generated Toast'${selectedPosition ? `,
         )
 
         setCodeSyntax(`
-toast.error('Error Generated Toast'${selectedPosition ? `,
-    position: '${selectedPosition}
-)` : ')'}
+toast.error('Error Generated Toast'${selectedPosition ? `, {
+    position: '${selectedPosition}'
+})` : ')'}
 `)
     }
 
@@ -50,9 +50,9 @@ toast.error('Error Generated Toast'${selectedPosition ? `,
         )
 
         setCodeSyntax(`
-toast.info('Information Generated Toast'${selectedPosition ? `,
-    position: '${selectedPosition}
-)` : ')'}
+toast.info('Information Generated Toast'${selectedPosition ? `, {
+    position: '${selectedPosition}'
+})` : ')'}
 `)
     }
 
@@ -72,13 +72,14 @@ toast.info('Information Generated Toast'${selectedPosition ? `,
         setCodeSyntax(`
 toast.custom(
   <>Custom JSX component</>,${selectedPosition ? `
-  position: '${selectedPosition}',` : ''}
-  icon: (
-    <div className="flex size-8 items-center justify-center rounded-lg bg-yellow-300">
-        <span className='text-lg'>🦊</span>
-    </div>
-  )
-)
+  {  
+    position: '${selectedPosition}',` : ''}
+    icon: (
+        <div className='flex size-8 items-center justify-center rounded-lg bg-yellow-300'>
+            <span className='text-lg'>🦊</span>
+        </div>
+    )
+})
 `)
     }
 
@@ -89,10 +90,10 @@ toast.custom(
         setCodeSyntax(`
 const type = 'success' | 'error' | 'info' | 'custom'
 
-toast[type](<>Toast Bar with close Btn</>,${selectedPosition ? `
+toast[type](<>Toast Bar with close Btn</>,${selectedPosition ? `{
   position: '${selectedPosition}',` : ''}
   isCloseBtn: true
-)
+})
 `)
     }
 
@@ -148,11 +149,11 @@ toast.promise(fetchData(), {
     const showTailwindCSS = () => {
         toast.success('Success data with Tailwind Css', {
             position: selectedPosition ? selectedPosition : undefined,
-            className: "bg-white dark:bg-green-800 dark:border-green-700",
+            className: 'bg-white dark:bg-green-800 dark:border-green-700',
         })
         setCodeSyntax(`
 toast.success('Success data with Tailwind Css',{
-  className: "bg-white dark:bg-green-800 dark:border-green-700",${selectedPosition ? `
+  className: 'bg-white dark:bg-green-800 dark:border-green-700',${selectedPosition ? `
   position: '${selectedPosition}'` : ''}
 })
 `)
@@ -161,11 +162,11 @@ toast.success('Success data with Tailwind Css',{
     const showCustonIcon = () => {
         toast.success('Success data with Tailwind Css', {
             position: selectedPosition ? selectedPosition : undefined,
-            icon: "👍",
+            icon: '👍',
         })
         setCodeSyntax(`
 toast.success('Success data with Tailwind Css',{
-  icon: "👍"${selectedPosition ? `,
+  icon: '👍'${selectedPosition ? `,
   position: '${selectedPosition}'` : ''}
 })
 `)
@@ -176,7 +177,7 @@ toast.success('Success data with Tailwind Css',{
             {/* Position List */}
             <div className="flex items-center justify-center">
                 <div className="w-full max-w-3xl p-6 space-y-6">
-                    <h2 className="text-2xl font-bold text-center underline">Select Position</h2>
+                    <h2 className="text-2xl font-bold text-center underline">Select Position & Click Any Button</h2>
                     <RadioGroup
                         value={selectedPosition}
                         onValueChange={setSelectedPosition}
