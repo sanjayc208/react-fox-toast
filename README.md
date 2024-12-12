@@ -15,6 +15,13 @@
 </div>
 <br />
 
+<div align="center">
+<h2><strong><a href="https://react-fox-toast.vercel.app/">Website</a> 
+<span> | </span>
+<a href="https://react-fox-toast.vercel.app//documentation/getting-started">Documentation</a> 
+</div>
+<br />
+
 # React Fox Toast - Flexible Toast Notifications for React and Next.js
 
 `react-fox-toast` is a lightweight and customizable toast/notification component for React and Next.js. It supports various customization options and integrates seamlessly with libraries like TailwindCSS.

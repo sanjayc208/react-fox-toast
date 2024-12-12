@@ -26,9 +26,9 @@ export default function ToastAPIPage() {
               <CardDescription>How to use the toast() API in your components</CardDescription>
             </CardHeader>
             <CardContent>
-            <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
-              tabs={[{
-                codeSyntax:`import { toast } from "react-fox-toast";
+              <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+                tabs={[{
+                  codeSyntax: `import { toast } from "react-fox-toast";
 
 function MyComponent() {
   const showToast = () => {
@@ -37,8 +37,8 @@ function MyComponent() {
 
   return <Button onClick={showToast}>Show Success Toast</Button>;
 }`
-              }]}
-                />
+                }]}
+              />
             </CardContent>
           </Card>
         </TabsContent>
@@ -52,12 +52,12 @@ function MyComponent() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-              <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
-              tabs={[{
-                codeSyntax:`toast.success("Operation Successful!");`
-              }]}
-              // codeSyntax={`toast.success("Operation Successful!");`}
-              // language='JSX'
+                <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+                  tabs={[{
+                    codeSyntax: `toast.success("Operation Successful!");`
+                  }]}
+                // codeSyntax={`toast.success("Operation Successful!");`}
+                // language='JSX'
                 />
                 {/* <pre className="bg-muted p-4 rounded-md">
                   <code>{`toast.success("Operation Successful!");`}</code>
@@ -72,11 +72,11 @@ function MyComponent() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-              <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
-              tabs={[{
-                codeSyntax:`toast.error("Something went wrong!");`
-              }]}
-              />
+                <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+                  tabs={[{
+                    codeSyntax: `toast.error("Something went wrong!");`
+                  }]}
+                />
               </CardContent>
             </Card>
             <Card>
@@ -87,11 +87,11 @@ function MyComponent() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-              <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
-              tabs={[{
-                codeSyntax:`toast.info("This is some information.");`
-              }]} 
-              />
+                <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+                  tabs={[{
+                    codeSyntax: `toast.info("This is some information.");`
+                  }]}
+                />
               </CardContent>
             </Card>
             <Card>
@@ -102,9 +102,9 @@ function MyComponent() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-              <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
-              tabs={[{
-                codeSyntax:`toast.promise(
+                <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+                  tabs={[{
+                    codeSyntax: `toast.promise(
   fetchData(), // Your promise function
   {
     loading: 'Loading data...',
@@ -112,8 +112,8 @@ function MyComponent() {
     error: 'Failed to load data!',
   }
 );`
-              }]}
-              />
+                  }]}
+                />
               </CardContent>
             </Card>
             <Card>
@@ -124,9 +124,9 @@ function MyComponent() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-              <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
-              tabs={[{
-                codeSyntax:`toast.promise(
+                <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+                  tabs={[{
+                    codeSyntax: `toast.promise(
   fetchData(), // Your promise function
   {
     loading: 'Loading data...',
@@ -134,8 +134,8 @@ function MyComponent() {
     error: 'Failed to load data!',
   }
 );`
-              }]} 
-              />
+                  }]}
+                />
               </CardContent>
             </Card>
           </div>
@@ -229,7 +229,7 @@ function MyComponent() {
                     <TableCell>{'{}'}</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">isPause</TableCell>
+                    <TableCell className="font-medium">isPausedOnHover</TableCell>
                     <TableCell>boolean</TableCell>
                     <TableCell>Whether to pause the toast timer on hover</TableCell>
                     <TableCell>true, false</TableCell>
@@ -240,8 +240,8 @@ function MyComponent() {
               <div className="mt-4">
                 <h3 className="text-lg font-semibold mb-2">Usage Example:</h3>
                 <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                tabs={[{
-                  codeSyntax:`toast.success("Operation Successful!", {
+                  tabs={[{
+                    codeSyntax: `toast.success("Operation Successful!", {
   position: 'top-right',
   duration: 5000,
   isCloseBtn: true,
@@ -252,10 +252,10 @@ function MyComponent() {
   iconClassName: 'text-2xl',
   expandedContentClassName: 'bg-gray-100 p-2',
   expandedContentStyle: { maxHeight: '100px', overflow: 'auto' },
-  isPause: false
+  isPausedOnHover: false
 });`
-                }]}
-              />
+                  }]}
+                />
               </div>
             </CardContent>
           </Card>
@@ -265,69 +265,89 @@ function MyComponent() {
           <Card>
             <CardHeader>
               <CardTitle>Toast Management</CardTitle>
-              <CardDescription>How to update and remove toasts</CardDescription>
+              <CardDescription>How to update, remove, and clear all toasts</CardDescription>
             </CardHeader>
             <CardContent>
               <h3 className="text-lg font-semibold mb-2">Updating Toasts</h3>
               <p className="mb-2">
-                You can update an existing toast using the <code>toast.update()</code> method. This is useful when you want to change the content or options of a toast that's already been displayed.
+                Use the <code>toast.update()</code> method to update the content or options of an existing toast.
               </p>
-              <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-
-tabs={[{
-  codeSyntax:`const toastId = toast.success("Initial message");
+              <CustomSyntaxHighlighter
+                className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+                tabs={[
+                  {
+                    codeSyntax: `const toastId = toast.success("Initial message");
 
 // Later in your code
 toast.update(toastId, {
   message: "Updated message",
   icon: <NewIcon />,
   duration: 3000,
-  // ... any other options you want to update
+  // ... other options
 });`
-}]}
+                  }
+                ]}
               />
               <p className="mb-2">
-                The <code>update()</code> method takes two parameters:
+                <code>update()</code> accepts two parameters:
               </p>
               <ul className="list-disc list-inside mb-6">
-                <li><code>id</code>: The ID of the toast you want to update (returned when creating a toast)</li>
-                <li><code>updates</code>: An object containing the properties you want to update, including the new message</li>
+                <li><code>id</code>: The ID of the toast to update</li>
+                <li><code>updates</code>: An object with new properties for the toast</li>
               </ul>
 
               <h3 className="text-lg font-semibold mb-2">Removing Toasts</h3>
               <p className="mb-2">
-                To remove a specific toast, you can use the <code>toast.remove()</code> method. This is often used for manual dismissal or when you want to remove a toast programmatically.
+                Use <code>toast.remove()</code> to manually dismiss a specific toast.
               </p>
-              <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-
-            tabs={[{
-              codeSyntax:`const toastId = toast.info("This is an info message");
+              <CustomSyntaxHighlighter
+                className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+                tabs={[
+                  {
+                    codeSyntax: `const toastId = toast.info("This is an info message");
 
 // Later in your code
 toast.remove(toastId);`
-}]}
+                  }
+                ]}
               />
               <p className="mb-2">
-                The <code>remove()</code> method takes one parameter:
+                <code>remove()</code> accepts one parameter:
               </p>
               <ul className="list-disc list-inside mb-4">
-                <li><code>id</code>: The ID of the toast you want to remove</li>
+                <li><code>id</code>: The ID of the toast to remove</li>
               </ul>
 
-              <h3 className="text-lg font-semibold mb-2">Example: Update and Remove</h3>
-              <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
-              tabs={[{
-                codeSyntax:`import { toast } from 'react-fox-toast';
+              <h3 className="text-lg font-semibold mb-2">Clearing All Toasts</h3>
+              <p className="mb-2">
+                Use <code>toast.removeAll()</code> to clear all active toasts on the page.
+              </p>
+              <CustomSyntaxHighlighter
+                className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+                tabs={[
+                  {
+                    codeSyntax: `// Remove all toasts
+toast.removeAll();`
+                  }
+                ]}
+              />
+
+              <h3 className="text-lg font-semibold mb-2">Example: Update, Remove, and Clear All</h3>
+              <CustomSyntaxHighlighter
+                className="w-full border rounded-lg overflow-x-auto shadow-lg"
+                tabs={[
+                  {
+                    codeSyntax: `import { toast } from 'react-fox-toast';
 
 function MyComponent() {
   const handleOperation = async () => {
     const toastId = toast.info("Operation in progress...");
 
     try {
-      // Perform some async operation
+      // Perform async operation
       await someAsyncOperation();
 
-      // Update the toast on success
+      // Update toast on success
       toast.update(toastId, {
         message: "Operation completed successfully!",
         type: "success",
@@ -340,7 +360,7 @@ function MyComponent() {
         toast.remove(toastId);
       }, 3000);
     } catch (error) {
-      // Update the toast on error
+      // Update toast on error
       toast.update(toastId, {
         message: "Operation failed. Please try again.",
         type: "error",
@@ -350,18 +370,25 @@ function MyComponent() {
     }
   };
 
-  return <Button onClick={handleOperation}>Start Operation</Button>;
+  const clearToasts = () => {
+    toast.removeAll();
+  };
+
+  return (
+    <>
+      <Button onClick={handleOperation}>Start Operation</Button>
+      <Button onClick={clearToasts}>Clear All Toasts</Button>
+    </>
+  );
 }`
-  }]}
+                  }
+                ]}
               />
-              <p className="mt-4">
-                This example demonstrates how to create an initial toast, update its content based on the operation result, and then remove it after a specified duration.
-              </p>
             </CardContent>
           </Card>
         </TabsContent>
+
       </Tabs>
     </div>
   )
 }
-
