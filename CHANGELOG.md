@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.3...v1.2.4) (2024-12-14)
+
+
+### Bug Fixes
+
+* custom will accept toast.custom() and toast() both ([4cdfffe](https://github.com/sanjayc208/react-fox-toast/commit/4cdfffede9455861b1593aff1cb76e969ff44af9))
+
 ## [1.2.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.2...v1.2.3) (2024-12-12)
 
 
