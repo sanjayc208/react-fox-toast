@@ -126,14 +126,10 @@ function MyComponent() {
               <CardContent>
                 <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
                   tabs={[{
-                    codeSyntax: `toast.promise(
-  fetchData(), // Your promise function
-  {
-    loading: 'Loading data...',
-    success: 'Data loaded successfully!',
-    error: 'Failed to load data!',
-  }
-);`
+                    codeSyntax: `toast('You can use Customize toast here');
+
+//or you can use toast.custom() also
+toast.cusotm('Customize toast here');                   `
                   }]}
                 />
               </CardContent>
