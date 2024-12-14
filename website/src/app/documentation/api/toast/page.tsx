@@ -126,7 +126,7 @@ function MyComponent() {
               <CardContent>
                 <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
                   tabs={[{
-                    codeSyntax: `toast('You can use Customize toast here');
+                    codeSyntax: `toast('Customize toast here');
 
 //or you can use toast.custom() also
 toast.cusotm('Customize toast here');                   `
