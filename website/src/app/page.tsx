@@ -48,7 +48,7 @@ export default function Home() {
         </RainbowButton>
         <div>
         </div>
-        <a onClick={() => toast.custom(<>Custom JSX component</>,
+        <a onClick={() => toast(<>Custom JSX component</>,
           {
             position: 'top-center',
             icon:
@@ -57,7 +57,8 @@ export default function Home() {
               >
                 <span className='text-lg'>🦊</span>
               </div>
-          })} className="rounded-xl px-5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
+          }
+          )} className="rounded-xl px-5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-yellow-300 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
           <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease space-x-2"><span className='text-md'>🦊</span><span>Try it out Yourself</span></span>
         </a>
