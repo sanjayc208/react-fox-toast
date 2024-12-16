@@ -34,7 +34,7 @@ const fadeOut = (position: string) => keyframes`
 // Styled Components for Toast
 const ToastContainer = styled('div')(
     (props: any) => {
-      const { isvisible, isclosing, position, type, style } = props; // Extract non-DOM props
+      const { isclosing, position, type, style } = props; // Extract non-DOM props
 
       return `
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -81,17 +81,6 @@ const FlexItems = styled('div')(
 `
 );
 
-const CloseButton = styled('button')(
-  () => `
-  padding-left: 0.5rem;
-  border-radius: 50%;
-  outline: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-`
-);
-
 const ExpandedContent = styled('div')(
   (props: any) => `
     color: black;
@@ -100,6 +89,43 @@ const ExpandedContent = styled('div')(
     max-height: ${props.isexpanded  === "true" ? props.expandedheight : '0px'};
   `
 );
+
+const MessageContainer = styled('div')(
+  (props: any) => `
+    overflow: hidden;
+    ${props.fadeout === "true" ? `
+      height: 0; /* Gradually reduce the height to 0 */
+    ` : `
+      height: auto; /* Reset height when not fading out */
+    `}
+  `
+);
+
+const CloseButton = styled('button')(
+  (props: any) => `
+    ${props.position === 'right' ? 'left: -0.3rem;' : 'right: -0.3rem;'}
+    font-size: 0.6rem;
+    position: absolute;
+    top: -0.3rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    border: 1px solid #ddd; /* Subtle border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    cursor: pointer;
+    z-index: 9999; /* Ensure it appears above other elements */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    
+    &:hover {
+      background-color: #f0f0f0; /* Slightly darker on hover */
+      transform: scale(1.1); /* Slight zoom effect */
+    }
+  `
+);
+
 
 
 const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
@@ -121,26 +147,48 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   isPausedOnHover = true, // Default is true to pause on hover
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const toastRef = useRef<HTMLDivElement>(null);
   const expandedContentRef = useRef<HTMLDivElement>(null);
+  const [fadeOutMessage, setFadeOutMessage] = useState(false);
 
   useEffect(() => {
-      // requestAnimationFrame(() => setIsVisible(true));
+    const toastContainerClassName = `toast-container-default-${id}`;
+    const closeButtonClassName = `close-button-${id}`;
+
     // create default class for toastContainer
-    createDynamicClass(`toast-container-default-${id}` , `
+    createDynamicClass(toastContainerClassName , `
       padding: 0.55rem 0.85rem;
       border-radius: 0.5rem;
       background-color: ${backgroundColors[type] || backgroundColors.custom};
       color : black;
       `)
+
+      // create default class for CloseButton
+      createDynamicClass(closeButtonClassName, `
+        background-color: #F3F4F6 !important;
+        color: #000 !important;
+      `);  
   }, [type]);
 
   const handleClick = (e: any) => {
     if (e.target.closest("button") || e.target.closest("[data-action]")) return;
     if (expandedContent) {
-      setIsExpanded((prev) => !prev);
-      onExpand(!isExpanded);
+
+      // for only type tip
+      // if (type === 'tip') {
+      //   setFadeOutMessage(true);
+
+      //   setTimeout(() => {
+      //     setIsExpanded(true);
+      //     onExpand(!isExpanded);
+      //   }, 150); // wait for smooth transition it will also work if removed
+
+      // } else {
+
+        // for everything other than type 'tip'
+        setIsExpanded((prev) => !prev);
+        onExpand(!isExpanded);
+      // }
     }
   };
 
@@ -184,7 +232,6 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
       className={`toast-container-default-${id} ${className} ${typeThemeClass}`}
       type={type}
       position={position}
-      isvisible={isVisible.toString()}
       isclosing={isClosing.toString()}
       style={{...style,...typeThemeStyle}}
 
@@ -197,11 +244,21 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
             <div style={{ flexShrink: 0, ...iconStyle }}>
               {icon || defaultIcons[type]}
             </div>
-            <div>{message}</div>
-          </FlexItems>
-            {isCloseBtn && <CloseButton onClick={onClose}>
-            &#x2715;
-          </CloseButton>}
+            <MessageContainer 
+            // fadeout={fadeOutMessage.toString()}
+            >
+              {message}
+            </MessageContainer>
+            </FlexItems>
+            {isCloseBtn && (
+            <CloseButton 
+              onClick={onClose} 
+              position={position.includes('right') ? 'right' : 'left'}
+              className={`close-button-${id}`}
+            >
+              &#x2715;
+            </CloseButton>
+          )}
         </FlexContainer>
       )}
       {expandedContent && (
