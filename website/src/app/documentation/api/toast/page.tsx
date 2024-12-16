@@ -32,7 +32,7 @@ export default function ToastAPIPage() {
 
 function MyComponent() {
   const showToast = () => {
-    toast.success("Success! The action was completed.");
+    toast("Toast it Yourself");
   };
 
   return <Button onClick={showToast}>Show Success Toast</Button>;
