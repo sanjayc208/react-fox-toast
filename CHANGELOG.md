@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.4...v1.3.0) (2024-12-16)
+
+
+### Features
+
+* close button is enhanced ([f1a50a7](https://github.com/sanjayc208/react-fox-toast/commit/f1a50a7ed6734b694d9fee5f08e7a0721e652194))
+
 ## [1.2.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.3...v1.2.4) (2024-12-14)
 
 

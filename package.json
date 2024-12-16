@@ -1,6 +1,6 @@
 {
   "name": "react-fox-toast",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "description": "This toast for UI which is very flexible to use",
   "private": false,
   "main": "dist/index.js",
