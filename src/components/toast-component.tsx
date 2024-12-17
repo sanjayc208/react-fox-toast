@@ -37,7 +37,6 @@ const ToastContainer = styled('div')(
       const { isclosing, position, type, style } = props; // Extract non-DOM props
 
       return `
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         will-change: transform;
         animation: ${isclosing === "false" ? fadeIn(position) : fadeOut(position)} 0.35s ease-in-out;
         max-width: 400px;
@@ -48,7 +47,7 @@ const ToastContainer = styled('div')(
 
 
 // Function to create a CSS class dynamically with :where() for low specificity
-function createDynamicClass(className: any, styles: any) {
+function createDynamicWhereClass(className: any, styles: any) {
   const styleSheet = document.styleSheets[0] || document.createElement("style");
 
   // If the stylesheet already exists, append the rule to it
@@ -118,6 +117,9 @@ const CloseButton = styled('button')(
     cursor: pointer;
     z-index: 9999; /* Ensure it appears above other elements */
     transition: transform 0.2s ease, background-color 0.2s ease;
+
+    background-color: #ffffff;
+    color: #000;
     
     &:hover {
       background-color: #f0f0f0; /* Slightly darker on hover */
@@ -143,6 +145,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   onExpand,
   isClosing,
   expandedClassName,
+  closeBtnStyle,
   toastTypeTheming ={},
   isPausedOnHover = true, // Default is true to pause on hover
 }) => {
@@ -156,18 +159,14 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
     const closeButtonClassName = `close-button-${id}`;
 
     // create default class for toastContainer
-    createDynamicClass(toastContainerClassName , `
+    createDynamicWhereClass(toastContainerClassName , `
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 0.55rem 0.85rem;
       border-radius: 0.5rem;
       background-color: ${backgroundColors[type] || backgroundColors.custom};
       color : black;
       `)
 
-      // create default class for CloseButton
-      createDynamicClass(closeButtonClassName, `
-        background-color: #F3F4F6 !important;
-        color: #000 !important;
-      `);  
   }, [type]);
 
   const handleClick = (e: any) => {
@@ -208,7 +207,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
     success: '#D1FAE5',
     error: '#FEE2E2',
     info: '#DBEAFE',
-    custom: '#F3F4F6',
+    custom: '#ffffff',
   };
 
   const toastFunctions = {
@@ -254,7 +253,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
             <CloseButton 
               onClick={onClose} 
               position={position.includes('right') ? 'right' : 'left'}
-              className={`close-button-${id}`}
+              style={closeBtnStyle}
             >
               &#x2715;
             </CloseButton>

@@ -20,9 +20,10 @@ export interface ToastProps {
     isClosing?: any
     isCloseBtn?:any
     expandedClassName?: string
-    toastTypeTheming? : any,
-    spacingToast?: React.CSSProperties,
-    isPausedOnHover?: boolean,
+    closeBtnStyle?: React.CSSProperties
+    toastTypeTheming? : any
+    spacingToast?: React.CSSProperties
+    isPausedOnHover?: boolean
 
 }
 
