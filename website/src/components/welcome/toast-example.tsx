@@ -149,11 +149,11 @@ toast.promise(fetchData(), {
     const showTailwindCSS = () => {
         toast.success('Success data with Tailwind Css', {
             position: selectedPosition ? selectedPosition : undefined,
-            className: 'bg-white dark:bg-green-800 dark:border-green-700',
+            className: 'bg-orange-100 text-orange-900',
         })
         setCodeSyntax(`
 toast.success('Success data with Tailwind Css',{
-  className: 'bg-white dark:bg-green-800 dark:border-green-700',${selectedPosition ? `
+  className: 'bg-orange-100 text-orange-900',${selectedPosition ? `
   position: '${selectedPosition}'` : ''}
 })
 `)
