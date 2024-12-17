@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.3.0...v1.3.1) (2024-12-17)
+
+
+### Bug Fixes
+
+* closeBtnStyle added for passing customize close button ([f342227](https://github.com/sanjayc208/react-fox-toast/commit/f342227887261ba9b575b959fda7a9589afc865f))
+
 # [1.3.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.2.4...v1.3.0) (2024-12-16)
 
 
