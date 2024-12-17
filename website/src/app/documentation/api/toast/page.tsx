@@ -56,12 +56,7 @@ function MyComponent() {
                   tabs={[{
                     codeSyntax: `toast.success("Operation Successful!");`
                   }]}
-                // codeSyntax={`toast.success("Operation Successful!");`}
-                // language='JSX'
                 />
-                {/* <pre className="bg-muted p-4 rounded-md">
-                  <code>{`toast.success("Operation Successful!");`}</code>
-                </pre> */}
               </CardContent>
             </Card>
             <Card>
@@ -225,6 +220,13 @@ toast.cusotm('Customize toast here');                   `
                     <TableCell>{'{}'}</TableCell>
                   </TableRow>
                   <TableRow>
+                    <TableCell className="font-medium">closeBtnStyle</TableCell>
+                    <TableCell>React.CSSProperties</TableCell>
+                    <TableCell>Inline styles to apply to the expanded content</TableCell>
+                    <TableCell>Any valid CSS properties in object format</TableCell>
+                    <TableCell>{'{}'}</TableCell>
+                  </TableRow>
+                  <TableRow>
                     <TableCell className="font-medium">isPausedOnHover</TableCell>
                     <TableCell>boolean</TableCell>
                     <TableCell>Whether to pause the toast timer on hover</TableCell>
@@ -248,6 +250,7 @@ toast.cusotm('Customize toast here');                   `
   iconClassName: 'text-2xl',
   expandedContentClassName: 'bg-gray-100 p-2',
   expandedContentStyle: { maxHeight: '100px', overflow: 'auto' },
+  closeBtnStyle: { backgroundColor: 'green' },
   isPausedOnHover: false
 });`
                   }]}
