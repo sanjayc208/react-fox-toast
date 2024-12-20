@@ -1,4 +1,4 @@
-import { addToast, removeToast, updateToast, removeAllToast } from './toast-store';
+import { addToast, removeToast, updateToast, removeAllToast, getRemainingTimeForToast } from './toast-store';
 
 export const toast = Object.assign(
   (message: React.ReactNode, options?: Partial<any>) => {
@@ -16,6 +16,7 @@ export const toast = Object.assign(
     remove: (id: string) => removeToast(id),
     removeAll: () => removeAllToast(),
     update: (id: string, updates: Partial<any>) => updateToast(id, updates),
+    remainingTime: (id: string) => getRemainingTimeForToast(id),
     promise: (
       promise: Promise<any>,
       {

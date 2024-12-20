@@ -165,6 +165,24 @@ export const resumeToastTimer = (id: string) => {
   }
 };
 
+export const getRemainingTimeForToast = (id: string): number | null => {
+  const toast = toastList.find((t) => t.id === id);
+
+  if (toast && toast.isPaused && toast.remainingTime !== undefined) {
+    // If the toast is paused, return the remaining time
+    return toast.remainingTime;
+  }
+
+  if (toast && !toast.isPaused && toast.duration !== undefined) {
+    // If the toast is not paused, calculate remaining time based on duration and elapsed time
+    const elapsedTime = Date.now() - (toast.startTime || 0);
+    const remainingTime = toast.duration - elapsedTime;
+    return remainingTime > 0 ? remainingTime : 0;
+  }
+
+  return null; // Return null if no remaining time is available
+};
+
 export const subscribeToToasts = (callback: (toasts: Toast[]) => void) => {
   toastSubscribers.push(callback);
   callback(toastList); // Send initial state
