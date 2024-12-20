@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.3.2...v1.4.0) (2024-12-20)
+
+
+### Features
+
+* added reaminingTime(id) ([d59f126](https://github.com/sanjayc208/react-fox-toast/commit/d59f126f5f6946d4e089ff9ace354fee2d240ab1))
+
 ## [1.3.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.3.1...v1.3.2) (2024-12-20)
 
 
