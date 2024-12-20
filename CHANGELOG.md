@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.3.1...v1.3.2) (2024-12-20)
+
+
+### Bug Fixes
+
+* added minzip badge to readme ([623e2c3](https://github.com/sanjayc208/react-fox-toast/commit/623e2c32ae5e991aab60873246aa73719980a9ef))
+
 ## [1.3.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.3.0...v1.3.1) (2024-12-17)
 
 
