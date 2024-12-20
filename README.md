@@ -12,6 +12,7 @@
 </div>
 <div align="center">
 <img src="https://badgen.net/bundlephobia/min/react-fox-toast" alt="Min Size">  
+<img src="https://badgen.net/bundlephobia/minzip/react-fox-toast" alt="Minzip Size"> 
 </div>
 <br />
 
