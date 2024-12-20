@@ -18,7 +18,8 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarFooter,
-  SidebarGroupLabel
+  SidebarGroupLabel,
+  useSidebar
 } from "@/components/ui/sidebar"
 
 // This is sample data.
@@ -69,6 +70,7 @@ const data = {
 export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname()
   const router = useRouter()
+  const { toggleSidebar, isMobile } = useSidebar()
 
   // Function to check if the current path matches the URL of the sidebar item
   const isActive = (url: string) => {
@@ -78,6 +80,7 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   // Function to handle click and navigate
   const onClickRedirect = (url: string) => {
     router.push(url)  // Programmatically navigate to the new route
+    if(isMobile) toggleSidebar()
   }
 
   return (
@@ -97,7 +100,7 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-semibold">react-fox-toast</span>
-                  <span className="">v1.3.1</span>
+                  <span className="">v1.4.0</span>
                 </div>
               </a>
             </SidebarMenuButton>

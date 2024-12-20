@@ -261,21 +261,21 @@ toast.cusotm('Customize toast here');                   `
         </TabsContent>
 
         <TabsContent value="management">
-          <Card>
-            <CardHeader>
-              <CardTitle>Toast Management</CardTitle>
-              <CardDescription>How to update, remove, and clear all toasts</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <h3 className="text-lg font-semibold mb-2">Updating Toasts</h3>
-              <p className="mb-2">
-                Use the <code>toast.update()</code> method to update the content or options of an existing toast.
-              </p>
-              <CustomSyntaxHighlighter
-                className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                tabs={[
-                  {
-                    codeSyntax: `const toastId = toast.success("Initial message");
+  <Card>
+    <CardHeader>
+      <CardTitle>Toast Management</CardTitle>
+      <CardDescription>How to update, remove, fetch remainingTime and clear all toasts</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <h3 className="text-lg font-semibold mb-2">Updating Toasts</h3>
+      <p className="mb-2">
+        Use the <code>toast.update()</code> method to update the content or options of an existing toast.
+      </p>
+      <CustomSyntaxHighlighter
+        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+        tabs={[
+          {
+            codeSyntax: `const toastId = toast.success("Initial message");
 
 // Later in your code
 toast.update(toastId, {
@@ -284,108 +284,82 @@ toast.update(toastId, {
   duration: 3000,
   // ... other options
 });`
-                  }
-                ]}
-              />
-              <p className="mb-2">
-                <code>update()</code> accepts two parameters:
-              </p>
-              <ul className="list-disc list-inside mb-6">
-                <li><code>id</code>: The ID of the toast to update</li>
-                <li><code>updates</code>: An object with new properties for the toast</li>
-              </ul>
+          }
+        ]}
+      />
+      <p className="mb-2">
+        <code>update()</code> accepts two parameters:
+      </p>
+      <ul className="list-disc list-inside mb-6">
+        <li><code>id</code>: The ID of the toast to update</li>
+        <li><code>updates</code>: An object with new properties for the toast</li>
+      </ul>
 
-              <h3 className="text-lg font-semibold mb-2">Removing Toasts</h3>
-              <p className="mb-2">
-                Use <code>toast.remove()</code> to manually dismiss a specific toast.
-              </p>
-              <CustomSyntaxHighlighter
-                className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                tabs={[
-                  {
-                    codeSyntax: `const toastId = toast.info("This is an info message");
+      <h3 className="text-lg font-semibold mb-2">Removing Toasts</h3>
+      <p className="mb-2">
+        Use <code>toast.remove()</code> to manually dismiss a specific toast.
+      </p>
+      <CustomSyntaxHighlighter
+        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+        tabs={[
+          {
+            codeSyntax: `const toastId = toast.info("This is an info message");
 
 // Later in your code
 toast.remove(toastId);`
-                  }
-                ]}
-              />
-              <p className="mb-2">
-                <code>remove()</code> accepts one parameter:
-              </p>
-              <ul className="list-disc list-inside mb-4">
-                <li><code>id</code>: The ID of the toast to remove</li>
-              </ul>
+          }
+        ]}
+      />
+      <p className="mb-2">
+        <code>remove()</code> accepts one parameter:
+      </p>
+      <ul className="list-disc list-inside mb-4">
+        <li><code>id</code>: The ID of the toast to remove</li>
+      </ul>
 
-              <h3 className="text-lg font-semibold mb-2">Clearing All Toasts</h3>
-              <p className="mb-2">
-                Use <code>toast.removeAll()</code> to clear all active toasts on the page.
-              </p>
-              <CustomSyntaxHighlighter
-                className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                tabs={[
-                  {
-                    codeSyntax: `// Remove all toasts
+      <h3 className="text-lg font-semibold mb-2">Clearing All Toasts</h3>
+      <p className="mb-2">
+        Use <code>toast.removeAll()</code> to clear all active toasts on the page.
+      </p>
+      <CustomSyntaxHighlighter
+        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+        tabs={[
+          {
+            codeSyntax: `// Remove all toasts
 toast.removeAll();`
-                  }
-                ]}
-              />
+          }
+        ]}
+      />
 
-              <h3 className="text-lg font-semibold mb-2">Example: Update, Remove, and Clear All</h3>
-              <CustomSyntaxHighlighter
-                className="w-full border rounded-lg overflow-x-auto shadow-lg"
-                tabs={[
-                  {
-                    codeSyntax: `import { toast } from 'react-fox-toast';
+      <h3 className="text-lg font-semibold mb-2">Getting Remaining Time for a Toast</h3>
+      <p className="mb-2">
+        You can use the <code>toast.remainingTime()</code> method to retrieve the remaining time before a toast auto-dismisses.
+      </p>
+      <CustomSyntaxHighlighter
+        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+        tabs={[
+          {
+            codeSyntax: `const toastId = toast.info("This is an info message");
 
-function MyComponent() {
-  const handleOperation = async () => {
-    const toastId = toast.info("Operation in progress...");
+// Check remaining time for this toast
+const remainingTime = toast.remainingTime(toastId);
 
-    try {
-      // Perform async operation
-      await someAsyncOperation();
+console.log('Remaining time in milliseconds:',remainingTime)`
+          }
+        ]}
+      />
+      <p className="mb-2">
+        <code>remainingTime()</code> accepts one parameter:
+      </p>
+      <ul className="list-disc list-inside mb-4">
+        <li><code>id</code>: The ID of the toast whose remaining time you want to check</li>
+      </ul>
 
-      // Update toast on success
-      toast.update(toastId, {
-        message: "Operation completed successfully!",
-        type: "success",
-        icon: <CheckCircle />,
-        duration: 3000,
-      });
+      
+    </CardContent>
+  </Card>
+</TabsContent>
 
-      // Remove the toast after 3 seconds
-      setTimeout(() => {
-        toast.remove(toastId);
-      }, 3000);
-    } catch (error) {
-      // Update toast on error
-      toast.update(toastId, {
-        message: "Operation failed. Please try again.",
-        type: "error",
-        icon: <AlertCircle />,
-        duration: 5000,
-      });
-    }
-  };
-
-  const clearToasts = () => {
-    toast.removeAll();
-  };
-
-  return (
-    <>
-      <Button onClick={handleOperation}>Start Operation</Button>
-      <Button onClick={clearToasts}>Clear All Toasts</Button>
-    </>
-  );
-}`
-                  }
-                ]}
-              />
-            </CardContent>
-          </Card>
-        </TabsContent>
 
       </Tabs>
     </div>
