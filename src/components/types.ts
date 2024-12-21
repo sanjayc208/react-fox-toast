@@ -24,7 +24,7 @@ export interface ToastProps {
     toastTypeTheming? : any
     spacingToast?: React.CSSProperties
     isPausedOnHover?: boolean
-
+    direction?: string
 }
 
 export interface ToastContextType {

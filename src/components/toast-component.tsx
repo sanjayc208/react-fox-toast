@@ -34,12 +34,13 @@ const fadeOut = (position: string) => keyframes`
 // Styled Components for Toast
 const ToastContainer = styled('div')(
     (props: any) => {
-      const { isclosing, position, type, style } = props; // Extract non-DOM props
+      const { isclosing, position, direction, style } = props; // Extract non-DOM props
 
       return `
         will-change: transform;
         animation: ${isclosing === "false" ? fadeIn(position) : fadeOut(position)} 0.35s ease-in-out;
         max-width: 400px;
+        direction: ${direction};
         ${style}
       `;
     }
@@ -148,12 +149,13 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   closeBtnStyle,
   toastTypeTheming ={},
   isPausedOnHover = true, // Default is true to pause on hover
+  direction = 'ltr'
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toastRef = useRef<HTMLDivElement>(null);
   const expandedContentRef = useRef<HTMLDivElement>(null);
   const [fadeOutMessage, setFadeOutMessage] = useState(false);
-
+  
   useEffect(() => {
     const toastContainerClassName = `toast-container-default-${id}`;
     const closeButtonClassName = `close-button-${id}`;
@@ -232,6 +234,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
       type={type}
       position={position}
       isclosing={isClosing.toString()}
+      direction={direction}
       style={{...style,...typeThemeStyle}}
 
     >

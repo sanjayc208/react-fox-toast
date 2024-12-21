@@ -18,11 +18,12 @@ type ToastTypeTheming = {
     spacing?: number,
     position? : ToastPosition,
     duration? : number
+    direction? : string
   }  
 
 // const DEFAULT_POSITION: ToastPosition = 'bottom-center'
 
-export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {} , spacing = 0, position = 'bottom-center', duration = 3000 }) => {
+export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {} , spacing = 0, position = 'bottom-center', duration = 3000, direction= 'ltr' }) => {
     // Set new default values
     setToastDefaults(duration, position);
 
@@ -127,7 +128,7 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
                             >
                                 <ToastComponent
                                     {...toasts.find((toast) => toast.id === id)!}
-
+                                    direction={direction} // supports ltr or rtl
                                     toastTypeTheming={toastTypeTheming}  /* Pass it down */
 
                                     onClose={() => {
