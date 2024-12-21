@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.0...v1.4.1) (2024-12-21)
+
+
+### Bug Fixes
+
+* Added direction support for rtl ([b286055](https://github.com/sanjayc208/react-fox-toast/commit/b2860557fab2f5936feee95a8e42684f76eff1b2))
+
 # [1.4.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.3.2...v1.4.0) (2024-12-20)
 
 
