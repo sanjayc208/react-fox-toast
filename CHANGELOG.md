@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.1...v1.4.2) (2024-12-22)
+
+
+### Bug Fixes
+
+* added toast.pause(id) for pausing time on toast ([bac20ee](https://github.com/sanjayc208/react-fox-toast/commit/bac20ee675f7abcef4fd0803ae51e63a85de32be))
+
 ## [1.4.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.0...v1.4.1) (2024-12-21)
 
 
