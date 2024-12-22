@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.2...v1.4.3) (2024-12-22)
+
+
+### Bug Fixes
+
+* added toast.resume(id) for resuming paused time on toast ([cac2867](https://github.com/sanjayc208/react-fox-toast/commit/cac28678ce38e994500a6a75613a850cd3a323f9))
+
 ## [1.4.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.1...v1.4.2) (2024-12-22)
 
 
