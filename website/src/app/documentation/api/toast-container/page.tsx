@@ -1,7 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter'
-import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter';
+import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
 
 export default function ToastContainerPage() {
   return (
@@ -36,6 +36,7 @@ function App() {
         toastTypeTheming={} // Go through Theming Page for more details on this
         gap={} // Gap need between each toast
         position={} // default global position example 'top-center'
+        direction="" // Add this to change text direction (optional)
       />
       {/* Your app content */}
     </div>
@@ -95,6 +96,16 @@ function App() {
                     </TableCell>
                     <TableCell>'top-right'</TableCell>
                   </TableRow>
+                  <TableRow>
+                    <TableCell>direction</TableCell>
+                    <TableCell>
+                      Defines the text direction inside the ToastContainer. You can set it to either 'ltr' (left-to-right) or 'rtl' (right-to-left).
+                    </TableCell>
+                    <TableCell>
+                      <code>{`'ltr' | 'rtl'`}</code>
+                    </TableCell>
+                    <TableCell>'ltr'</TableCell>
+                  </TableRow>
                 </TableBody>
               </Table>
             </CardContent>
@@ -146,11 +157,12 @@ function App() {
                         className: 'custom-toast-class',
                       },
                     }}
+                    direction="rtl" // Set text direction to RTL here
                   />`
                 }]}
               />
               <p className="mt-4">
-                Use the `toastTypeTheming` prop to apply global styles and classes to different types of toasts. This allows for consistent styling across your application while still allowing for customization of individual toasts.
+                Use the `toastTypeTheming` prop to apply global styles and classes to different types of toasts. This allows for consistent styling across your application while still allowing for customization of individual toasts. You can also set the `direction` prop to change the text direction of the toasts.
               </p>
             </CardContent>
           </Card>
