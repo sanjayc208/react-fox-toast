@@ -259,12 +259,11 @@ toast.cusotm('Customize toast here');                   `
             </CardContent>
           </Card>
         </TabsContent>
-
         <TabsContent value="management">
   <Card>
     <CardHeader>
       <CardTitle>Toast Management</CardTitle>
-      <CardDescription>How to update, remove, fetch remainingTime and clear all toasts</CardDescription>
+      <CardDescription>How to update, remove, fetch remainingTime, clear all toasts, and pause/resume toasts</CardDescription>
     </CardHeader>
     <CardContent>
       <h3 className="text-lg font-semibold mb-2">Updating Toasts</h3>
@@ -355,10 +354,72 @@ console.log('Remaining time in milliseconds:',remainingTime)`
         <li><code>id</code>: The ID of the toast whose remaining time you want to check</li>
       </ul>
 
-      
+      <h3 className="text-lg font-semibold mb-2">Pausing and Resuming Toasts</h3>
+      <p className="mb-2">
+        You can pause and resume a specific toast using the <code>toast.pause()</code> and <code>toast.resume()</code> methods. This can be useful when you want to pause the auto-dismiss countdown based on user interaction, like hovering over or clicking the toast.
+      </p>
+
+      <p className="mb-2">Example:</p>
+
+ <CustomSyntaxHighlighter
+  className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+  tabs={[
+    {
+      codeSyntax: `import React, { useState, useEffect } from 'react';
+import { toast } from 'react-fox-toast';
+
+const ToastComponent = () => {
+  const [toastId, setToastId] = useState(null);
+
+  useEffect(() => {
+    const id = toast.success("This is a success message");
+    setToastId(id);
+  }, []);
+
+  const handlePause = () => {
+    if (toastId) {
+      toast.pause(toastId);
+    }
+  };
+
+  const handleResume = () => {
+    if (toastId) {
+      toast.resume(toastId);
+    }
+  };
+
+  return (
+    <div>
+      <h3>Hover over the div to pause the toast</h3>
+      <div
+        onMouseEnter={handlePause}  // Pauses the toast on hover
+        onMouseLeave={handleResume} // Resumes the toast when the mouse leaves
+      >
+        Hover here to pause/resume the toast
+      </div>
+    </div>
+  );
+};
+
+export default ToastComponent;`
+    }
+  ]}
+/>
+
+      <p className="mb-2">
+        In the example above, the toast pauses when the user hovers over it and resumes when the mouse leaves.
+      </p>
+
+      <p className="mb-2">
+        <code>pause()</code> and <code>resume()</code> each accept one parameter:
+      </p>
+      <ul className="list-disc list-inside mb-4">
+        <li><code>id</code>: The ID of the toast you want to pause or resume</li>
+      </ul>
     </CardContent>
   </Card>
 </TabsContent>
+
 
 
       </Tabs>

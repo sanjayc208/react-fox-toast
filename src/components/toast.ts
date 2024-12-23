@@ -16,8 +16,8 @@ export const toast = Object.assign(
     remove: (id: string) => removeToast(id),
     removeAll: () => removeAllToast(),
     update: (id: string, updates: Partial<any>) => updateToast(id, updates),
-    remainingTime: (id: string) => getRemainingTimeForToast(id),
     pause: (id: string) => pauseToastTimer(id),
+    remainingTime: (id: string) => getRemainingTimeForToast(id),
     resume: (id: string) => resumeToastTimer(id),
     promise: (
       promise: Promise<any>,
