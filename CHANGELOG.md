@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.4...v1.4.5) (2024-12-23)
+
+
+### Bug Fixes
+
+* added direction props to ToastContainer ([a87aab9](https://github.com/sanjayc208/react-fox-toast/commit/a87aab98abd6f0240ac2c709a019ad8f3f82f83a))
+
 ## [1.4.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.3...v1.4.4) (2024-12-23)
 
 
