@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.3...v1.4.4) (2024-12-23)
+
+
+### Bug Fixes
+
+* rearranged functions and added pause and resume doc in website ([ec197a8](https://github.com/sanjayc208/react-fox-toast/commit/ec197a8de42643a0263938a2021946a01d6cfeff))
+
 ## [1.4.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.2...v1.4.3) (2024-12-22)
 
 
