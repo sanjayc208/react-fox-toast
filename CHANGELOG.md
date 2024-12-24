@@ -1,3 +1,10 @@
+## [1.4.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.5...v1.4.6) (2024-12-24)
+
+
+### Bug Fixes
+
+* formattted code ([6b30b28](https://github.com/sanjayc208/react-fox-toast/commit/6b30b28b119a6dbc07152ff2dbf8ddf08e84f0a6))
+
 ## [1.4.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.4...v1.4.5) (2024-12-23)
 
 
