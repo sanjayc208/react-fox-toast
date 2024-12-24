@@ -1,6 +1,6 @@
 import React from "react";
 
-export const defaultIcons:any = {
+export const defaultIcons: any = {
     success: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="0" fill="green">
@@ -57,8 +57,8 @@ export const defaultIcons:any = {
     custom: null,
     promise: (
         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <style>
-        {`
+            <style>
+                {`
           .spinner_Pcrv {
             transform-origin: center;
             animation: spinner_xeMo 0.6s linear infinite;
@@ -69,11 +69,11 @@ export const defaultIcons:any = {
             }
           }
         `}
-      </style>
-      <path
-        className="spinner_Pcrv"
-        d="M2,12A10.94,10.94,0,0,1,5,4.65c-.21-.19-.42-.36-.62-.55h0A11,11,0,0,0,12,23c.34,0,.67,0,1-.05C6,23,2,17.74,2,12Z"
-      />
-    </svg>
+            </style>
+            <path
+                className="spinner_Pcrv"
+                d="M2,12A10.94,10.94,0,0,1,5,4.65c-.21-.19-.42-.36-.62-.55h0A11,11,0,0,0,12,23c.34,0,.67,0,1-.05C6,23,2,17.74,2,12Z"
+            />
+        </svg>
     ),
 };

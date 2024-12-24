@@ -54,7 +54,7 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
                 className={cn(
                   "group relative flex items-center h-7 px-3 text-xs select-none  cursor-pointer",
                   "transition-all duration-200",
-                  "mx-0.5 max-w-[200px] min-w-[120px]",
+                  "mx-0.5 max-w-[200px] min-w-[60px]",
                   index === activeTabIndex
                     ? "bg-[#2a2a2a] text-white"
                     : "bg-transparent text-gray-400 hover:bg-[#252525]"
