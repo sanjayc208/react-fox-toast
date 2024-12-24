@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.6...v1.4.7) (2024-12-24)
+
+
+### Bug Fixes
+
+* reduced min width of terminal tabs ([587d723](https://github.com/sanjayc208/react-fox-toast/commit/587d72377499427ddd949677f7a57ba3697f1f30))
+
 ## [1.4.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.5...v1.4.6) (2024-12-24)
 
 
