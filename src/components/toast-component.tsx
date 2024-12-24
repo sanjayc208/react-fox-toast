@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ToastProps } from './types';
 import { defaultIcons } from './default-icons';
 import { removeToast, updateToast, removeAllToast, pauseToastTimer, resumeToastTimer } from './toast-store';
-import { styled , keyframes} from 'goober';
+import { styled, keyframes } from 'goober';
 
 // Enter Animation (Zoom out to Zoom in)
 const fadeIn = (position: string) => keyframes`
@@ -33,18 +33,18 @@ const fadeOut = (position: string) => keyframes`
 
 // Styled Components for Toast
 const ToastContainer = styled('div')(
-    (props: any) => {
-      const { isclosing, position, direction, style } = props; // Extract non-DOM props
+  (props: any) => {
+    const { isclosing, position, direction, style } = props; // Extract non-DOM props
 
-      return `
+    return `
         will-change: transform;
         animation: ${isclosing === "false" ? fadeIn(position) : fadeOut(position)} 0.35s ease-in-out;
         max-width: 400px;
         direction: ${direction};
         ${style}
       `;
-    }
-  );
+  }
+);
 
 
 // Function to create a CSS class dynamically with :where() for low specificity
@@ -63,7 +63,7 @@ function createDynamicWhereClass(className: any, styles: any) {
     document.head.appendChild(styleTag);
     styleTag.innerHTML = `:where(.${className}) { ${styles} }`;
   }
-}  
+}
 
 const FlexContainer = styled('div')(
   () => `
@@ -86,7 +86,7 @@ const ExpandedContent = styled('div')(
     color: black;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    max-height: ${props.isexpanded  === "true" ? props.expandedheight : '0px'};
+    max-height: ${props.isexpanded === "true" ? props.expandedheight : '0px'};
   `
 );
 
@@ -147,7 +147,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   isClosing,
   expandedClassName,
   closeBtnStyle,
-  toastTypeTheming ={},
+  toastTypeTheming = {},
   isPausedOnHover = true, // Default is true to pause on hover
   direction = 'ltr'
 }) => {
@@ -155,13 +155,13 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   const toastRef = useRef<HTMLDivElement>(null);
   const expandedContentRef = useRef<HTMLDivElement>(null);
   const [fadeOutMessage, setFadeOutMessage] = useState(false);
-  
+
   useEffect(() => {
     const toastContainerClassName = `toast-container-default-${id}`;
     const closeButtonClassName = `close-button-${id}`;
 
     // create default class for toastContainer
-    createDynamicWhereClass(toastContainerClassName , `
+    createDynamicWhereClass(toastContainerClassName, `
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 0.55rem 0.85rem;
       border-radius: 0.5rem;
@@ -186,9 +186,9 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
 
       // } else {
 
-        // for everything other than type 'tip'
-        setIsExpanded((prev) => !prev);
-        onExpand(!isExpanded);
+      // for everything other than type 'tip'
+      setIsExpanded((prev) => !prev);
+      onExpand(!isExpanded);
       // }
     }
   };
@@ -235,7 +235,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
       position={position}
       isclosing={isClosing.toString()}
       direction={direction}
-      style={{...style,...typeThemeStyle}}
+      style={{ ...style, ...typeThemeStyle }}
 
     >
       {typeof message === 'function' ? (
@@ -246,15 +246,15 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
             <div style={{ flexShrink: 0, ...iconStyle }}>
               {icon || defaultIcons[type]}
             </div>
-            <MessageContainer 
+            <MessageContainer
             // fadeout={fadeOutMessage.toString()}
             >
               {message}
             </MessageContainer>
-            </FlexItems>
-            {isCloseBtn && (
-            <CloseButton 
-              onClick={onClose} 
+          </FlexItems>
+          {isCloseBtn && (
+            <CloseButton
+              onClick={onClose}
               position={position.includes('right') ? 'right' : 'left'}
               style={closeBtnStyle}
             >

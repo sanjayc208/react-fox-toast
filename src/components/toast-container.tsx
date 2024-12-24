@@ -4,26 +4,26 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { subscribeToToasts, removeToast, Toast, setToastDefaults } from './toast-store';
 import ToastComponent from './toast-component';
-import {ToastPosition} from './types'
+import { ToastPosition } from './types'
 
 type ToastTypeTheming = {
     success: { style: React.CSSProperties, className: string };
     error: { style: React.CSSProperties, className: string };
     info: { style: React.CSSProperties, className: string };
     custom: { style: React.CSSProperties, className: string };
-  };
+};
 
-  interface ToastContainerProps {
+interface ToastContainerProps {
     toastTypeTheming?: ToastTypeTheming;
     spacing?: number,
-    position? : ToastPosition,
-    duration? : number
-    direction? : string
-  }  
+    position?: ToastPosition,
+    duration?: number
+    direction?: string
+}
 
 // const DEFAULT_POSITION: ToastPosition = 'bottom-center'
 
-export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {} , spacing = 0, position = 'bottom-center', duration = 3000, direction= 'ltr' }) => {
+export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {}, spacing = 0, position = 'bottom-center', duration = 3000, direction = 'ltr' }) => {
     // Set new default values
     setToastDefaults(duration, position);
 
@@ -86,7 +86,7 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
             const positionValue = isBottom
                 ? cumulativeHeight
                 : cumulativeHeight;
-            cumulativeHeight += height + (spacing || 8) ; // Add spacing
+            cumulativeHeight += height + (spacing || 8); // Add spacing
             return { id: toast.id, positionValue };
         });
     };
@@ -108,7 +108,7 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
                     (toast) => toast.position === pos
                 );
                 const toastPositions = calculatePositions(positionToasts, isBottom, spacing);
-                
+
                 return (
                     <div key={pos} style={{ ...style, position: "fixed", zIndex: 9999 }}>
                         {toastPositions.map(({ id, positionValue }) => (
@@ -123,7 +123,7 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
                                     width: "max-content",
                                     transition: enableTransition
                                         ? "all 0.2s ease-in-out"
-                                        : undefined, 
+                                        : undefined,
                                 }}
                             >
                                 <ToastComponent

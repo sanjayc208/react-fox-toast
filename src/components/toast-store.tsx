@@ -1,6 +1,6 @@
 // src/component/toast-store.ts
 'use client';
-import {ToastPosition, ToastType} from './types'
+import { ToastPosition, ToastType } from './types'
 
 export interface Toast {
   id: string;
@@ -48,14 +48,15 @@ export const getToastDefaults = () => ({
 export const addToast = (toast: Omit<Toast, 'id'>): string => {
   const id = Math.random().toString(36).substr(2, 9);
   toast.position ??= (defaultPosition); // Default to 'bottom-right' if not provided
-  const newToast = { ...toast, id, isClosing: false, isVisible: true, isExpanded: false, 
+  const newToast = {
+    ...toast, id, isClosing: false, isVisible: true, isExpanded: false,
     isPausedOnHover: toast.isPausedOnHover ?? true  // Default to true for pausing
   };
 
-  toastList = toast.position?.includes('top') ?[newToast, ...toastList] : [...toastList, newToast];
+  toastList = toast.position?.includes('top') ? [newToast, ...toastList] : [...toastList, newToast];
   notifySubscribers();
   newToast.duration = newToast.duration || defaultDuration //if there is no duration default is 5 second
-  
+
   // If a duration is set and not 'Infinity', auto-dismiss the toast after the duration
   if (newToast.duration && newToast.duration !== Infinity) {
     startToastTimer(id, newToast.duration);
