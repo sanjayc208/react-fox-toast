@@ -1,3 +1,10 @@
+## [1.4.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.7...v1.4.8) (2024-12-25)
+
+
+### Bug Fixes
+
+* changed tab size for syntax highlighter ([4646e48](https://github.com/sanjayc208/react-fox-toast/commit/4646e488aada609b7acb109046694cbcc94dca5a))
+
 ## [1.4.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.6...v1.4.7) (2024-12-24)
 
 
