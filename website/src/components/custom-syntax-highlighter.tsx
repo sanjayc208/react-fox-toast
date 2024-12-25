@@ -81,8 +81,8 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
                       className="w-4 h-4 object-contain flex-shrink-0"
                     />
                   )}
-                  <span className="truncate flex-1">
-                    {tab.language || 'JSX'}
+                  <span className="truncate flex-1 text-sm">
+                    {tab.language || 'jsx'}
                   </span>
                   {/* <X className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" /> */}
                 </div>

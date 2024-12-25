@@ -46,15 +46,15 @@ const GettingStarted = () => {
               // language='Terminal' 
               tabs={[{
                 codeSyntax:`npm i react-fox-toast`,
-                language:'NPM'
+                language:'npm'
               },
               {
                 codeSyntax:`pnpm add react-fox-toast`,
-                language:'PNPM'
+                language:'pnpm'
               },
               {
                 codeSyntax:`yarn i react-fox-toast`,
-                language:'YARN'
+                language:'yarn'
               }]}
               />
           </div>
