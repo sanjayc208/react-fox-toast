@@ -13,11 +13,11 @@ export default function ToastAPIPage() {
       </p>
 
       <Tabs defaultValue="usage">
-        <TabsList>
-          <TabsTrigger value="usage">Usage</TabsTrigger>
-          <TabsTrigger value="types">Toast Types</TabsTrigger>
-          <TabsTrigger value="customization">Customization</TabsTrigger>
-          <TabsTrigger value="management">Toast Management</TabsTrigger>
+        <TabsList className="bg-white">
+          <TabsTrigger className="data-[state=active]:bg-defaultBase" value="usage">Usage</TabsTrigger>
+          <TabsTrigger className="data-[state=active]:bg-defaultBase" value="types">Toast Types</TabsTrigger>
+          <TabsTrigger className="data-[state=active]:bg-defaultBase" value="customization">Customization</TabsTrigger>
+          <TabsTrigger className="data-[state=active]:bg-defaultBase" value="management">Toast Management</TabsTrigger>
         </TabsList>
         <TabsContent value="usage">
           <Card>
