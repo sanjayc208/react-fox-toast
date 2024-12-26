@@ -1,3 +1,10 @@
+## [1.4.10](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.9...v1.4.10) (2024-12-26)
+
+
+### Bug Fixes
+
+* website codeSyntax tab animation improved and structure improved too ([1579e18](https://github.com/sanjayc208/react-fox-toast/commit/1579e18a14742b1d99e777fc81bf3dc8218d62f8))
+
 ## [1.4.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.8...v1.4.9) (2024-12-25)
 
 
