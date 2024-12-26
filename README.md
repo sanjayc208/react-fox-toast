@@ -17,9 +17,9 @@
 <br />
 
 <div align="center">
-<h2><strong><a href="https://react-fox-toast.vercel.app/">Website</a> 
+<h2><strong><a href="https://react-fox-toast.vercel.app/">🌐 Website</a> 
 <span> | </span>
-<a href="https://react-fox-toast.vercel.app//documentation/getting-started">Documentation</a> 
+<a href="https://react-fox-toast.vercel.app//documentation/getting-started">📚 Documentation</a> 
 </div>
 <br />
 

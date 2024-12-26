@@ -27,7 +27,7 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
     const activeTab = tabRefs.current[activeTabKey];
     if (activeTab) {
       const tabWidth = activeTab.offsetWidth;
-      const indicatorWidth = 50; // 3rem = 48px
+      const indicatorWidth = 55; // 3rem = 48px
       const leftOffset = activeTab.offsetLeft + (tabWidth - indicatorWidth) / 2;
       setIndicatorStyle({
         left: `${leftOffset}px`,
