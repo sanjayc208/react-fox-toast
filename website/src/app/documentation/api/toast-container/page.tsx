@@ -26,8 +26,9 @@ export default function ToastContainerPage() {
             <CardContent>
               <CustomSyntaxHighlighter
                 className="w-full border rounded-lg overflow-x-auto shadow-lg"
-                tabs={[{
-                  codeSyntax: `import { ToastContainer } from "react-fox-toast";
+                tabs={{
+                  'jsx': {
+                    syntax: `import { ToastContainer } from "react-fox-toast";
 
 function App() {
   return (
@@ -41,8 +42,10 @@ function App() {
       {/* Your app content */}
     </div>
   );
-}`
-                }]}
+}`,
+                    language: 'jsx'
+                  }
+                }}
               />
               <p className="mt-4">
                 Add the ToastContainer component to your root component or layout to enable toast notifications throughout your application.
@@ -108,62 +111,6 @@ function App() {
                   </TableRow>
                 </TableBody>
               </Table>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="theming">
-          <Card>
-            <CardHeader>
-              <CardTitle>Global Theming</CardTitle>
-              <CardDescription>How to apply global themes to your toasts</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg text-muted-foreground">
-                Global theming allows you to customize the default appearance of each toast type.
-                Here's an example of how you can pass the `toastTypeTheming` prop to customize your toasts.
-              </p>
-              <CustomSyntaxHighlighter
-                className="w-full border rounded-lg overflow-x-auto shadow-lg"
-                tabs={[{
-                  codeSyntax:`<ToastContainer 
-                    toastTypeTheming={{
-                      success: {
-                        style: {
-                          backgroundColor: 'blue',
-                          color: '#155E00',
-                        },
-                        className: 'bg-blue-10'
-                      },
-                      error: {
-                        style: {
-                          backgroundColor: 'green',
-                          color: '#B91C1C',
-                        },
-                        className: 'error-toast-class',
-                      },
-                      info: {
-                        style: {
-                          backgroundColor: '#white',
-                          color: '#1D4ED8',
-                        },
-                        className: 'info-toast-class',
-                      },
-                      custom: {
-                        style: {
-                          backgroundColor: 'yellow',
-                          color: '#6B7280',
-                        },
-                        className: 'custom-toast-class',
-                      },
-                    }}
-                    direction="rtl" // Set text direction to RTL here
-                  />`
-                }]}
-              />
-              <p className="mt-4">
-                Use the `toastTypeTheming` prop to apply global styles and classes to different types of toasts. This allows for consistent styling across your application while still allowing for customization of individual toasts. You can also set the `direction` prop to change the text direction of the toasts.
-              </p>
             </CardContent>
           </Card>
         </TabsContent>

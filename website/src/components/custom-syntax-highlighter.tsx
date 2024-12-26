@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -8,23 +8,37 @@ import { Check, Copy } from 'lucide-react'
 import { cn } from "@/lib/utils"
 
 interface TabInfo {
+  syntax: string;
   language?: string;
-  codeSyntax: string;
-  icon?: string;
 }
 
 interface CustomSyntaxHighlighterProps {
-  tabs: TabInfo[];
+  tabs: Record<string, TabInfo>;
   className?: string;
 }
 
 const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs, className }) => {
-  const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const [activeTabKey, setActiveTabKey] = useState<string>(Object.keys(tabs)[0]);
   const [copied, setCopied] = useState(false);
+  const [indicatorStyle, setIndicatorStyle] = useState({});
+  const tabRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+  useEffect(() => {
+    const activeTab = tabRefs.current[activeTabKey];
+    if (activeTab) {
+      const tabWidth = activeTab.offsetWidth;
+      const indicatorWidth = 50; // 3rem = 48px
+      const leftOffset = activeTab.offsetLeft + (tabWidth - indicatorWidth) / 2;
+      setIndicatorStyle({
+        left: `${leftOffset}px`,
+        width: `${indicatorWidth}px`
+      });
+    }
+  }, [activeTabKey]);
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(tabs[activeTabIndex].codeSyntax);
+      await navigator.clipboard.writeText(tabs[activeTabKey].syntax);
       setCopied(true);
       setTimeout(() => {
         setCopied(false);
@@ -46,48 +60,42 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
           </div>
 
           {/* Tabs */}
-          <div className="flex items-center">
-            {tabs.map((tab, index) => (
+          <div className="flex items-center relative">
+
+            {Object.keys(tabs).map((key) => (
               <div
-                key={index}
-                onClick={() => setActiveTabIndex(index)}
+                key={key}
+                ref={el => {
+                  tabRefs.current[key] = el;
+                }}
+                onClick={() => setActiveTabKey(key)}
                 className={cn(
-                  "group relative flex items-center h-7 px-3 text-xs select-none  cursor-pointer",
+                  "group relative flex items-center h-7 px-3 text-xs select-none cursor-pointer",
                   "transition-all duration-200",
                   "mx-0.5 max-w-[200px] min-w-[60px]",
-                  index === activeTabIndex
-                    ? "bg-[#2a2a2a] text-white"
+                  key === activeTabKey
+                    ? "text-white"
                     : "bg-transparent text-gray-400 hover:bg-[#252525]"
                 )}
               >
-                {/* Custom curved shape for active tab */}
-                {index === activeTabIndex && (
-                  <>
-                    {/* Purple top border */}
-                    <div className="absolute -top-px left-1 right-1 h-[2px] bg-yellow-500" />
-                    
-                    {/* Background with curved edges */}
-                    <div className="absolute inset-0 bg-[#2a2a2a]">
-                    </div>
-                  </>
+                {/* Background with curved edges */}
+                {key === activeTabKey && (
+                  <div className="absolute inset-0 bg-[#2a2a2a]"></div>
                 )}
-                
+
                 {/* Tab content */}
-                <div className="flex items-center space-x-2 overflow-hidden flex-1 relative z-10">
-                  {tab.icon && (
-                    <img 
-                      src={tab.icon} 
-                      alt="" 
-                      className="w-4 h-4 object-contain flex-shrink-0"
-                    />
-                  )}
-                  <span className="truncate flex-1 text-sm">
-                    {tab.language || 'jsx'}
-                  </span>
-                  {/* <X className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" /> */}
+                <div className="flex items-center space-x-2 overflow-hidden flex-1 relative z-10 text-center">
+                  <span className="truncate flex-1 text-sm">{key}</span>
                 </div>
               </div>
             ))}
+
+
+            {/* Animated yellow indicator */}
+            <div 
+              className="absolute bottom-0 h-[2px] bg-yellow-500 transition-all duration-300 ease-in-out"
+              style={indicatorStyle}
+            />
           </div>
 
           {/* Copy button */}
@@ -109,16 +117,15 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
 
       <div className="transition-all duration-500 ease-in-out">
         <SyntaxHighlighter
-          language={tabs[activeTabIndex].language?.toLowerCase() || 'jsx'}
+          language={tabs[activeTabKey].language?.toLowerCase() || 'shell'}
           style={oneDark}
-          customStyle={{ 
-            fontSize: '15px', 
-            margin: 0, 
+          customStyle={{
+            fontSize: '15px',
+            margin: 0,
             borderRadius: '0 0 0.5rem 0.5rem',
-            // background: '#1c1c1c' 
           }}
         >
-          {tabs[activeTabIndex].codeSyntax}
+          {tabs[activeTabKey].syntax}
         </SyntaxHighlighter>
       </div>
     </div>
@@ -126,4 +133,5 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
 }
 
 export default CustomSyntaxHighlighter
+
 

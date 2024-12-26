@@ -224,9 +224,12 @@ toast.success('Success data with Tailwind Css',{
                 //  language='JSX' 
                  className="flex-none lg:w-1/2"
                 // codeSyntax={codeSyntax} 
-                tabs={[{
-                    codeSyntax
-                }]}
+                tabs={{
+                    'jsx': {
+                      syntax: codeSyntax,
+                      language: 'jsx'
+                    }
+                  }}
                 />
             </div>
         </>

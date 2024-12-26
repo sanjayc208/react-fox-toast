@@ -21,8 +21,9 @@ export default function ThemingPage() {
           </p>
           <CustomSyntaxHighlighter
             className="w-full border rounded-lg overflow-x-auto shadow-lg"
-            tabs={[{
-              codeSyntax: `<ToastContainer 
+            tabs={{
+              'jsx': {
+                syntax: `<ToastContainer 
   toastTypeTheming={{
     success: {
       style: {
@@ -53,8 +54,10 @@ export default function ThemingPage() {
       className: 'custom-toast-class',
     },
   }}
-/>`
-            }]}
+/>`,
+                language: 'jsx'
+              }
+            }}
           />
           <p className="mt-4">
             Use the `toastTypeTheming` prop to apply global styles and classes to different types of toasts. This allows for consistent styling across your application while still allowing for customization of individual toasts.

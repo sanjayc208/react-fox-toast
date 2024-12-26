@@ -42,20 +42,18 @@ const GettingStarted = () => {
             </h3>
             </div>
             <CustomSyntaxHighlighter className="xs:w-[20rem] xs:max-w-[22rem] lg:max-w-[31rem] lg:w-[31rem] border rounded-lg overflow-x-auto shadow-lg"
-              // codeSyntax={`npm i react-fox-toast`}
-              // language='Terminal' 
-              tabs={[{
-                codeSyntax:`npm i react-fox-toast`,
-                language:'npm'
-              },
-              {
-                codeSyntax:`pnpm add react-fox-toast`,
-                language:'pnpm'
-              },
-              {
-                codeSyntax:`yarn i react-fox-toast`,
-                language:'yarn'
-              }]}
+              tabs={{
+                'npm':{
+                  syntax: `npm i react-fox-toast`,
+                },
+                'pnpm':{
+                  syntax: `pnpm add react-fox-toast`,
+                },
+                'yarn':{
+                  syntax: `yarn i react-fox-toast`
+                }
+                
+              }}
               />
           </div>
         </div>
@@ -78,10 +76,12 @@ const GettingStarted = () => {
               <p>Adding ToastContainer on the Component where 'toast' hook will be used also works</p>
             </div>
             <CustomSyntaxHighlighter className="xs:w-[20rem] xs:max-w-[22rem] lg:max-w-[31rem] lg:w-[31rem] border rounded-lg overflow-x-auto shadow-lg"
-              // codeSyntax={secondStepInstallation}
-              tabs={[{
-                codeSyntax: secondStepInstallation
-              }]}
+              tabs={{
+                'jsx': {
+                  syntax: secondStepInstallation,
+                  language: 'jsx'
+                }
+              }}
               />
           </div>
         </div>
@@ -105,10 +105,12 @@ const GettingStarted = () => {
               </p>
             </div>
             <CustomSyntaxHighlighter className="xs:w-[20rem] xs:max-w-[22rem] lg:max-w-[31rem] lg:w-[31rem] border rounded-lg overflow-x-auto shadow-lg"
-              // codeSyntax={thirdStepInstallation}
-              tabs={[{
-                codeSyntax: thirdStepInstallation
-              }]}
+              tabs={{
+                'jsx': {
+                  syntax: thirdStepInstallation,
+                  language: 'jsx'
+                }
+              }}
               />
           </div>
         </div>
