@@ -1,3 +1,10 @@
+## [1.4.12](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.11...v1.4.12) (2024-12-26)
+
+
+### Bug Fixes
+
+* header slider padding-x reduced ([29b7757](https://github.com/sanjayc208/react-fox-toast/commit/29b77576deebdde14adf37803e066e663433d721))
+
 ## [1.4.11](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.10...v1.4.11) (2024-12-26)
 
 
