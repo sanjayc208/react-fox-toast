@@ -1,3 +1,10 @@
+## [1.4.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.8...v1.4.9) (2024-12-25)
+
+
+### Bug Fixes
+
+* website tab colour pattern fixed ([b1cf1ff](https://github.com/sanjayc208/react-fox-toast/commit/b1cf1ff48211b29217c3755be7d9134d2bc824d4))
+
 ## [1.4.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.7...v1.4.8) (2024-12-25)
 
 
