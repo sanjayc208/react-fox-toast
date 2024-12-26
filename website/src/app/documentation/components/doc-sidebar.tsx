@@ -100,7 +100,7 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-semibold">react-fox-toast</span>
-                  <span className="">v1.4.3</span>
+                  <span className="">v1.4.11</span>
                 </div>
               </a>
             </SidebarMenuButton>
