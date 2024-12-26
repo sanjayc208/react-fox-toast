@@ -1,3 +1,10 @@
+## [1.4.11](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.10...v1.4.11) (2024-12-26)
+
+
+### Bug Fixes
+
+* added icons to readme file ([95930c3](https://github.com/sanjayc208/react-fox-toast/commit/95930c363a7e979d49289e9050021f78d1700438))
+
 ## [1.4.10](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.9...v1.4.10) (2024-12-26)
 
 
