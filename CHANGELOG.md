@@ -1,3 +1,10 @@
+## [1.4.15](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.14...v1.4.15) (2024-12-27)
+
+
+### Bug Fixes
+
+* wesbiste linter fixes ([93803a7](https://github.com/sanjayc208/react-fox-toast/commit/93803a7267f0df00a7ff6a1468a4bbef51e0b289))
+
 ## [1.4.14](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.13...v1.4.14) (2024-12-27)
 
 
