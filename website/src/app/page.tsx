@@ -70,7 +70,7 @@ export default function Home() {
         </motion.div>
         
         <motion.h1
-          className={`${road_rage.className} text-6xl font-semibold text-yellow-950 mb-4`}
+          className={`${road_rage.className} lg:text-7xl xs:text-6xl font-semibold text-yellow-950 mb-4`}
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: [0.5, 1.5, 1.2], opacity: 1 }}
           transition={{ 
@@ -85,7 +85,7 @@ export default function Home() {
         </motion.h1>
         
         <motion.h1
-          className={`${road_rage.className} text-7xl font-bold text-yellow-900`}
+          className={`${road_rage.className} lg:text-8xl xs:text-6xl font-bold text-yellow-900`}
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: [0.5, 1.5, 1.2], opacity: 1 }}
           transition={{ 
