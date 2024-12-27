@@ -1,3 +1,10 @@
+## [1.4.14](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.13...v1.4.14) (2024-12-27)
+
+
+### Bug Fixes
+
+* wesbiste home page logo changed with title font ([c34d9ec](https://github.com/sanjayc208/react-fox-toast/commit/c34d9ec3b424c446d17521758b75ef018622a3a5))
+
 ## [1.4.13](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.12...v1.4.13) (2024-12-27)
 
 
