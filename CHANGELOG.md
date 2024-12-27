@@ -1,3 +1,10 @@
+## [1.4.13](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.12...v1.4.13) (2024-12-27)
+
+
+### Bug Fixes
+
+* wesbiste changes -removed uncessary font family from global css ([16d06bb](https://github.com/sanjayc208/react-fox-toast/commit/16d06bb3e55a9c20ce8d7bbdd799fde916138915))
+
 ## [1.4.12](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.11...v1.4.12) (2024-12-26)
 
 
