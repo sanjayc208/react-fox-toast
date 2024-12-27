@@ -1,3 +1,10 @@
+## [1.4.16](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.15...v1.4.16) (2024-12-27)
+
+
+### Bug Fixes
+
+* website main page title size increased ([ac83509](https://github.com/sanjayc208/react-fox-toast/commit/ac83509d0c2e0e3b6acb3a09eb5b9aeb2869e208))
+
 ## [1.4.15](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.14...v1.4.15) (2024-12-27)
 
 
