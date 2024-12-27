@@ -11,30 +11,96 @@ import { useRouter } from 'next/navigation'
 import TypingAnimation from "@/components/ui/typing-animation";
 import { cn } from "@/lib/utils";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import { motion } from "framer-motion";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Road_Rage, Londrina_Sketch, Ranchers, Mouse_Memoirs } from 'next/font/google'
+
+const road_rage = Road_Rage({ 
+  weight: '400',
+  subsets: ['latin'] })
 
 export default function Home() {
   const router = useRouter()
 
   return (
     <div className="">
-      <div className="relative flex min-h-[400px] max-h-fit w-full flex-col items-center justify-center overflow-hidden">
-        <header></header>
-        <Meteors number={40} />
-        <span
-          className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent max-w-3xl mx-auto block"
+      <div className="relative flex min-h-[77vh] max-h-fit w-full flex-col items-center justify-center overflow-hidden">
+      <header></header>
+      <Meteors number={40} />
+      
+      <motion.div
+        className="text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          initial={{ y: -200, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 50,
+            damping: 18,
+            duration: 0.5,
+          }}
         >
-          <GradualSpacing
-            className="font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]"
-            text="Welcome To"
-          />
-          <GradualSpacing
-            className="font-display text-center text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-7xl md:leading-[5rem]"
-            text="React 🦊 Toast"
-          />
-        </span>
-      </div>
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+              delay: 1, // Start bouncing after the initial drop
+            }}
+          >
+            <img
+              src="/logos/fox4.png"
+              width={200}
+              height={200}
+              alt="Fox Logo"
+              className="mx-auto mb-8"
+            />
+          </motion.div>
+        </motion.div>
+        
+        <motion.h1
+          className={`${road_rage.className} text-6xl font-semibold text-yellow-950 mb-4`}
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: [0.5, 1.5, 1.2], opacity: 1 }}
+          transition={{ 
+            duration: 1.5, 
+            times: [0, 0.3, 0.6],
+            repeatType: "reverse",
+            repeatDelay: 1,
+            delay: 1.5 // Delay to start after the fox has dropped
+          }}
+        >
+          Welcome to
+        </motion.h1>
+        
+        <motion.h1
+          className={`${road_rage.className} text-7xl font-bold text-yellow-900`}
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: [0.5, 1.5, 1.2], opacity: 1 }}
+          transition={{ 
+            duration: 1.5, 
+            times: [0, 0.3, 0.6],
+            repeatType: "reverse",
+            repeatDelay: 1,
+            delay: 1.7 // Slightly more delay than "Welcome to"
+          }}
+        >
+          React Fox Toast
+        </motion.h1>
+      </motion.div>
+    </div>
 
       <div className="flex justify-center items-center lg:space-x-3 xs:space-x-1">
         <RainbowButton
@@ -55,12 +121,13 @@ export default function Home() {
               <div
                 className="flex size-8 items-center justify-center rounded-lg bg-yellow-300"
               >
-                <span className='text-lg'>🦊</span>
+                <img src="logos/fox4.png" width={20}/>
+                {/* <span className='text-lg'>🦊</span> */}
               </div>
           }
-          )} className="rounded-xl px-5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
+          )} className="rounded-xl lg:px-5 xs:px-3 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-yellow-300 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-          <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease space-x-2"><span className='text-md'>🦊</span><span>Try it out Yourself</span></span>
+          <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><img src="logos/fox4.png" width={25}/><span>Try it out Yourself</span></span>
         </a>
       </div>
 
