@@ -36,6 +36,7 @@ export default function RootLayout({
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="author" content={metadata.author} />
+        <meta name="image" content="logo/fox4.png" />
         {/* Add more meta tags as needed */}
       </head>
       <body

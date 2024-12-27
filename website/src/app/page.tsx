@@ -3,7 +3,6 @@
 import { toast } from "react-fox-toast"
 import Meteors from "@/components/ui/meteors";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import GradualSpacing from "@/components/ui/gradual-spacing";
 import ToastDemo from "@/components/welcome/toast-example"
 import AnimatedListDemo from '@/components/welcome/feature-list'
 import { ArrowRight } from 'lucide-react'
@@ -14,7 +13,7 @@ import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 import { motion } from "framer-motion";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Road_Rage, Londrina_Sketch, Ranchers, Mouse_Memoirs } from 'next/font/google'
+import { Road_Rage } from 'next/font/google'
 
 const road_rage = Road_Rage({ 
   weight: '400',
@@ -121,13 +120,13 @@ export default function Home() {
               <div
                 className="flex size-8 items-center justify-center rounded-lg bg-yellow-300"
               >
-                <img src="logos/fox4.png" width={20}/>
+                <img src="logos/fox4.png" alt={`fox_logo`} width={20}/>
                 {/* <span className='text-lg'>🦊</span> */}
               </div>
           }
           )} className="rounded-xl lg:px-5 xs:px-3 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-yellow-300 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-          <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><img src="logos/fox4.png" width={25}/><span>Try it out Yourself</span></span>
+          <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><img src="logos/fox4.png" alt={`fox_logo`} width={25}/><span>Try it out Yourself</span></span>
         </a>
       </div>
 
