@@ -33,6 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>{metadata.title}</title>
+        <link rel="icon" type="image/x-icon" href="logos/fox4.ico"></link>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="author" content={metadata.author} />
