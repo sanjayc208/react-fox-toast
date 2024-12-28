@@ -1,3 +1,10 @@
+## [1.4.17](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.16...v1.4.17) (2024-12-28)
+
+
+### Bug Fixes
+
+* website added icon header ([ad8fa9f](https://github.com/sanjayc208/react-fox-toast/commit/ad8fa9f5956b0a6088eac7a05cb9c4f673409148))
+
 ## [1.4.16](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.15...v1.4.16) (2024-12-27)
 
 
