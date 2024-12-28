@@ -1,3 +1,10 @@
+## [1.4.20](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.19...v1.4.20) (2024-12-28)
+
+
+### Bug Fixes
+
+* website sidebar logo changed and adding new images for public website ([31a738c](https://github.com/sanjayc208/react-fox-toast/commit/31a738c2b6bf486f3c9c8238e3d2bed65d01b3ab))
+
 ## [1.4.19](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.18...v1.4.19) (2024-12-28)
 
 
