@@ -1,3 +1,10 @@
+## [1.4.19](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.18...v1.4.19) (2024-12-28)
+
+
+### Bug Fixes
+
+* favicon.ico changed ([5ffb44e](https://github.com/sanjayc208/react-fox-toast/commit/5ffb44e0a43a88d0b01f4940ebfab1417fa9db02))
+
 ## [1.4.18](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.17...v1.4.18) (2024-12-28)
 
 
