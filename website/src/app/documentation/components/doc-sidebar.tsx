@@ -95,7 +95,7 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <div
                     className="flex size-8 items-center justify-center rounded-lg"
                   >
-                    <span className='text-lg'>🦊</span>
+                    <img src="../logos/fox4.png" alt={`fox_logo`} width={25}/>
                   </div>
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
