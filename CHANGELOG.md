@@ -1,3 +1,10 @@
+## [1.4.18](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.17...v1.4.18) (2024-12-28)
+
+
+### Bug Fixes
+
+* website missing fox4.ico ([f163d9e](https://github.com/sanjayc208/react-fox-toast/commit/f163d9e1d915d753f27e1be4099d23cfd3d7e8e2))
+
 ## [1.4.17](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.16...v1.4.17) (2024-12-28)
 
 
