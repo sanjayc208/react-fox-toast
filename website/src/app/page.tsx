@@ -22,7 +22,7 @@ const road_rage = Road_Rage({
 
 export default function Home() {
   const router = useRouter()
-  const [pulseStart, setPulseStart] = React.useState(false);
+  // const [pulseStart, setPulseStart] = React.useState(false);
 
   return (
     <div className="">
@@ -108,7 +108,7 @@ export default function Home() {
             // repeat: pulseStart ? Infinity : 0, // Start pulsing after the first animation
             repeatType: "loop", // Infinite pulse
           }}
-          onAnimationComplete={() => setPulseStart(true)} // Trigger pulsing after initial animation
+          // onAnimationComplete={() => setPulseStart(true)} // Trigger pulsing after initial animation
         >
           React Fox Toast
         </motion.h1>
