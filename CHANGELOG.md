@@ -1,3 +1,10 @@
+## [1.4.21](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.20...v1.4.21) (2024-12-29)
+
+
+### Bug Fixes
+
+* added new fox_cook image above title ([df79859](https://github.com/sanjayc208/react-fox-toast/commit/df79859b5632b3b0c4c76d52c21f511ef1985a5f))
+
 ## [1.4.20](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.19...v1.4.20) (2024-12-28)
 
 
