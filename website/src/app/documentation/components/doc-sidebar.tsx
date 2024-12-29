@@ -21,6 +21,7 @@ import {
   SidebarGroupLabel,
   useSidebar
 } from "@/components/ui/sidebar"
+import Image from "next/image";
 
 // This is sample data.
 const data = {
@@ -95,7 +96,7 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <div
                     className="flex size-8 items-center justify-center rounded-lg"
                   >
-                    <img src="../logos/fox4.png" alt={`fox_logo`} width={25}/>
+                    <Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25}/>
                   </div>
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
