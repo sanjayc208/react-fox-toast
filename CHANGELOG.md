@@ -1,3 +1,10 @@
+## [1.4.23](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.22...v1.4.23) (2024-12-29)
+
+
+### Bug Fixes
+
+* website changes img change to Image ([1e99041](https://github.com/sanjayc208/react-fox-toast/commit/1e99041741163a48a28c8703f95f36fbfad48977))
+
 ## [1.4.22](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.21...v1.4.22) (2024-12-29)
 
 
