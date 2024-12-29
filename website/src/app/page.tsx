@@ -1,5 +1,6 @@
 
 "use client";
+import React from "react";
 import { toast } from "react-fox-toast"
 import Meteors from "@/components/ui/meteors";
 import { RainbowButton } from "@/components/ui/rainbow-button";
@@ -21,6 +22,7 @@ const road_rage = Road_Rage({
 
 export default function Home() {
   const router = useRouter()
+  const [pulseStart, setPulseStart] = React.useState(false);
 
   return (
     <div className="">
@@ -59,12 +61,19 @@ export default function Home() {
               delay: 1, // Start bouncing after the initial drop
             }}
           >
-            <img
+            {/* <img
               src="/logos/fox4.png"
               width={200}
               height={200}
               alt="Fox Logo"
               className="mx-auto mb-8"
+            /> */}
+            <img
+              src="bg/fox_cook.png"
+              width={270}
+              height={270}
+              alt="Fox Logo"
+              className="mx-auto mb-2"
             />
           </motion.div>
         </motion.div>
@@ -72,7 +81,7 @@ export default function Home() {
         <motion.h1
           className={`${road_rage.className} lg:text-7xl xs:text-6xl font-semibold text-yellow-950 mb-4`}
           initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: [0.5, 1.5, 1.2], opacity: 1 }}
+          animate={{ scale: [0.5, 1.3, 1], opacity: 1 }}
           transition={{ 
             duration: 1.5, 
             times: [0, 0.3, 0.6],
@@ -84,20 +93,26 @@ export default function Home() {
           Welcome to
         </motion.h1>
         
+        {/* "React Fox Toast" with pulsing animation after the initial animation */}
         <motion.h1
           className={`${road_rage.className} lg:text-8xl xs:text-6xl font-bold text-yellow-900`}
           initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: [0.5, 1.5, 1.2], opacity: 1 }}
-          transition={{ 
-            duration: 1.5, 
+          animate={
+            // pulseStart ? { scale: [1, 1.1, 0.9 , 1], opacity: 1 } : 
+            { scale: [0.5, 1.3, 1], opacity: 1 }}
+          transition={{
+            duration: 1.5,
+            delay: 1.7, // Delay to start after "Welcome to" has appeared
             times: [0, 0.3, 0.6],
-            repeatType: "reverse",
             repeatDelay: 1,
-            delay: 1.7 // Slightly more delay than "Welcome to"
+            // repeat: pulseStart ? Infinity : 0, // Start pulsing after the first animation
+            repeatType: "loop", // Infinite pulse
           }}
+          onAnimationComplete={() => setPulseStart(true)} // Trigger pulsing after initial animation
         >
           React Fox Toast
         </motion.h1>
+
       </motion.div>
     </div>
 
