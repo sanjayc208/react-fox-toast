@@ -1,3 +1,10 @@
+## [1.4.22](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.21...v1.4.22) (2024-12-29)
+
+
+### Bug Fixes
+
+* website changes commented unwanted code ([142a85d](https://github.com/sanjayc208/react-fox-toast/commit/142a85ddb33ba0df382993f8eb5b13d34b6b8de1))
+
 ## [1.4.21](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.20...v1.4.21) (2024-12-29)
 
 
