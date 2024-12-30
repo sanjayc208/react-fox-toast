@@ -137,13 +137,13 @@ export default function Home() {
               <div
                 className="flex size-8 items-center justify-center rounded-lg bg-yellow-300"
               >
-                <Image src="/logos/fox4.png" alt={`fox_logo`} width={20}/>
+                <Image src="/logos/fox4.png" alt={`fox_logo`} width={20} height={20}/>
                 {/* <span className='text-lg'>🦊</span> */}
               </div>
           }
           )} className="rounded-xl lg:px-5 xs:px-3 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-yellow-300 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-          <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25}/><span>Try it out Yourself</span></span>
+          <button className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25}/><span>Try it out Yourself</span></button>
         </a>
       </div>
 
