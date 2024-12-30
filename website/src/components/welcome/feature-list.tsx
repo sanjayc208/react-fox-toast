@@ -39,7 +39,12 @@ let notifications = [
   {
     name: "Highly Customizable",
     // description: "Magic UI",
-    icon: "🦊",
+    icon: <img
+    src="/logos/fox4.png"
+    width={30}
+    height={10}
+    alt="Fox Logo"
+  />,
     color: "#FEF08A",
   },
   {
