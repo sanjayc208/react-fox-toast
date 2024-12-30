@@ -1,3 +1,10 @@
+## [1.4.24](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.23...v1.4.24) (2024-12-30)
+
+
+### Bug Fixes
+
+* website changes feature list logo change ([79ed4cb](https://github.com/sanjayc208/react-fox-toast/commit/79ed4cb51f1a9faae5043ac44ae0a76d3bf16820))
+
 ## [1.4.23](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.22...v1.4.23) (2024-12-29)
 
 
