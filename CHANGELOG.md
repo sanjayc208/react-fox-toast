@@ -1,3 +1,10 @@
+## [1.4.25](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.24...v1.4.25) (2024-12-30)
+
+
+### Bug Fixes
+
+* website change span to button for 'Try it yourself' button ([a3be654](https://github.com/sanjayc208/react-fox-toast/commit/a3be654dd339c29cf384a9fa9e8fd61db71638fe))
+
 ## [1.4.24](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.23...v1.4.24) (2024-12-30)
 
 
