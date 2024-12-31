@@ -1,3 +1,10 @@
+## [1.4.26](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.25...v1.4.26) (2024-12-31)
+
+
+### Bug Fixes
+
+* website changes added new hook onscreen view load ([9d84f19](https://github.com/sanjayc208/react-fox-toast/commit/9d84f1926500bdda45839bc1e910b54c7863d72c))
+
 ## [1.4.25](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.24...v1.4.25) (2024-12-30)
 
 
