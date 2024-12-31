@@ -22,6 +22,7 @@ import {
   useSidebar
 } from "@/components/ui/sidebar"
 import Image from "next/image";
+import { Separator } from "@/components/ui/separator"
 
 // This is sample data.
 const data = {
@@ -105,6 +106,8 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 </div>
               </a>
             </SidebarMenuButton>
+            <Separator className="my-1" />
+
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
