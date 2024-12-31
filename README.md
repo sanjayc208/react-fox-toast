@@ -21,7 +21,7 @@
 <br />
 
 <div align="center">
-<h3><strong>
+<h3 style="font-size: 20px"><strong>
 
 <a href="https://react-fox-toast.vercel.app/">🌏 Website</a> 
 <span> &nbsp;|&nbsp; </span>
@@ -29,9 +29,8 @@
 <span> &nbsp;|&nbsp; </span>
 <a href="https://github.com/sanjayc208/react-fox-toast">🗄️ Github</a> 
 </strong>
-</h3>
+</h3 >
 </div>
-<br />
 
 
 <div align="center">
