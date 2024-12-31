@@ -25,7 +25,7 @@ const GettingStarted = () => {
  
     return (<div className="max-w-fit mx-auto my-4">
 
-        <div className="flex gap-x-3">
+        <div className="flex lg:lg:gap-x-3 xs:gap-x-1">
         <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
@@ -58,7 +58,7 @@ const GettingStarted = () => {
           </div>
         </div>
 
-        <div className="flex gap-x-3">
+        <div className="flex lg:gap-x-3 xs:gap-x-1">
           <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
@@ -69,7 +69,7 @@ const GettingStarted = () => {
 
           <div className="flex flex-col lg:flex-row gap-4 pt-0.5 pb-8">
 
-            <div className="w-[368px] max-w-[368px]">
+            <div className="w-[368px] max-w-[368px] ">
               <h3 className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
                 Add 'ToastContainer' on top of the Application
               </h3>
@@ -86,7 +86,7 @@ const GettingStarted = () => {
           </div>
         </div>
 
-        <div className="flex gap-x-3">
+        <div className="flex lg:gap-x-3 xs:gap-x-1">
           <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
