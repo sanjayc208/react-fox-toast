@@ -1,3 +1,10 @@
+## [1.4.27](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.26...v1.4.27) (2024-12-31)
+
+
+### Bug Fixes
+
+* website changes added seperator to sidebar ([49de2c3](https://github.com/sanjayc208/react-fox-toast/commit/49de2c3268605bb2addcc6a129dd3b8ee52791a6))
+
 ## [1.4.26](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.25...v1.4.26) (2024-12-31)
 
 
