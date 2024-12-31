@@ -1,14 +1,18 @@
 <a href="https://react-fox-toast.vercel.app/">
 <p align="center">
-  <img src="./assets/RFT_v1.1.0.gif" alt="Description of GIF">
+  <img src="./assets/fox_logo.png"  align="center" alt="fox logo" width="200px">
+  <h1 align="center">✨ React Fox Toast✨</h1>
+  <p align="center">
+    Lightweight and customizable toast/notification component for React and Next.js
+  </p>
 </p>
 </a>
 
 <div align="center">
   <img src="https://badgen.net/npm/v/react-fox-toast" alt="NPM Version">
   <img src="https://packagephobia.com/badge?p=react-fox-toast" alt="NPM Package Size"> 
-  <img src="https://badgen.net/static/license/MIT/yellow" alt="NPM Package Size">   
-     
+  <img src="https://badgen.net/static/license/MIT/yellow" alt="NPM Package Size">  
+  <img src="https://img.shields.io/npm/dy/react-fox-toast.svg" alt="npm">    
 </div>
 <div align="center">
 <img src="https://badgen.net/bundlephobia/min/react-fox-toast" alt="Min Size">  
@@ -17,11 +21,23 @@
 <br />
 
 <div align="center">
-<h2><strong><a href="https://react-fox-toast.vercel.app/">🌐 Website</a> 
-<span> | </span>
+<h3><strong>
+
+<a href="https://react-fox-toast.vercel.app/">🌏 Website</a> 
+<span> &nbsp;|&nbsp; </span>
 <a href="https://react-fox-toast.vercel.app//documentation/getting-started">📚 Documentation</a> 
+<span> &nbsp;|&nbsp; </span>
+<a href="https://github.com/sanjayc208/react-fox-toast">🗄️ Github</a> 
+</strong>
+</h3>
 </div>
 <br />
+
+
+<div align="center">
+  <p>Preview</p>
+  <img src="./assets/rft-preview.gif" alt="Description of GIF">
+</div>
 
 # React Fox Toast - Flexible Toast Notifications for React and Next.js
 
