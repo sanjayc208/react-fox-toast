@@ -1,3 +1,11 @@
+## [1.4.28](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.27...v1.4.28) (2024-12-31)
+
+
+### Bug Fixes
+
+* website changes stepper gap according to screen size ([c3dbf5f](https://github.com/sanjayc208/react-fox-toast/commit/c3dbf5f27f7f21ff985ac8ed5d3638f37188aad9))
+* website RFT package updated with latest version ([15e1e42](https://github.com/sanjayc208/react-fox-toast/commit/15e1e42b8d69cacdb560b9fcb9a722a447a09f48))
+
 ## [1.4.27](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.26...v1.4.27) (2024-12-31)
 
 
