@@ -1,3 +1,10 @@
+## [1.4.30](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.29...v1.4.30) (2024-12-31)
+
+
+### Bug Fixes
+
+* website changes and readme file ([4b08f36](https://github.com/sanjayc208/react-fox-toast/commit/4b08f36bd451d5bed9af9437ad2585144031b2f4))
+
 ## [1.4.29](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.28...v1.4.29) (2024-12-31)
 
 
