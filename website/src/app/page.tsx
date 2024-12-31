@@ -17,12 +17,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Road_Rage } from 'next/font/google'
 import Image from "next/image";
 
+import useOnScreen from '@/hooks/use-onscreen'; // Import your custom hook
+
+
 const road_rage = Road_Rage({ 
   weight: '400',
   subsets: ['latin'] })
 
 export default function Home() {
   const router = useRouter()
+  const [onScreenRef, onScreenVisible] = useOnScreen() as [React.RefObject<HTMLDivElement>, boolean];
+
   // const [pulseStart, setPulseStart] = React.useState(false);
 
   return (
@@ -123,14 +128,14 @@ export default function Home() {
           onClick={() => router.push('/documentation/getting-started')}//window.open("https://github.com/sanjayc208/react-fox-toast", "_blank")}
           className="lg:pl-5 lg:pr-3 xs:px-2"
         >
-          <div className="flex justify-center items-center space-x-3">
+          <div className="flex justify-center items-center space-x-1">
             <span>Getting Started</span>
             <ArrowRight />
           </div>
         </RainbowButton>
         <div>
         </div>
-        <a onClick={() => toast(<>Custom JSX component</>,
+        <button onClick={() => toast(<>Custom JSX component</>,
           {
             position: 'top-center',
             icon:
@@ -141,10 +146,10 @@ export default function Home() {
                 {/* <span className='text-lg'>🦊</span> */}
               </div>
           }
-          )} className="rounded-xl lg:px-5 xs:px-3 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
+          )} className="rounded-xl lg:px-5 xs:px-3 py-1.5 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-yellow-300 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-          <button className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25}/><span>Try it out Yourself</span></button>
-        </a>
+          <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25}/><span>Try it out Yourself</span></span>
+        </button>
       </div>
 
       <div className="z-10 flex min-h-20 items-center justify-center">
@@ -169,12 +174,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mx-auto xs:px-4 lg:px-20 md:lg:px-12 sm:lg:px-12 py-5 lg:min-h-[630px]">
-        <TypingAnimation
+      <div ref={onScreenRef || undefined} className="mx-auto xs:px-4 lg:px-20 md:lg:px-12 sm:lg:px-12 py-5 lg:min-h-[630px]">
+      {onScreenVisible && <TypingAnimation
           className="text-4xl mb-4 mt-6 font-bold text-black dark:text-white"
           text="🚀 Toast It Your Way"
           duration={100}
-        />
+        />}
         {/* <h1 className="text-3xl font-bold text-center mb-6">🚀 Toast It Your Way</h1> */}
         <ToastDemo />
       </div>
