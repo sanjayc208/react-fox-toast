@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { toast } from "react-fox-toast"
-import { CheckCircle, Smile, Paintbrush, Clock, Expand, CircleX, Info, X } from 'lucide-react'
+import { CheckCircle, Smile, Paintbrush, Clock, Expand, CircleX, Info, X, AlertCircle } from 'lucide-react'
 import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter'
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -51,6 +51,19 @@ toast.error('Error Generated Toast'${selectedPosition ? `, {
 
         setCodeSyntax(`
 toast.info('Information Generated Toast'${selectedPosition ? `, {
+    position: '${selectedPosition}'
+})` : ')'}
+`)
+    }
+
+    const showWarning = () => {
+        toast.warning('Warning Generated Toast',
+            { position: selectedPosition ? selectedPosition : undefined
+             }
+        )
+
+        setCodeSyntax(`
+toast.warning('Warning Generated Toast'${selectedPosition ? `, {
     position: '${selectedPosition}'
 })` : ')'}
 `)
@@ -205,6 +218,8 @@ toast.success('Success data with Tailwind Css',{
                         <CircleX color="#df2121" />Error</Button>
                     <Button className="bg-white text-black hover:bg-gray-100" onClick={showInfo}>
                         <Info color='#2a47eb' />Info</Button>
+                    <Button className="bg-white text-black hover:bg-gray-100" onClick={showWarning}>
+                        <AlertCircle color='#FFA500' />Warning</Button>
                     <Button className="bg-white text-black hover:bg-gray-100" onClick={showCustom}>
                         <Paintbrush />Custom JSX/TSX</Button>
                     <Button className="bg-white text-black hover:bg-gray-100" onClick={showPromise}>
