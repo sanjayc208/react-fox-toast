@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.31...v1.5.0) (2025-01-01)
+
+
+### Features
+
+* added warning toast ([a1c0360](https://github.com/sanjayc208/react-fox-toast/commit/a1c0360fd49e8587bda01858f8d13600c5519f9c))
+
 ## [1.4.31](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.30...v1.4.31) (2025-01-01)
 
 
