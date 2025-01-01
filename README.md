@@ -35,7 +35,7 @@
 
 <div align="center">
   <p>Preview</p>
-  <img src="./assets/rft-preview.gif" alt="Description of GIF">
+  <a href="https://react-fox-toast.vercel.app/"><img src="./assets/rft-preview.gif" alt="Description of GIF"></a>
 </div>
 
 # React Fox Toast - Flexible Toast Notifications for React and Next.js
