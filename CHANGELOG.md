@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.0...v1.5.1) (2025-01-01)
+
+
+### Bug Fixes
+
+* adding warning example with latest rft version ([858f66d](https://github.com/sanjayc208/react-fox-toast/commit/858f66dab8ca9356070f5f96fb30afd89abcf24a))
+
 # [1.5.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.4.31...v1.5.0) (2025-01-01)
 
 
