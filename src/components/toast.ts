@@ -11,6 +11,8 @@ export const toast = Object.assign(
       addToast({ ...options, message, type: 'error' }),
     info: (message: React.ReactNode, options?: Partial<any>) =>
       addToast({ ...options, message, type: 'info' }),
+    warning: (message: React.ReactNode, options?: Partial<any>) =>
+      addToast({ ...options, message, type: 'warning' }),
     custom: (message: React.ReactNode, options?: Partial<any>) =>
       addToast({ ...options, message, type: 'custom' }),
     remove: (id: string) => removeToast(id),

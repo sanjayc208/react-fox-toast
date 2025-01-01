@@ -210,6 +210,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
     error: '#FEE2E2',
     info: '#DBEAFE',
     custom: '#ffffff',
+    warning: '#fff4b7',
   };
 
   const toastFunctions = {
