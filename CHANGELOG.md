@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.1...v1.5.2) (2025-01-02)
+
+
+### Bug Fixes
+
+* added warning toast in documentation ([c632202](https://github.com/sanjayc208/react-fox-toast/commit/c63220206b30cd9bd4515bcbd458b9c866f7b815))
+
 ## [1.5.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.0...v1.5.1) (2025-01-01)
 
 
