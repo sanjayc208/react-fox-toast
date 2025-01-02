@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { AlertCircle, CheckCircle, Info, Rocket, Clock } from 'lucide-react'
+import { AlertCircle, CircleX, CheckCircle, Info, Rocket, Clock } from 'lucide-react'
 import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
@@ -68,7 +68,7 @@ function MyComponent() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <AlertCircle className="mr-2 h-5 w-5 text-red-500" />
+                  <CircleX color="#df2121"  className="mr-2 h-5 w-5" />
                   Error Toast
                 </CardTitle>
               </CardHeader>
@@ -77,6 +77,24 @@ function MyComponent() {
                   tabs={{
                     'jsx': {
                       syntax: `toast.error("Something went wrong!");`,
+                      language: 'jsx'
+                    }
+                  }}
+                />
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <AlertCircle color='#FFA500' className="mr-2 h-5 w-5" />
+                  Warning Toast
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+                  tabs={{
+                    'jsx': {
+                      syntax: `toast.warning("This is some warning.");`,
                       language: 'jsx'
                     }
                   }}
