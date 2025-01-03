@@ -29,7 +29,7 @@ let notifications = [
     color: "#FFB800",
   },
   {
-    name: "Tailwind Css Support",
+    name: "Tailwind CSS Support",
     // description: "Magic UI",
     // time: "5m ago",
     icon: <img alt="Icon"
