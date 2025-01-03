@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.4...v1.5.5) (2025-01-03)
+
+
+### Bug Fixes
+
+* example logo of fox changed ([7c91501](https://github.com/sanjayc208/react-fox-toast/commit/7c91501e3ed97e1e6d7d9128412a138625d072ff))
+
 ## [1.5.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.3...v1.5.4) (2025-01-03)
 
 
