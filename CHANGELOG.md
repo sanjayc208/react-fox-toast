@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.3...v1.5.4) (2025-01-03)
+
+
+### Bug Fixes
+
+* corrected spellings feature list ([578df3a](https://github.com/sanjayc208/react-fox-toast/commit/578df3a9274eaf73205fb3817935d60e440abe05))
+
 ## [1.5.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.2...v1.5.3) (2025-01-02)
 
 
