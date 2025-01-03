@@ -6,6 +6,7 @@ import { CheckCircle, Smile, Paintbrush, Clock, Expand, CircleX, Info, X, AlertC
 import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter'
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import Image from "next/image";
 
 const positions = [
     "top-left",
@@ -78,7 +79,7 @@ toast.warning('Warning Generated Toast'${selectedPosition ? `, {
                     <div
                         className="flex size-8 items-center justify-center rounded-xl bg-yellow-200"
                     >
-                        <span className='text-lg'>🦊</span>
+                        <Image src="/logos/fox4.png" alt={`fox_logo`} width={20} height={20}/>   
                     </div>
             })
 
@@ -89,7 +90,7 @@ toast.custom(
     position: '${selectedPosition}',` : ''}
     icon: (
         <div className='flex size-8 items-center justify-center rounded-lg bg-yellow-300'>
-            <span className='text-lg'>🦊</span>
+            <img src="/logos/fox4.png" alt='fox_logo' width={20} height={20}/>
         </div>
     )
 })
