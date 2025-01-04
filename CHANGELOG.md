@@ -1,3 +1,10 @@
+## [1.5.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.6...v1.5.7) (2025-01-04)
+
+
+### Bug Fixes
+
+* website changes lucid react icon addded to feature list ([7a226d8](https://github.com/sanjayc208/react-fox-toast/commit/7a226d82c12e252e51d3abe1a1528c4c2e84be94))
+
 ## [1.5.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.5...v1.5.6) (2025-01-04)
 
 
