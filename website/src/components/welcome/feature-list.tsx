@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/ui/animated-list";
-import { Paintbrush, Expand, Pause } from 'lucide-react'
+import { Paintbrush, Expand, Pause, Feather, User } from 'lucide-react'
 
 interface Item {
   name: string;
@@ -18,14 +18,14 @@ let notifications = [
     // description: "Magic UI",
     // time: "15m ago",
 
-    icon: "🪶",
+    icon: <Feather />,
     color: "#00C9A7",
   },
   {
     name: "Easy To use",
     // description: "Magic UI",
     // time: "10m ago",
-    icon: "👤",
+    icon: <User />,
     color: "#FFB800",
   },
   {
