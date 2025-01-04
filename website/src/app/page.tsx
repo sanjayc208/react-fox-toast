@@ -67,13 +67,6 @@ export default function Home() {
               delay: 1, // Start bouncing after the initial drop
             }}
           >
-            {/* <img
-              src="/logos/fox4.png"
-              width={200}
-              height={200}
-              alt="Fox Logo"
-              className="mx-auto mb-8"
-            /> */}
             <Image
               src="/bg/fox_cook.png"
               width={270}
@@ -180,7 +173,6 @@ export default function Home() {
           text="🚀 Toast It Your Way"
           duration={100}
         />}
-        {/* <h1 className="text-3xl font-bold text-center mb-6">🚀 Toast It Your Way</h1> */}
         <ToastDemo />
       </div>
 
@@ -189,8 +181,6 @@ export default function Home() {
         text="Why Should You Use This Toast?"
         duration={100}
       />
-      {/* <h1 className="max-w-fit mx-auto mb-6 mt-10 text-3xl underline">Why Use this Toast</h1> */}
-      {/* <GettingStarted /> */}
 
       <div className="max-w-fit mx-auto my-4">
         <div className="flex flex-col lg:flex-row gap-4">
