@@ -1,3 +1,10 @@
+## [1.5.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.5...v1.5.6) (2025-01-04)
+
+
+### Bug Fixes
+
+* website changes removed commented code form home page ([1c2303e](https://github.com/sanjayc208/react-fox-toast/commit/1c2303e8bab59133a0cfdce5ca27629d1ae3f6b7))
+
 ## [1.5.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.4...v1.5.5) (2025-01-03)
 
 
