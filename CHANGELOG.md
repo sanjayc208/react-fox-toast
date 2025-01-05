@@ -1,3 +1,10 @@
+## [1.5.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.7...v1.5.8) (2025-01-05)
+
+
+### Bug Fixes
+
+* added isPausedOnHover in toast-container as props ([1cdea5d](https://github.com/sanjayc208/react-fox-toast/commit/1cdea5daf436af232311f39adc18efdc6f99042f))
+
 ## [1.5.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.6...v1.5.7) (2025-01-04)
 
 
