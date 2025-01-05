@@ -1,3 +1,10 @@
+## [1.5.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.8...v1.5.9) (2025-01-05)
+
+
+### Bug Fixes
+
+* website changes added isPausedOnHover on doc ([c4f8564](https://github.com/sanjayc208/react-fox-toast/commit/c4f8564e10a2f3e5d26f779eeeb45d0a7be7a55d))
+
 ## [1.5.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.7...v1.5.8) (2025-01-05)
 
 
