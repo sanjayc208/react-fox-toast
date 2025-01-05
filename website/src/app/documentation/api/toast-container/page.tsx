@@ -38,6 +38,7 @@ function App() {
         gap={} // Gap need between each toast
         position={} // default global position example 'top-center'
         direction="" // Add this to change text direction (optional)
+        isPausedOnHover={true} // Add this to pause the toast on hover (optional)
       />
       {/* Your app content */}
     </div>
@@ -108,6 +109,16 @@ function App() {
                       <code>{`'ltr' | 'rtl'`}</code>
                     </TableCell>
                     <TableCell>'ltr'</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>isPausedOnHover</TableCell>
+                    <TableCell>
+                      Defines the pause of the toast container when a user hovers over a toast notification.
+                    </TableCell>
+                    <TableCell>
+                      <code>{`boolean`}</code>
+                    </TableCell>
+                    <TableCell>true</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
