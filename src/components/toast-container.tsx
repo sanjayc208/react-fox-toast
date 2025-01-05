@@ -18,12 +18,13 @@ interface ToastContainerProps {
     spacing?: number,
     position?: ToastPosition,
     duration?: number
-    direction?: string
+    direction?: string,
+    isPausedOnHover?: boolean
 }
 
 // const DEFAULT_POSITION: ToastPosition = 'bottom-center'
 
-export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {}, spacing = 0, position = 'bottom-center', duration = 3000, direction = 'ltr' }) => {
+export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {}, spacing = 0, position = 'bottom-center', duration = 3000, direction = 'ltr', isPausedOnHover=true  }) => {
     // Set new default values
     setToastDefaults(duration, position);
 
@@ -130,6 +131,7 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
                                     {...toasts.find((toast) => toast.id === id)!}
                                     direction={direction} // supports ltr or rtl
                                     toastTypeTheming={toastTypeTheming}  /* Pass it down */
+                                    isPausedOnHover={isPausedOnHover}  /* Pass it down */
 
                                     onClose={() => {
                                         removeToast(id);
