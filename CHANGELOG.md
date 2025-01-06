@@ -1,3 +1,11 @@
+## [1.5.10](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.9...v1.5.10) (2025-01-06)
+
+
+### Bug Fixes
+
+* added installation step video to doc ([ca6aa72](https://github.com/sanjayc208/react-fox-toast/commit/ca6aa72f4d9ee2dad98c1fd44eee66d18fc03e98))
+* linter issue fixed ([f3068eb](https://github.com/sanjayc208/react-fox-toast/commit/f3068eb4c01a2bb13133b192958f94d621b04363))
+
 ## [1.5.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.8...v1.5.9) (2025-01-05)
 
 
