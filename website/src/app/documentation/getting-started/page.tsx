@@ -30,7 +30,7 @@ export default function GettingStartedPage() {
       </li>
     </ul> */}
     
-    <div className="flex-none mt-4 sm:mt-0 sm:w-45 radius-lg">
+    <div className="flex-none mt-4 sm:mt-0 sm:w-3/5 radius-lg">
     {/* <h3 className="underline">Installation Steps Video</h3> */}
       <HeroVideoDialog
         animationStyle="from-center"
@@ -48,4 +48,3 @@ export default function GettingStartedPage() {
 
   )
 }
-
