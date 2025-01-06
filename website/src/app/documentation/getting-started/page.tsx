@@ -1,4 +1,4 @@
-import Link from "next/link"
+// import Link from "next/link"
 import GettingStarted from '@/components/welcome/getting-started'
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 
