@@ -1,3 +1,10 @@
+## [1.5.11](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.10...v1.5.11) (2025-01-06)
+
+
+### Bug Fixes
+
+* resized video for installation step and added black white thumbnail ([ed4424a](https://github.com/sanjayc208/react-fox-toast/commit/ed4424adfc332e87bfb1d2783743daae42714bc1))
+
 ## [1.5.10](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.9...v1.5.10) (2025-01-06)
 
 
