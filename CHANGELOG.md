@@ -1,3 +1,10 @@
+## [1.5.13](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.12...v1.5.13) (2025-01-07)
+
+
+### Bug Fixes
+
+* website changes added toast api usage mp4 preview to doc ([4fe7919](https://github.com/sanjayc208/react-fox-toast/commit/4fe7919119095da1ca9d1fa2906846f4e07c6e3d))
+
 ## [1.5.12](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.11...v1.5.12) (2025-01-07)
 
 
