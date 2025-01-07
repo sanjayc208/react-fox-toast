@@ -1,3 +1,10 @@
+## [1.5.12](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.11...v1.5.12) (2025-01-07)
+
+
+### Bug Fixes
+
+* changed video with proper cursor and display ([f867969](https://github.com/sanjayc208/react-fox-toast/commit/f867969def760153793f0d0894ccfda2c452dbf7))
+
 ## [1.5.11](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.10...v1.5.11) (2025-01-06)
 
 
