@@ -1,3 +1,10 @@
+## [1.5.14](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.13...v1.5.14) (2025-01-07)
+
+
+### Bug Fixes
+
+* website changed installed new rft version ([3cd0fd4](https://github.com/sanjayc208/react-fox-toast/commit/3cd0fd491c2ab89e412427ab551242cee07dc00c))
+
 ## [1.5.13](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.12...v1.5.13) (2025-01-07)
 
 
