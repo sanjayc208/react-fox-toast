@@ -1,3 +1,10 @@
+## [1.5.15](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.14...v1.5.15) (2025-01-07)
+
+
+### Bug Fixes
+
+* website changes doc-sidebar version changed ([b3c705f](https://github.com/sanjayc208/react-fox-toast/commit/b3c705fd234b7e5f49671208ee381632b0fcf1fd))
+
 ## [1.5.14](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.13...v1.5.14) (2025-01-07)
 
 
