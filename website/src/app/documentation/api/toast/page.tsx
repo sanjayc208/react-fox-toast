@@ -189,12 +189,12 @@ toast.cusotm('Customize toast here');                   `,
             <CardContent>
               <Table>
                 <TableHeader>
-                  <TableRow>
-                    <TableHead>Option</TableHead>
-                    <TableHead>Type</TableHead>
-                    <TableHead>Description</TableHead>
-                    <TableHead>Possible Values</TableHead>
-                    <TableHead>Default</TableHead>
+                  <TableRow >
+                    <TableHead className="text-black font-bold">Option</TableHead>
+                    <TableHead className="text-black font-bold">Type</TableHead>
+                    <TableHead className="text-black font-bold">Description</TableHead>
+                    <TableHead className="text-black font-bold">Possible Values</TableHead>
+                    <TableHead className="text-black font-bold">Default</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
