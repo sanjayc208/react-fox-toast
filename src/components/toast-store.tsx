@@ -64,7 +64,6 @@ export const addToast = (toast: Omit<Toast, 'id'>): string => {
   return id;
 };
 
-
 // Start or reset the toast timer
 const startToastTimer = (id: string, duration: number) => {
   const toast = toastList.find((t) => t.id === id);
@@ -128,7 +127,6 @@ export const updateToast = (id: string, updates: Partial<Toast>) => {
   );
   notifySubscribers();
 };
-
 
 export const pauseToastTimer = (id: string) => {
   const toast = toastList.find((t) => t.id === id);

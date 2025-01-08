@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/ui/animated-list";
-import { Paintbrush, Expand, Pause, Feather, User } from 'lucide-react'
+import { Paintbrush, Expand, Pause, Feather, User, CircleX } from 'lucide-react'
 
 interface Item {
   name: string;
@@ -56,14 +56,20 @@ let notifications = [
   {
     name: "Custom Class / Style support",
     // description: "Magic UI",
-    icon: <Paintbrush />, //"👷🏽",
+    icon: <Paintbrush />,
     color: "#bd8cf9 " //"#1E86FF",
   },
   {
     name: "Pause on Hover",
     // description: "Magic UI",
-    icon: <Pause />, //"👷🏽",
-    color: "#c4f98c  " //"#1E86FF",
+    icon: <Pause />,
+    color: "#c4f98c" //"#1E86FF",
+  },
+  {
+    name: "Default Close Button",
+    // description: "Magic UI",
+    icon: <CircleX />,
+    color: "#f0f0f0" //"#1E86FF",
   },
 ];
 

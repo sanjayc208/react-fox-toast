@@ -46,7 +46,6 @@ const ToastContainer = styled('div')(
   }
 );
 
-
 // Function to create a CSS class dynamically with :where() for low specificity
 function createDynamicWhereClass(className: any, styles: any) {
   const styleSheet = document.styleSheets[0] || document.createElement("style");
