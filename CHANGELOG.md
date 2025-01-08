@@ -1,3 +1,10 @@
+## [1.5.16](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.15...v1.5.16) (2025-01-08)
+
+
+### Bug Fixes
+
+* websitchanges added close button in feature list ([6f56bd7](https://github.com/sanjayc208/react-fox-toast/commit/6f56bd77d4687ee56d68f10c88b5833e224c5f36))
+
 ## [1.5.15](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.14...v1.5.15) (2025-01-07)
 
 
