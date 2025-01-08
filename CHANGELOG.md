@@ -1,3 +1,10 @@
+## [1.5.17](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.16...v1.5.17) (2025-01-08)
+
+
+### Bug Fixes
+
+* website changes aligned feature-list to center ([0bf1615](https://github.com/sanjayc208/react-fox-toast/commit/0bf16158f9bd08559eb53651f9407afffe2e3bff))
+
 ## [1.5.16](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.15...v1.5.16) (2025-01-08)
 
 
