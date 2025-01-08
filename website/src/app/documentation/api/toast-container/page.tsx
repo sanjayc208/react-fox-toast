@@ -63,10 +63,10 @@ function App() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableCell>Prop</TableCell>
-                    <TableCell>Description</TableCell>
-                    <TableCell>Type</TableCell>
-                    <TableCell>Default</TableCell>
+                    <TableCell className="text-black font-bold">Prop</TableCell>
+                    <TableCell className="text-black font-bold">Description</TableCell>
+                    <TableCell className="text-black font-bold">Type</TableCell>
+                    <TableCell className="text-black font-bold">Default</TableCell>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

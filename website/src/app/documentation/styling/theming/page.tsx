@@ -14,10 +14,10 @@ export default function ThemingPage() {
           <CardTitle>Global Theming</CardTitle>
           <CardDescription>How to apply global themes to your toasts</CardDescription>
         </CardHeader>
-        <CardContent>
-          <p className="text-lg text-muted-foreground">
+        <CardContent className="space-y-4">
+          <p className="text-md">
             Global theming allows you to customize the default appearance of each toast type.
-            Here's an example of how you can pass the `toastTypeTheming` prop to customize your toasts.
+            Here's an example of how you can pass the <code>`toastTypeTheming`</code> prop to customize your toasts.
           </p>
           <CustomSyntaxHighlighter
             className="w-full border rounded-lg overflow-x-auto shadow-lg"
