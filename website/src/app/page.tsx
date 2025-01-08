@@ -183,7 +183,7 @@ export default function Home() {
       />
 
       <div className="max-w-fit mx-auto my-4">
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="flex flex-col lg:flex-row gap-4 items-center">
           {/* <FeatureGrid /> */}
           <div className="xs:w-[22rem] xs:max-w-[22rem] lg:max-w-[400px] lg:min-w-[400px] p-3">
 
