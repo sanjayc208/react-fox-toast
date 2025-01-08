@@ -1,3 +1,10 @@
+## [1.5.18](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.17...v1.5.18) (2025-01-08)
+
+
+### Bug Fixes
+
+* website changes improved text for doc table header ([1b15f3d](https://github.com/sanjayc208/react-fox-toast/commit/1b15f3d35f7c7cb81ad836d3c0cb70d68dea4af1))
+
 ## [1.5.17](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.16...v1.5.17) (2025-01-08)
 
 
