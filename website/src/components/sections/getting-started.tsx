@@ -1,6 +1,6 @@
 'use client';
 
-import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter'
+import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
 
 const secondStepInstallation = `import { ToastContainer } from "react-fox-toast"
 

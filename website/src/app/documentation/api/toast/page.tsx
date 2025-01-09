@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AlertCircle, CircleX, CheckCircle, Info, Rocket, Clock } from 'lucide-react'
-import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter'
+import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 export default function ToastAPIPage() {
