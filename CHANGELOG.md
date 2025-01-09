@@ -1,3 +1,10 @@
+## [1.5.19](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.18...v1.5.19) (2025-01-09)
+
+
+### Bug Fixes
+
+* webite changes updated package version ([8d8579a](https://github.com/sanjayc208/react-fox-toast/commit/8d8579a16d85c314512eb9a097f8518325e24eda))
+
 ## [1.5.18](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.17...v1.5.18) (2025-01-08)
 
 
