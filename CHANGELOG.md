@@ -1,3 +1,10 @@
+## [1.5.21](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.20...v1.5.21) (2025-01-09)
+
+
+### Bug Fixes
+
+* website changes applied atomic design to the application ([e6fdec7](https://github.com/sanjayc208/react-fox-toast/commit/e6fdec7f678b3cef18f4632dd639ff67c44459c4))
+
 ## [1.5.20](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.19...v1.5.20) (2025-01-09)
 
 
