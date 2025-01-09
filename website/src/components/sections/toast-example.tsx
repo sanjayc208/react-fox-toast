@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { toast } from "react-fox-toast"
 import { CheckCircle, Smile, Paintbrush, Clock, Expand, CircleX, Info, X, AlertCircle } from 'lucide-react'
-import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter'
+import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Image from "next/image";

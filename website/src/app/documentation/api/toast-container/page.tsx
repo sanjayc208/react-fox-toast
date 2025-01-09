@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter';
+import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter';
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
 
 export default function ToastContainerPage() {

@@ -1,6 +1,6 @@
 import { Sidebar, SidebarContent, SidebarHeader, SidebarProvider } from "@/components/ui/sidebar"
-import { Header } from "./components/header"
-import { DocSidebar } from "./components/doc-sidebar"
+import { Header } from "./components/sections/header"
+import { DocSidebar } from "./components/sections/doc-sidebar"
 
 export default function DocumentationLayout({
   children,

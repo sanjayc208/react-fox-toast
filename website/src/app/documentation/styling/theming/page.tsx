@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import CustomSyntaxHighlighter from '@/components/custom-syntax-highlighter'
+import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
 
 export default function ThemingPage() {
   return (

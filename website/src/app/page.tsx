@@ -4,8 +4,8 @@ import React from "react";
 import { toast } from "react-fox-toast"
 import Meteors from "@/components/ui/meteors";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import ToastDemo from "@/components/welcome/toast-example"
-import AnimatedListDemo from '@/components/welcome/feature-list'
+import ToastDemo from "@/components/sections/toast-example"
+import AnimatedListDemo from '@/components/features/feature-list'
 import { ArrowRight } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import TypingAnimation from "@/components/ui/typing-animation";

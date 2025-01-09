@@ -1,5 +1,5 @@
 // import Link from "next/link"
-import GettingStarted from '@/components/welcome/getting-started'
+import GettingStarted from '@/components/sections/getting-started'
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 
 export default function GettingStartedPage() {
