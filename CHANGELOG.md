@@ -1,3 +1,10 @@
+## [1.5.20](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.19...v1.5.20) (2025-01-09)
+
+
+### Bug Fixes
+
+* updated homepage url ([0eae936](https://github.com/sanjayc208/react-fox-toast/commit/0eae936e1a9009ff22ec073d741705f13d93907f))
+
 ## [1.5.19](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.18...v1.5.19) (2025-01-09)
 
 
