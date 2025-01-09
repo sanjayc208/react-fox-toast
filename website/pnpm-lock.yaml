@@ -63,8 +63,8 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
       react-fox-toast:
-        specifier: ^1.5.13
-        version: 1.5.13(goober@2.1.16(csstype@3.1.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^1.5.18
+        version: 1.5.18(goober@2.1.16(csstype@3.1.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-syntax-highlighter:
         specifier: ^15.6.1
         version: 15.6.1(react@19.0.0)
@@ -2075,8 +2075,8 @@ packages:
     peerDependencies:
       react: ^19.0.0
 
-  react-fox-toast@1.5.13:
-    resolution: {integrity: sha512-l1vW+0SwTZa6H6zzJ7Ohh0xmCRwoPmW2MHYzjpDPfkRwHgozgKB+FmdO6om/hcKiMK7n6aI2+wR9NxVRBDQ0jg==}
+  react-fox-toast@1.5.18:
+    resolution: {integrity: sha512-45utQuLNhnaeEGZAV8TSo5mT8ovvVIPCs6zRb1h7f9bIlUTBtZLsZVsEN/+dVzVHypubD7Ht8tb/8IYTttdKtw==}
     peerDependencies:
       goober: ^2.1.16
       react: '>16.0.0'
@@ -4514,7 +4514,7 @@ snapshots:
       react: 19.0.0
       scheduler: 0.25.0
 
-  react-fox-toast@1.5.13(goober@2.1.16(csstype@3.1.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-fox-toast@1.5.18(goober@2.1.16(csstype@3.1.3))(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       goober: 2.1.16(csstype@3.1.3)
       react: 19.0.0
