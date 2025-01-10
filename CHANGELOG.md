@@ -1,3 +1,11 @@
+## [1.6.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.0...v1.6.1) (2025-01-10)
+
+
+### Bug Fixes
+
+* website changes onDimiss added to doc ([56c6f24](https://github.com/sanjayc208/react-fox-toast/commit/56c6f2403a18d1b7342d4746df11ad95374c6cad))
+* website changes onDimiss added to doc ([51542c9](https://github.com/sanjayc208/react-fox-toast/commit/51542c9cbefe3d5ecb3355a00dbe6295178d1d66))
+
 # [1.6.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.21...v1.6.0) (2025-01-10)
 
 
