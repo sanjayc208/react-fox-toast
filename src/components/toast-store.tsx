@@ -20,7 +20,7 @@ export interface Toast {
   remainingTime?: number; // Remaining time for the toast
   isPaused?: boolean; // To track if the toast timer is paused
   isPausedOnHover?: boolean; // Optional prop to disable hover pause functionality
-
+  onDismiss?: (id: string) => void; // Callback triggered on dismiss
 }
 
 const toastSubscribers: Array<(toasts: Toast[]) => void> = [];
@@ -88,6 +88,14 @@ const startToastTimer = (id: string, duration: number) => {
 };
 
 export const removeToast = (id: string) => {
+  //findinf the details of taost with the id
+  const toast = toastList.find((t) => t.id === id);
+
+  //if onDimiss callback is sent then return callback with toast data
+  if (toast?.onDismiss) {
+    toast.onDismiss(id); // Invoke the onDismiss callback
+  }
+
   toastList = toastList.map((toast) =>
     toast.id === id ? { ...toast, isClosing: true } : toast
   );
