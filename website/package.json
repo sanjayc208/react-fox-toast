@@ -28,7 +28,7 @@
     "next": "15.0.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-fox-toast": "^1.5.18",
+    "react-fox-toast": "^1.6.0",
     "react-syntax-highlighter": "^15.6.1",
     "tailwind-merge": "^2.5.5"
   },
