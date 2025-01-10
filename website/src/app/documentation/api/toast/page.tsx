@@ -473,6 +473,58 @@ export default ToastComponent;`,
               <ul className="list-disc list-inside mb-4">
                 <li><code>id</code>: The ID of the toast you want to pause or resume</li>
               </ul>
+
+              <h3 className="text-lg font-semibold mb-2">Using the `onDismiss` Callback</h3>
+      <p className="mb-2">
+        You can provide an <code>onDismiss</code> callback function as an option when creating a toast. This function will be called when the toast is dismissed (either automatically or manually). This can be useful if you need to perform actions like logging or cleaning up resources after the toast disappears.
+      </p>
+      
+      <CustomSyntaxHighlighter
+        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+        tabs={{
+          'jsx': {
+            syntax: `const toastId = toast(
+  <>Custom JSX component</>,
+  {
+    onDismiss: (id) => {
+      console.log('Toast dismissed:', id);
+    },
+  }
+);`,
+            language: 'jsx'
+          }
+        }}
+      />
+
+      <p className="mb-2">
+        The <code>onDismiss</code> callback accepts one parameter:
+      </p>
+      <ul className="list-disc list-inside mb-4">
+        <li><code>id</code>: The ID of the dismissed toast. This can be useful for performing specific actions or tracking which toast was dismissed.</li>
+      </ul>
+
+      <p className="mb-2">
+        Here's an example of using multiple toasts with individual dismiss handling:
+      </p>
+
+      <CustomSyntaxHighlighter
+        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+        tabs={{
+          'jsx': {
+            syntax: `const toastId1 = toast.success("Success Toast", {
+  onDismiss: (id) => console.log("First toast dismissed:", id),
+});
+
+const toastId2 = toast.error("Error Toast", {
+  onDismiss: (id) => console.log("Second toast dismissed:", id),
+});`,
+            language: 'jsx'
+          }
+        }}
+      />
+      <p className="mb-2">
+        In this example, each toast has its own `onDismiss` handler that logs the ID of the dismissed toast.
+      </p>
             </CardContent>
           </Card>
         </TabsContent>
