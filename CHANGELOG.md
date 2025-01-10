@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.21...v1.6.0) (2025-01-10)
+
+
+### Features
+
+* onDimiss returns new message parameter on callback ([449ff2b](https://github.com/sanjayc208/react-fox-toast/commit/449ff2b152cb120a5ccde597cd50a00bc9ed5be1))
+
 ## [1.5.21](https://github.com/sanjayc208/react-fox-toast/compare/v1.5.20...v1.5.21) (2025-01-09)
 
 
