@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.1...v1.6.2) (2025-01-11)
+
+
+### Bug Fixes
+
+* added zustand and created right-sidebar for toast-management tab ([8061544](https://github.com/sanjayc208/react-fox-toast/commit/80615446fb1258c5fa63f6b7a422a6d1a1cfc8e3))
+
 ## [1.6.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.0...v1.6.1) (2025-01-10)
 
 
