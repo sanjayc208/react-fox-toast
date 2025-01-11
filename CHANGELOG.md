@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.2...v1.6.3) (2025-01-11)
+
+
+### Bug Fixes
+
+* structured the api doc layout ([8b7c68f](https://github.com/sanjayc208/react-fox-toast/commit/8b7c68f643214d4f965ef80499e25692d2a36db2))
+
 ## [1.6.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.1...v1.6.2) (2025-01-11)
 
 
