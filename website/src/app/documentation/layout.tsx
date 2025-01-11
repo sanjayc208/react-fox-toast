@@ -1,12 +1,17 @@
+'use client';
 import { Sidebar, SidebarContent, SidebarHeader, SidebarProvider } from "@/components/ui/sidebar"
 import { Header } from "./components/sections/header"
 import { DocSidebar } from "./components/sections/doc-sidebar"
+import { SidebarRight } from "@/app/documentation/components/sections/right-sidebar"
+import { useSidebarStore } from "@/store/useSideBarStore"; // Import Zustand store
 
 export default function DocumentationLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const content = useSidebarStore(state => state.content);
+  const isVisible = useSidebarStore(state => state.isVisible);
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -25,6 +30,9 @@ export default function DocumentationLayout({
           <Header />
           <main className="flex-1 overflow-y-auto lg:p-6 xs:p-2  sm:p-2">{children}</main>
         </div>
+
+       {/* Sidebar */}
+       {isVisible && <SidebarRight content={content}/>}
       </SidebarProvider>
     </div>
   )
