@@ -11,24 +11,46 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-  SidebarHeader,
   SidebarFooter
 } from "@/components/ui/sidebar"
-
- import Link from "next/link";
 
 export function SidebarRight({
   ...props
 }: React.ComponentProps<any>) {
-   
+   // State to track the current hash in the URL
+  const [activeHash, setActiveHash] = React.useState<string>("")
+
+
+  // Set the active hash initially when the component mounts
+  React.useEffect(() => {
+    const currentHash = window.location.hash
+    setActiveHash(currentHash)
+    
+    // Update the active hash when the hash changes in the URL
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash)
+    }
+
+    window.addEventListener("hashchange", handleHashChange)
+    
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange)
+    }
+  }, [])
+
+
+  // Handle click to update the active state and hash
+  const handleItemClick = (id: string) => {
+    setActiveHash(`#${id}`)
+    window.location.hash = `#${id}`  // Update the URL hash
+  }
   return (
     <Sidebar
       collapsible="none"
-      className="sticky hidden lg:flex top-0 h-svh border-l bg-color-[#efefea]"
+      className={"sticky hidden lg:flex top-0 h-svh border-l bg-color-[#efefea]"}
       {...props}
     >
-      <SidebarHeader className="h-16 border-b border-sidebar-border">
-      </SidebarHeader>
       <SidebarContent>
       <SidebarGroup>
           <SidebarGroupContent>
@@ -43,12 +65,18 @@ export function SidebarRight({
                         <SidebarMenuSubItem key={item.title}>
                           <SidebarMenuSubButton
                           className={`h-auto my-1`}
+                          isActive={activeHash === `#${item.id}`}
                             asChild
                             // isActive={item.isActive}
                           >
-                            <Link href={`#${item.id}`} className="text-blue-600 hover:text-blue-800">
-                              {item.title}
-                            </Link>
+                            {/* OnClick to handle active state and hash update */}
+                          <button
+                            onClick={() => handleItemClick(item.id)}
+                            className="text-blue-600 hover:text-blue-800 w-full text-left"
+                          >
+                            {item.title}
+                          </button>
+
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
                       ))}
