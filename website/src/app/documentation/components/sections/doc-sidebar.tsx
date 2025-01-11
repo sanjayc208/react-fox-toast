@@ -76,13 +76,18 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
   // Function to check if the current path matches the URL of the sidebar item
   const isActive = (url: string) => {
-    return pathname === url
+    // Ensure the pathname starts with the provided URL and doesn't match unwanted substrings
+    // This check is more flexible and handles distinct paths like toast vs toast-container
+    const regex = new RegExp(`^${url}(\/|$)`); // Matches the exact path or any sub-paths under it
+
+    return regex.test(pathname);
   }
+
 
   // Function to handle click and navigate
   const onClickRedirect = (url: string) => {
     router.push(url)  // Programmatically navigate to the new route
-    if(isMobile) toggleSidebar()
+    if (isMobile) toggleSidebar()
   }
 
   return (
@@ -97,7 +102,7 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <div
                     className="flex size-8 items-center justify-center rounded-lg"
                   >
-                    <Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25}/>
+                    <Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25} />
                   </div>
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
@@ -142,7 +147,7 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      
+
       {/* Sidebar Footer Content */}
       <SidebarFooter >
         <SidebarMenuButton
