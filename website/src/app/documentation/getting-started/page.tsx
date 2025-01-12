@@ -4,7 +4,7 @@ import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 
 export default function GettingStartedPage() {
   return (
-    <div className="max-w-3xl">
+    <div className="">
       <h1 className="mb-4 text-3xl font-bold">Getting Started</h1>
       <p className="mb-6 text-lg text-muted-foreground">
         Welcome to our documentation. This page will help you get started with our library.

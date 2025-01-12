@@ -23,7 +23,7 @@ toast.success('Successfully created a toast')`
 
 const GettingStarted = () => {
  
-    return (<div className="max-w-fit mx-auto my-4">
+    return (<div className="max-w-fit my-4">
 
         <div className="flex lg:lg:gap-x-3 xs:gap-x-1">
         <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
