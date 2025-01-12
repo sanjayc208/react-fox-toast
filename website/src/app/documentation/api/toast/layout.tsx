@@ -4,6 +4,7 @@ import React from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import { useSidebarStore } from "@/store/useSideBarStore"; // Import Zustand store
 
 export default function ToastAPILayout({
     children,
@@ -14,15 +15,9 @@ export default function ToastAPILayout({
     // State to keep track of the active tab
     const [activeTab, setActiveTab] = React.useState<string>('usage');
     const pathname = usePathname();
+    const { setContent, setVisibility } = useSidebarStore();
     
     React.useEffect(() => {
-        // Scroll to the section based on the URL hash after the component mounts
-        if (window.location.hash) {
-            const element = document.getElementById(window.location.hash.substring(1)); // Get element by ID from the hash
-            if (element) {
-                element.scrollIntoView({ behavior: "smooth" }); // Scroll to the element with smooth behavior
-            }
-        }
         // Extract the active tab from the pathname or URL hash
         const pathParts = pathname.split('/');
         
@@ -34,6 +29,96 @@ export default function ToastAPILayout({
             setActiveTab(tabFromUrl);
         }
     }, [pathname])
+
+    React.useEffect(() => {
+        setVisibility(true);
+        // Set sidebar content and visibility
+        setContent(
+            [{
+                title: "Usage",
+                url: "/documentation/api/toast/usage",
+                items:[{
+                    "url": "/documentation/api/toast/usage#basic-usage",
+                    "title": "Basic Usage"
+                }]
+            },
+            {
+                title: "Toast Types",
+                url: "/documentation/api/toast/usage",
+                items:[{
+                    "url": "/documentation/api/toast/types#success-toast",
+                    "title": "Success Toast"
+                },
+                {
+                    "url": "/documentation/api/toast/types#error-toast",
+                    "title": "Error Toast"
+                },
+                {
+                    "url": "/documentation/api/toast/types#warning-toast",
+                    "title": "Warning Toast"
+                },
+                {
+                    "url": "/documentation/api/toast/types#info-toast",
+                    "title": "Info Toast"
+                },
+                {
+                    "url": "/documentation/api/toast/types#promise-toast",
+                    "title": "Promise Toast"
+                },
+                {
+                    "url": "/documentation/api/toast/types#custom-toast",
+                    "title": "Custom Toast"
+                }]
+            },
+            {
+                title: "Customization",
+                url: "/documentation/api/toast/customization",
+                items:[{
+                    "url": "/documentation/api/toast/customization#customization-options",
+                    "title": "Options"
+                },
+                {
+                    "url": "/documentation/api/toast/customization#customization-example",
+                    "title": "Example"
+                }]
+            },{
+                title: "Toast Management",
+                url: "/documentation/api/toast/management",
+                items:[
+            {
+                "url": "/documentation/api/toast/management#updating-toasts",
+                "title": "Updating Toasts"
+            },
+            {
+                "url": "/documentation/api/toast/management#removing-toasts",
+                "title": "Removing Toasts"
+            },
+            {
+                "url": "/documentation/api/toast/management#clearing-toasts",
+                "title": "Clearing All Toasts"
+            },
+            {
+                "url": "/documentation/api/toast/management#remaining-time",
+                "title": "Getting Remaining Time"
+            },
+            {
+                "url": "/documentation/api/toast/management#pausing-resuming",
+                "title": "Pausing and Resuming Toasts"
+            },
+            {
+                "url": "/documentation/api/toast/management#on-dismiss-callback",
+                "title": "Using the onDismiss Callback"
+            }
+        ]}]);
+
+        // Cleanup on unmount
+        return () => {
+            setContent(null); // Reset the content when leaving the page
+            setVisibility(false); // Optionally hide the sidebar
+        };
+
+
+    }, []);
 
     return (
 
@@ -50,16 +135,14 @@ export default function ToastAPILayout({
                     <TabsTrigger
                         className="data-[state=active]:bg-defaultBase"
                         value="usage"
-                    >
-                        Usage
+                    >Usage
                     </TabsTrigger>
                     </Link>
                     <Link href="types">
                     <TabsTrigger
                         className="data-[state=active]:bg-defaultBase"
                         value="types"
-                    >
-                        Toast Types
+                    >Toast Types
                     </TabsTrigger></Link>
                     <Link href="customization">
                     <TabsTrigger

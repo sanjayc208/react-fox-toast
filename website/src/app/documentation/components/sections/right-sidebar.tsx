@@ -13,19 +13,20 @@ import {
   SidebarMenuSubItem,
   SidebarFooter
 } from "@/components/ui/sidebar"
-
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 export function SidebarRight({
   ...props
 }: React.ComponentProps<any>) {
    // State to track the current hash in the URL
   const [activeHash, setActiveHash] = React.useState<string>("")
+  const router = useRouter();
 
 
   // Set the active hash initially when the component mounts
   React.useEffect(() => {
     const currentHash = window.location.hash
     setActiveHash(currentHash)
-    
     // Update the active hash when the hash changes in the URL
     const handleHashChange = () => {
       setActiveHash(window.location.hash)
@@ -41,9 +42,9 @@ export function SidebarRight({
 
 
   // Handle click to update the active state and hash
-  const handleItemClick = (id: string) => {
-    setActiveHash(`#${id}`)
-    window.location.hash = `#${id}`  // Update the URL hash
+  const handleItemClick = (url: string) => {
+    setActiveHash(`${url}`)
+    router.push(url);
   }
   return (
     <Sidebar
@@ -53,25 +54,30 @@ export function SidebarRight({
     >
       <SidebarContent>
       <SidebarGroup>
+      <h3 className="font-bold mb-2">Quick References</h3>
           <SidebarGroupContent>
             <SidebarMenu>
-                <SidebarMenuItem >
-                  <SidebarMenuButton className={`font-bold`}>
-                      {`Quick Reference`}
+              {props.content?.map((data: any) => (
+                <SidebarMenuItem key={data.title}>
+                  <SidebarMenuButton asChild>
+                    <Link href={data.url} className="font-medium">
+                      {data.title}
+                    </Link>
                   </SidebarMenuButton>
-                  {props.content?.length ? (
+
+                  {data.items?.length ? (
                     <SidebarMenuSub>
-                      {props.content.map((item: any) => (
+                      {data.items.map((item: any) => (
                         <SidebarMenuSubItem key={item.title}>
                           <SidebarMenuSubButton
                           className={`h-auto my-1`}
-                          isActive={activeHash === `#${item.id}`}
+                          isActive={activeHash === `${item.url}`}
                             asChild
                             // isActive={item.isActive}
                           >
                             {/* OnClick to handle active state and hash update */}
                           <button
-                            onClick={() => handleItemClick(item.id)}
+                            onClick={() => handleItemClick(item.url)}
                             className="text-blue-600 hover:text-blue-800 w-full text-left"
                           >
                             {item.title}
@@ -83,6 +89,7 @@ export function SidebarRight({
                     </SidebarMenuSub>
                   ) : null}
                 </SidebarMenuItem>
+              ))} 
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

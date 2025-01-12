@@ -10,7 +10,7 @@ export default function Types() {
 
   return (
   <div className="space-y-3">
-    <Card>
+    <Card id="success-toast">
       <CardHeader>
         <CardTitle className="flex items-center">
           <CheckCircle className="mr-2 h-5 w-5 text-green-500" />
@@ -28,7 +28,7 @@ export default function Types() {
         />
       </CardContent>
     </Card>
-    <Card>
+    <Card id="error-toast">
       <CardHeader>
         <CardTitle className="flex items-center">
           <CircleX color="#df2121" className="mr-2 h-5 w-5" />
@@ -46,7 +46,7 @@ export default function Types() {
         />
       </CardContent>
     </Card>
-    <Card>
+    <Card id="warning-toast">
       <CardHeader>
         <CardTitle className="flex items-center">
           <AlertCircle color='#FFA500' className="mr-2 h-5 w-5" />
@@ -64,7 +64,7 @@ export default function Types() {
         />
       </CardContent>
     </Card>
-    <Card>
+    <Card id="info-toast">
       <CardHeader>
         <CardTitle className="flex items-center">
           <Info className="mr-2 h-5 w-5 text-blue-500" />
@@ -82,7 +82,7 @@ export default function Types() {
         />
       </CardContent>
     </Card>
-    <Card>
+    <Card id="promise-toast">
       <CardHeader>
         <CardTitle className="flex items-center">
           <Clock className="mr-2 h-5 w-5 text-yellow-500" />
@@ -107,7 +107,7 @@ error: 'Failed to load data!',
         />
       </CardContent>
     </Card>
-    <Card>
+    <Card id="custom-toast">
       <CardHeader>
         <CardTitle className="flex items-center">
           <Rocket className="mr-2 h-5 w-5 text-purple-500" />
