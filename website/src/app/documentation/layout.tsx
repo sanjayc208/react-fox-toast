@@ -1,5 +1,5 @@
 'use client';
-import { Sidebar, SidebarContent, SidebarProvider } from "@/components/ui/sidebar";
+import { Sidebar, SidebarContent, SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { Header } from "./components/sections/header";
 import { DocSidebar } from "./components/sections/doc-sidebar";
 import { SidebarRight } from "@/app/documentation/components/sections/right-sidebar";
@@ -21,7 +21,7 @@ export default function DocumentationLayout({
             <DocSidebar />
           </SidebarContent>
         </Sidebar>
-
+        <SidebarInset className="bg-transparent">
         {/* Main content area */}
         <div>
           <Header />
@@ -38,6 +38,7 @@ export default function DocumentationLayout({
           )}
           </div>
         </div>
+        </SidebarInset>
       </SidebarProvider>
     </div>
   );

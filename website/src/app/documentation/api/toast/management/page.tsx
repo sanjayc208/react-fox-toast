@@ -4,51 +4,8 @@ import React from "react"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
-import { useSidebarStore } from "@/store/useSideBarStore"; // Import Zustand store
 
 export default function Management() {
-
-    const { setContent, setVisibility } = useSidebarStore();
-
-    React.useEffect(() => {
-
-        setVisibility(true);
-        // Set sidebar content and visibility
-        setContent([
-            {
-                "id": "updating-toasts",
-                "title": "Updating Toasts"
-            },
-            {
-                "id": "removing-toasts",
-                "title": "Removing Toasts"
-            },
-            {
-                "id": "clearing-toasts",
-                "title": "Clearing All Toasts"
-            },
-            {
-                "id": "remaining-time",
-                "title": "Getting Remaining Time"
-            },
-            {
-                "id": "pausing-resuming",
-                "title": "Pausing and Resuming Toasts"
-            },
-            {
-                "id": "on-dismiss-callback",
-                "title": "Using the onDismiss Callback"
-            }
-        ]);
-
-        // Cleanup on unmount
-        return () => {
-            setContent(null); // Reset the content when leaving the page
-            setVisibility(false); // Optionally hide the sidebar
-        };
-
-
-    }, [setContent, setVisibility]);
 
     return (
         <Card>

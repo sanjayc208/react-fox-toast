@@ -9,7 +9,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 export default function Customization() {
 
     return (
-        <Card>
+        <Card id="customization-options">
             <CardHeader>
                 <CardTitle>Customization Options</CardTitle>
                 <CardDescription>Available options for customizing toasts</CardDescription>
@@ -112,7 +112,7 @@ export default function Customization() {
                         </TableRow>
                     </TableBody>
                 </Table>
-                <div className="mt-4">
+                <div id="customization-example" className="mt-4">
                     <h3 className="text-lg font-semibold mb-2">Usage Example:</h3>
                     <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
                         tabs={{

@@ -7,7 +7,7 @@ import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highligh
 export default function ToastAPIPage() {
     return (
 
-        <Card>
+        <Card id="basic-usage">
             <CardHeader>
                 <CardTitle>Basic Usage</CardTitle>
                 <CardDescription>How to use the toast() API in your components</CardDescription>
