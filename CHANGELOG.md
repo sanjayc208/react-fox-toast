@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.3...v1.6.4) (2025-01-12)
+
+
+### Bug Fixes
+
+* corrected sidebar flex and layout changes for quick reference  data done ([59f8dad](https://github.com/sanjayc208/react-fox-toast/commit/59f8dad528730eebf6528299d4c86828554987e6))
+
 ## [1.6.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.2...v1.6.3) (2025-01-11)
 
 
