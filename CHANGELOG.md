@@ -1,3 +1,10 @@
+## [1.6.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.4...v1.6.5) (2025-01-12)
+
+
+### Bug Fixes
+
+* website removed unwanted max width from components ([b9cb73b](https://github.com/sanjayc208/react-fox-toast/commit/b9cb73b2fb411cd6273927896513c16ed29b511e))
+
 ## [1.6.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.3...v1.6.4) (2025-01-12)
 
 
