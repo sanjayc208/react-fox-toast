@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.5...v1.6.6) (2025-01-13)
+
+
+### Bug Fixes
+
+* website changes quick reference added to installation steps ([cef975c](https://github.com/sanjayc208/react-fox-toast/commit/cef975cad2abe9d19e12e5dc5017cc06ba65cb51))
+
 ## [1.6.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.4...v1.6.5) (2025-01-12)
 
 
