@@ -26,7 +26,7 @@ const GettingStarted = () => {
     return (<div className="max-w-fit my-4">
 
         <div className="flex lg:lg:gap-x-3 xs:gap-x-1">
-        <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
+        <div id="installation-step-1" className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
                 <span className="text-defaultBase text-lg font-semibold">1</span>
@@ -58,7 +58,7 @@ const GettingStarted = () => {
           </div>
         </div>
 
-        <div className="flex lg:gap-x-3 xs:gap-x-1">
+        <div id="installation-step-2" className="flex lg:gap-x-3 xs:gap-x-1">
           <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
@@ -86,7 +86,7 @@ const GettingStarted = () => {
           </div>
         </div>
 
-        <div className="flex lg:gap-x-3 xs:gap-x-1">
+        <div  id="installation-step-3" className="flex lg:gap-x-3 xs:gap-x-1">
           <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-300 dark:after:bg-neutral-700">
             <div className="relative z-10 size-7 flex justify-center items-center">
               <div className="flex justify-center items-center size-5 rounded-full bg-gray-400 dark:bg-neutral-600">
