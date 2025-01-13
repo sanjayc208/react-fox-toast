@@ -16,105 +16,120 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Road_Rage } from 'next/font/google'
 import Image from "next/image";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 import useOnScreen from '@/hooks/use-onscreen'; // Import your custom hook
+import { useIsMobile } from "@/hooks/use-mobile"
 
-
-const road_rage = Road_Rage({ 
+const road_rage = Road_Rage({
   weight: '400',
-  subsets: ['latin'] })
+  subsets: ['latin']
+})
 
 export default function Home() {
   const router = useRouter()
+  const isMobile = useIsMobile()
   const [onScreenRef, onScreenVisible] = useOnScreen() as [React.RefObject<HTMLDivElement>, boolean];
 
   // const [pulseStart, setPulseStart] = React.useState(false);
 
   return (
     <div className="">
-      <div className="relative flex min-h-[77vh] max-h-fit w-full flex-col items-center justify-center overflow-hidden">
-      <header></header>
-      <Meteors number={40} />
-      
-      <motion.div
-        className="text-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className={`relative ${isMobile ? 'min-h-[77vh]' : ''} flex w-full flex-col items-center justify-center overflow-hidden`}>
+        <header></header>
+        <Meteors number={40} />
+
         <motion.div
-          initial={{ y: -200, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 50,
-            damping: 18,
-            duration: 0.5,
-          }}
+          className="text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <motion.div
+            initial={{ y: -200, opacity: 0 }}
             animate={{
-              y: [0, -10, 0],
+              y: 0,
+              opacity: 1,
             }}
             transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeInOut",
-              delay: 1, // Start bouncing after the initial drop
+              type: "spring",
+              stiffness: 50,
+              damping: 18,
+              duration: 0.5,
             }}
           >
-            <Image
-              src="/bg/fox_cook.png"
-              width={270}
-              height={270}
-              alt="Fox Logo"
-              className="mx-auto mb-2"
-              priority
-            />
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+                delay: 1, // Start bouncing after the initial drop
+              }}
+            >
+              <Image
+                src="/bg/fox_cook.png"
+                width={270}
+                height={270}
+                alt="Fox Logo"
+                className="mx-auto mb-2"
+                priority
+              />
+            </motion.div>
           </motion.div>
-        </motion.div>
-        
-        <motion.h1
-          className={`${road_rage.className} lg:text-7xl xs:text-6xl font-semibold text-yellow-950 mb-4`}
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: [0.5, 1.3, 1], opacity: 1 }}
-          transition={{ 
-            duration: 1.5, 
-            times: [0, 0.3, 0.6],
-            repeatType: "reverse",
-            repeatDelay: 1,
-            delay: 1.5 // Delay to start after the fox has dropped
-          }}
-        >
-          Welcome to
-        </motion.h1>
-        
-        {/* "React Fox Toast" with pulsing animation after the initial animation */}
-        <motion.h1
-          className={`${road_rage.className} lg:text-8xl xs:text-6xl font-bold text-yellow-900`}
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={
-            // pulseStart ? { scale: [1, 1.1, 0.9 , 1], opacity: 1 } : 
-            { scale: [0.5, 1.3, 1], opacity: 1 }}
-          transition={{
-            duration: 1.5,
-            delay: 1.7, // Delay to start after "Welcome to" has appeared
-            times: [0, 0.3, 0.6],
-            repeatDelay: 1,
-            // repeat: pulseStart ? Infinity : 0, // Start pulsing after the first animation
-            repeatType: "loop", // Infinite pulse
-          }}
-          // onAnimationComplete={() => setPulseStart(true)} // Trigger pulsing after initial animation
-        >
-          React Fox Toast
-        </motion.h1>
 
-      </motion.div>
-    </div>
+          <motion.h1
+            className={`${road_rage.className} lg:text-7xl xs:text-6xl font-semibold text-yellow-950 mb-4`}
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: [0.5, 1.3, 1], opacity: 1 }}
+            transition={{
+              duration: 1.5,
+              times: [0, 0.3, 0.6],
+              repeatType: "reverse",
+              repeatDelay: 1,
+              delay: 1.5 // Delay to start after the fox has dropped
+            }}
+          >
+            Welcome to
+          </motion.h1>
+
+          {/* "React Fox Toast" with pulsing animation after the initial animation */}
+          <motion.h1
+            className={`${road_rage.className} lg:text-8xl xs:text-6xl font-bold text-yellow-900`}
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={
+              // pulseStart ? { scale: [1, 1.1, 0.9 , 1], opacity: 1 } : 
+              { scale: [0.5, 1.3, 1], opacity: 1 }}
+            transition={{
+              duration: 1.5,
+              delay: 1.7, // Delay to start after "Welcome to" has appeared
+              times: [0, 0.3, 0.6],
+              repeatDelay: 1,
+              // repeat: pulseStart ? Infinity : 0, // Start pulsing after the first animation
+              repeatType: "loop", // Infinite pulse
+            }}
+          // onAnimationComplete={() => setPulseStart(true)} // Trigger pulsing after initial animation
+          >
+            React Fox Toast
+          </motion.h1>
+          {!isMobile && <div className={`xs:text-sm xs:my-2 xs:m-3 md:my-16 md:text-md text-yellow-950 font-semibold`}>
+            <TextAnimate delay={1000} animation="scaleUp" as="h1">
+              {/* For every developer, it is not just a library, but a toast canvas waiting to be painted with your vision */}
+              {/* Like a Fox Lightweight and swift, it brings a whisper of notification to your users, leaving no heavy mark behind */}
+              Like a Fox, which thrives in the quiet spaces between the trees
+            </TextAnimate>
+            <TextAnimate delay={10000} animation="scaleUp" as="h1">
+              this library is a silent but powerful presence—quick to act, yet never overwhelming.
+            </TextAnimate>
+            <TextAnimate delay={10000} animation="scaleUp" as="h1">
+              It moves with purpose, light as a shadow, and as adaptable as the fox itself.
+            </TextAnimate>
+          </div>}
+        </motion.div>
+      </div>
 
       <div className="flex justify-center items-center lg:space-x-3 xs:space-x-1">
         <RainbowButton
@@ -135,13 +150,13 @@ export default function Home() {
               <div
                 className="flex size-8 items-center justify-center rounded-lg bg-yellow-300"
               >
-                <Image src="/logos/fox4.png" alt={`fox_logo`} width={20} height={20}/>
+                <Image src="/logos/fox4.png" alt={`fox_logo`} width={20} height={20} />
                 {/* <span className='text-lg'>🦊</span> */}
               </div>
           }
-          )} className="rounded-xl lg:px-5 xs:px-3 py-1.5 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
+        )} className="rounded-xl lg:px-5 xs:px-3 py-1.5 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-yellow-300 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-          <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25}/><span>Try it out Yourself</span></span>
+          <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25} /><span>Try it out Yourself</span></span>
         </button>
       </div>
 
@@ -168,7 +183,7 @@ export default function Home() {
       </div>
 
       <div ref={onScreenRef || undefined} className="mx-auto xs:px-4 lg:px-20 md:lg:px-12 sm:lg:px-12 py-5 lg:min-h-[630px]">
-      {onScreenVisible && <TypingAnimation
+        {onScreenVisible && <TypingAnimation
           className="text-4xl mb-4 mt-6 font-bold text-black dark:text-white"
           text="🚀 Toast It Your Way"
           duration={100}
