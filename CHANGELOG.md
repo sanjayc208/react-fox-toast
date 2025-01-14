@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.7...v1.7.0) (2025-01-14)
+
+
+### Features
+
+* enevelop type added in toast component ([29bb079](https://github.com/sanjayc208/react-fox-toast/commit/29bb0793ea39d73e4a7279298ac1c0af45d899a1))
+
 ## [1.6.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.6...v1.6.7) (2025-01-14)
 
 
