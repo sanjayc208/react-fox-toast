@@ -9,7 +9,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 export default function Customization() {
 
     return (
-        <Card id="customization-options">
+        <Card id="customization-options" className="xs:max-w-[95vw] md:max-w-full">
             <CardHeader>
                 <CardTitle>Customization Options</CardTitle>
                 <CardDescription>Available options for customizing toasts</CardDescription>

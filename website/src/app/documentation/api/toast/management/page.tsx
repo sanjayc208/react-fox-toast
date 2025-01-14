@@ -8,7 +8,7 @@ import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highligh
 export default function Management() {
 
     return (
-        <Card>
+        <Card className="xs:max-w-[95vw] md:max-w-full">
             <CardHeader>
                 <CardTitle>Toast Management</CardTitle>
                 <CardDescription>How to update, remove, fetch remainingTime, clear all toasts, and pause/resume toasts</CardDescription>

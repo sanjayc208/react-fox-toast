@@ -120,7 +120,7 @@ export default function AnimatedListDemo({
   return (
     <div
       className={cn(
-        "relative flex h-[500px] w-full flex-col p-4 overflow-hidden ",
+        "relative flex h-[550px] w-full flex-col p-4 overflow-hidden ",
         className,
       )}
     >

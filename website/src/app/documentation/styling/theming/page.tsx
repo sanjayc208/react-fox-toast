@@ -3,7 +3,7 @@ import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highligh
 
 export default function ThemingPage() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 xs:max-w-[95vw] md:max-w-full">
       <h1 className="mb-4 text-3xl font-bold">Theming</h1>
       <p className="text-lg text-muted-foreground">
         Learn how to customize the look and feel of your application using our theming system.

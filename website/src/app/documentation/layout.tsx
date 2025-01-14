@@ -26,13 +26,13 @@ export default function DocumentationLayout({
         <div>
           <Header />
           <div className="flex flex-row">
-          <main className="flex-1 overflow-y-auto lg:p-6 xs:p-2 sm:p-2">
+          <main className="flex-1 overflow-auto lg:p-6 xs:p-2 sm:p-2">
             {children}
           </main>
 
           {/* Right Sidebar, pushed below the header */}
           {isVisible && (
-            <aside className="lg:mt-4 mt-2">
+            <aside className="mt-2">
               <SidebarRight content={content} />
             </aside>
           )}

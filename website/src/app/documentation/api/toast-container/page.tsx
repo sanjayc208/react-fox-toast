@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components
 
 export default function ToastContainerPage() {
   return (
-    <div className="space-y-6">
+    <div className="xs:max-w-[95vw] md:max-w-full">
       <h1 className="text-3xl font-bold">ToastContainer Component Documentation</h1>
       <p className="text-lg text-muted-foreground">
         The ToastContainer component is used to create a global container for toasts in your React application.

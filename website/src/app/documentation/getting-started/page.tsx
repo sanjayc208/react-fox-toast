@@ -44,10 +44,13 @@ export default function GettingStartedPage() {
 
   return (
     <div className="grid gap-8">
+      <div>
       <h1 className="mb-4 text-3xl font-bold">Getting Started</h1>
       <p className="mb-6 text-lg text-muted-foreground">
         Welcome to our documentation. This page will help you get started with our library.
       </p>
+      </div>
+      
       <h2 className="mb-2 text-2xl font-semibold">Installation Steps Video</h2>
 
       <div className="flex flex-col sm:space-x-8">
@@ -81,7 +84,6 @@ export default function GettingStartedPage() {
       </div>
 
       <h2 className="mt-8 mb-2 text-2xl font-semibold">Installation Steps</h2>
-      <p className="mb-4">To get started, install our library using npm:</p>
       <GettingStarted />
     </div>
   )
