@@ -89,16 +89,33 @@ const ExpandedContent = styled('div')(
   `
 );
 
-const MessageContainer = styled('div')(
-  (props: any) => `
-    overflow: hidden;
-    ${props.fadeout === "true" ? `
-      height: 0; /* Gradually reduce the height to 0 */
-    ` : `
-      height: auto; /* Reset height when not fading out */
+const MessageContainer = styled('div')<{
+  fadeout: string;
+  type: string;
+}>`
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out;
+  ${({ type, fadeout }) =>
+    type === 'envelope' &&
+    `
+      max-height: ${fadeout === 'true' ? '0' : '500px'}; /* Adjust to your typical max height */
+      opacity: ${fadeout === 'true' ? '0' : '1'};
     `}
-  `
-);
+`;
+
+const IconContainer = styled('div')<{
+  fadeout: string;
+  type: string;
+}>`
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out;
+  ${({ type, fadeout }) =>
+    type === 'envelope' &&
+    `
+      max-height: ${fadeout === 'true' ? '0' : '500px'}; /* Adjust to your icon size */
+      opacity: ${fadeout === 'true' ? '0' : '1'};
+    `}
+`;
 
 const CloseButton = styled('button')(
   (props: any) => `
@@ -127,8 +144,6 @@ const CloseButton = styled('button')(
     }
   `
 );
-
-
 
 const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   id,
@@ -175,20 +190,20 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
     if (expandedContent) {
 
       // for only type tip
-      // if (type === 'tip') {
-      //   setFadeOutMessage(true);
+      if (type === 'envelope') {
+        setFadeOutMessage(true);
 
-      //   setTimeout(() => {
-      //     setIsExpanded(true);
-      //     onExpand(!isExpanded);
-      //   }, 150); // wait for smooth transition it will also work if removed
+        setTimeout(() => {
+          setIsExpanded(true);
+          onExpand(!isExpanded);
+        }, 150); // wait for smooth transition it will also work if removed
 
-      // } else {
+      } else {
 
       // for everything other than type 'tip'
       setIsExpanded((prev) => !prev);
       onExpand(!isExpanded);
-      // }
+      }
     }
   };
 
@@ -210,6 +225,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
     info: '#DBEAFE',
     custom: '#ffffff',
     warning: '#fff4b7',
+    tip: '#ffffff',
   };
 
   const toastFunctions = {
@@ -243,11 +259,12 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
       ) : (
         <FlexContainer>
           <FlexItems>
-            <div style={{ flexShrink: 0, ...iconStyle }}>
+            <IconContainer type={type} fadeout={fadeOutMessage.toString()} style={{ flexShrink: 0, ...iconStyle }}>
               {icon || defaultIcons[type]}
-            </div>
+            </IconContainer>
             <MessageContainer
-            // fadeout={fadeOutMessage.toString()}
+            type={type}
+            fadeout={fadeOutMessage.toString()}
             >
               {message}
             </MessageContainer>
