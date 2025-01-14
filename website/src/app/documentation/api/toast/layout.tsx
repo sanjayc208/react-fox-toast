@@ -121,16 +121,14 @@ export default function ToastAPILayout({
     }, []);
 
     return (
-
         <div className="space-y-6">
-
             <h1 className="text-3xl font-bold">toast() API Documentation</h1>
             <p className="text-lg text-muted-foreground">
                 The toast() API is used for creating various types of toast notifications in your React application.
             </p>
 
             <Tabs defaultValue="usage" value={activeTab} onValueChange={setActiveTab}>
-                <TabsList className="bg-white">
+                <TabsList className="xs:w-[95vw] md:w-fit overflow-x-auto items-center justify-start bg-white">
                 <Link href="usage">
                     <TabsTrigger
                         className="data-[state=active]:bg-defaultBase"

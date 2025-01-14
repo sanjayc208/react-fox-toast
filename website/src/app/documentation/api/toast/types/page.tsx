@@ -10,7 +10,7 @@ export default function Types() {
 
   return (
   <div className="space-y-3">
-    <Card id="success-toast">
+    <Card id="success-toast" className="xs:max-w-[95vw] md:max-w-full">
       <CardHeader>
         <CardTitle className="flex items-center">
           <CheckCircle className="mr-2 h-5 w-5 text-green-500" />
@@ -18,7 +18,7 @@ export default function Types() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+        <CustomSyntaxHighlighter className="border rounded-lg overflow-x-auto shadow-lg"
           tabs={{
             'jsx': {
               syntax: `toast.success("Operation Successful!");`,
@@ -28,7 +28,7 @@ export default function Types() {
         />
       </CardContent>
     </Card>
-    <Card id="error-toast">
+    <Card id="error-toast" className="xs:max-w-[95vw] md:max-w-full">
       <CardHeader>
         <CardTitle className="flex items-center">
           <CircleX color="#df2121" className="mr-2 h-5 w-5" />
@@ -36,7 +36,7 @@ export default function Types() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+        <CustomSyntaxHighlighter className="border rounded-lg overflow-x-auto shadow-lg"
           tabs={{
             'jsx': {
               syntax: `toast.error("Something went wrong!");`,
@@ -46,7 +46,7 @@ export default function Types() {
         />
       </CardContent>
     </Card>
-    <Card id="warning-toast">
+    <Card id="warning-toast" className="xs:max-w-[95vw] md:max-w-full">
       <CardHeader>
         <CardTitle className="flex items-center">
           <AlertCircle color='#FFA500' className="mr-2 h-5 w-5" />
@@ -64,7 +64,7 @@ export default function Types() {
         />
       </CardContent>
     </Card>
-    <Card id="info-toast">
+    <Card id="info-toast" className="xs:max-w-[95vw] md:max-w-full">
       <CardHeader>
         <CardTitle className="flex items-center">
           <Info className="mr-2 h-5 w-5 text-blue-500" />
@@ -72,7 +72,7 @@ export default function Types() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+        <CustomSyntaxHighlighter className="border rounded-lg overflow-x-auto shadow-lg"
           tabs={{
             'jsx': {
               syntax: `toast.info("This is some information.");`,
@@ -82,7 +82,7 @@ export default function Types() {
         />
       </CardContent>
     </Card>
-    <Card id="promise-toast">
+    <Card id="promise-toast" className="xs:max-w-[95vw] md:max-w-full">
       <CardHeader>
         <CardTitle className="flex items-center">
           <Clock className="mr-2 h-5 w-5 text-yellow-500" />
@@ -90,7 +90,7 @@ export default function Types() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+        <CustomSyntaxHighlighter className="border rounded-lg overflow-x-auto shadow-lg"
           tabs={{
             'jsx': {
               syntax: `toast.promise(
@@ -107,7 +107,7 @@ error: 'Failed to load data!',
         />
       </CardContent>
     </Card>
-    <Card id="custom-toast">
+    <Card id="custom-toast" className="xs:max-w-[95vw] md:max-w-full">
       <CardHeader>
         <CardTitle className="flex items-center">
           <Rocket className="mr-2 h-5 w-5 text-purple-500" />
@@ -115,7 +115,7 @@ error: 'Failed to load data!',
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <CustomSyntaxHighlighter className="w-full border rounded-lg overflow-x-auto shadow-lg"
+        <CustomSyntaxHighlighter className="border rounded-lg overflow-x-auto shadow-lg"
           tabs={{
             'jsx': {
               syntax: `toast('Customize toast here');
