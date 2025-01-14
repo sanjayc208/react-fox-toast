@@ -1,3 +1,11 @@
+## [1.6.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.6...v1.6.7) (2025-01-14)
+
+
+### Bug Fixes
+
+* added fox quote to desktop size  below logo ([069085d](https://github.com/sanjayc208/react-fox-toast/commit/069085da687e4f6dcf918231fefc011daa901aa7))
+* website changes made all pages responsive ([93aced0](https://github.com/sanjayc208/react-fox-toast/commit/93aced09b32c752d9a10ab473fcac7a02eb81cdf))
+
 ## [1.6.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.5...v1.6.6) (2025-01-13)
 
 
