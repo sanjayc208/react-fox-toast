@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.2...v1.7.3) (2025-01-15)
+
+
+### Bug Fixes
+
+* footer added instead of card ([e2d4916](https://github.com/sanjayc208/react-fox-toast/commit/e2d491683a5cd9a8132170dd6e74b916665398eb))
+
 ## [1.7.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.1...v1.7.2) (2025-01-15)
 
 
