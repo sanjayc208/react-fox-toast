@@ -199,7 +199,6 @@ export default function Home() {
 
       <div className="max-w-fit mx-auto my-4">
         <div className="flex flex-col lg:flex-row gap-4 items-center">
-          {/* <FeatureGrid /> */}
           <div className="xs:w-[22rem] xs:max-w-[22rem] lg:max-w-[400px] lg:min-w-[400px] p-3">
 
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">
@@ -230,13 +229,17 @@ export default function Home() {
         </div>
       </div>
 
-      <Card className="w-full mt-8 bg-[#e0e0d6] text-gray-800 border-t border-gray-300">
-        <CardContent className="flex items-center justify-center p-4">
+      {/* Avoid flickering issue when scrolled down with toast open */}
+      <div className="w-full py-2">
+      </div>
+
+      <footer className="w-full mt-8 bg-[#e0e0d6] text-gray-800 border-t border-gray-300">
+        <div className="flex items-center justify-center p-4">
           <p className="text-sm text-center">
             © {new Date().getFullYear()} <b>react-fox-toast</b> by <b>Sanjay Rajeev</b>. All rights reserved.
           </p>
-        </CardContent>
-      </Card>
+        </div>
+      </footer>
     </div>
   )
 }
