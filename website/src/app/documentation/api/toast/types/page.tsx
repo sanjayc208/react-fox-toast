@@ -128,6 +128,39 @@ toast.cusotm('Customize toast here');                   `,
         />
       </CardContent>
     </Card>
+    <Card id="envelope-toast" className="xs:max-w-[95vw] md:max-w-full">
+      <CardHeader>
+        <CardTitle className="flex items-center">
+          <Rocket className="mr-2 h-5 w-5 text-purple-500" />
+          Envelope Toast
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <CustomSyntaxHighlighter className="border rounded-lg overflow-x-auto shadow-lg"
+          tabs={{
+            'jsx': {
+              syntax: `toast.envelope(
+<>A new Message from 'John Mayer' 
+  <span className="text-xs text-blue-600">...open msg</span>
+</>,
+{
+  expandedContent: (
+    <div className="flex flex-col items-center p-4 mx-auto space-y-3 w-80">
+      <p className="text-lg font-semibold text-gray-700">
+      Message 1: Hello, How are you?</p>
+      <p className="text-lg font-semibold text-gray-700">
+      Message 2: Don't forget about the meeting tomorrow!</p>
+      <p className="text-lg font-semibold text-gray-700">
+      Message 3: Your package has been shipped.</p>
+    </div>)
+})
+`,
+              language: 'jsx'
+            }
+          }}
+        />
+      </CardContent>
+    </Card>
   </div>
   )
 }

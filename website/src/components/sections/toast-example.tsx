@@ -2,11 +2,12 @@
 import React, { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { toast } from "react-fox-toast"
-import { CheckCircle, Smile, Paintbrush, Clock, Expand, CircleX, Info, X, AlertCircle } from 'lucide-react'
+import { CheckCircle, Smile, Paintbrush, Clock, Expand, CircleX, Info, X, AlertCircle, MailOpen } from 'lucide-react'
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge"
 
 const positions = [
     "top-left",
@@ -107,6 +108,41 @@ const type = 'success' | 'error' | 'info' | 'custom'
 toast[type](<>Toast Bar with close Btn</>,${selectedPosition ? `{
   position: '${selectedPosition}',` : ''}
   isCloseBtn: true
+})
+`)
+    }
+
+    const showEnvelope = () => {
+        toast.envelope(
+            <>A new Message from 'John Mayer' 
+                <span className="text-xs text-blue-600">...open msg</span>
+            </>,
+            { 
+                expandedContent: (
+                <div className="flex flex-col items-center p-2 mx-auto space-y-3">
+                    <p className="text-lg font-semibold text-gray-700">Message: Hello, How are you?</p>
+                    <input type="text" placeholder="Add Message here.." 
+                        className="px-4 py-1.5 border border-gray-300 rounded-lg shadow-sm w-full" />
+                    <button className="px-6 py-2 bg-black text-white rounded-lg focus:ring-opacity-50">
+                        Reply
+                    </button>
+                </div>
+                ),
+                position: selectedPosition ? selectedPosition : undefined
+            }
+        )
+        setCodeSyntax(`toast.envelope(<>A new Message from 'John Mayer' <span className="text-xs text-blue-600">...open msg</span></>,
+{${selectedPosition ? `
+  position: '${selectedPosition}',` : ''}
+  expandedContent: (
+    <div className="flex flex-col items-center p-2 mx-auto space-y-3">
+        <p className="text-lg font-semibold text-gray-700">Message: Hello, How are you?</p>
+        <input type="text" placeholder="Add Message here.." 
+            className="px-4 py-2 border border-gray-300 rounded-lg shadow-sm w-full" />
+        <button className="px-6 py-2 bg-black text-white rounded-lg focus:ring-opacity-50">
+            Reply
+        </button>
+    </div>)
 })
 `)
     }
@@ -212,7 +248,7 @@ toast.success('Success data with Tailwind Css',{
 
             {/* Example List */}
             <div className="flex flex-col lg:flex-row gap-8 p-6 xs:px-4 lg:px-20 md:lg:px-12 sm:lg:px-12 ">
-                <div className="grid grid-cols-2 gap-4 flex-none lg:w-1/2 lg:max-h-[200px]">
+                <div className="grid grid-cols-2 gap-4 flex-none lg:w-[45%] lg:max-h-[200px]">
                     <Button className="bg-white text-black hover:bg-gray-100" onClick={showSuccess}>
                         <CheckCircle color='#159d12' />Success</Button>
                     <Button className="bg-white text-black hover:bg-gray-100" onClick={showError}>
@@ -235,6 +271,14 @@ toast.success('Success data with Tailwind Css',{
 
                     <Button className="bg-white text-black hover:bg-gray-100" onClick={showDefaultClostButton}>
                         <X />Close Button</Button>
+                    <Button className="bg-white text-black hover:bg-gray-100 relative" onClick={showEnvelope}>
+                        <MailOpen /> Envelope 
+                        <Badge
+                            variant="outline"
+                            className="bg-red-600 px-1.5 text-white absolute top-0 right-2 transform translate-x-1/2 -translate-y-1/2 rounded-lg"
+                        > New 
+                        </Badge>
+                    </Button>  
                 </div>
                 <CustomSyntaxHighlighter
                 //  language='JSX' 

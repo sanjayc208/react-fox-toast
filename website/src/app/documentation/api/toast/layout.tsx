@@ -68,6 +68,10 @@ export default function ToastAPILayout({
                 {
                     "url": "/documentation/api/toast/types#custom-toast",
                     "title": "Custom Toast"
+                },
+                {
+                    "url": "/documentation/api/toast/types#envelope-toast",
+                    "title": "Envelope Toast"
                 }]
             },
             {
