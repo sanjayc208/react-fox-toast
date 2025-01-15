@@ -65,7 +65,17 @@ const data = {
           url: "/documentation/styling/theming",
         }
       ],
-    }
+    },
+    // {
+    //   title: "What's New",
+    //   url: "#",
+    //   items: [
+    //     {
+    //       title: "Envelope Toast",
+    //       url: "/documentation/new/envelope-toast",
+    //     }
+    //   ],
+    // }
   ],
 }
 
@@ -107,7 +117,7 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-semibold">react-fox-toast</span>
-                  <span className="">v1.5.13</span>
+                  <span className="">v1.7.0</span>
                 </div>
               </a>
             </SidebarMenuButton>
