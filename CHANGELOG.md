@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.0...v1.7.1) (2025-01-15)
+
+
+### Bug Fixes
+
+* website changes added enevlope documentation ([ca69207](https://github.com/sanjayc208/react-fox-toast/commit/ca69207b617a32841488b10875418854ef6f6059))
+
 # [1.7.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.6.7...v1.7.0) (2025-01-14)
 
 
