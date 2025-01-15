@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/sidebar"
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator"
+import { Badge } from "@/components/ui/badge"
 
 // This is sample data.
 const data = {
@@ -66,16 +67,16 @@ const data = {
         }
       ],
     },
-    // {
-    //   title: "What's New",
-    //   url: "#",
-    //   items: [
-    //     {
-    //       title: "Envelope Toast",
-    //       url: "/documentation/new/envelope-toast",
-    //     }
-    //   ],
-    // }
+    {
+      title: "What's New!",
+      url: "#",
+      items: [
+        {
+          title: "Envelope Toast",
+          url: "/documentation/new/envelope-toast",
+        }
+      ],
+    }
   ],
 }
 
@@ -132,7 +133,13 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
-                  <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
+                  <SidebarGroupLabel>{item.title}
+                    {item.title === `What's New!` && <Badge
+                      variant="outline"
+                      className="bg-red-600 px-1.5 text-white right-5 absolute rounded-lg"
+                    > New
+                    </Badge>}
+                  </SidebarGroupLabel>
                 </SidebarMenuButton>
                 {item.items?.length ? (
                   <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
