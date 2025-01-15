@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
 
 export default function EnvelopeToastPage() {
   return (
@@ -10,16 +11,11 @@ export default function EnvelopeToastPage() {
       </p>
 
       {/* Video Section - Placed at the top */}
-      <div className="w-full aspect-w-16 aspect-h-9 mb-6">
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/your_video_id?autoplay=1&controls=0&mute=1"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="rounded-lg"
-        ></iframe>
+      <div className="sm:w-[70%] xs:w-full justify-self-center aspect-w-16 aspect-h-9 mb-6">
+        <video className="rounded-lg" autoPlay loop muted playsInline style={{ pointerEvents: "none" }}>
+            <source src="/instructions/toast-envelope/video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
       </div>
 
       <Card>
@@ -42,9 +38,10 @@ export default function EnvelopeToastPage() {
             Below is an example code snippet demonstrating how to use the Envelope Toast in your application:
           </p>
 
-          <pre className="bg-gray-800 text-white p-4 rounded-lg overflow-x-auto">
-            <code className="text-sm">
-              {`toast.envelope(<>A new Message from 'John Mayer' <span className="text-xs text-blue-600">...open msg</span></>, {
+          <CustomSyntaxHighlighter
+                tabs={{
+                    'jsx': {
+                      syntax: `toast.envelope(<>A new Message from 'John Mayer' <span className="text-xs text-blue-600">...open msg</span></>, {
   expandedContent: (
     <div className="flex flex-col items-center p-2 mx-auto space-y-3">
         <p className="text-lg font-semibold text-gray-700">Message: Hello, How are you?</p>
@@ -54,10 +51,11 @@ export default function EnvelopeToastPage() {
             Reply
         </button>
     </div>)
-})`}
-            </code>
-          </pre>
-
+})`,
+                      language: 'jsx'
+                    }
+                  }}
+                />
           <h3 className="font-semibold text-lg text-gray-800">Why Use Envelope Toast?</h3>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
             <li><strong>Organize complex messages:</strong> Use Envelope Toast to hide or reveal additional details, making your notifications cleaner and more user-friendly.</li>
