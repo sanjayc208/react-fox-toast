@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.1...v1.7.2) (2025-01-15)
+
+
+### Bug Fixes
+
+* Added new page for What's new ([06147c1](https://github.com/sanjayc208/react-fox-toast/commit/06147c1d0e9a2f3ffbd61cea18a05d2f020d8e8d))
+
 ## [1.7.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.0...v1.7.1) (2025-01-15)
 
 
