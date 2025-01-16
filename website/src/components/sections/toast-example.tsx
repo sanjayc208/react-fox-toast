@@ -118,7 +118,6 @@ toast[type](<>Toast Bar with close Btn</>,${selectedPosition ? `{
                 <span className="text-xs text-blue-600">...open msg</span>
             </>,
             { 
-                duration: 6000,
                 expandedContent: (
                 <div className="flex flex-col items-center p-2 mx-auto space-y-3">
                     <p className="text-lg font-semibold text-gray-700">Message: Hello, How are you?</p>
