@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/ui/animated-list";
-import { Paintbrush, Expand, Pause, Feather, User, CircleX } from 'lucide-react'
+import { Paintbrush, Expand, Pause, Feather, User, CircleX, MailOpen } from 'lucide-react'
 
 interface Item {
   name: string;
@@ -52,6 +52,12 @@ let notifications = [
     // description: "Magic UI",
     icon: <Expand />, //"🗞️",
     color: "#8ce3f9" //"#1E86FF",
+  },
+  {
+    name: "Envelope",
+    // description: "Magic UI",
+    icon: <MailOpen color="#FFFFFF"/>, //"🗞️",
+    color: "#FF5733" //"#1E86FF",
   },
   {
     name: "Custom Class / Style support",
