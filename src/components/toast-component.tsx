@@ -39,8 +39,12 @@ const ToastContainer = styled('div')(
     return `
         will-change: transform;
         animation: ${isclosing === "false" ? fadeIn(position) : fadeOut(position)} 0.35s ease-in-out;
-        max-width: 400px;
         direction: ${direction};
+
+        /* Mobile view (80vw) */
+        @media (max-width: 768px) {
+          max-width: 80vw; /* For mobile devices */
+        }
         ${style}
       `;
   }
@@ -181,6 +185,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
       border-radius: 0.5rem;
       background-color: ${backgroundColors[type] || backgroundColors.custom};
       color : black;
+      max-width: 50vw;
       `)
 
   }, [type]);
