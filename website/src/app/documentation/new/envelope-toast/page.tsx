@@ -41,7 +41,9 @@ export default function EnvelopeToastPage() {
           <CustomSyntaxHighlighter
                 tabs={{
                     'jsx': {
-                      syntax: `toast.envelope(<>A new Message from 'John Mayer' <span className="text-xs text-blue-600">...open msg</span></>, {
+                      syntax: `toast.envelope(
+  <>A new Message from 'John Mayer' 
+    <span className="text-xs text-blue-600">...open msg</span></>, {
   expandedContent: (
     <div className="flex flex-col items-center p-2 mx-auto space-y-3">
         <p className="text-lg font-semibold text-gray-700">Message: Hello, How are you?</p>
