@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.3...v1.7.4) (2025-01-16)
+
+
+### Bug Fixes
+
+* remove duration from toast.envelope ([f0d8a0e](https://github.com/sanjayc208/react-fox-toast/commit/f0d8a0e554c53519bf0e4d31f1c7b08e14cc2f52))
+
 ## [1.7.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.2...v1.7.3) (2025-01-15)
 
 
