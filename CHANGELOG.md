@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.4...v1.7.5) (2025-01-16)
+
+
+### Bug Fixes
+
+* maxwidth changes for both desktop and mobile view ([b9aa7f2](https://github.com/sanjayc208/react-fox-toast/commit/b9aa7f250fb8b2183faee5f28736de358616b610))
+
 ## [1.7.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.3...v1.7.4) (2025-01-16)
 
 
