@@ -1,3 +1,10 @@
+## [1.7.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.5...v1.7.6) (2025-01-16)
+
+
+### Bug Fixes
+
+* updated latest eft version and added envelope to feature-list ([751e0cc](https://github.com/sanjayc208/react-fox-toast/commit/751e0cc97f5ce54033c677cdac060e97b578d23e))
+
 ## [1.7.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.4...v1.7.5) (2025-01-16)
 
 
