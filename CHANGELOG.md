@@ -1,3 +1,11 @@
+## [1.7.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.6...v1.7.7) (2025-01-17)
+
+
+### Bug Fixes
+
+* if there is active quick link selected the text will be bold ([20ea3fe](https://github.com/sanjayc208/react-fox-toast/commit/20ea3fe852704bd6bba9e04dc549cdf1aa024cc2))
+* if there is active quick link selected the text will be bold ([f9976a8](https://github.com/sanjayc208/react-fox-toast/commit/f9976a825068ee8f3382b073cc298e88778a0eaf))
+
 ## [1.7.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.5...v1.7.6) (2025-01-16)
 
 
