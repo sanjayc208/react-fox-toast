@@ -11,12 +11,14 @@ export default function EnvelopeToastPage() {
       </p>
 
       {/* Video Section - Placed at the top */}
-      <div className="sm:w-[70%] xs:w-full justify-self-center aspect-w-16 aspect-h-9 mb-6">
-        <video className="rounded-lg" autoPlay loop muted playsInline style={{ pointerEvents: "none" }}>
-            <source src="/instructions/toast-envelope/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-      </div>
+      <Card className="p-4">
+        <div className="sm:w-[70%] xs:w-full justify-self-center aspect-w-16 aspect-h-9">
+          <video className="rounded-lg" autoPlay loop muted playsInline style={{ pointerEvents: "none" }}>
+              <source src="/instructions/toast-envelope/video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
+        </div>
+      </Card>
 
       <Card>
         <CardHeader>
