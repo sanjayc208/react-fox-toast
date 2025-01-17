@@ -1,3 +1,10 @@
+## [1.7.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.7...v1.7.8) (2025-01-17)
+
+
+### Bug Fixes
+
+* Card added on above for envelope video in doc ([89e7392](https://github.com/sanjayc208/react-fox-toast/commit/89e739297faefe56db897a5ab74d65dac880e077))
+
 ## [1.7.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.6...v1.7.7) (2025-01-17)
 
 
