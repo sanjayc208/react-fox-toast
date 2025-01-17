@@ -85,7 +85,7 @@ export function SidebarRight({
                             {/* OnClick to handle active state and hash update */}
                           <button
                             onClick={() => handleItemClick(item.url)}
-                            className={`text-blue-600 hover:text-blue-800 w-full text-left ${onActive(activeHash, item) ? 'bg-blue-950 font-bold' : ''}`}
+                            className={`text-blue-600 hover:text-blue-800 w-full text-left ${onActive(activeHash, item) ? 'bg-blue-950 font-semibold' : ''}`}
                           >
                             {item.title}
                           </button>
