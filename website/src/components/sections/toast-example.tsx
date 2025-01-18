@@ -271,7 +271,7 @@ toast.success('Success data with Tailwind Css',{
 
                     <Button className="bg-white text-black hover:bg-gray-100" onClick={showDefaultClostButton}>
                         <X />Close Button</Button>
-                    <Button className="bg-white text-black hover:bg-gray-100 relative" onClick={showEnvelope}>
+                    <Button className="bg-white text-black col-span-2 hover:bg-gray-100 relative" onClick={showEnvelope}>
                         <MailOpen /> Envelope 
                         <Badge
                             variant="outline"
