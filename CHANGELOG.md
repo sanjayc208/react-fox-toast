@@ -1,3 +1,10 @@
+## [1.7.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.8...v1.7.9) (2025-01-18)
+
+
+### Bug Fixes
+
+* envelope button fills the width in home page toast examples ([2b1cf40](https://github.com/sanjayc208/react-fox-toast/commit/2b1cf406e2616bd534223accec9c8bc57c5d24fb))
+
 ## [1.7.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.7...v1.7.8) (2025-01-17)
 
 
