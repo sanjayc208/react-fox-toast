@@ -21,6 +21,7 @@ export interface Toast {
   isPaused?: boolean; // To track if the toast timer is paused
   isPausedOnHover?: boolean; // Optional prop to disable hover pause functionality
   onDismiss?: (id: string, message: React.ReactNode) => void; // Callback triggered on dismiss
+  onExpandContent?: (id: string, message: React.ReactNode) => void; // Callback triggered on dismiss
 }
 
 const toastSubscribers: Array<(toasts: Toast[]) => void> = [];
@@ -86,6 +87,15 @@ const startToastTimer = (id: string, duration: number) => {
     notifySubscribers();
   }
 };
+
+export const onExpandToast = (id:string) => {
+  //findinf the details of taost with the id
+  const toast = toastList.find((t) => t.id === id);
+  //if onDimiss callback is sent then return callback with toast data
+  if (toast?.onExpandContent) {
+    toast.onExpandContent(toast.id, toast.message); // Invoke the onDismiss callback
+  }
+}
 
 export const removeToast = (id: string) => {
   //findinf the details of taost with the id

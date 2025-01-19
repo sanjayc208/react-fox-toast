@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type ToastType = 'success' | 'error' | 'info' | 'custom' | 'promise' | 'warning' | 'envelope';
+export type ToastType = 'success' | 'error' | 'info' | 'custom' | 'promise' | 'warning' | 'envelope' | 'zip';
 
 export type ToastPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 
