@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.9...v1.8.0) (2025-01-19)
+
+
+### Features
+
+* onExpandToast will be triggered once the toast is expanded ([91ba1f5](https://github.com/sanjayc208/react-fox-toast/commit/91ba1f5eba68157051811807c5d5538ce1c3cfce))
+
 ## [1.7.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.8...v1.7.9) (2025-01-18)
 
 
