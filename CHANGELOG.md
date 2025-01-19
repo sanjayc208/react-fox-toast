@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.0...v1.8.1) (2025-01-19)
+
+
+### Bug Fixes
+
+* added onExpandToast callback use in documentaion ([58e5eb5](https://github.com/sanjayc208/react-fox-toast/commit/58e5eb56910007fb5f82ee862fde67362d725d62))
+
 # [1.8.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.7.9...v1.8.0) (2025-01-19)
 
 
