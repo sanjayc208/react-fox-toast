@@ -213,6 +213,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
       //     setFadeOutMessage(!isExpanded);
       //   }
       } else {
+        if(!isExpanded) onExpandToast(id)
         setIsExpanded((prev) => !prev);
         onExpand(!isExpanded);
       }
