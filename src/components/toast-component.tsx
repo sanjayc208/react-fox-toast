@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ToastProps } from './types';
 import { defaultIcons } from './default-icons';
-import { removeToast, updateToast, removeAllToast, pauseToastTimer, resumeToastTimer } from './toast-store';
+import { removeToast, updateToast, removeAllToast, pauseToastTimer, resumeToastTimer, onExpandToast } from './toast-store';
 import { styled, keyframes } from 'goober';
 
 // Enter Animation (Zoom out to Zoom in)
@@ -100,7 +100,7 @@ const MessageContainer = styled('div')<{
   overflow: hidden;
   transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out;
   ${({ type, fadeout }) =>
-    type === 'envelope' &&
+    (type === 'envelope' || type === 'zip') &&
     `
       max-height: ${fadeout === 'true' ? '0' : '500px'}; /* Adjust to your typical max height */
       opacity: ${fadeout === 'true' ? '0' : '1'};
@@ -114,7 +114,7 @@ const IconContainer = styled('div')<{
   overflow: hidden;
   transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out;
   ${({ type, fadeout }) =>
-    type === 'envelope' &&
+    (type === 'envelope' || type === 'zip') &&
     `
       max-height: ${fadeout === 'true' ? '0' : '500px'}; /* Adjust to your icon size */
       opacity: ${fadeout === 'true' ? '0' : '1'};
@@ -193,21 +193,28 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   const handleClick = (e: any) => {
     if (e.target.closest("button") || e.target.closest("[data-action]")) return;
     if (expandedContent) {
-
-      // for only type tip
       if (type === 'envelope') {
         setFadeOutMessage(true);
-
         setTimeout(() => {
           setIsExpanded(true);
           onExpand(!isExpanded);
-        }, 150); // wait for smooth transition it will also work if removed
-
+        }, 150);
+        if(!isExpanded) onExpandToast(id) // Trigger onExpandToast Function
+      // } else if (type === 'zip') {
+      //   if (!isExpanded) {
+      //     setFadeOutMessage((prev) => !prev);
+      //     setTimeout(() => {
+      //       setIsExpanded((prev) => !prev);
+      //       onExpand(!isExpanded);
+      //     }, 150);
+      //   } else {
+      //     setIsExpanded((prev) => !prev);
+      //     onExpand(!isExpanded);
+      //     setFadeOutMessage(!isExpanded);
+      //   }
       } else {
-
-      // for everything other than type 'tip'
-      setIsExpanded((prev) => !prev);
-      onExpand(!isExpanded);
+        setIsExpanded((prev) => !prev);
+        onExpand(!isExpanded);
       }
     }
   };
