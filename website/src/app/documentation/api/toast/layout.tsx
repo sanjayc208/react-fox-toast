@@ -112,6 +112,10 @@ export default function ToastAPILayout({
             {
                 "url": "/documentation/api/toast/management#on-dismiss-callback",
                 "title": "onDismiss Callback"
+            },
+            {
+                "url": "/documentation/api/toast/management#on-expand-callback",
+                "title": "onExpandContent Callback"
             }
         ]}]);
 

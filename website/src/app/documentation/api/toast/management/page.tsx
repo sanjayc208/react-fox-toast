@@ -246,60 +246,41 @@ const toastId2 = toast.error("Error Toast", {
                 </div>
 
                 <Separator />
-                {/* Using the `onExpandToast` Callback */}
-                <div id="on-expand-toast-callback">
-                    <h3 className="text-lg font-semibold mb-2">Using the `onExpandToast` Callback</h3>
+                {/* Using the `onExpandContent` Callback */}
+                <div id="on-expand-callback">
+                    <h3 className="text-lg font-semibold mb-2">Using the `onExpandContent` Callback</h3>
                     <p className="mb-2">
-                        You can provide an <code>onExpandToast</code> callback function when creating a toast. This function will be triggered when the toast is expanded (e.g., the user clicks to view more details). This can be useful if you want to track when a user interacts with a toast or dynamically update the content of the toast upon expansion.
+                        You can provide an <code>onExpandContent</code> callback function when creating a toast. This function will be triggered when the content of the toast is expanded (e.g., the user clicks to view more details). This can be useful for tracking the expansion event, such as logging or analytics, as it shows which toast was expanded.
                     </p>
-
-                    <CustomSyntaxHighlighter
-                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                        tabs={{
-                            'jsx': {
-                                syntax: `const toastId = toast(
-<>Custom JSX component with expandable content</>,
-{
-    onExpandToast: (id) => {
-        console.log('Toast expanded:', id);
-    },
-}
-);`,
-                                language: 'jsx'
-                            }
-                        }}
-                    />
                     <p className="mb-2">
-                        The <code>onExpandToast</code> callback accepts one parameter:
+                        The <code>onExpandContent</code> callback accepts two parameters:
                     </p>
                     <ul className="list-disc list-inside mb-4">
-                        <li><code>id</code>: The ID of the expanded toast. This is useful for tracking which toast was expanded or performing specific actions related to the expansion.</li>
-                    </ul>
+                        <li><code>id</code>: The ID of the expanded toast. This can be helpful for tracking which specific toast was expanded.</li>
+                        <li><code>message</code>: The message content of the toast. If the message is a string, it will be passed directly. If the message is a <code>React.node</code> (i.e., JSX), you can access the content via the <code>children</code> prop.</li>
+                        </ul>
 
                     <p className="mb-2">
-                        Here's an example of using multiple toasts with individual expand handling:
+                        Here's an example of using the <code>onExpandContent</code> callback:
                     </p>
 
                     <CustomSyntaxHighlighter
                         className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
                         tabs={{
                             'jsx': {
-                                syntax: `const toastId1 = toast.success("Success Toast", {
-    onExpandToast: (id) => console.log("First toast expanded:", id),
-});
-
-const toastId2 = toast.error("Error Toast", {
-    onExpandToast: (id) => console.log("Second toast expanded:", id),
+                                syntax: `const toastId = toast.success("Success Toast", {
+  onExpandContent: (id, message) => {
+    console.log('Toast expanded:', id, message);
+  },
 });`,
                                 language: 'jsx'
                             }
                         }}
                     />
                     <p className="mb-2">
-                        In this example, each toast has its own <code>onExpandToast</code> handler that logs the ID of the expanded toast.
+                        In this example, when the toast is expanded, the <code>onExpandContent</code> handler logs the ID and the message of the expanded toast.
                     </p>
                 </div>
-
             </CardContent>
         </Card>
     )
