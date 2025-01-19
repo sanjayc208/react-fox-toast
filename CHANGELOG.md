@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.1...v1.8.2) (2025-01-19)
+
+
+### Bug Fixes
+
+* documentation changes for onExpandContent ([e6cde85](https://github.com/sanjayc208/react-fox-toast/commit/e6cde8573c80d7cc175f18d04ddfdb2c7664d476))
+
 ## [1.8.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.0...v1.8.1) (2025-01-19)
 
 
