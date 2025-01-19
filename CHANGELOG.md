@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.2...v1.8.3) (2025-01-19)
+
+
+### Bug Fixes
+
+* changed flex to grid for try and get started button ([40b0a08](https://github.com/sanjayc208/react-fox-toast/commit/40b0a08b052c3363b38d0a636f0e0f17b5d260aa))
+
 ## [1.8.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.1...v1.8.2) (2025-01-19)
 
 
