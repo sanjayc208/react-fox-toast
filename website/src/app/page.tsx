@@ -131,55 +131,72 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="flex justify-center items-center lg:space-x-3 xs:space-x-1">
+      <div className="grid grid-cols-2 xs:gap-2 sm:gap-5 items-center">
         <RainbowButton
-          onClick={() => router.push('/documentation/getting-started')}//window.open("https://github.com/sanjayc208/react-fox-toast", "_blank")}
-          className="lg:pl-5 lg:pr-3 xs:px-2"
+          onClick={() => router.push('/documentation/getting-started')}
+          className="py-1 lg:pl-5 lg:pr-3 xs:px-2 justify-self-end"
         >
           <div className="flex justify-center items-center space-x-1">
             <span>Getting Started</span>
             <ArrowRight />
           </div>
         </RainbowButton>
-        <div>
-        </div>
-        <button onClick={() => toast(<>Custom JSX component</>,
-          {
-            position: 'top-center',
-            icon:
-              <div
-                className="flex size-8 items-center justify-center rounded-lg bg-yellow-300"
-              >
-                <Image src="/logos/fox4.png" alt={`fox_logo`} width={20} height={20} />
-                {/* <span className='text-lg'>🦊</span> */}
-              </div>
+        <button
+          onClick={() =>
+            toast(
+              <>
+                Custom JSX componentCustom
+              </>,
+              {
+                position: 'top-center',
+                icon: (
+                  <div className="flex size-8 items-center justify-center rounded-lg bg-yellow-300">
+                    <Image src="/logos/fox4.png" alt={`fox_logo`} width={20} height={20} />
+                  </div>
+                )
+              }
+            )
           }
-        )} className="rounded-xl lg:px-5 xs:px-3 py-1.5 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black text-white">
+          className="rounded-xl sm:px-5 xs:px-3 py-1 overflow-hidden relative group cursor-pointer border-2 font-medium bg-white shadow-sm text-black justify-self-start">
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-yellow-300 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-          <span className="relative text-black transition duration-300 group-hover:text-yellow-800 ease inline-flex items-center space-x-2"><Image src="/logos/fox4.png" alt={`fox_logo`} width={25} height={25} /><span>Try it out Yourself</span></span>
+          <span className="grid grid-cols-5 py-1 xs:gap-1 sm:gap-2 relative text-black transition duration-300 group-hover:text-yellow-800 ease items-center justify-center">
+            <Image className="col-span-1" src="/logos/fox4.png" alt="fox_logo" width={25} height={25} />
+            <span className="col-span-4" >{isMobile ? "Try it Yourself" : "Try it out Yourself"}</span>
+          </span>
         </button>
       </div>
-
-      <div className="z-10 flex min-h-20 items-center justify-center">
-        <div className="cursor-pointer" onClick={() => window.open("https://github.com/sanjayc208/react-fox-toast", "_blank")}>
+      <div className="z-10 grid grid-cols-1 gap-2 min-h-20 items-center justify-center">
+        <div
+          className="cursor-pointer col-span-1 flex items-center justify-self-center"
+          onClick={() => window.open("https://github.com/sanjayc208/react-fox-toast", "_blank")}
+        >
           <AnimatedGradientText>
-            {/* 🎉 */}
             <Image
               src={'/static/github-mark.svg'}
               alt="Icon"
               width={20}
               height={20}
             />
-            <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
+            <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
             <span
               className={cn(
-                `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+                `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
               )}
             >
               Github
             </span>
           </AnimatedGradientText>
         </div>
+
+        {/* <div className="col-span-1 flex justify-self-start">
+          <button onClick={() => window.open("https://www.buymeacoffee.com/sanjayc208", "_blank")}>
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+              alt="Buy Me A Coffee"
+              width="150"
+            />
+          </button>
+        </div> */}
       </div>
 
       <div ref={onScreenRef || undefined} className="mx-auto xs:px-4 lg:px-20 md:lg:px-12 sm:lg:px-12 py-5 lg:min-h-[630px]">

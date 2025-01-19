@@ -167,6 +167,14 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
       {/* Sidebar Footer Content */}
       <SidebarFooter >
+        <div className="self-center sm:max-w-36 xs:max-w-40">
+          <button onClick={() => window.open("https://www.buymeacoffee.com/sanjayc208", "_blank")}>
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+              alt="Buy Me A Coffee"
+            />
+          </button>
+        </div>
         <SidebarMenuButton
           size="lg"
           className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
