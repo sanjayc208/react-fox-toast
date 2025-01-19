@@ -4,6 +4,7 @@ import React from "react"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
+import { Separator } from "@/components/ui/separator"
 
 export default function Management() {
 
@@ -13,7 +14,7 @@ export default function Management() {
                 <CardTitle>Toast Management</CardTitle>
                 <CardDescription>How to update, remove, fetch remainingTime, clear all toasts, and pause/resume toasts</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-4">
                 <div id="updating-toasts">
                     <h3 className="text-lg font-semibold mb-2">Updating Toasts</h3>
                     <p className="mb-2">
@@ -44,6 +45,8 @@ toast.update(toastId, {
                         <li><code>updates</code>: An object with new properties for the toast</li>
                     </ul>
                 </div>
+                
+                <Separator />
                 {/* Removing Toasts */}
                 <div id="removing-toasts">
                     <h3 className="text-lg font-semibold mb-2">Removing Toasts</h3>
@@ -70,6 +73,7 @@ toast.remove(toastId);`,
                     </ul>
                 </div>
 
+                <Separator />
                 {/* Clearing All Toasts */}
                 <div id="clearing-toasts">
                     <h3 className="text-lg font-semibold mb-2">Clearing All Toasts</h3>
@@ -88,6 +92,7 @@ toast.removeAll();`,
                     />
                 </div>
 
+                <Separator />
                 {/* Getting Remaining Time */}
                 <div id="remaining-time">
                     <h3 className="text-lg font-semibold mb-2">Getting Remaining Time for a Toast</h3>
@@ -115,6 +120,8 @@ console.log('Remaining time in milliseconds:',remainingTime)`,
                         <li><code>id</code>: The ID of the toast whose remaining time you want to check</li>
                     </ul>
                 </div>
+
+                <Separator />
                 {/* Pausing and Resuming Toasts */}
                 <div id="pausing-resuming">
                     <h3 className="text-lg font-semibold mb-2">Pausing and Resuming Toasts</h3>
@@ -182,6 +189,7 @@ export default ToastComponent;`,
                     </ul>
                 </div>
 
+                <Separator />
                 {/* Using the `onDismiss` Callback */}
                 <div id="on-dismiss-callback">
                     <h3 className="text-lg font-semibold mb-2">Using the `onDismiss` Callback</h3>
@@ -236,6 +244,62 @@ const toastId2 = toast.error("Error Toast", {
                         In this example, each toast has its own `onDismiss` handler that logs the ID of the dismissed toast.
                     </p>
                 </div>
+
+                <Separator />
+                {/* Using the `onExpandToast` Callback */}
+                <div id="on-expand-toast-callback">
+                    <h3 className="text-lg font-semibold mb-2">Using the `onExpandToast` Callback</h3>
+                    <p className="mb-2">
+                        You can provide an <code>onExpandToast</code> callback function when creating a toast. This function will be triggered when the toast is expanded (e.g., the user clicks to view more details). This can be useful if you want to track when a user interacts with a toast or dynamically update the content of the toast upon expansion.
+                    </p>
+
+                    <CustomSyntaxHighlighter
+                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+                        tabs={{
+                            'jsx': {
+                                syntax: `const toastId = toast(
+<>Custom JSX component with expandable content</>,
+{
+    onExpandToast: (id) => {
+        console.log('Toast expanded:', id);
+    },
+}
+);`,
+                                language: 'jsx'
+                            }
+                        }}
+                    />
+                    <p className="mb-2">
+                        The <code>onExpandToast</code> callback accepts one parameter:
+                    </p>
+                    <ul className="list-disc list-inside mb-4">
+                        <li><code>id</code>: The ID of the expanded toast. This is useful for tracking which toast was expanded or performing specific actions related to the expansion.</li>
+                    </ul>
+
+                    <p className="mb-2">
+                        Here's an example of using multiple toasts with individual expand handling:
+                    </p>
+
+                    <CustomSyntaxHighlighter
+                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+                        tabs={{
+                            'jsx': {
+                                syntax: `const toastId1 = toast.success("Success Toast", {
+    onExpandToast: (id) => console.log("First toast expanded:", id),
+});
+
+const toastId2 = toast.error("Error Toast", {
+    onExpandToast: (id) => console.log("Second toast expanded:", id),
+});`,
+                                language: 'jsx'
+                            }
+                        }}
+                    />
+                    <p className="mb-2">
+                        In this example, each toast has its own <code>onExpandToast</code> handler that logs the ID of the expanded toast.
+                    </p>
+                </div>
+
             </CardContent>
         </Card>
     )

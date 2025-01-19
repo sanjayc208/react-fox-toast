@@ -111,7 +111,7 @@ export default function ToastAPILayout({
             },
             {
                 "url": "/documentation/api/toast/management#on-dismiss-callback",
-                "title": "Using the onDismiss Callback"
+                "title": "onDismiss Callback"
             }
         ]}]);
 
