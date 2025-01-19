@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.3...v1.8.4) (2025-01-19)
+
+
+### Bug Fixes
+
+* even custom will now have onExapndContent callback and only will happen on open ([b1a4a68](https://github.com/sanjayc208/react-fox-toast/commit/b1a4a68afd33cf7fac56f53ea30c3eb9b9bf1aff))
+
 ## [1.8.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.2...v1.8.3) (2025-01-19)
 
 
