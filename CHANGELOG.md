@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.5...v1.8.6) (2025-01-20)
+
+
+### Bug Fixes
+
+* added github link to the header for doc ([083b99f](https://github.com/sanjayc208/react-fox-toast/commit/083b99f9c68cbe0fb503b29da9ef54c5e372ec49))
+
 ## [1.8.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.4...v1.8.5) (2025-01-20)
 
 
