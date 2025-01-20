@@ -134,7 +134,7 @@ export default function Home() {
       <div className="grid grid-cols-2 xs:gap-2 sm:gap-5 items-center">
         <RainbowButton
           onClick={() => router.push('/documentation/getting-started')}
-          className="py-1 lg:pl-5 lg:pr-3 xs:px-2 justify-self-end"
+          className="py-1 lg:pl-5 lg:pr-3 xs:pl-4 xs:pr-2 justify-self-end"
         >
           <div className="flex justify-center items-center space-x-1">
             <span>Getting Started</span>

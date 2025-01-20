@@ -26,7 +26,6 @@ export function SidebarRight({
   // Set the active hash initially when the component mounts
   React.useEffect(() => {
     const currentHash = window.location.hash
-    console.log(currentHash)
     setActiveHash(currentHash)
     // Update the active hash when the hash changes in the URL
     const handleHashChange = () => {
@@ -42,8 +41,6 @@ export function SidebarRight({
   }, [])
 
   const onActive = (activeHash : string, item: any) => {
-    console.log('active', activeHash)
-    console.log('item', item.url)
     return activeHash === `${activeHash.startsWith('#') ? `#${item.url.split('#')[1]}`: item.url}`
   }
 
