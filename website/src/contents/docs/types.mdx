@@ -1,0 +1,65 @@
+The `toast()` API is used for creating various types of toast notifications in your React application.
+
+## Success Toast
+```javascript
+toast.success("Operation Successful!");
+```
+
+## Error Toast
+```javascript
+toast.error("Something went wrong!");
+```
+
+## Warning Toast
+```javascript
+toast.warning("This is some warning.");
+```
+
+## Info Toast
+```javascript
+toast.info("This is some information.");
+```
+
+## Promise Toast
+```javascript
+toast.promise(
+  fetchData(), // Your promise function
+  {
+    loading: 'Loading data...',
+    success: 'Data loaded successfully!',
+    error: 'Failed to load data!',
+  }
+);
+```
+
+## Custom Toast
+```javascript
+toast('Customize toast here');
+
+//or you can use toast.custom() also
+toast.custom('Customize toast here');
+```
+
+## Envelope Toast
+```javascript
+toast.envelope(
+  <>A new Message from 'John Mayer' 
+    <span className="text-xs text-blue-600">...open msg</span>
+  </>,
+  {
+    expandedContent: (
+      <div className="flex flex-col items-center p-4 mx-auto space-y-3 w-80">
+        <p className="text-lg font-semibold text-gray-700">
+          Message 1: Hello, How are you?
+        </p>
+        <p className="text-lg font-semibold text-gray-700">
+          Message 2: Don't forget about the meeting tomorrow!
+        </p>
+        <p className="text-lg font-semibold text-gray-700">
+          Message 3: Your package has been shipped.
+        </p>
+      </div>
+    )
+  }
+);
+```

@@ -1,0 +1,115 @@
+[
+  {
+      "title": "Usage",
+      "href": "/documentation/api/toast/usage",
+      "mdxPath": "usage",
+      "items": [
+          {
+              "href": "#basic-usage",
+              "title": "Basic Usage",
+              "mdxPath": "basic-usage"
+          }
+      ]
+  },
+  {
+      "title": "Toast Types",
+      "href": "/documentation/api/toast/types",
+      "mdxPath": "usage",
+      "items": [
+          {
+              "href": "#success-toast",
+              "title": "Success Toast",
+              "mdxPath": "success-toast"
+          },
+          {
+              "href": "#error-toast",
+              "title": "Error Toast",
+              "mdxPath": "error-toast"
+          },
+          {
+              "href": "#warning-toast",
+              "title": "Warning Toast",
+              "mdxPath": "warning-toast"
+          },
+          {
+              "href": "#info-toast",
+              "title": "Info Toast",
+              "mdxPath": "info-toast"
+          },
+          {
+              "href": "#promise-toast",
+              "title": "Promise Toast",
+              "mdxPath": "promise-toast"
+          },
+          {
+              "href": "#custom-toast",
+              "title": "Custom Toast",
+              "mdxPath": "custom-toast"
+          },
+          {
+              "href": "#envelope-toast",
+              "title": "Envelope Toast",
+              "mdxPath": "envelope-toast"
+          }
+      ]
+  },
+  {
+      "title": "Customization",
+      "href": "/documentation/api/toast/customization",
+      "mdxPath": "customization",
+      "items": [
+          {
+              "href": "#customization-options",
+              "title": "Options",
+              "mdxPath": "customization-options"
+          },
+          {
+              "href": "#customization-example",
+              "title": "Example",
+              "mdxPath": "customization-example"
+          }
+      ]
+  },
+  {
+      "title": "Toast Management",
+      "href": "/documentation/api/toast/management",
+      "mdxPath": "management",
+      "items": [
+          {
+              "href": "#updating-toasts",
+              "title": "Updating Toasts",
+              "mdxPath": "updating-toasts"
+          },
+          {
+              "href": "#removing-toasts",
+              "title": "Removing Toasts",
+              "mdxPath": "removing-toasts"
+          },
+          {
+              "href": "#clearing-toasts",
+              "title": "Clearing All Toasts",
+              "mdxPath": "clearing-toasts"
+          },
+          {
+              "href": "#remaining-time",
+              "title": "Getting Remaining Time",
+              "mdxPath": "remaining-time"
+          },
+          {
+              "href": "#pausing-resuming",
+              "title": "Pausing and Resuming Toasts",
+              "mdxPath": "pausing-resuming"
+          },
+          {
+              "href": "#on-dismiss-callback",
+              "title": "onDismiss Callback",
+              "mdxPath": "on-dismiss-callback"
+          },
+          {
+              "href": "#on-expand-callback",
+              "title": "onExpandContent Callback",
+              "mdxPath": "on-expand-callback"
+          }
+      ]
+  }
+]

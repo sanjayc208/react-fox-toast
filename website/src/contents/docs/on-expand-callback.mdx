@@ -1,0 +1,20 @@
+# Using the `onExpandContent` Callback
+
+You can provide an `onExpandContent` callback function when creating a toast. This function will be triggered when the content of the toast is expanded (e.g., the user clicks to view more details). This can be useful for tracking the expansion event, such as logging or analytics, as it shows which toast was expanded.
+
+The `onExpandContent` callback accepts two parameters:
+
+- **id**: The ID of the expanded toast. This can be helpful for tracking which specific toast was expanded.
+- **message**: The message content of the toast. If the message is a string, it will be passed directly. If the message is a `React.node` (i.e., JSX), you can access the content via the children prop.
+
+Here's an example of using the `onExpandContent` callback:
+
+```javascript
+const toastId = toast.success("Success Toast", {
+  onExpandContent: (id, message) => {
+    console.log('Toast expanded:', id, message);
+  },
+});
+```
+
+In this example, when the toast is expanded, the `onExpandContent` handler logs the ID and the message of the expanded toast.

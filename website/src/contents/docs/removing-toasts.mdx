@@ -1,0 +1,13 @@
+## Removing Toasts
+Use toast.remove() to manually dismiss a specific toast.
+
+```
+const toastId = toast.info("This is an info message");
+
+// Later in your code
+toast.remove(toastId);
+```
+
+`remove()` accepts one parameter:
+
+id: The ID of the toast to remove
