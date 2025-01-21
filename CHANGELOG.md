@@ -1,3 +1,11 @@
+## [1.8.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.6...v1.8.7) (2025-01-21)
+
+
+### Bug Fixes
+
+* created searchbar with toast mdx's required to search ([de2ac77](https://github.com/sanjayc208/react-fox-toast/commit/de2ac7758a27764914010cae64bf526cd1bad0b2))
+* eslint fixed for search utils ([123583d](https://github.com/sanjayc208/react-fox-toast/commit/123583d78bce3bead1b88dc3028bf7b766b0189b))
+
 ## [1.8.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.5...v1.8.6) (2025-01-20)
 
 
