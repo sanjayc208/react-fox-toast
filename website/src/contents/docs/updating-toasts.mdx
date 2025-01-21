@@ -1,0 +1,20 @@
+# Updating Toasts
+
+Use the `toast.update()` method to update the content or options of an existing toast.
+
+```javascript
+const toastId = toast.success("Initial message");
+
+// Later in your code
+toast.update(toastId, {
+  message: "Updated message",
+  icon: <NewIcon />,
+  duration: 3000,
+  // ... other options
+});
+```
+
+The `update()` method accepts two parameters:
+
+1. **id**: The ID of the toast to update
+2. **updates**: An object with new properties for the toast

@@ -1,0 +1,28 @@
+# Using the `onDismiss` Callback
+
+You can provide an `onDismiss` callback function as an option when creating a toast. This function will be called when the toast is dismissed (either automatically or manually). This can be useful if you need to perform actions like logging or cleaning up resources after the toast disappears.
+
+const toastId = toast(
+  <>Custom JSX component</>,
+  {
+    onDismiss: (id) => {
+      console.log('Toast dismissed:', id);
+    },
+  }
+);
+
+The `onDismiss` callback accepts one parameter:
+
+- **id**: The ID of the dismissed toast. This can be useful for performing specific actions or tracking which toast was dismissed.
+
+Here's an example of using multiple toasts with individual dismiss handling:
+
+const toastId1 = toast.success("Success Toast", {
+  onDismiss: (id) => console.log("First toast dismissed:", id),
+});
+
+const toastId2 = toast.error("Error Toast", {
+  onDismiss: (id) => console.log("Second toast dismissed:", id),
+});
+
+In this example, each toast has its own `onDismiss` handler that logs the ID of the dismissed toast.

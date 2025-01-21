@@ -1,16 +1,32 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { SearchBar } from "@/components/modules/search-bar"
+import { useIsMobile } from "@/hooks/use-mobile"
+import Image from "next/image"
 
 export function Header() {
+  const isMobile = useIsMobile()
   return (
-    <header className="sticky grid grid-cols-5 gap-5 h-16 items-center border-b px-3">
-      <div className="col-span=1 grid grid-cols-5 space-x-5">
-        <SidebarTrigger className="col-span-1" />
-        <h1 className="col-span-4 text-lg font-semibold text-center justify-self-start">
-          Documentation
-        </h1>
-      </div>
-      <div className="col-span-4 justify-self-end lg:mr-5">
-        <img className="cursor-pointer" onClick={() => window.open("https://github.com/sanjayc208/react-fox-toast", "_blank")} width="23" height="23" src="/github-mark.png" /></div>  {/* Empty div if you want to keep space on the right */}
-    </header>
+<header className="sticky flex items-center justify-between h-16 border-b px-3">
+  <div className="flex items-center space-x-5">
+    <SidebarTrigger />
+    {!isMobile && <h1 className="text-lg font-semibold text-center">
+      Documentation
+    </h1>}
+  </div>
+  <div className="flex items-center space-x-5 xs:pr-0 sm:pr-12">
+    <div className="flex justify-end">
+      <SearchBar />
+    </div>
+    <Image 
+      alt="GitHub"
+      className="cursor-pointer" 
+      onClick={() => window.open("https://github.com/sanjayc208/react-fox-toast", "_blank")} 
+      width="23" 
+      height="23" 
+      src="/github-mark.png" 
+    />
+  </div>
+</header>
+
   )
 }

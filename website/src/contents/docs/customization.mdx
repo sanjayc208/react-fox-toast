@@ -1,0 +1,18 @@
+# Customization Options
+
+Available options for customizing toasts:
+
+| Option                     | Type           | Description                                                                      | Possible Values                                                            | Default                       |
+|---------------------------|----------------|----------------------------------------------------------------------------------|---------------------------------------------------------------------------|-------------------------------|
+| position                   | string         | Determines where the toast appears on the screen                                 | 'top-left', 'top-right', 'top-center', 'bottom-left', 'bottom-right', 'bottom-center' | 'bottom-right'                |
+| duration                   | number         | How long the toast stays visible (in milliseconds)                               | Any positive number, or Infinity for persistent toasts                    | 5000                          |
+| isCloseBtn                 | boolean        | Whether to show a close button on the toast                                     | true, false                                                              | true                          |
+| expandedContent            | ReactNode      | Additional content shown when the toast is expanded                              | Any valid React element or component                                      | undefined                     |
+| className                  | string         | Custom CSS classes to apply to the toast                                        | Any valid CSS class names                                                 | ''                            |
+| icon                       | ReactNode      | Custom icon to display in the toast                                             | Any valid React element or component                                      | Default icon based on toast type |
+| iconStyle                  | React.CSSProperties | Inline styles to apply to the toast icon                                       | Any valid CSS properties in object format                                  | {}                            |
+| iconClassName              | string         | Custom CSS classes to apply to the toast icon                                   | Any valid CSS class names or Tailwind classes                              | ''                            |
+| expandedContentClassName   | string         | Custom CSS classes to apply to the expanded content                             | Any valid CSS class names or Tailwind classes                              | ''                            |
+| expandedContentStyle       | React.CSSProperties | Inline styles to apply to the expanded content                                   | Any valid CSS properties in object format                                  | {}                            |
+| closeBtnStyle              | React.CSSProperties | Inline styles to apply to the close button of the toast                        | Any valid CSS properties in object format                                  | {}                            |
+| isPausedOnHover            | boolean        | Whether to pause the toast timer on hover                                       | true, false                                                              | true                          |

@@ -1,0 +1,51 @@
+# Pausing and Resuming Toasts
+
+You can pause and resume a specific toast using the `toast.pause()` and `toast.resume()` methods. This can be useful when you want to pause the auto-dismiss countdown based on user interaction, like hovering over or clicking the toast.
+
+## Example:
+
+```javascript
+import React, { useState, useEffect } from 'react';
+import { toast } from 'react-fox-toast';
+
+const ToastComponent = () => {
+  const [toastId, setToastId] = useState(null);
+
+  useEffect(() => {
+    const id = toast.success("This is a success message");
+    setToastId(id);
+  }, []);
+
+  const handlePause = () => {
+    if (toastId) {
+      toast.pause(toastId);
+    }
+  };
+
+  const handleResume = () => {
+    if (toastId) {
+      toast.resume(toastId);
+    }
+  };
+
+  return (
+    <div>
+      <h3>Hover over the div to pause the toast</h3>
+      <div
+        onMouseEnter={handlePause}  // Pauses the toast on hover
+        onMouseLeave={handleResume} // Resumes the toast when the mouse leaves
+      >
+        Hover here to pause/resume the toast
+      </div>
+    </div>
+  );
+};
+
+export default ToastComponent;
+```
+
+In the example above, the toast pauses when the user hovers over it and resumes when the mouse leaves.
+
+`pause()` and `resume()` each accept one parameter:
+
+- `id`: The ID of the toast you want to pause or resume.
