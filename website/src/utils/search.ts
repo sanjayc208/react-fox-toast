@@ -85,7 +85,7 @@ function getHighlightedSnippet(snippet: string, query: string): string {
     let matchedLine = ""
 
     // Iterate through each line in the snippet and find the first matching one
-    for (let line of snippetLines) {
+    for (const line of snippetLines) {
         if (line.toLowerCase().includes(lowerQuery)) {
             matchedLine = line
             break
