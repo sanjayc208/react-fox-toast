@@ -1,0 +1,38 @@
+# Getting Started
+
+Welcome to our documentation. This page will help you get started with our library.
+
+## Installation Steps Video
+
+### Hero Video
+
+## Installation Steps
+
+1. Install package with npm / pnpm / yarn
+   ```
+   npm i react-fox-toast
+   ```
+2. Add `ToastContainer` on top of the Application  
+   Adding `ToastContainer` on the Component where `toast` hook will be used also works
+
+   ```
+   import { ToastContainer } from "react-fox-toast"
+
+   // Add ToastContainer to Main application component 
+   const App = () => {
+     return (
+       <div>
+         <ToastContainer /> 
+       </div>
+     )
+   }
+   ```
+3. Import `toast` from `react-fox-toast`  
+   Use this in any JSX/TSX component and if using NEXT.JS then see to it that there is `'use client';` on top. Since react-fox-toast supports only client side
+
+   ```
+   import { toast } from "react-fox-toast"
+
+   // Use this toast functionality on any component
+   toast.success('Successfully created a toast')
+   ```

@@ -78,7 +78,7 @@ export function SearchBar() {
           </div>
         </div>
       </DialogTrigger>
-      <DialogContent className="max-w-[650px] p-0 top-[45%] sm:top-[38%]">
+      <DialogContent className="xs:max-w-[20rem] sm:max-w-[650px] p-0 top-[45%] sm:top-[38%]">
         <DialogTitle className="sr-only">Search</DialogTitle>
         <DialogHeader>
           <input

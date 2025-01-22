@@ -40,17 +40,13 @@ export async function advanceSearch(query: string) {
             // Extract the path or hash name from the href
             let pathSegment = ""
 
-            // If there's a hash in the href, match it with the hash name
-            if (item.href.includes('#')) {
-                pathSegment = item.href.split('#').pop() || ""
-            } else {
-                // Otherwise, match the last part of the path
-                pathSegment = item.href.split('/').pop() || ""
-            }
+            // remove '/documenation' and replace '#' with '/'
+            pathSegment = fullHref.replace(/^\/documentation\//, '').replace('#', '/');
 
             // Retrieve the content from mdxData using the pathSegment (either full path or hash name)
             const mdxSnippet = mdxData[pathSegment] || ""  // Fallback to empty string if not found
-
+            console.log('mdxData', mdxData)
+            console.log('pathSegment', pathSegment)
             // Check if the title or snippet matches the query
             const snippetMatches = mdxSnippet.toLowerCase().includes(lowerQuery)
             if (item.title.toLowerCase().includes(lowerQuery) || snippetMatches) {
