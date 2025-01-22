@@ -1,0 +1,34 @@
+# How to use the ToastContainer component in your app
+
+```javascript
+import { ToastContainer } from "react-fox-toast";
+
+function App() {
+  return (
+    <div>
+      <ToastContainer 
+        toastTypeTheming={} // Go through Theming Page for more details on this
+        gap={} // Gap need between each toast
+        position={} // default global position example 'top-center'
+        direction="" // Add this to change text direction (optional)
+        isPausedOnHover={true} // Add this to pause the toast on hover (optional)
+      />
+      {/* Your app content */}
+    </div>
+  );
+}
+```
+
+Add the ToastContainer component to your root component or layout to enable toast notifications throughout your application.
+
+# Props
+
+## Available Props for the ToastContainer
+
+| Prop                | Description                                                                                                 | Type                                                                   | Default                   |
+|---------------------|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|---------------------------|
+| `toastTypeTheming`  | A configuration object to define custom styles and classes for different toast types (e.g., success, error, etc.). | `{ success: object, error: object, info: object, custom: object }`    | None                      |
+| `gap`               | Defines the gap between toast notifications in the container.                                             | number                                                                 | 10                        |
+| `position`          | Defines the default position of the toast container (e.g., 'top-left', 'bottom-right').                   | `'top-right' | 'top-left' | 'bottom-left' | 'bottom-right'`      | 'top-right'              |
+| `direction`         | Defines the text direction inside the ToastContainer. You can set it to either 'ltr' (left-to-right) or 'rtl' (right-to-left). | `'ltr' | 'rtl'`                                                      | 'ltr'                     |
+| `isPausedOnHover`   | Defines the pause of the toast container when a user hovers over a toast notification.                     | boolean                                                                | true                      |
