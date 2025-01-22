@@ -24,7 +24,7 @@ const getAllMdxFiles = (dir: string): string[] => {
   return files;
 };
 
-export async function GET(req: any, res: any) {
+export async function GET() {
   try {
     const suffixPath = "/src/contents/docs/";
     const docsDir = path.join(process.cwd(), suffixPath);
