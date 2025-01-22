@@ -1,3 +1,11 @@
+## [1.8.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.7...v1.8.8) (2025-01-22)
+
+
+### Bug Fixes
+
+* now all pages mdx created and will be found in search ([c309340](https://github.com/sanjayc208/react-fox-toast/commit/c309340b2a12844c4f06bfed5c3fa6dd419c80fb))
+* removed unwatned req and res from doc api ([bcc19d5](https://github.com/sanjayc208/react-fox-toast/commit/bcc19d5e482db0b2406e721ed2da0b1fc44a4d33))
+
 ## [1.8.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.6...v1.8.7) (2025-01-21)
 
 
