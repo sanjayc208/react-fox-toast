@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { toast } from "react-fox-toast"
-import { CheckCircle, Smile, Paintbrush, Clock, Expand, CircleX, Info, X, AlertCircle, MailOpen } from 'lucide-react'
+import { CheckCircle, Smile, Paintbrush, Clock, Expand, CircleX, Info, X, AlertCircle, MailOpen, PanelTopOpen } from 'lucide-react'
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -60,8 +60,9 @@ toast.info('Information Generated Toast'${selectedPosition ? `, {
 
     const showWarning = () => {
         toast.warning('Warning Generated Toast',
-            { position: selectedPosition ? selectedPosition : undefined
-             }
+            { 
+                position: selectedPosition ? selectedPosition : undefined
+            }
         )
 
         setCodeSyntax(`
@@ -80,7 +81,7 @@ toast.warning('Warning Generated Toast'${selectedPosition ? `, {
                     <div
                         className="flex size-8 items-center justify-center rounded-xl bg-yellow-200"
                     >
-                        <Image src="/logos/fox4.png" alt={`fox_logo`} width={20} height={20}/>   
+                        <Image src="/logos/fox4.png" alt={`fox_logo`} width={20} height={20} />
                     </div>
             })
 
@@ -114,35 +115,80 @@ toast[type](<>Toast Bar with close Btn</>,${selectedPosition ? `{
 
     const showEnvelope = () => {
         toast.envelope(
-            <>A new Message from 'John Mayer' 
-                <span className="text-xs text-blue-600">...open msg</span>
-            </>,
-            { 
+            <div className="flex items-center gap-2 text-md font-medium">🎉Achievement Unlocked!🎉
+            </div>,
+            {
                 expandedContent: (
-                <div className="flex flex-col items-center p-2 mx-auto space-y-3">
-                    <p className="text-lg font-semibold text-gray-700">Message: Hello, How are you?</p>
-                    <input type="text" placeholder="Add Message here.." 
-                        className="px-4 py-1.5 border border-gray-300 rounded-lg shadow-sm w-full" />
-                    <button className="px-6 py-2 bg-black text-white rounded-lg focus:ring-opacity-50">
-                        Reply
-                    </button>
-                </div>
+                    <div className="text-center space-y-2">
+                        <h3 className="text-xl font-bold text-amber-900">Explorer Badge Earned!</h3>
+                        <p className="text-sm text-amber-800">You've opened 50+ messages this week 🏆</p>
+                        <div className="pt-4">
+                            <div className="h-2 bg-amber-200 rounded-full overflow-hidden">
+                                <div className="h-full bg-amber-500 transition-all duration-1000 w-75" />
+                            </div>
+                            <p className="text-xs text-amber-600 mt-2">Progress to next level: 75/100</p>
+                        </div>
+                    </div>
                 ),
                 position: selectedPosition ? selectedPosition : undefined
             }
         )
-        setCodeSyntax(`toast.envelope(<>A new Message from 'John Mayer' <span className="text-xs text-blue-600">...open msg</span></>,
+        setCodeSyntax(`toast.envelope(
+<div className="flex items-center text-md">🎉Achievement Unlocked!🎉</div>,
 {${selectedPosition ? `
   position: '${selectedPosition}',` : ''}
   expandedContent: (
-    <div className="flex flex-col items-center p-2 mx-auto space-y-3">
-        <p className="text-lg font-semibold text-gray-700">Message: Hello, How are you?</p>
-        <input type="text" placeholder="Add Message here.." 
-            className="px-4 py-2 border border-gray-300 rounded-lg shadow-sm w-full" />
-        <button className="px-6 py-2 bg-black text-white rounded-lg focus:ring-opacity-50">
-            Reply
-        </button>
+    <div className="text-center space-y-2">
+        <h3 className="text-xl font-bold text-amber-900">Explorer Badge Earned!</h3>
+        <p className="text-sm text-amber-800">You've opened 50+ messages this week 🏆</p>
+        <div className="pt-4">
+        <div className="h-2 bg-amber-200 rounded-full overflow-hidden">
+            <div className="h-full bg-amber-500 transition-all duration-1000 w-75"/>
+        </div>
+        <p className="text-xs text-amber-600 mt-2">Progress to next level: 75/100</p>
+        </div>
     </div>)
+})
+`)
+    }
+
+    const showDrawer = () => {
+        toast.drawer(<div className="flex flex-col pl-4">
+            <p className="font-semibold">New Message!</p>
+            <p className="text-sm text-gray-600">From: React Fox Team</p>
+        </div>,
+            {
+                position: selectedPosition ? selectedPosition : undefined,
+                expandedContent: (
+                    <div className="p-4 bg-white lg max-w-md ">
+                        <h3 className="font-bold mb-4">React Fox Team</h3>
+                        <div className="space-y-4 border-t pt-4">
+                            <p className="text-gray-700">
+                                Hey there! 👋 Thanks for using React Fox Toast!
+                            </p>
+                            <p className="text-gray-600">
+                                This expanded drawer is perfect for showing detailed content like
+                                messages, notifications, or even quick forms!
+                            </p>
+                        </div>
+                    </div>
+                )
+            }
+        )
+        setCodeSyntax(`toast.drawer(<div className="flex flex-col pl-4">
+  <p className="font-semibold">New Message!</p>
+  <p className="text-sm text-gray-600">From: React Fox Team</p>
+</div>,
+{${selectedPosition ? `
+  position: '${selectedPosition}',` : ''}
+  expandedContent: (
+    <div className="p-4 bg-white lg max-w-md ">
+        <h3 className="font-bold mb-4">React Fox Team</h3>
+        <div className="space-y-4 border-t pt-4">
+            <p className="text-gray-700">Hey there! 👋 Thanks for using React Fox Toast!</p>
+            <p className="text-gray-600">This expanded drawer is perfect for showing detailed content like messages, notifications, or even quick forms!</p>
+        </div>
+  </div>)
 })
 `)
     }
@@ -271,25 +317,33 @@ toast.success('Success data with Tailwind Css',{
 
                     <Button className="bg-white text-black hover:bg-gray-100" onClick={showDefaultClostButton}>
                         <X />Close Button</Button>
-                    <Button className="bg-white text-black col-span-2 hover:bg-gray-100 relative" onClick={showEnvelope}>
-                        <MailOpen /> Envelope 
+                    <Button className="bg-white text-black col-span-1 hover:bg-gray-100 relative" onClick={showEnvelope}>
+                        <MailOpen /> Envelope
                         <Badge
                             variant="outline"
                             className="bg-red-600 px-1.5 text-white absolute top-0 right-2 transform translate-x-1/2 -translate-y-1/2 rounded-lg"
-                        > New 
+                        > New
                         </Badge>
-                    </Button>  
+                    </Button>
+                    <Button className="bg-white text-black col-span-1 hover:bg-gray-100 relative" onClick={showDrawer}>
+                        <PanelTopOpen /> Drawer
+                        <Badge
+                            variant="outline"
+                            className="bg-red-600 px-1.5 text-white absolute top-0 right-2 transform translate-x-1/2 -translate-y-1/2 rounded-lg"
+                        > New
+                        </Badge>
+                    </Button>
                 </div>
                 <CustomSyntaxHighlighter
-                //  language='JSX' 
-                 className="flex-none lg:w-1/2"
-                // codeSyntax={codeSyntax} 
-                tabs={{
-                    'jsx': {
-                      syntax: codeSyntax,
-                      language: 'jsx'
-                    }
-                  }}
+                    //  language='JSX' 
+                    className="flex-none lg:w-1/2"
+                    // codeSyntax={codeSyntax} 
+                    tabs={{
+                        'jsx': {
+                            syntax: codeSyntax,
+                            language: 'jsx'
+                        }
+                    }}
                 />
             </div>
         </>
