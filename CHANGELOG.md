@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.1...v1.9.2) (2025-01-23)
+
+
+### Bug Fixes
+
+* website changes drawer button with demo code added to home page ([f387d6d](https://github.com/sanjayc208/react-fox-toast/commit/f387d6d15042a88c05bd58cc0354e6ea067dc8e6))
+
 ## [1.9.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.0...v1.9.1) (2025-01-23)
 
 
