@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.8...v1.9.0) (2025-01-23)
+
+
+### Features
+
+* new type drawer with expand and collapse functionality ([60226e1](https://github.com/sanjayc208/react-fox-toast/commit/60226e15ea44d48ae3096bd4f429137155db284c))
+
 ## [1.8.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.7...v1.8.8) (2025-01-22)
 
 
