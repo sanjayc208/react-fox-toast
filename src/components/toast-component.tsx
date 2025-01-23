@@ -100,7 +100,7 @@ const MessageContainer = styled('div')<{
   overflow: hidden;
   transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out;
   ${({ type, fadeout }) =>
-    (type === 'envelope' || type === 'zip') &&
+    (type === 'envelope' || type === 'drawer') &&
     `
       max-height: ${fadeout === 'true' ? '0' : '500px'}; /* Adjust to your typical max height */
       opacity: ${fadeout === 'true' ? '0' : '1'};
@@ -114,7 +114,7 @@ const IconContainer = styled('div')<{
   overflow: hidden;
   transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out;
   ${({ type, fadeout }) =>
-    (type === 'envelope' || type === 'zip') &&
+    (type === 'envelope' || type === 'drawer') &&
     `
       max-height: ${fadeout === 'true' ? '0' : '500px'}; /* Adjust to your icon size */
       opacity: ${fadeout === 'true' ? '0' : '1'};
@@ -200,18 +200,18 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
           onExpand(!isExpanded);
         }, 150);
         if(!isExpanded) onExpandToast(id) // Trigger onExpandToast Function
-      // } else if (type === 'zip') {
-      //   if (!isExpanded) {
-      //     setFadeOutMessage((prev) => !prev);
-      //     setTimeout(() => {
-      //       setIsExpanded((prev) => !prev);
-      //       onExpand(!isExpanded);
-      //     }, 150);
-      //   } else {
-      //     setIsExpanded((prev) => !prev);
-      //     onExpand(!isExpanded);
-      //     setFadeOutMessage(!isExpanded);
-      //   }
+      } else if (type === 'drawer') {
+        if (!isExpanded) {
+          setFadeOutMessage((prev) => !prev);
+          setTimeout(() => {
+            setIsExpanded((prev) => !prev);
+            onExpand(!isExpanded);
+          }, 150);
+        } else {
+          setIsExpanded((prev) => !prev);
+          onExpand(!isExpanded);
+          setFadeOutMessage(!isExpanded);
+        }
       } else {
         if(!isExpanded) onExpandToast(id)
         setIsExpanded((prev) => !prev);

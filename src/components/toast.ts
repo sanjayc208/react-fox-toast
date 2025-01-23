@@ -13,8 +13,8 @@ export const toast = Object.assign(
       addToast({ ...options, message, type: 'info' }),
     envelope: (message: React.ReactNode, options?: Partial<any>) =>
       addToast({ ...options, message, type: 'envelope' }),
-    zip: (message: React.ReactNode, options?: Partial<any>) =>
-      addToast({ ...options, message, type: 'zip' }),
+    drawer: (message: React.ReactNode, options?: Partial<any>) =>
+      addToast({ ...options, message, type: 'drawer' }),
     warning: (message: React.ReactNode, options?: Partial<any>) =>
       addToast({ ...options, message, type: 'warning' }),
     custom: (message: React.ReactNode, options?: Partial<any>) =>
