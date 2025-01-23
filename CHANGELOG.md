@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.0...v1.9.1) (2025-01-23)
+
+
+### Bug Fixes
+
+* default icon for drawer added ([229e7b9](https://github.com/sanjayc208/react-fox-toast/commit/229e7b9e19c816b0373d8aca69bb2a6a1cf9435f))
+
 # [1.9.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.8.8...v1.9.0) (2025-01-23)
 
 
