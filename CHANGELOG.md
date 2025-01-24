@@ -1,3 +1,10 @@
+## [1.9.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.2...v1.9.3) (2025-01-24)
+
+
+### Bug Fixes
+
+* website changes created drawer doc page ([5fab6ec](https://github.com/sanjayc208/react-fox-toast/commit/5fab6eca46774003bddb9067bc28a5ac950c6544))
+
 ## [1.9.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.1...v1.9.2) (2025-01-23)
 
 
