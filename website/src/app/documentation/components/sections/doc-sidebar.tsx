@@ -74,6 +74,10 @@ const data = {
         {
           title: "Envelope Toast",
           url: "/documentation/new/envelope-toast",
+        },
+        {
+          title: "Drawer Toast",
+          url: "/documentation/new/drawer-toast",
         }
       ],
     }
