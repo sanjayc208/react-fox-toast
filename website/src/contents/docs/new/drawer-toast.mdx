@@ -1,0 +1,46 @@
+# What's New: Toast Drawer
+
+The **Toast Drawer** introduces an expandable/collapsible container perfect for showing detailed content while maintaining a clean interface. Users can click to expand and view additional information, forms, or messages without leaving the context.
+
+## What is Toast Drawer?
+
+A collapsible container that expands on click, ideal for progressive disclosure of content while maintaining a minimal initial footprint. Perfect for detailed messages, forms, or supplementary information. The Drawer Toast maintains all regular toast behaviors while adding toggleable content sections. Its collapsible nature makes it excellent for scenarios where you want to provide optional additional information without cluttering the UI.
+
+## Example of Toast Drawer
+
+Implementation example with expandable content section:
+
+```jsx
+toast.drawer(
+  <div className="flex flex-col pl-4">
+    <p className="font-semibold">New Message!</p>
+    <p className="text-sm text-gray-600">From: React Fox Team</p>
+  </div>,
+  {
+    position: 'bottom-center',
+    expandedContent: (
+      <div className="p-4 bg-white lg max-w-md">
+        <h3 className="font-bold mb-4">React Fox Team</h3>
+        <div className="space-y-4 border-t pt-4">
+          <p className="text-gray-700">Hey there! 👋 Thanks for using React Fox Toast!</p>
+          <p className="text-gray-600">This expanded drawer is perfect for showing detailed content...</p>
+        </div>
+      </div>
+    )
+  }
+)
+```
+
+## Why Use Toast Drawer?
+
+- **Progressive Disclosure:** Show essential info first, reveal details on demand
+- **Interactive Content:** Supports forms, media, and complex components in expanded state
+- **Space Efficient:** Maintains clean UI while offering access to detailed content
+- **Context Preservation:** Keeps users in flow by showing additional content in-place
+
+## Use Cases:
+
+1. Message threads
+2. Detailed notifications
+3. Quick forms
+4. Multi-step actions
