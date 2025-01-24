@@ -1,3 +1,10 @@
+## [1.9.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.3...v1.9.4) (2025-01-24)
+
+
+### Bug Fixes
+
+* added drawer-toast page to sidebar ([eb2224f](https://github.com/sanjayc208/react-fox-toast/commit/eb2224f40ac3360c7f235220a11831aae9ba17f8))
+
 ## [1.9.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.2...v1.9.3) (2025-01-24)
 
 
