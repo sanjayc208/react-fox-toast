@@ -1,4 +1,5 @@
 'use client';
+import { Suspense } from 'react'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
@@ -15,6 +16,7 @@ export default function DrawerToastPage() {
       {/* Video Section with Loader */}
       <Card className="p-4">
         <div className="sm:w-[70%] xs:w-full justify-self-center aspect-w-16 aspect-h-9 relative">
+        <Suspense fallback={<p className="justify-self-center">Loading video...</p>}>
           <video 
             className="rounded-lg" 
             autoPlay 
@@ -26,6 +28,7 @@ export default function DrawerToastPage() {
             <source src="/instructions/toast-drawer/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
           </video>
+          </Suspense>
         </div>
       </Card>
 
@@ -63,8 +66,12 @@ export default function DrawerToastPage() {
       <div className="p-4 bg-white lg max-w-md">
         <h3 className="font-bold mb-4">React Fox Team</h3>
         <div className="space-y-4 border-t pt-4">
-          <p className="text-gray-700">Hey there! 👋 Thanks for using React Fox Toast!</p>
-          <p className="text-gray-600">This expanded drawer is perfect for showing detailed content...</p>
+          <p className="text-gray-700"
+            >Hey there! 👋 Thanks for using React Fox Toast!
+          </p>
+          <p className="text-gray-600">
+            This expanded drawer is perfect for showing detailed content...
+          </p>
         </div>
       </div>
     )
