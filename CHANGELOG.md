@@ -1,3 +1,11 @@
+## [1.9.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.4...v1.9.5) (2025-01-25)
+
+
+### Bug Fixes
+
+* added mdx for drawer-toast ([5c558f4](https://github.com/sanjayc208/react-fox-toast/commit/5c558f409d165e0a7be125fa62713ed628eed2ea))
+* envelope svg updated ([69bccc4](https://github.com/sanjayc208/react-fox-toast/commit/69bccc40c3174400b9c22ba45a1fc5a59fdc757d))
+
 ## [1.9.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.3...v1.9.4) (2025-01-24)
 
 
