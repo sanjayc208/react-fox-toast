@@ -1,3 +1,10 @@
+## [1.9.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.5...v1.9.6) (2025-01-25)
+
+
+### Bug Fixes
+
+* rft version updated ([eede648](https://github.com/sanjayc208/react-fox-toast/commit/eede648549aeba4a01ede9e5aa4ead0f132ba9e8))
+
 ## [1.9.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.4...v1.9.5) (2025-01-25)
 
 
