@@ -1,3 +1,10 @@
+## [1.9.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.7...v1.9.8) (2025-01-26)
+
+
+### Bug Fixes
+
+* multiple times envelope clicked cause ficker fixed with condition ([6137513](https://github.com/sanjayc208/react-fox-toast/commit/6137513ab64a5f7c2ce25f78a82a19a70f1c7d63))
+
 ## [1.9.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.6...v1.9.7) (2025-01-26)
 
 
