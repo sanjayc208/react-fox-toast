@@ -194,12 +194,15 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
     if (e.target.closest("button") || e.target.closest("[data-action]")) return;
     if (expandedContent) {
       if (type === 'envelope') {
-        setFadeOutMessage(true);
-        setTimeout(() => {
-          setIsExpanded(true);
-          onExpand(!isExpanded);
-        }, 150);
-        if(!isExpanded) onExpandToast(id) // Trigger onExpandToast Function
+        if (!isExpanded) {
+          setFadeOutMessage(true);
+          setTimeout(() => {
+            setIsExpanded(true);
+            onExpand(true);
+          }, 150);
+
+          onExpandToast(id) // Trigger onExpandToast Function
+        }
       } else if (type === 'drawer') {
         if (!isExpanded) {
           setFadeOutMessage((prev) => !prev);
@@ -212,6 +215,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
           onExpand(!isExpanded);
           setFadeOutMessage(!isExpanded);
         }
+        onExpandToast(id) // Trigger onExpandToast Function
       } else {
         if(!isExpanded) onExpandToast(id)
         setIsExpanded((prev) => !prev);
