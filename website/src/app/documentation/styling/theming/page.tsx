@@ -1,7 +1,35 @@
+'use client';
+import React from "react"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
+import { useSidebarStore } from "@/store/useSideBarStore"; // Import Zustand store
 
 export default function ThemingPage() {
+  const { setContent, setVisibility } = useSidebarStore();
+  
+    React.useEffect(() => {
+            setVisibility(true);
+            // Set sidebar content and visibility
+            setContent(
+                [{
+                    title: "Theming",
+                    url: "/documentation/styling/theming",
+                    items:[{
+                        "url": "/documentation/styling/theming#global-theming",
+                        "title": "Global Theming"
+                    }]
+                }]);
+    
+            // Cleanup on unmount
+            return () => {
+                setContent(null); // Reset the content when leaving the page
+                setVisibility(false); // Optionally hide the sidebar
+            };
+    
+    
+        }, []);
+
   return (
     <div className="space-y-6 xs:max-w-[95vw] md:max-w-full">
       <h1 className="mb-4 text-3xl font-bold">Theming</h1>
@@ -9,7 +37,7 @@ export default function ThemingPage() {
         Learn how to customize the look and feel of your application using our theming system.
       </p>
 
-      <Card>
+      <Card id="global-theming">
         <CardHeader>
           <CardTitle>Global Theming</CardTitle>
           <CardDescription>How to apply global themes to your toasts</CardDescription>

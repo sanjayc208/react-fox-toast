@@ -25,8 +25,8 @@ export default function DocumentationLayout({
         {/* Main content area */}
         <div>
           <Header />
-          <div className={`grid xl:grid xl:${isVisible ? 'grid-cols-[1fr_250px]' : 'grid-col-1'}`}>
-          <main className="overflow-y-auto lg:p-6 xs:p-2 sm:p-2">
+          <div className={`grid xl:grid xl:grid-cols-[1fr_250px]`}>
+          <main className="overflow-auto lg:p-6 xs:p-2 sm:p-2">
             {children}
           </main>
 

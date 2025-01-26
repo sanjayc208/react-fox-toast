@@ -1,14 +1,44 @@
 'use client';
-import { Suspense } from 'react'
+import React from "react"
 
+import { Suspense } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
+import { useSidebarStore } from "@/store/useSideBarStore"; // Import Zustand store
 
 export default function DrawerToastPage() {
+  const { setContent, setVisibility } = useSidebarStore();
+  
+    React.useEffect(() => {
+            setVisibility(true);
+            // Set sidebar content and visibility
+            setContent(
+                [{
+                    title: "Drawer Toast",
+                    url: "/documentation/new/drawer-toast",
+                    items:[{
+                        "url": "/documentation/new/drawer-toast#what-is-drawer",
+                        "title": "What is Drawer"
+                    },
+                    {
+                      "url": "/documentation/new/drawer-toast#example-drawer",
+                      "title": "Example of Drawer"
+                  }]
+                }]);
+    
+            // Cleanup on unmount
+            return () => {
+                setContent(null); // Reset the content when leaving the page
+                setVisibility(false); // Optionally hide the sidebar
+            };
+    
+    
+        }, []);
+
   return (
     <div className="space-y-6 xs:max-w-[95vw] md:max-w-full">
       <h1 className="mb-4 text-3xl font-bold text-gray-800">What's New: Toast Drawer</h1>
-      <p className="text-lg text-muted-foreground mb-6">
+      <p id="what-is-drawer" className="text-lg text-muted-foreground mb-6">
         The **Toast Drawer** introduces an expandable/collapsible container perfect for showing detailed content while maintaining 
         a clean interface. Users can click to expand and view additional information, forms, or messages without leaving the context.
       </p>
@@ -40,7 +70,7 @@ export default function DrawerToastPage() {
             a minimal initial footprint. Perfect for detailed messages, forms, or supplementary information.
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent id="example-drawer" className="space-y-4">
           <p className="text-gray-700">
             The Drawer Toast maintains all regular toast behaviors while adding toggleable content sections. 
             Its collapsible nature makes it excellent for scenarios where you want to provide optional additional 
