@@ -1,3 +1,11 @@
+## [1.9.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.6...v1.9.7) (2025-01-26)
+
+
+### Bug Fixes
+
+* added quick ref to all pages ([70273f5](https://github.com/sanjayc208/react-fox-toast/commit/70273f5db310b4b827db9f6420f81c9659980b0d))
+* header fixed with blur effect on scroll ([e39bd0c](https://github.com/sanjayc208/react-fox-toast/commit/e39bd0c888e172a5342132f7b26abe4644f43100))
+
 ## [1.9.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.5...v1.9.6) (2025-01-25)
 
 
