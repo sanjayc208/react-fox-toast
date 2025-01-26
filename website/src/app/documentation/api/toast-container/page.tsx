@@ -1,9 +1,41 @@
+'use client';
+import React from "react"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter';
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
+import { useSidebarStore } from "@/store/useSideBarStore"; // Import Zustand store
 
 export default function ToastContainerPage() {
+  const { setContent, setVisibility } = useSidebarStore();
+
+  React.useEffect(() => {
+          setVisibility(true);
+          // Set sidebar content and visibility
+          setContent(
+              [{
+                  title: "Usage",
+                  url: "/documentation/api/toast-container",
+                  items:[{
+                      "url": "/documentation/api/toast-container#basic-usage",
+                      "title": "Basic Usage"
+                  },
+                  {
+                    "url": "/documentation/api/toast-container#props",
+                    "title": "Props"
+                }]
+              }]);
+  
+          // Cleanup on unmount
+          return () => {
+              setContent(null); // Reset the content when leaving the page
+              setVisibility(false); // Optionally hide the sidebar
+          };
+  
+  
+      }, []);
+
   return (
     <div className="xs:max-w-[95vw] md:max-w-full">
       <h1 className="text-3xl font-bold">ToastContainer Component Documentation</h1>
@@ -20,7 +52,7 @@ export default function ToastContainerPage() {
         <TabsContent value="usage">
           <Card>
             <CardHeader>
-              <CardTitle>Basic Usage</CardTitle>
+              <CardTitle id="basic-usage">Basic Usage</CardTitle>
               <CardDescription>How to use the ToastContainer component in your app</CardDescription>
             </CardHeader>
             <CardContent>
@@ -59,7 +91,7 @@ function App() {
               <CardTitle>Props</CardTitle>
               <CardDescription>Available Props for the ToastContainer</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent id="props">
               <Table>
                 <TableHeader>
                   <TableRow>

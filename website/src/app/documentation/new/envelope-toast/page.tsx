@@ -1,9 +1,40 @@
+'use client';
+import React from "react"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
+import { useSidebarStore } from "@/store/useSideBarStore"; // Import Zustand store
 
 export default function EnvelopeToastPage() {
+  const { setContent, setVisibility } = useSidebarStore();
+    
+      React.useEffect(() => {
+              setVisibility(true);
+              // Set sidebar content and visibility
+              setContent(
+                  [{
+                      title: "Envelope Toast",
+                      url: "/documentation/new/envelope-toast",
+                      items:[{
+                          "url": "/documentation/new/envelope-toast#what-is-envelope",
+                          "title": "What is Envelope"
+                      },
+                      {
+                        "url": "/documentation/new/envelope-toast#example-envelope",
+                        "title": "Example of Envelope"
+                    }]
+                  }]);
+      
+              // Cleanup on unmount
+              return () => {
+                  setContent(null); // Reset the content when leaving the page
+                  setVisibility(false); // Optionally hide the sidebar
+              };
+      
+      
+          }, []);
   return (
-    <div className="space-y-6 xs:max-w-[95vw] md:max-w-full">
+    <div id="what-is-envelope" className="space-y-6 xs:max-w-[95vw] md:max-w-full">
       <h1 className="mb-4 text-3xl font-bold text-gray-800">What's New: Envelope Toast</h1>
       <p className="text-lg text-muted-foreground mb-6">
         The **Envelope Toast** introduces a new way to display expandable toasts. It's perfect for cases where you need to show 
@@ -20,15 +51,15 @@ export default function EnvelopeToastPage() {
         </div>
       </Card>
 
-      <Card>
+      <Card >
         <CardHeader>
-          <CardTitle>What is Envelope Toast?</CardTitle>
+          <CardTitle >What is Envelope Toast?</CardTitle>
           <CardDescription>
             Envelope Toast is a special toast type that allows users to expand the content of a toast message with a single click.
             Think of it as an envelope—once clicked, the content inside gets revealed.
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent id="example-envelope" className="space-y-4">
           <p className="text-gray-700">
             The core feature of the Envelope Toast is the ability to "unwrap" a detailed message or information with an interactive action.
             This pattern is commonly used for showing extra details in toasts that may otherwise overwhelm the user if shown in full.

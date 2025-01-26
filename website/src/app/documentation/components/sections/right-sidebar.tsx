@@ -53,7 +53,7 @@ export function SidebarRight({
   return (
     <Sidebar
       collapsible="none"
-      className={"sticky hidden lg:flex top-0 h-svh border-l bg-color-[#efefea]"}
+      className={"sticky hidden lg:flex top-20 h-svh border-l bg-defaultBase"}
       {...props}
     >
       <SidebarContent>

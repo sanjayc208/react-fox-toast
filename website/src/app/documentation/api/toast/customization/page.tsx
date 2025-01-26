@@ -118,18 +118,18 @@ export default function Customization() {
                         tabs={{
                             'jsx': {
                                 syntax: `toast.success("Operation Successful!", {
-position: 'top-right',
-duration: 5000,
-isCloseBtn: true,
-expandedContent: <div>Additional details about the operation</div>,
-className: 'custom-toast-class',
-icon: <CustomSuccessIcon />,
-iconStyle: { color: 'green' },
-iconClassName: 'text-2xl',
-expandedContentClassName: 'bg-gray-100 p-2',
-expandedContentStyle: { maxHeight: '100px', overflow: 'auto' },
-closeBtnStyle: { backgroundColor: 'green' },
-isPausedOnHover: false
+    position: 'top-right',
+    duration: 5000,
+    isCloseBtn: true,
+    expandedContent: <div>Additional details about the operation</div>,
+    className: 'custom-toast-class',
+    icon: <CustomSuccessIcon />,
+    iconStyle: { color: 'green' },
+    iconClassName: 'text-2xl',
+    expandedContentClassName: 'bg-gray-100 p-2',
+    expandedContentStyle: { maxHeight: '100px', overflow: 'auto' },
+    closeBtnStyle: { backgroundColor: 'green' },
+    isPausedOnHover: false
 });`,
                                 language: 'jsx'
                             }
