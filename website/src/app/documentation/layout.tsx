@@ -25,14 +25,14 @@ export default function DocumentationLayout({
         {/* Main content area */}
         <div>
           <Header />
-          <div className="flex flex-row">
-          <main className="flex-1 overflow-auto lg:p-6 xs:p-2 sm:p-2">
+          <div className={`grid xl:grid xl:${isVisible ? 'grid-cols-[1fr_250px]' : 'grid-col-1'}`}>
+          <main className="overflow-y-auto lg:p-6 xs:p-2 sm:p-2">
             {children}
           </main>
 
           {/* Right Sidebar, pushed below the header */}
           {isVisible && (
-            <aside className="mt-2">
+            <aside className="mt-2 hidden xl:block">
               <SidebarRight content={content} />
             </aside>
           )}

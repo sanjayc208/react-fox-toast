@@ -6,7 +6,7 @@ import Image from "next/image"
 export function Header() {
   const isMobile = useIsMobile()
   return (
-<header className="sticky flex items-center justify-between h-16 border-b px-3">
+<header className="sticky top-0 flex items-center justify-between h-16 border-b px-3 bg-defaultBase/60 backdrop-blur z-20">
   <div className="flex items-center space-x-5">
     <SidebarTrigger />
     {!isMobile && <h1 className="text-lg font-semibold text-center">
