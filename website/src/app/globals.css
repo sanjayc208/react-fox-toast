@@ -5,6 +5,15 @@
 html{
   scroll-behavior: smooth;
 }
+
+[id] {
+  scroll-margin-top: 4rem; /* Default for mobile */
+  
+  @media (min-width: 1024px) {
+    scroll-margin-top: 5rem; /* Desktop header height */
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
