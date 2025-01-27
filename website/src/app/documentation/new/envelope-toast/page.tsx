@@ -34,7 +34,7 @@ export default function EnvelopeToastPage() {
       
           }, []);
   return (
-    <div id="what-is-envelope" className="space-y-6 xs:max-w-[95vw] md:max-w-full">
+    <div className="space-y-6 xs:max-w-[95vw] md:max-w-full">
       <h1 className="mb-4 text-3xl font-bold text-gray-800">What's New: Envelope Toast</h1>
       <p className="text-lg text-muted-foreground mb-6">
         The **Envelope Toast** introduces a new way to display expandable toasts. It's perfect for cases where you need to show 
@@ -53,7 +53,7 @@ export default function EnvelopeToastPage() {
 
       <Card >
         <CardHeader>
-          <CardTitle >What is Envelope Toast?</CardTitle>
+          <CardTitle id="what-is-envelope" >What is Envelope Toast?</CardTitle>
           <CardDescription>
             Envelope Toast is a special toast type that allows users to expand the content of a toast message with a single click.
             Think of it as an envelope—once clicked, the content inside gets revealed.
