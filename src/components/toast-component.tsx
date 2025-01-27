@@ -176,7 +176,6 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
 
   useEffect(() => {
     const toastContainerClassName = `toast-container-default-${id}`;
-    const closeButtonClassName = `close-button-${id}`;
 
     // create default class for toastContainer
     createDynamicWhereClass(toastContainerClassName, `
@@ -205,13 +204,13 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
         }
       } else if (type === 'drawer') {
         if (!isExpanded) {
-          setFadeOutMessage((prev) => !prev);
+          setFadeOutMessage((p) => !p);
           setTimeout(() => {
-            setIsExpanded((prev) => !prev);
+            setIsExpanded((p) => !p);
             onExpand(!isExpanded);
           }, 150);
         } else {
-          setIsExpanded((prev) => !prev);
+          setIsExpanded((p) => !p);
           onExpand(!isExpanded);
           setFadeOutMessage(!isExpanded);
         }
