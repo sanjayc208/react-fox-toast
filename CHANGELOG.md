@@ -1,3 +1,10 @@
+## [1.9.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.8...v1.9.9) (2025-01-27)
+
+
+### Bug Fixes
+
+* changed id position for new toast types ([e729fbd](https://github.com/sanjayc208/react-fox-toast/commit/e729fbdd4adc5477f6625ae9ac4839dafc777fe9))
+
 ## [1.9.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.7...v1.9.8) (2025-01-26)
 
 
