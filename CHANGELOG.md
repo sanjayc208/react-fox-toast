@@ -1,3 +1,10 @@
+## [1.9.10](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.9...v1.9.10) (2025-01-27)
+
+
+### Bug Fixes
+
+* removed closeButtonClassName variable not requried ([a910318](https://github.com/sanjayc208/react-fox-toast/commit/a91031852ed24e9eb50903706ff45cfa29414c26))
+
 ## [1.9.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.8...v1.9.9) (2025-01-27)
 
 
