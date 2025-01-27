@@ -38,7 +38,7 @@ export default function DrawerToastPage() {
   return (
     <div className="space-y-6 xs:max-w-[95vw] md:max-w-full">
       <h1 className="mb-4 text-3xl font-bold text-gray-800">What's New: Toast Drawer</h1>
-      <p id="what-is-drawer" className="text-lg text-muted-foreground mb-6">
+      <p className="text-lg text-muted-foreground mb-6">
         The **Toast Drawer** introduces an expandable/collapsible container perfect for showing detailed content while maintaining 
         a clean interface. Users can click to expand and view additional information, forms, or messages without leaving the context.
       </p>
@@ -64,7 +64,7 @@ export default function DrawerToastPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>What is Toast Drawer?</CardTitle>
+          <CardTitle id="what-is-drawer">What is Toast Drawer?</CardTitle>
           <CardDescription>
             A collapsible container that expands on click, ideal for progressive disclosure of content while maintaining 
             a minimal initial footprint. Perfect for detailed messages, forms, or supplementary information.
