@@ -58,7 +58,8 @@ export default function ThemingPage() {
         backgroundColor: 'blue',
         color: '#155E00',
       },
-      className: 'bg-blue-10'
+      className: 'bg-blue-10',
+      icon: "🦊"
     },
     error: {
       style: {
@@ -66,6 +67,7 @@ export default function ThemingPage() {
         color: '#B91C1C',
       },
       className: 'error-toast-class',
+      icon: "🦊"
     },
     info: {
       style: {
@@ -73,6 +75,7 @@ export default function ThemingPage() {
         color: '#1D4ED8',
       },
       className: 'info-toast-class',
+      icon: "🦊"
     },
     custom: {
       style: {
@@ -80,6 +83,7 @@ export default function ThemingPage() {
         color: '#6B7280',
       },
       className: 'custom-toast-class',
+      icon: "🦊"
     },
   }}
 />`,
