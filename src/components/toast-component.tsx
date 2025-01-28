@@ -255,6 +255,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   // Global Theme styles and class from Toast Container
   const typeThemeStyle = toastTypeTheming[type]?.style || {};
   const typeThemeClass = `${toastTypeTheming[type]?.className || ''}`
+  icon = toastTypeTheming[type]?.icon || icon || defaultIcons[type]
 
   return (
     <ToastContainer
@@ -276,7 +277,7 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
         <FlexContainer>
           <FlexItems>
             <IconContainer type={type} fadeout={fadeOutMessage.toString()} style={{ flexShrink: 0, ...iconStyle }}>
-              {icon || defaultIcons[type]}
+              {icon}
             </IconContainer>
             <MessageContainer
             type={type}
