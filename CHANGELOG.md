@@ -1,3 +1,10 @@
+## [1.9.11](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.10...v1.9.11) (2025-01-28)
+
+
+### Bug Fixes
+
+* added icon to Theming for all types ([a6dcacd](https://github.com/sanjayc208/react-fox-toast/commit/a6dcacdf395b597a6a835b55eea112351e5ca5bc))
+
 ## [1.9.10](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.9...v1.9.10) (2025-01-27)
 
 
