@@ -3,7 +3,7 @@
 import React from "react"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { AlertCircle, CircleX, CheckCircle, Info, Rocket, Clock } from 'lucide-react'
+import { AlertCircle, CircleX, CheckCircle, Info, Rocket, Clock, PanelTopOpen, MailOpen } from 'lucide-react'
 import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
 
 export default function Types() {
@@ -131,7 +131,7 @@ toast.cusotm('Customize toast here');                   `,
     <Card id="envelope-toast" className="xs:max-w-[95vw] md:max-w-full">
       <CardHeader>
         <CardTitle className="flex items-center">
-          <Rocket className="mr-2 h-5 w-5 text-purple-500" />
+          <MailOpen className="mr-2 h-5 w-5 text-purple-500" />
           Envelope Toast
         </CardTitle>
       </CardHeader>
@@ -155,6 +155,44 @@ toast.cusotm('Customize toast here');                   `,
     </div>)
 })
 `,
+              language: 'jsx'
+            }
+          }}
+        />
+      </CardContent>
+    </Card>
+    <Card id="envelope-toast" className="xs:max-w-[95vw] md:max-w-full">
+      <CardHeader>
+        <CardTitle className="flex items-center">
+          <PanelTopOpen className="mr-2 h-5 w-5 text-red-500" />
+          Drawer Toast
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <CustomSyntaxHighlighter className="border rounded-lg overflow-x-auto shadow-lg"
+          tabs={{
+            'jsx': {
+              syntax: `toast.drawer(
+<div className="flex flex-col pl-4">
+  <p className="font-semibold">New Message!</p>
+  <p className="text-sm text-gray-600">From: React Fox Team</p>
+</div>,
+{
+  position: 'bottom-center',
+  expandedContent: (
+    <div className="p-4 bg-white lg max-w-md">
+      <h3 className="font-bold mb-4">React Fox Team</h3>
+      <div className="space-y-4 border-t pt-4">
+        <p className="text-gray-700"
+          >Hey there! 👋 Thanks for using React Fox Toast!
+        </p>
+        <p className="text-gray-600">
+          This expanded drawer is perfect for showing detailed content...
+        </p>
+      </div>
+    </div>
+  )
+})`,
               language: 'jsx'
             }
           }}

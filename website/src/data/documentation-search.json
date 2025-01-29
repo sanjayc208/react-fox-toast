@@ -131,5 +131,10 @@
         "title": "What's New Envelope Toast",
         "href": "/documentation/new/envelope-toast",
         "mdxPath": "/documentation/envelope-toast"
+    },
+    {
+        "title": "What's New Drawer Toast",
+        "href": "/documentation/new/drawer-toast",
+        "mdxPath": "/documentation/drawer-toast"
     }
 ]
