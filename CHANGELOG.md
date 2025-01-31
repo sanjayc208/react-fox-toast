@@ -1,3 +1,10 @@
+## [1.9.12](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.11...v1.9.12) (2025-01-31)
+
+
+### Bug Fixes
+
+* default constants created for ToastContainer ([d423af7](https://github.com/sanjayc208/react-fox-toast/commit/d423af78efef94ff0e7602725b656ead3f9e7b7c))
+
 ## [1.9.11](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.10...v1.9.11) (2025-01-28)
 
 
