@@ -22,9 +22,14 @@ interface ToastContainerProps {
     isPausedOnHover?: boolean
 }
 
-// const DEFAULT_POSITION: ToastPosition = 'bottom-center'
+const DEFAULT_POSITION: ToastPosition = 'bottom-center'
+const DEFAULT_DURATION = 3000
+const DEFAULT_SPACING = 0
+const DEFAULT_DIRECTION = 'ltr'
+const DEFAULT_IS_PAUSED_ON_HOVER = true
+const DEFAULT_TOAST_TYPE_THEMING = {}
 
-export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = {}, spacing = 0, position = 'bottom-center', duration = 3000, direction = 'ltr', isPausedOnHover=true  }) => {
+export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = DEFAULT_TOAST_TYPE_THEMING, spacing = DEFAULT_SPACING, position = DEFAULT_POSITION, duration = DEFAULT_DURATION, direction = DEFAULT_DIRECTION, isPausedOnHover = DEFAULT_IS_PAUSED_ON_HOVER }) => {
     // Set new default values
     setToastDefaults(duration, position);
 
@@ -130,8 +135,8 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
                                 <ToastComponent
                                     {...toasts.find((toast) => toast.id === id)!}
                                     direction={direction} // supports ltr or rtl
-                                    toastTypeTheming={toastTypeTheming}  /* Pass it down */
-                                    isPausedOnHover={isPausedOnHover}  /* Pass it down */
+                                    toastTypeTheming={toastTypeTheming}  /* Theming the toast type */
+                                    isPausedOnHover={isPausedOnHover}  /* on mouse hover trigger this props */
 
                                     onClose={() => {
                                         removeToast(id);
