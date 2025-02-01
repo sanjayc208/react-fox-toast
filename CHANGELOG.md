@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.12...v1.10.0) (2025-02-01)
+
+
+### Features
+
+* aria props for accessibilty with default aria ([29ecebc](https://github.com/sanjayc208/react-fox-toast/commit/29ecebc2b98df15d6565da20c3634a647d659a67))
+
 ## [1.9.12](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.11...v1.9.12) (2025-01-31)
 
 
