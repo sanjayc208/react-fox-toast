@@ -1,6 +1,6 @@
 // src/component/toast-store.ts
 'use client';
-import { ToastPosition, ToastType } from './types'
+import { ToastPosition, ToastType, Aria } from './types'
 
 export interface Toast {
   id: string;
@@ -22,6 +22,7 @@ export interface Toast {
   isPausedOnHover?: boolean; // Optional prop to disable hover pause functionality
   onDismiss?: (id: string, message: React.ReactNode) => void; // Callback triggered on dismiss
   onExpandContent?: (id: string, message: React.ReactNode) => void; // Callback triggered on dismiss
+  aria?: Aria;
 }
 
 const toastSubscribers: Array<(toasts: Toast[]) => void> = [];
