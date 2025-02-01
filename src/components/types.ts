@@ -4,6 +4,10 @@ export type ToastType = 'success' | 'error' | 'info' | 'custom' | 'promise' | 'w
 
 export type ToastPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 
+export type Aria = {
+  role: string
+  label: string
+}
 export interface ToastProps {
   id: string
   message: ReactNode | any
@@ -25,6 +29,7 @@ export interface ToastProps {
   spacingToast?: React.CSSProperties
   isPausedOnHover?: boolean
   direction?: string
+  aria?: Aria
 }
 
 export interface ToastContextType {
