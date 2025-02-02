@@ -1,3 +1,15 @@
+## [1.10.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.0...v1.10.1) (2025-02-02)
+
+
+### Bug Fixes
+
+* added aria props in mdx and customization page ([0a7959d](https://github.com/sanjayc208/react-fox-toast/commit/0a7959dc4d3d3185b64eff06798af9dfc30f04d8))
+* codeowners added ([c79c0da](https://github.com/sanjayc208/react-fox-toast/commit/c79c0da0853a6335137c6b38b4394817072c2d88))
+* Update CODEOWNERS ([07d6d83](https://github.com/sanjayc208/react-fox-toast/commit/07d6d831e233ec29a02e11b5df181c0cc9003587))
+* Update CODEOWNERS ([bf20dee](https://github.com/sanjayc208/react-fox-toast/commit/bf20dee2176b0abd378ef414e652f7161813cb33))
+* Update CODEOWNERS ([53a0de1](https://github.com/sanjayc208/react-fox-toast/commit/53a0de1334caacffd189fcb418f9409f9e78e7f7))
+* Update CODEOWNERS ([b6b4207](https://github.com/sanjayc208/react-fox-toast/commit/b6b4207c235b21b544674de97a8eceff5ef5cec6))
+
 # [1.10.0](https://github.com/sanjayc208/react-fox-toast/compare/v1.9.12...v1.10.0) (2025-02-01)
 
 
