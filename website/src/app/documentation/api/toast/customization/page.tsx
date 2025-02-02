@@ -31,35 +31,35 @@ export default function Customization() {
                             <TableCell>string</TableCell>
                             <TableCell>Determines where the toast appears on the screen</TableCell>
                             <TableCell>'top-left', 'top-right', 'top-center', 'bottom-left', 'bottom-right', 'bottom-center'</TableCell>
-                            <TableCell>'bottom-right'</TableCell>
+                            <TableCell><code>'bottom-right'</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">duration</TableCell>
                             <TableCell>number</TableCell>
                             <TableCell>How long the toast stays visible (in milliseconds)</TableCell>
                             <TableCell>Any positive number, or Infinity for persistent toasts</TableCell>
-                            <TableCell>5000</TableCell>
+                            <TableCell><code>5000</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">isCloseBtn</TableCell>
                             <TableCell>boolean</TableCell>
                             <TableCell>Whether to show a close button on the toast</TableCell>
                             <TableCell>true, false</TableCell>
-                            <TableCell>true</TableCell>
+                            <TableCell><code>true</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">expandedContent</TableCell>
                             <TableCell>ReactNode</TableCell>
                             <TableCell>Additional content shown when the toast is expanded</TableCell>
                             <TableCell>Any valid React element or component</TableCell>
-                            <TableCell>undefined</TableCell>
+                            <TableCell><code>undefined</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">className</TableCell>
                             <TableCell>string</TableCell>
                             <TableCell>Custom CSS classes to apply to the toast</TableCell>
                             <TableCell>Any valid CSS class names</TableCell>
-                            <TableCell>''</TableCell>
+                            <TableCell><code>''</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">icon</TableCell>
@@ -73,42 +73,50 @@ export default function Customization() {
                             <TableCell>React.CSSProperties</TableCell>
                             <TableCell>Inline styles to apply to the toast icon</TableCell>
                             <TableCell>Any valid CSS properties in object format</TableCell>
-                            <TableCell>{'{}'}</TableCell>
+                            <TableCell><code>{'{}'}</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">iconClassName</TableCell>
                             <TableCell>string</TableCell>
                             <TableCell>Custom CSS classes to apply to the toast icon</TableCell>
                             <TableCell>Any valid CSS class names or Tailwind classes</TableCell>
-                            <TableCell>''</TableCell>
+                            <TableCell><code>''</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">expandedContentClassName</TableCell>
                             <TableCell>string</TableCell>
                             <TableCell>Custom CSS classes to apply to the expanded content</TableCell>
                             <TableCell>Any valid CSS class names or Tailwind classes</TableCell>
-                            <TableCell>''</TableCell>
+                            <TableCell><code>''</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">expandedContentStyle</TableCell>
                             <TableCell>React.CSSProperties</TableCell>
                             <TableCell>Inline styles to apply to the expanded content</TableCell>
                             <TableCell>Any valid CSS properties in object format</TableCell>
-                            <TableCell>{'{}'}</TableCell>
+                            <TableCell><code>{'{}'}</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">closeBtnStyle</TableCell>
                             <TableCell>React.CSSProperties</TableCell>
                             <TableCell>Inline styles to apply to the expanded content</TableCell>
                             <TableCell>Any valid CSS properties in object format</TableCell>
-                            <TableCell>{'{}'}</TableCell>
+                            <TableCell><code>{'{}'}</code></TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">isPausedOnHover</TableCell>
                             <TableCell>boolean</TableCell>
                             <TableCell>Whether to pause the toast timer on hover</TableCell>
                             <TableCell>true, false</TableCell>
-                            <TableCell>true</TableCell>
+                            <TableCell><code>true</code></TableCell>
+                        </TableRow>
+                        {/* Add new TableRow for aria prop */}
+                        <TableRow>
+                            <TableCell className="font-medium">aria</TableCell>
+                            <TableCell>object</TableCell>
+                            <TableCell>Accessibility attributes for screen readers</TableCell>
+                            <TableCell>Object with optional 'role' and 'label' keys</TableCell>
+                            <TableCell><code>{'{ role: "status", label: "Notification" }'}</code></TableCell>
                         </TableRow>
                     </TableBody>
                 </Table>
@@ -129,7 +137,11 @@ export default function Customization() {
     expandedContentClassName: 'bg-gray-100 p-2',
     expandedContentStyle: { maxHeight: '100px', overflow: 'auto' },
     closeBtnStyle: { backgroundColor: 'green' },
-    isPausedOnHover: false
+    isPausedOnHover: false,
+    aria: { 
+        role: 'alert',
+        label: 'Important notification' 
+    },
 });`,
                                 language: 'jsx'
                             }
