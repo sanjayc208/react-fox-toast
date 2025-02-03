@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.1...v1.10.2) (2025-02-03)
+
+
+### Bug Fixes
+
+* website - added new accessibility page and updated rft version ([69937c2](https://github.com/sanjayc208/react-fox-toast/commit/69937c2d17e273f8bbae6f9056b1cd3815375ee5))
+
 ## [1.10.1](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.0...v1.10.1) (2025-02-02)
 
 
