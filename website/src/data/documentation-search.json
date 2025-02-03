@@ -136,5 +136,10 @@
         "title": "What's New Drawer Toast",
         "href": "/documentation/new/drawer-toast",
         "mdxPath": "/documentation/drawer-toast"
+    },
+    {
+        "title": "Accessibility",
+        "href": "/documentation/accessibility",
+        "mdxPath": "/documentation/accessibility"
     }
 ]

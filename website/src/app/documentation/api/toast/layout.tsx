@@ -117,7 +117,17 @@ export default function ToastAPILayout({
                 "url": "/documentation/api/toast/management#on-expand-callback",
                 "title": "onExpandContent Callback"
             }
-        ]}]);
+        ]
+    },
+    {
+        title: "Accessibility",
+        url: "/documentation/accessibility",
+        items:[{
+            "url": "/documentation/accessibility",
+            "title": "Accessibility"
+        }]
+    },
+]);
 
         // Cleanup on unmount
         return () => {

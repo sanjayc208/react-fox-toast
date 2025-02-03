@@ -80,6 +80,10 @@ const data = {
           url: "/documentation/new/drawer-toast",
         }
       ],
+    },
+    {
+      title: "Accessibility",
+      url: "/documentation/accessibility",
     }
   ],
 }
@@ -122,7 +126,7 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-semibold">react-fox-toast</span>
-                  <span className="">v1.9.5</span>
+                  <span className="">v1.10.2</span>
                 </div>
               </a>
             </SidebarMenuButton>
@@ -137,12 +141,15 @@ export function DocSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton asChild>
-                  <SidebarGroupLabel>{item.title}
+                  <SidebarGroupLabel>
+                    <button onClick={() => onClickRedirect(item.url)}>
+                      {item.title}
                     {item.title === `What's New!` && <Badge
                       variant="outline"
                       className="bg-red-600 px-1.5 text-white right-5 absolute rounded-lg"
                     > New
                     </Badge>}
+                    </button>
                   </SidebarGroupLabel>
                 </SidebarMenuButton>
                 {item.items?.length ? (
