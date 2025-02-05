@@ -1,3 +1,10 @@
+## [1.10.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.8...v1.10.9) (2025-02-05)
+
+
+### Bug Fixes
+
+* changed default toast example position ([4f93390](https://github.com/sanjayc208/react-fox-toast/commit/4f933909b3d3bfe96f1790c10b7cb10944fd80df))
+
 ## [1.10.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.7...v1.10.8) (2025-02-05)
 
 
