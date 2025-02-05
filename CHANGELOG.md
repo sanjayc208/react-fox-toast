@@ -1,3 +1,10 @@
+## [1.10.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.4...v1.10.5) (2025-02-05)
+
+
+### Bug Fixes
+
+* pat check and aria type change ([cbf3473](https://github.com/sanjayc208/react-fox-toast/commit/cbf34733f5ba26ed456067a9038fb887035768da))
+
 ## [1.10.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.3...v1.10.4) (2025-02-05)
 
 
