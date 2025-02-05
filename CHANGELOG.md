@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.3...v1.10.4) (2025-02-05)
+
+
+### Bug Fixes
+
+* username in release and aria props type change ([6f0e55d](https://github.com/sanjayc208/react-fox-toast/commit/6f0e55d4eaaab188ffebee2f137f4dbbe8603bef))
+
 ## [1.10.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.2...v1.10.3) (2025-02-05)
 
 
