@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false  # Prevents GitHub from using the bot credentials
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -29,6 +31,11 @@ jobs:
 
       - name: Print package.json version before
         run: cat package.json | jq .version  
+
+      - name: Configure Git User  # 👈 ADD THIS STEP
+        run: |
+          git config --global user.name "sanjayc208"
+          git config --global user.email "sanjayc208@gmail.com"
 
       - name: Run semantic-release
         run: npx semantic-release
