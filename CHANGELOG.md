@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.2...v1.10.3) (2025-02-05)
+
+
+### Bug Fixes
+
+* adding aria to the toast container as optional params ([b13b112](https://github.com/sanjayc208/react-fox-toast/commit/b13b112789600bd9466743bd1abd1b799c83c44c))
+
 ## [1.10.2](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.1...v1.10.2) (2025-02-03)
 
 
