@@ -20,7 +20,7 @@ const positions = [
 
 const ToastDemo = () => {
     const [codeSyntax, setCodeSyntax] = useState<string>("\ntoast.success('Successfully Generated Toast,'{\n    position:'bottom-center'\n})")
-    const [selectedPosition, setSelectedPosition] = useState<string>("bottom-center")
+    const [selectedPosition, setSelectedPosition] = useState<string>("top-center")
 
     const showSuccess = () => {
         toast.success('Successfully Generated Toast',
