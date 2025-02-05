@@ -4,7 +4,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { subscribeToToasts, removeToast, Toast, setToastDefaults } from './toast-store';
 import ToastComponent from './toast-component';
-import { ToastPosition } from './types'
+import { ToastPosition, Aria } from './types'
 
 type ToastTypeTheming = {
     success: { style: React.CSSProperties, className: string };
@@ -20,7 +20,7 @@ interface ToastContainerProps {
     duration?: number
     direction?: string,
     isPausedOnHover?: boolean
-    aria?: Record<string, string>
+    aria?: Aria
 }
 
 const DEFAULT_POSITION: ToastPosition = 'bottom-center'
@@ -142,6 +142,7 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
                                     onClose={() => {
                                         removeToast(id);
                                     }}
+                                    
                                     onExpand={(isExpanded: any) => {
                                         setIsExpansion(isExpanded);
                                         if (isExpanded) {
