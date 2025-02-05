@@ -1,3 +1,10 @@
+## [1.10.8](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.7...v1.10.8) (2025-02-05)
+
+
+### Bug Fixes
+
+* updated toast library version ([64207d9](https://github.com/sanjayc208/react-fox-toast/commit/64207d9e7633e7483585bd9da5bf50bcf80ec273))
+
 ## [1.10.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.6...v1.10.7) (2025-02-05)
 
 
