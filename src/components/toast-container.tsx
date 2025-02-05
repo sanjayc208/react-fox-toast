@@ -20,7 +20,7 @@ interface ToastContainerProps {
     duration?: number
     direction?: string,
     isPausedOnHover?: boolean
-    aria?: Record<string, string>
+    aria?: Record<any, any>
 }
 
 const DEFAULT_POSITION: ToastPosition = 'bottom-center'
