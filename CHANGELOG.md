@@ -1,3 +1,10 @@
+## [1.10.10](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.9...v1.10.10) (2025-02-05)
+
+
+### Bug Fixes
+
+* aria type updated ([d02919c](https://github.com/sanjayc208/react-fox-toast/commit/d02919c836575b5dbe8321d0eca565400c20f451))
+
 ## [1.10.9](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.8...v1.10.9) (2025-02-05)
 
 
