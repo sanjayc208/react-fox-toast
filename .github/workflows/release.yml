@@ -32,7 +32,7 @@ jobs:
       - name: Print package.json version before
         run: cat package.json | jq .version  
 
-      - name: Configure Git User  # 👈 ADD THIS STEP
+      - name: Configure Git User
         run: |
           git config --global user.name "sanjayc208"
           git config --global user.email "sanjayc208@gmail.com"
