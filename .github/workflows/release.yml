@@ -39,7 +39,7 @@ jobs:
 
       - name: Run semantic-release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN_FOX_TOAST }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN_FOX_TOAST }} # NPM token for publishing
           GH_TOKEN: ${{ secrets.GH_PAT }}  # GitHub token for release
           GIT_AUTHOR_NAME: "sanjayc208"
           GIT_AUTHOR_EMAIL: "sanjayc208@gmail.com"
