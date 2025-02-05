@@ -1,3 +1,10 @@
+## [1.10.7](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.6...v1.10.7) (2025-02-05)
+
+
+### Bug Fixes
+
+* aria props type ([7a3ab91](https://github.com/sanjayc208/react-fox-toast/commit/7a3ab91390543fa90d5c68d28097b481b72c0b14))
+
 ## [1.10.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.5...v1.10.6) (2025-02-05)
 
 
