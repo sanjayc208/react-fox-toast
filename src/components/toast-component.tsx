@@ -164,7 +164,6 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
   toastTypeTheming = {},
   isPausedOnHover = true,
   direction = 'ltr',
-  // Prop for custom ARIA attributes
   aria // Expected to be an object like { role: 'status', 'label': 'Custom notification' }
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
