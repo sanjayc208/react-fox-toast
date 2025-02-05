@@ -1,3 +1,10 @@
+## [1.10.6](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.5...v1.10.6) (2025-02-05)
+
+
+### Bug Fixes
+
+* testing release flow ([7a5655c](https://github.com/sanjayc208/react-fox-toast/commit/7a5655cc893d48be45046b09e615a35e9853783e))
+
 ## [1.10.5](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.4...v1.10.5) (2025-02-05)
 
 
