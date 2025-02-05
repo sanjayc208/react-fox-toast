@@ -41,7 +41,7 @@ jobs:
         run: npx semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN_FOX_TOAST }}              # Your npm token stored in GitHub Secrets
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # GitHub token for release
+          GH_TOKEN: ${{ secrets.GH_PAT }}  # GitHub token for release
       
       - name: Print package.json version after
         run: cat package.json | jq .version    
