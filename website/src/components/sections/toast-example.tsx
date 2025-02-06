@@ -245,11 +245,11 @@ toast.promise(fetchData(), {
     const showTailwindCSS = () => {
         toast.success('Success data with Tailwind Css', {
             position: selectedPosition ? selectedPosition : undefined,
-            className: 'bg-orange-100 text-orange-900',
+            className: 'bg-[#282c34] text-[#e5e5e5] rounded-3xl',
         })
         setCodeSyntax(`
 toast.success('Success data with Tailwind Css',{
-  className: 'bg-orange-100 text-orange-900',${selectedPosition ? `
+  className: 'bg-[#282c34] text-[#e5e5e5] rounded-3xl',${selectedPosition ? `
   position: '${selectedPosition}'` : ''}
 })
 `)
@@ -290,7 +290,6 @@ toast.success('Success data with Tailwind Css',{
                     </RadioGroup>
                 </div>
             </div>
-
 
             {/* Example List */}
             <div className="flex flex-col lg:flex-row gap-8 p-6 xs:px-4 lg:px-20 md:lg:px-12 sm:lg:px-12 ">
