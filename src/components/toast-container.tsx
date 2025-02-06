@@ -143,6 +143,8 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming
                                         removeToast(id);
                                     }}
                                     
+                                    aria={aria} // for accessbility
+
                                     onExpand={(isExpanded: any) => {
                                         setIsExpansion(isExpanded);
                                         if (isExpanded) {
