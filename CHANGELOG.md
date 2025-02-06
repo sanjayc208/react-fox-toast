@@ -1,3 +1,10 @@
+## [1.10.11](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.10...v1.10.11) (2025-02-06)
+
+
+### Bug Fixes
+
+* added aria as props to ToastContainer ([54d046d](https://github.com/sanjayc208/react-fox-toast/commit/54d046d69f6eaea893aed4e6c7912fbf860838b1))
+
 ## [1.10.10](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.9...v1.10.10) (2025-02-05)
 
 
