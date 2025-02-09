@@ -1,4 +1,4 @@
-<a href="https://react-fox-toast.vercel.app/">
+<a href="https://react-fox-toast.com/">
 <p align="center">
   <img src="./assets/fox_logo.png"  align="center" alt="fox logo" width="200px">
   <h1 align="center">✨ React Fox Toast✨</h1>
@@ -23,9 +23,9 @@
 <div align="center">
 <h3 style="font-size: 20px"><strong>
 
-<a href="https://react-fox-toast.vercel.app/">🌏 Website</a> 
+<a href="https://react-fox-toast.com/">🌏 Website</a> 
 <span> &nbsp;|&nbsp; </span>
-<a href="https://react-fox-toast.vercel.app//documentation/getting-started">📚 Documentation</a> 
+<a href="https://react-fox-toast.com//documentation/getting-started">📚 Documentation</a> 
 <span> &nbsp;|&nbsp; </span>
 <a href="https://github.com/sanjayc208/react-fox-toast">🗄️ Github</a> 
 </strong>
@@ -35,7 +35,7 @@
 
 <div align="center">
   <p>Preview</p>
-  <a href="https://react-fox-toast.vercel.app/"><img src="./assets/rft-preview.gif" alt="Description of GIF"></a>
+  <a href="https://react-fox-toast.com/"><img src="./assets/rft-preview.gif" alt="Description of GIF"></a>
 </div>
 
 # React Fox Toast - Flexible Toast Notifications for React and Next.js
@@ -103,7 +103,7 @@ function MyComponent() {
 ```
 
 ## Learn More
-- Detailed usage and examples are available in the [Documentation](https://react-fox-toast.vercel.app/documentation/getting-started).
+- Detailed usage and examples are available in the [Documentation](https://react-fox-toast.com/documentation/getting-started).
 
 ## License
 MIT License

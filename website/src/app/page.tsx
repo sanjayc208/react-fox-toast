@@ -145,7 +145,7 @@ export default function Home() {
           onClick={() =>
             toast(
               <>
-                Custom JSX componentCustom
+                Welcome to React Fox Toast!
               </>,
               {
                 position: 'top-center',

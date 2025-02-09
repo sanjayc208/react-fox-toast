@@ -29,8 +29,9 @@ const DEFAULT_SPACING = 0
 const DEFAULT_DIRECTION = 'ltr'
 const DEFAULT_IS_PAUSED_ON_HOVER = true
 const DEFAULT_TOAST_TYPE_THEMING = {}
+const DEFAULT_ARIA = undefined
 
-export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = DEFAULT_TOAST_TYPE_THEMING, spacing = DEFAULT_SPACING, position = DEFAULT_POSITION, duration = DEFAULT_DURATION, direction = DEFAULT_DIRECTION, isPausedOnHover = DEFAULT_IS_PAUSED_ON_HOVER, aria = undefined }) => {
+export const ToastContainer: React.FC<ToastContainerProps> = ({ toastTypeTheming = DEFAULT_TOAST_TYPE_THEMING, spacing = DEFAULT_SPACING, position = DEFAULT_POSITION, duration = DEFAULT_DURATION, direction = DEFAULT_DIRECTION, isPausedOnHover = DEFAULT_IS_PAUSED_ON_HOVER, aria = DEFAULT_ARIA }) => {
     // Set new default values
     setToastDefaults(duration, position);
 
