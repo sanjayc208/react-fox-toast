@@ -1,6 +1,7 @@
 'use client';
 
 import localFont from "next/font/local";
+import Head from 'next/head';
 import "./globals.css";
 import { ToastContainer } from "react-fox-toast"
 
@@ -32,16 +33,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="image" content={metadata.image} />
         <meta name="author" content={metadata.author} />
         <meta property="og:title" content={metadata.title} />
+        <meta property="og:site_name" content='React Fox Toast'/>
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content={metadata.image} />
-      </head>
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 
@@ -51,39 +53,6 @@ export default function RootLayout({
       >
         <ToastContainer />
         {children}
-        {/* <ToastContainer 
-        // spacing={100}
-        // toastTypeTheming = {{
-        //   success: {
-        //     // style: {
-        //     //   backgroundColor: 'blue',
-        //     //   color: '#155E00',
-        //     // },
-        //     className: 'bg-blue-100', // Optional class name for custom styling
-        //   },
-        //   error: {
-        //     style: {
-        //       backgroundColor: 'green',
-        //       color: '#B91C1C',
-        //     },
-        //     className: 'error-toast-class',
-        //   },
-        //   info: {
-        //     style: {
-        //       backgroundColor: '#white',
-        //       color: '#1D4ED8',
-        //     },
-        //     className: 'info-toast-class',
-        //   },
-        //   custom: {
-        //     style: {
-        //       backgroundColor: 'yellow',
-        //       color: '#6B7280',
-        //     },
-        //     className: 'custom-toast-class',
-        //   },
-        // }}
-        /> */}
       </body>
     </html>
   );
