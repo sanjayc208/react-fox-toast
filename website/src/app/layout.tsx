@@ -17,9 +17,9 @@ const geistMono = localFont({
 
 // Define metadata
 const metadata: any = {
-  title: "React Fox Toast | Expandable and Lightweight Notification Library",
+  title: "react-fox-toast",
   description: "React Fox Toast is a customizable and lightweight toast/notification library designed for React applications.",
-  keywords: "react toast, notification, react, react fox, react-fox, fox toast, fox-toast, react fox toast , react-fox-toast, toast notifications for react",
+  keywords: "toast, notification, fox, react-fox, fox-toast, react fox toast, react-fox-toast",
   author: "Sanjay Rajeev",
   image: "logo/fox4.png",
 };
