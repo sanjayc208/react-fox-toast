@@ -1,3 +1,10 @@
+## [1.10.12](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.11...v1.10.12) (2025-02-09)
+
+
+### Bug Fixes
+
+* default aria , domain updated, website changes added accessbility in feature list ([85ba9d0](https://github.com/sanjayc208/react-fox-toast/commit/85ba9d05cdc8c4bf3ab1e93a542534945050b940))
+
 ## [1.10.11](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.10...v1.10.11) (2025-02-06)
 
 
