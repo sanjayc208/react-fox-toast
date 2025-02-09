@@ -23,7 +23,7 @@ const metadata: any = {
   author: "Sanjay Rajeev",
   image: "logo/fox4.png",
   url: "https://react-fox-toast.com/",
-  banner: "https://react-fox-toast.com/rft-banner-1200-530.png",
+  banner: "https://react-fox-toast.com/rft-banner.png",
 };
 
 
@@ -48,11 +48,14 @@ export default function RootLayout({
         <meta property="og:image" content={metadata.banner} />
         <meta property="og:url" content={metadata.url} />
         <meta property="og:type" content="website" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.banner} />
+        <meta name="twitter:card" content="summary_large_image" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
