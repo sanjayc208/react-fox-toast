@@ -1,7 +1,6 @@
 'use client';
 
 import localFont from "next/font/local";
-import Head from 'next/head';
 import "./globals.css";
 import { ToastContainer } from "react-fox-toast"
 
@@ -23,8 +22,8 @@ const metadata: any = {
   keywords: "toast, notification, fox, react-fox, fox-toast, react fox toast, react-fox-toast",
   author: "Sanjay Rajeev",
   image: "logo/fox4.png",
-  url: "https://react-fox-toast.com",
-  banner: "https://react-fox-toast/rft-banner-1200-530.png",
+  url: "https://react-fox-toast.com/",
+  banner: "https://react-fox-toast.com/rft-banner-1200-530.png",
 };
 
 
@@ -35,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
@@ -54,7 +53,7 @@ export default function RootLayout({
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.banner} />
-      </Head>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{
