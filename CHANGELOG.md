@@ -1,3 +1,10 @@
+## [1.10.13](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.12...v1.10.13) (2025-02-09)
+
+
+### Bug Fixes
+
+* homepage domain changed ([3848964](https://github.com/sanjayc208/react-fox-toast/commit/384896404d88af376c38c4eb5dbda4854d00ccab))
+
 ## [1.10.12](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.11...v1.10.12) (2025-02-09)
 
 
