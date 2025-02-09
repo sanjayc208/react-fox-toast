@@ -23,6 +23,8 @@ const metadata: any = {
   keywords: "toast, notification, fox, react-fox, fox-toast, react fox toast, react-fox-toast",
   author: "Sanjay Rajeev",
   image: "logo/fox4.png",
+  url: "https://react-fox-toast.com",
+  banner: "https://react-fox-toast/rft-banner-1200-530.png",
 };
 
 
@@ -39,16 +41,24 @@ export default function RootLayout({
         <meta name="keywords" content={metadata.keywords} />
         <meta name="image" content={metadata.image} />
         <meta name="author" content={metadata.author} />
+
+        {/* Open Graph */}
         <meta property="og:title" content={metadata.title} />
-        <meta property="og:site_name" content='React Fox Toast'/>
+        <meta property="og:site_name" content='React Fox Toast' />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content={metadata.image} />
+        <meta property="og:image" content={metadata.banner} />
+        <meta property="og:url" content={metadata.url} />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content={metadata.banner} />
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-
         style={{
-          background:'#efefea'
+          background: '#efefea'
         }}
       >
         <ToastContainer />
