@@ -23,7 +23,7 @@ const metadata: any = {
   author: "Sanjay Rajeev",
   image: "logo/fox4.png",
   url: "https://react-fox-toast.com/",
-  banner: "https://react-fox-toast.com/rft-banner.png",
+  banner: "https://react-fox-toast.com/rft-banner.jpg",
 };
 
 
