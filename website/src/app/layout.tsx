@@ -17,7 +17,7 @@ const geistMono = localFont({
 
 // Define metadata
 const metadata: any = {
-  title: "react-fox-toast",
+  title: "React Fox Toast",
   description: "React Fox Toast is a customizable and lightweight toast/notification library designed for React applications.",
   keywords: "toast, notification, fox, react-fox, fox-toast, react fox toast, react-fox-toast",
   author: "Sanjay Rajeev",
@@ -56,6 +56,9 @@ export default function RootLayout({
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.banner} />
         <meta name="twitter:card" content="summary_large_image" />
+
+        <link rel="canonical" href={metadata.url} />
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
