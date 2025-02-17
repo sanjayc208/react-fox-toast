@@ -34,12 +34,22 @@ const fadeOut = (position: string) => keyframes`
 // Styled Components for Toast
 const ToastContainer = styled('div')(
   (props: any) => {
-    const { isclosing, position, direction, style } = props;
+    const { isclosing, position, direction, style, type } = props;
     return `
       will-change: transform;
       animation: ${isclosing === "false" ? fadeIn(position) : fadeOut(position)} 0.35s ease-in-out;
       direction: ${direction};
 
+      /* Using :where() to apply low specificity styles */
+      :where(&) {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 0.55rem 0.85rem;
+        border-radius: 0.5rem;
+        background-color: ${backgroundColors[type] || backgroundColors.custom};
+        color: black;
+        max-width: 50vw;
+      }
+        
       /* Mobile view (80vw) */
       @media (max-width: 768px) {
         max-width: 80vw;
@@ -50,20 +60,20 @@ const ToastContainer = styled('div')(
 );
 
 // Function to create a CSS class dynamically with :where() for low specificity
-function createDynamicWhereClass(className: any, styles: any) {
-  const styleSheet = document.styleSheets[0] || document.createElement("style");
+// function createDynamicWhereClass(className: any, styles: any) {
+//   const styleSheet = document.styleSheets[0] || document.createElement("style");
 
-  if (styleSheet === document.styleSheets[0]) {
-    styleSheet.insertRule(
-      `:where(.${className}) { ${styles} }`,
-      styleSheet.cssRules.length
-    );
-  } else {
-    const styleTag = document.createElement("style");
-    document.head.appendChild(styleTag);
-    styleTag.innerHTML = `:where(.${className}) { ${styles} }`;
-  }
-}
+//   if (styleSheet === document.styleSheets[0]) {
+//     styleSheet.insertRule(
+//       `:where(.${className}) { ${styles} }`,
+//       styleSheet.cssRules.length
+//     );
+//   } else {
+//     const styleTag = document.createElement("style");
+//     document.head.appendChild(styleTag);
+//     styleTag.innerHTML = `:where(.${className}) { ${styles} }`;
+//   }
+// }
 
 const FlexContainer = styled('div')(
   () => `
@@ -89,6 +99,15 @@ const ExpandedContent = styled('div')(
     max-height: ${props.isexpanded === "true" ? props.expandedheight : '0px'};
   `
 );
+
+const backgroundColors: Record<string, string> = {
+  success: '#D1FAE5',
+  error: '#FEE2E2',
+  info: '#DBEAFE',
+  custom: '#ffffff',
+  warning: '#fff4b7',
+  tip: '#ffffff',
+};
 
 const MessageContainer = styled('div')<{
   fadeout: string;
@@ -173,14 +192,14 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
 
   useEffect(() => {
     const toastContainerClassName = `toast-container-default-${id}`;
-    createDynamicWhereClass(toastContainerClassName, `
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 0.55rem 0.85rem;
-      border-radius: 0.5rem;
-      background-color: ${backgroundColors[type] || backgroundColors.custom};
-      color: black;
-      max-width: 50vw;
-    `);
+    // createDynamicWhereClass(toastContainerClassName, `
+    //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    //   padding: 0.55rem 0.85rem;
+    //   border-radius: 0.5rem;
+    //   background-color: ${backgroundColors[type] || backgroundColors.custom};
+    //   color: black;
+    //   max-width: 50vw;
+    // `);
   }, [id, type]);
 
   const handleClick = (e: any) => {
@@ -228,14 +247,6 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
     }
   };
 
-  const backgroundColors: Record<string, string> = {
-    success: '#D1FAE5',
-    error: '#FEE2E2',
-    info: '#DBEAFE',
-    custom: '#ffffff',
-    warning: '#fff4b7',
-    tip: '#ffffff',
-  };
 
   const toastFunctions = {
     update: (updates: Partial<any>) => updateToast(id, updates),
