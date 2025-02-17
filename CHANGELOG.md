@@ -1,3 +1,10 @@
+## [1.10.14](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.13...v1.10.14) (2025-02-17)
+
+
+### Bug Fixes
+
+* Use Goober pseudo-class names for default styling in toast component ([abe7c2a](https://github.com/sanjayc208/react-fox-toast/commit/abe7c2ad7ed38cb4a9030178a5d1e4f9b4551373))
+
 ## [1.10.13](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.12...v1.10.13) (2025-02-09)
 
 
