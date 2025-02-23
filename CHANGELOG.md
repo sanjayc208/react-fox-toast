@@ -1,3 +1,10 @@
+## [1.10.15](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.14...v1.10.15) (2025-02-23)
+
+
+### Bug Fixes
+
+* documentation website horizontal scrollbar ([7b42bd9](https://github.com/sanjayc208/react-fox-toast/commit/7b42bd91430a8ade98c8cf17c36110e6b4fc05d8))
+
 ## [1.10.14](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.13...v1.10.14) (2025-02-17)
 
 
