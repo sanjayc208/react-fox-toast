@@ -1,92 +1,103 @@
 {
-  "name": "react-fox-toast",
-  "version": "1.10.15",
-  "description": "This toast for UI which is very flexible to use",
-  "private": false,
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+    "name": "react-fox-toast",
+    "version": "1.10.15",
+    "description": "This toast for UI which is very flexible to use",
+    "private": false,
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "start": "tsup --watch && postcss src/styles.css -o dist/styles.css --watch",
+        "test": "echo\"Error: no test specified\" && exit 1",
+        "lint": "tsc",
+        "link": "pnpm link ../site/node_modules/react && pnpm link ../site/node_modules/react-dom",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sanjayc208/react-fox-toast.git"
+    },
+    "author": "Sanjay Rajeev",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/sanjayc208/react-fox-toast/issues"
+    },
+    "homepage": "https://react-fox-toast.com/",
+    "keywords": [
+        "react",
+        "toast",
+        "notifications",
+        "notification",
+        "snackbar",
+        "react-fox-toast",
+        "react-fox",
+        "fox-toast",
+        "nextjs",
+        "react-toast",
+        "toast-notification",
+        "react-ui",
+        "react-component",
+        "react fox toast",
+        "react fox",
+        "fox",
+        "fox toast",
+        "tailwindcss",
+        "css",
+        "notification-toast",
+        "react-notification",
+        "nextjs toast",
+        "frontend",
+        "alert",
+        "alert-toast",
+        "popup"
+    ],
+    "peerDependencies": {
+        "goober": "^2.1.16",
+        "react": ">16.0.0",
+        "react-dom": ">16.0.0"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^2.27.10",
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/commit-analyzer": "^13.0.0",
+        "@semantic-release/git": "^10.0.1",
+        "@semantic-release/npm": "^12.0.1",
+        "@semantic-release/release-notes-generator": "^14.0.1",
+        "@types/node": "^22.10.1",
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "autoprefixer": "^10.4.20",
+        "goober": "^2.1.16",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.4.3",
+        "postcss": "^8.4.49",
+        "postcss-modules": "^6.0.1",
+        "prettier": "^3.5.2",
+        "semantic-release": "^24.2.0",
+        "ts-loader": "^9.5.1",
+        "tsup": "^8.3.5",
+        "typescript": "^5.7.2",
+        "webpack": "^5.96.1",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.1.0"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "prettier --write",
+            "pnpm run lint",
+            "git add"
+        ]
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsup",
-    "start": "tsup --watch && postcss src/styles.css -o dist/styles.css --watch",
-    "test": "echo\"Error: no test specified\" && exit 1",
-    "lint": "tsc",
-    "link": "pnpm link ../site/node_modules/react && pnpm link ../site/node_modules/react-dom"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sanjayc208/react-fox-toast.git"
-  },
-  "author": "Sanjay Rajeev",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sanjayc208/react-fox-toast/issues"
-  },
-  "homepage": "https://react-fox-toast.com/",
-  "keywords": [
-    "react",
-    "toast",
-    "notifications",
-    "notification",
-    "snackbar",
-    "react-fox-toast",
-    "react-fox",
-    "fox-toast",
-    "nextjs",
-    "react-toast",
-    "toast-notification",
-    "react-ui",
-    "react-component",
-    "react fox toast",
-    "react fox",
-    "fox",
-    "fox toast",
-    "tailwindcss",
-    "css",
-    "notification-toast",
-    "react-notification",
-    "nextjs toast",
-    "frontend",
-    "alert",
-    "alert-toast",
-    "popup"
-  ],
-  "peerDependencies": {
-    "goober": "^2.1.16",
-    "react": ">16.0.0",
-    "react-dom": ">16.0.0"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.27.10",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^13.0.0",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/npm": "^12.0.1",
-    "@semantic-release/release-notes-generator": "^14.0.1",
-    "@types/node": "^22.10.1",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "autoprefixer": "^10.4.20",
-    "goober": "^2.1.16",
-    "postcss": "^8.4.49",
-    "postcss-modules": "^6.0.1",
-    "semantic-release": "^24.2.0",
-    "ts-loader": "^9.5.1",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.2",
-    "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
-  }
 }
