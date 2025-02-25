@@ -12,7 +12,7 @@ const ToastComponent = () => {
   const [toastId, setToastId] = useState(null);
 
   useEffect(() => {
-    const id = toast.success("This is a success message");
+    const id = toast.success('This is a success message');
     setToastId(id);
   }, []);
 
@@ -32,7 +32,7 @@ const ToastComponent = () => {
     <div>
       <h3>Hover over the div to pause the toast</h3>
       <div
-        onMouseEnter={handlePause}  // Pauses the toast on hover
+        onMouseEnter={handlePause} // Pauses the toast on hover
         onMouseLeave={handleResume} // Resumes the toast when the mouse leaves
       >
         Hover here to pause/resume the toast

@@ -22,7 +22,6 @@
 </div>
 <br />
 
-
 # React Fox Toast - Toast for ReactJS and NextJS
 
 `react-fox-toast` is a flexible, customizable, and easy-to-use toast/notification bar component for ReactJS and NextJS. It supports various customization options, including styles, classes, icons, expandable content, and even integrates with libraries like TailwindCSS.
@@ -30,6 +29,7 @@
 > **_NOTE:_** : this package works only on Client Side . So if using any SSR frameworks like NEXT.JS see to it that you have 'use client'; on top of component
 
 ## Features
+
 - **Highly Customizable**: You can customize the position, duration, content, icons, and more.
 - **Supports Promises**: Show success/error messages based on the result of promises.
 - **Custom Content**: Render custom components inside the toast.
@@ -59,11 +59,10 @@ pnpm add react-fox-toast
 
 To enable toast notifications in your app, wrap your root component with ToastContainer. This will allow the toasts to be displayed anywhere within your component tree.
 
-
 ```typescript
 'use client'; //Add if you are using NextJs
 
-import { ToastContainer } from "react-fox-toast";
+import { ToastContainer } from 'react-fox-toast';
 
 function App() {
   return (
@@ -77,52 +76,54 @@ export default App;
 ```
 
 ### Step 2: Use the toast Hook in Your Components
+
 To display toasts, use the toast hook inside your components. This hook gives you access to toast functions like toast.success(), toast.error(), and more.
 
 ```typescript
 'use client'; //Add if you are using NextJs
 
-import { toast } from "react-fox-toast";
+import { toast } from 'react-fox-toast';
 
 function MyComponent() {
-
   const showToast = () => {
-    toast.success("Success! The action was completed.");
+    toast.success('Success! The action was completed.');
   };
 
   return <button onClick={showToast}>Show Success Toast</button>;
 }
 ```
+
 ## Toast Types
+
 The following types of toasts are available:
 
 ## 1. Success Toast
+
 To display a success message:
 
-
 ```typescript
-toast.success("Operation Successful!");
+toast.success('Operation Successful!');
 ```
 
 ## 2. Error Toast
+
 To display an error message:
 
-
 ```typescript
-toast.error("Something went wrong!");
+toast.error('Something went wrong!');
 ```
 
 ## 3. Info Toast
+
 To display an informational message:
 
-
 ```typescript
-toast.info("This is some information.");
+toast.info('This is some information.');
 ```
 
 ## 4. Promise Toast
-To display loading, success, or error states based on a promise:
 
+To display loading, success, or error states based on a promise:
 
 ```typescript
 toast.promise(
@@ -136,33 +137,36 @@ toast.promise(
 ```
 
 ## 5. Custom Toast
+
 You can create fully customized toasts by passing React components as content:
 
 ```typescript
-
 toast.custom(
   ({ update, remove, dismiss }) => (
     <div className="flex flex-col items-center">
-      <img src="/placeholder.svg" alt="Custom content" className="w-16 h-16 mb-2" />
+      <img
+        src="/placeholder.svg"
+        alt="Custom content"
+        className="w-16 h-16 mb-2"
+      />
       <span>This is a toast with custom content!</span>
-
-      /** Example on how to Update functionality inside the toast  */
+      /** Example on how to Update functionality inside the toast */
       <button
-        onClick={() => update({ message: 'Updated message with different width!' })}
+        onClick={() =>
+          update({ message: 'Updated message with different width!' })
+        }
         className="mt-2 px-2 py-1 bg-blue-100 text-black rounded"
       >
         Update
       </button>
-
-      /** Example on how to remove functionality inside the toast  */
+      /** Example on how to remove functionality inside the toast */
       <button
         onClick={() => remove()}
         className="mt-2 px-2 py-1 bg-red-200 text-black rounded"
       >
         Close
       </button>
-
-      /** Example on how to remove all functionality inside the toast  */
+      /** Example on how to remove all functionality inside the toast */
       <button
         onClick={() => dismiss()}
         className="mt-2 px-2 py-1 bg-red-300 text-black rounded"
@@ -179,6 +183,7 @@ toast.custom(
 ```
 
 ## Customization
+
 - You can pass additional customization options as the 2nd parameter for all toast types (success, error, info, promise, custom). These options include:
 
 Customization Options
@@ -203,10 +208,11 @@ toast.[TOAST_TYPE](MESSAGE,
   }
 )
 ```
+
 ### Example with Customization
 
 ```typescript
-toast.success("Operation Successful!", {
+toast.success('Operation Successful!', {
   position: 'bottom-center',
   duration: 3000,
   isCloseBtn: true,
@@ -221,16 +227,19 @@ toast.success("Operation Successful!", {
 ```
 
 ### Dynamic Updates and Removal
+
 You can also update or remove toasts dynamically using the toast.update(), toast.remove(), and toast.dismiss() methods.
 
 Update a Toast: Update an existing toast with a new message or other options.
 
 ```typescript
-const toastid = toast.success("Initial success message");
+const toastid = toast.success('Initial success message');
 
-toast.update(toastid, 
-             { message: "Updated success message", position: "top-right" });
-             
+toast.update(toastid, {
+  message: 'Updated success message',
+  position: 'top-right',
+});
+
 // Remove a Toast: Remove a specific toast by its ID.
 toast.remove(toastid);
 
@@ -239,6 +248,7 @@ toast.dismiss();
 ```
 
 ### Support for JSX (React Components) in Toast Messages
+
 In addition to using simple strings, you can now also pass JSX components (React elements) as content inside toast.success(), toast.error(), toast.info(), etc. This allows you to have more complex and dynamic content inside your toasts.
 
 Example with JSX Content
@@ -256,13 +266,12 @@ toast.success(
     icon: <span className="text-green-500 text-xl">✔️</span>,
   }
 );
-
 ```
 
-
-
 ### Example Usage
+
 Here's a complete example showing how to use the toast notifications in a React component:
+
 ```typescript
 'use client'; //Add if you are using NextJs
 
@@ -273,7 +282,7 @@ function App() {
   const toast = useToast();
 
   const showSuccessToast = () => {
-    toast.success("Operation completed successfully!", {
+    toast.success('Operation completed successfully!', {
       position: 'top-right',
       duration: 3000,
       isCloseBtn: true,
@@ -281,7 +290,7 @@ function App() {
   };
 
   const showErrorToast = () => {
-    toast.error("Something went wrong!", {
+    toast.error('Something went wrong!', {
       position: 'bottom-left',
       duration: 5000,
       icon: <span className="text-red-500 text-xl">❌</span>,
@@ -300,12 +309,13 @@ export default App;
 ```
 
 ## Theming Globally
- You can globally theme your default toast in ToastContainer, while still allowing custom styles for specific toast types like success, error, or info.
 
+You can globally theme your default toast in ToastContainer, while still allowing custom styles for specific toast types like success, error, or info.
 
 ### Example Usage
+
 ```tsx
-<ToastContainer 
+<ToastContainer
 
   <! -- Add for global theming -->
    toastTypeTheming = {{
@@ -338,9 +348,11 @@ export default App;
        className: 'custom-toast-class',
      },
    }}
-/> 
+/>
 ```
+
 ## Conclusion
+
 react-fox-toast is a powerful and customizable toast notification library for ReactJS and NextJS. With features like promise-based toasts, custom content, expandable details, and full control over appearance and behavior, it offers a flexible solution for showing notifications in your app.
 
 Feel free to modify and extend the functionality to suit your needs, and enjoy the seamless integration with libraries like TailwindCSS!
@@ -348,7 +360,6 @@ Feel free to modify and extend the functionality to suit your needs, and enjoy t
 License: MIT License
 
 For any questions or feedback, feel free to open an issue or contribute on GitHub!
-
 
 ### How to Use
 

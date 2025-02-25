@@ -1,4 +1,12 @@
-import { addToast, removeToast, updateToast, pauseToastTimer, resumeToastTimer, removeAllToast, getRemainingTimeForToast } from './toast-store';
+import {
+  addToast,
+  removeToast,
+  updateToast,
+  pauseToastTimer,
+  resumeToastTimer,
+  removeAllToast,
+  getRemainingTimeForToast,
+} from './toast-store';
 
 export const toast = Object.assign(
   (message: React.ReactNode, options?: Partial<any>) => {

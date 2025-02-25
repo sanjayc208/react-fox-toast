@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 interface GradualSpacingProps {
   text: string;
@@ -15,7 +15,9 @@ interface GradualSpacingProps {
 // Helper function to split text into grapheme clusters (handles emojis correctly)
 const splitText = (text: string) => {
   const segmenter = new Intl.Segmenter('en', { granularity: 'grapheme' });
-  const segments = Array.from(segmenter.segment(text)).map(seg => seg.segment);
+  const segments = Array.from(segmenter.segment(text)).map(
+    (seg) => seg.segment
+  );
   return segments;
 };
 
@@ -40,9 +42,9 @@ export default function GradualSpacing({
             exit="hidden"
             variants={framerProps}
             transition={{ duration, delay: i * delayMultiple }}
-            className={cn("drop-shadow-sm ", className)}
+            className={cn('drop-shadow-sm ', className)}
           >
-            {char === " " ? <span>&nbsp;</span> : char}
+            {char === ' ' ? <span>&nbsp;</span> : char}
           </motion.h1>
         ))}
       </AnimatePresence>
