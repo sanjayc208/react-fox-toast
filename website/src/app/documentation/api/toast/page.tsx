@@ -1,6 +1,5 @@
-"use client";
+'use client';
 
 export default function Toast() {
-
-    return (<div>Toast API documentation</div>)
+    return <div>Toast API documentation</div>;
 }

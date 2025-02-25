@@ -9,36 +9,36 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-fox-toast';
 
 const ToastComponent = () => {
-  const [toastId, setToastId] = useState(null);
+    const [toastId, setToastId] = useState(null);
 
-  useEffect(() => {
-    const id = toast.success("This is a success message");
-    setToastId(id);
-  }, []);
+    useEffect(() => {
+        const id = toast.success('This is a success message');
+        setToastId(id);
+    }, []);
 
-  const handlePause = () => {
-    if (toastId) {
-      toast.pause(toastId);
-    }
-  };
+    const handlePause = () => {
+        if (toastId) {
+            toast.pause(toastId);
+        }
+    };
 
-  const handleResume = () => {
-    if (toastId) {
-      toast.resume(toastId);
-    }
-  };
+    const handleResume = () => {
+        if (toastId) {
+            toast.resume(toastId);
+        }
+    };
 
-  return (
-    <div>
-      <h3>Hover over the div to pause the toast</h3>
-      <div
-        onMouseEnter={handlePause}  // Pauses the toast on hover
-        onMouseLeave={handleResume} // Resumes the toast when the mouse leaves
-      >
-        Hover here to pause/resume the toast
-      </div>
-    </div>
-  );
+    return (
+        <div>
+            <h3>Hover over the div to pause the toast</h3>
+            <div
+                onMouseEnter={handlePause} // Pauses the toast on hover
+                onMouseLeave={handleResume} // Resumes the toast when the mouse leaves
+            >
+                Hover here to pause/resume the toast
+            </div>
+        </div>
+    );
 };
 
 export default ToastComponent;

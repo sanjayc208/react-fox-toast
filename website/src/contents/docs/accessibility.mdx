@@ -1,7 +1,9 @@
 # Accessibility Features
+
 Ensuring inclusive experiences for all users
 
 ## Why Accessibility Matters
+
 Our toast system implements WAI-ARIA standards to ensure proper screen reader support. Accessible notifications are crucial for:
 
 - Users with visual impairments relying on screen readers
@@ -10,17 +12,19 @@ Our toast system implements WAI-ARIA standards to ensure proper screen reader su
 - Better user experience for people with cognitive disabilities
 
 ## Default Accessibility Features
+
 By default, all toasts include these accessibility attributes:
 
-| Attribute     | Value              | Purpose                                          |
-|---------------|--------------------|--------------------------------------------------|
-| role          | "status"          | Indicates a live region with non-urgent updates  |
-| aria-label    | "Notification"    | Provides a descriptive label for screen readers   |
-| aria-live     | "polite"         | Ensures updates don't interrupt current screen reader tasks |
+| Attribute  | Value          | Purpose                                                     |
+| ---------- | -------------- | ----------------------------------------------------------- |
+| role       | "status"       | Indicates a live region with non-urgent updates             |
+| aria-label | "Notification" | Provides a descriptive label for screen readers             |
+| aria-live  | "polite"       | Ensures updates don't interrupt current screen reader tasks |
 
 ## Understanding ARIA Roles & Labels
 
 ### Role Attribute
+
 The role attribute defines the type of element for assistive technologies:
 
 - "status": For non-critical updates (default)
@@ -28,6 +32,7 @@ The role attribute defines the type of element for assistive technologies:
 - "log": For historical message streams
 
 ### ARIA Labels
+
 The aria-label provides context for screen reader users:
 
 - Should briefly describe the notification type
@@ -35,11 +40,13 @@ The aria-label provides context for screen reader users:
 - Improves navigation for users with screen readers
 
 ## Customization Options
-| Prop     | Type  | Description                       | Default                                      |
-|----------|-------|-----------------------------------|----------------------------------------------|
-| aria     | object| ARIA attributes configuration      | `{ role: "status", label: "Notification" }`  |
+
+| Prop | Type   | Description                   | Default                                     |
+| ---- | ------ | ----------------------------- | ------------------------------------------- |
+| aria | object | ARIA attributes configuration | `{ role: "status", label: "Notification" }` |
 
 ## Customization Examples
+
 ```
 // Urgent error toast
 toast.error("Database connection failed!", {
@@ -64,9 +71,11 @@ toast.success("Payment processed", {
     }
 });
 ```
+
 > Note: Omitting role will keep the default "status" value while maintaining other accessibility features.
 
 ## Best Practices
+
 - Use "alert" sparingly: Reserve for critical notifications that require immediate attention
 - Be descriptive: Make labels specific to the notification type (e.g., "Security warning" instead of "Alert")
 - Maintain consistency: Use similar labeling patterns across similar notification types
