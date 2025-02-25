@@ -3,7 +3,7 @@ name: Release Package
 on:
   push:
     branches:
-      - master  # Trigger the release when pushing to the main branch
+      - master # Trigger the release when pushing to the main branch
 
 jobs:
   release:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          persist-credentials: false  # Prevents GitHub from using the bot credentials
+          persist-credentials: false # Prevents GitHub from using the bot credentials
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -27,10 +27,10 @@ jobs:
         run: pnpm install
 
       - name: Build package (tsup)
-        run: pnpm run build  # Make sure this step builds the dist folder  
+        run: pnpm run build # Make sure this step builds the dist folder
 
       - name: Print package.json version before
-        run: cat package.json | jq .version  
+        run: cat package.json | jq .version
 
       - name: Configure Git User
         run: |
@@ -40,12 +40,12 @@ jobs:
       - name: Run semantic-release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN_FOX_TOAST }} # NPM token for publishing
-          GH_TOKEN: ${{ secrets.GH_PAT }}  # GitHub token for release
-          GIT_AUTHOR_NAME: "sanjayc208"
-          GIT_AUTHOR_EMAIL: "sanjayc208@gmail.com"
-          GIT_COMMITTER_NAME: "sanjayc208"
-          GIT_COMMITTER_EMAIL: "sanjayc208@gmail.com"
+          GH_TOKEN: ${{ secrets.GH_PAT }} # GitHub token for release
+          GIT_AUTHOR_NAME: 'sanjayc208'
+          GIT_AUTHOR_EMAIL: 'sanjayc208@gmail.com'
+          GIT_COMMITTER_NAME: 'sanjayc208'
+          GIT_COMMITTER_EMAIL: 'sanjayc208@gmail.com'
         run: npx semantic-release
-      
+
       - name: Print package.json version after
-        run: cat package.json | jq .version    
+        run: cat package.json | jq .version

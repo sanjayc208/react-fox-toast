@@ -1,30 +1,38 @@
-
 'use client';
-import React from "react"
+import React from 'react';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter'
-import { Separator } from "@/components/ui/separator"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import CustomSyntaxHighlighter from '@/components/modules/custom-syntax-highlighter';
+import { Separator } from '@/components/ui/separator';
 
 export default function Management() {
-
-    return (
-        <Card className="xs:max-w-[95vw] md:max-w-full">
-            <CardHeader>
-                <CardTitle>Toast Management</CardTitle>
-                <CardDescription>How to update, remove, fetch remainingTime, clear all toasts, and pause/resume toasts</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-                <div id="updating-toasts">
-                    <h3 className="text-lg font-semibold mb-2">Updating Toasts</h3>
-                    <p className="mb-2">
-                        Use the <code>toast.update()</code> method to update the content or options of an existing toast.
-                    </p>
-                    <CustomSyntaxHighlighter
-                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                        tabs={{
-                            'jsx': {
-                                syntax: `const toastId = toast.success("Initial message");
+  return (
+    <Card className="xs:max-w-[95vw] md:max-w-full">
+      <CardHeader>
+        <CardTitle>Toast Management</CardTitle>
+        <CardDescription>
+          How to update, remove, fetch remainingTime, clear all toasts, and
+          pause/resume toasts
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div id="updating-toasts">
+          <h3 className="text-lg font-semibold mb-2">Updating Toasts</h3>
+          <p className="mb-2">
+            Use the <code>toast.update()</code> method to update the content or
+            options of an existing toast.
+          </p>
+          <CustomSyntaxHighlighter
+            className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+            tabs={{
+              jsx: {
+                syntax: `const toastId = toast.success("Initial message");
 
 // Later in your code
 toast.update(toastId, {
@@ -33,109 +41,128 @@ toast.update(toastId, {
   duration: 3000,
   // ... other options
 });`,
-                                language: 'jsx'
-                            }
-                        }}
-                    />
-                    <p className="mb-2">
-                        <code>update()</code> accepts two parameters:
-                    </p>
-                    <ul className="list-disc list-inside mb-6">
-                        <li><code>id</code>: The ID of the toast to update</li>
-                        <li><code>updates</code>: An object with new properties for the toast</li>
-                    </ul>
-                </div>
-                
-                <Separator />
-                {/* Removing Toasts */}
-                <div id="removing-toasts">
-                    <h3 className="text-lg font-semibold mb-2">Removing Toasts</h3>
-                    <p className="mb-2">
-                        Use <code>toast.remove()</code> to manually dismiss a specific toast.
-                    </p>
-                    <CustomSyntaxHighlighter
-                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                        tabs={{
-                            'jsx': {
-                                syntax: `const toastId = toast.info("This is an info message");
+                language: 'jsx',
+              },
+            }}
+          />
+          <p className="mb-2">
+            <code>update()</code> accepts two parameters:
+          </p>
+          <ul className="list-disc list-inside mb-6">
+            <li>
+              <code>id</code>: The ID of the toast to update
+            </li>
+            <li>
+              <code>updates</code>: An object with new properties for the toast
+            </li>
+          </ul>
+        </div>
+
+        <Separator />
+        {/* Removing Toasts */}
+        <div id="removing-toasts">
+          <h3 className="text-lg font-semibold mb-2">Removing Toasts</h3>
+          <p className="mb-2">
+            Use <code>toast.remove()</code> to manually dismiss a specific
+            toast.
+          </p>
+          <CustomSyntaxHighlighter
+            className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+            tabs={{
+              jsx: {
+                syntax: `const toastId = toast.info("This is an info message");
 
 // Later in your code
 toast.remove(toastId);`,
-                                language: 'jsx'
-                            }
-                        }}
-                    />
-                    <p className="mb-2">
-                        <code>remove()</code> accepts one parameter:
-                    </p>
-                    <ul className="list-disc list-inside mb-4">
-                        <li><code>id</code>: The ID of the toast to remove</li>
-                    </ul>
-                </div>
+                language: 'jsx',
+              },
+            }}
+          />
+          <p className="mb-2">
+            <code>remove()</code> accepts one parameter:
+          </p>
+          <ul className="list-disc list-inside mb-4">
+            <li>
+              <code>id</code>: The ID of the toast to remove
+            </li>
+          </ul>
+        </div>
 
-                <Separator />
-                {/* Clearing All Toasts */}
-                <div id="clearing-toasts">
-                    <h3 className="text-lg font-semibold mb-2">Clearing All Toasts</h3>
-                    <p className="mb-2">
-                        Use <code>toast.removeAll()</code> to clear all active toasts on the page.
-                    </p>
-                    <CustomSyntaxHighlighter
-                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                        tabs={{
-                            'jsx': {
-                                syntax: `// Remove all toasts
+        <Separator />
+        {/* Clearing All Toasts */}
+        <div id="clearing-toasts">
+          <h3 className="text-lg font-semibold mb-2">Clearing All Toasts</h3>
+          <p className="mb-2">
+            Use <code>toast.removeAll()</code> to clear all active toasts on the
+            page.
+          </p>
+          <CustomSyntaxHighlighter
+            className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+            tabs={{
+              jsx: {
+                syntax: `// Remove all toasts
 toast.removeAll();`,
-                                language: 'jsx'
-                            }
-                        }}
-                    />
-                </div>
+                language: 'jsx',
+              },
+            }}
+          />
+        </div>
 
-                <Separator />
-                {/* Getting Remaining Time */}
-                <div id="remaining-time">
-                    <h3 className="text-lg font-semibold mb-2">Getting Remaining Time for a Toast</h3>
-                    <p className="mb-2">
-                        You can use the <code>toast.remainingTime()</code> method to retrieve the remaining time before a toast auto-dismisses.
-                    </p>
-                    <CustomSyntaxHighlighter
-                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                        tabs={{
-                            'jsx': {
-                                syntax: `const toastId = toast.info("This is an info message");
+        <Separator />
+        {/* Getting Remaining Time */}
+        <div id="remaining-time">
+          <h3 className="text-lg font-semibold mb-2">
+            Getting Remaining Time for a Toast
+          </h3>
+          <p className="mb-2">
+            You can use the <code>toast.remainingTime()</code> method to
+            retrieve the remaining time before a toast auto-dismisses.
+          </p>
+          <CustomSyntaxHighlighter
+            className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+            tabs={{
+              jsx: {
+                syntax: `const toastId = toast.info("This is an info message");
 
 // Check remaining time for this toast
 const remainingTime = toast.remainingTime(toastId);
 
 console.log('Remaining time in milliseconds:',remainingTime)`,
-                                language: 'jsx'
-                            }
-                        }}
-                    />
-                    <p className="mb-2">
-                        <code>remainingTime()</code> accepts one parameter:
-                    </p>
-                    <ul className="list-disc list-inside mb-4">
-                        <li><code>id</code>: The ID of the toast whose remaining time you want to check</li>
-                    </ul>
-                </div>
+                language: 'jsx',
+              },
+            }}
+          />
+          <p className="mb-2">
+            <code>remainingTime()</code> accepts one parameter:
+          </p>
+          <ul className="list-disc list-inside mb-4">
+            <li>
+              <code>id</code>: The ID of the toast whose remaining time you want
+              to check
+            </li>
+          </ul>
+        </div>
 
-                <Separator />
-                {/* Pausing and Resuming Toasts */}
-                <div id="pausing-resuming">
-                    <h3 className="text-lg font-semibold mb-2">Pausing and Resuming Toasts</h3>
-                    <p className="mb-2">
-                        You can pause and resume a specific toast using the <code>toast.pause()</code> and <code>toast.resume()</code> methods. This can be useful when you want to pause the auto-dismiss countdown based on user interaction, like hovering over or clicking the toast.
-                    </p>
+        <Separator />
+        {/* Pausing and Resuming Toasts */}
+        <div id="pausing-resuming">
+          <h3 className="text-lg font-semibold mb-2">
+            Pausing and Resuming Toasts
+          </h3>
+          <p className="mb-2">
+            You can pause and resume a specific toast using the{' '}
+            <code>toast.pause()</code> and <code>toast.resume()</code> methods.
+            This can be useful when you want to pause the auto-dismiss countdown
+            based on user interaction, like hovering over or clicking the toast.
+          </p>
 
-                    <p className="mb-2">Example:</p>
+          <p className="mb-2">Example:</p>
 
-                    <CustomSyntaxHighlighter
-                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                        tabs={{
-                            'jsx': {
-                                syntax: `import React, { useState, useEffect } from 'react';
+          <CustomSyntaxHighlighter
+            className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+            tabs={{
+              jsx: {
+                syntax: `import React, { useState, useEffect } from 'react';
 import { toast } from 'react-fox-toast';
 
 const ToastComponent = () => {
@@ -172,36 +199,46 @@ const ToastComponent = () => {
 };
 
 export default ToastComponent;`,
-                                language: 'jsx'
-                            }
-                        }}
-                    />
+                language: 'jsx',
+              },
+            }}
+          />
 
-                    <p className="mb-2">
-                        In the example above, the toast pauses when the user hovers over it and resumes when the mouse leaves.
-                    </p>
+          <p className="mb-2">
+            In the example above, the toast pauses when the user hovers over it
+            and resumes when the mouse leaves.
+          </p>
 
-                    <p className="mb-2">
-                        <code>pause()</code> and <code>resume()</code> each accept one parameter:
-                    </p>
-                    <ul className="list-disc list-inside mb-4">
-                        <li><code>id</code>: The ID of the toast you want to pause or resume</li>
-                    </ul>
-                </div>
+          <p className="mb-2">
+            <code>pause()</code> and <code>resume()</code> each accept one
+            parameter:
+          </p>
+          <ul className="list-disc list-inside mb-4">
+            <li>
+              <code>id</code>: The ID of the toast you want to pause or resume
+            </li>
+          </ul>
+        </div>
 
-                <Separator />
-                {/* Using the `onDismiss` Callback */}
-                <div id="on-dismiss-callback">
-                    <h3 className="text-lg font-semibold mb-2">Using the `onDismiss` Callback</h3>
-                    <p className="mb-2">
-                        You can provide an <code>onDismiss</code> callback function as an option when creating a toast. This function will be called when the toast is dismissed (either automatically or manually). This can be useful if you need to perform actions like logging or cleaning up resources after the toast disappears.
-                    </p>
+        <Separator />
+        {/* Using the `onDismiss` Callback */}
+        <div id="on-dismiss-callback">
+          <h3 className="text-lg font-semibold mb-2">
+            Using the `onDismiss` Callback
+          </h3>
+          <p className="mb-2">
+            You can provide an <code>onDismiss</code> callback function as an
+            option when creating a toast. This function will be called when the
+            toast is dismissed (either automatically or manually). This can be
+            useful if you need to perform actions like logging or cleaning up
+            resources after the toast disappears.
+          </p>
 
-                    <CustomSyntaxHighlighter
-                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                        tabs={{
-                            'jsx': {
-                                syntax: `const toastId = toast(
+          <CustomSyntaxHighlighter
+            className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+            tabs={{
+              jsx: {
+                syntax: `const toastId = toast(
   <>Custom JSX component</>,
   {
     onDismiss: (id) => {
@@ -209,79 +246,102 @@ export default ToastComponent;`,
     },
   }
 );`,
-                                language: 'jsx'
-                            }
-                        }}
-                    />
+                language: 'jsx',
+              },
+            }}
+          />
 
-                    <p className="mb-2">
-                        The <code>onDismiss</code> callback accepts one parameter:
-                    </p>
-                    <ul className="list-disc list-inside mb-4">
-                        <li><code>id</code>: The ID of the dismissed toast. This can be useful for performing specific actions or tracking which toast was dismissed.</li>
-                    </ul>
+          <p className="mb-2">
+            The <code>onDismiss</code> callback accepts one parameter:
+          </p>
+          <ul className="list-disc list-inside mb-4">
+            <li>
+              <code>id</code>: The ID of the dismissed toast. This can be useful
+              for performing specific actions or tracking which toast was
+              dismissed.
+            </li>
+          </ul>
 
-                    <p className="mb-2">
-                        Here's an example of using multiple toasts with individual dismiss handling:
-                    </p>
+          <p className="mb-2">
+            Here's an example of using multiple toasts with individual dismiss
+            handling:
+          </p>
 
-                    <CustomSyntaxHighlighter
-                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                        tabs={{
-                            'jsx': {
-                                syntax: `const toastId1 = toast.success("Success Toast", {
+          <CustomSyntaxHighlighter
+            className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+            tabs={{
+              jsx: {
+                syntax: `const toastId1 = toast.success("Success Toast", {
   onDismiss: (id) => console.log("First toast dismissed:", id),
 });
 
 const toastId2 = toast.error("Error Toast", {
   onDismiss: (id) => console.log("Second toast dismissed:", id),
 });`,
-                                language: 'jsx'
-                            }
-                        }}
-                    />
-                    <p className="mb-2">
-                        In this example, each toast has its own `onDismiss` handler that logs the ID of the dismissed toast.
-                    </p>
-                </div>
+                language: 'jsx',
+              },
+            }}
+          />
+          <p className="mb-2">
+            In this example, each toast has its own `onDismiss` handler that
+            logs the ID of the dismissed toast.
+          </p>
+        </div>
 
-                <Separator />
-                {/* Using the `onExpandContent` Callback */}
-                <div id="on-expand-callback">
-                    <h3 className="text-lg font-semibold mb-2">Using the `onExpandContent` Callback</h3>
-                    <p className="mb-2">
-                        You can provide an <code>onExpandContent</code> callback function when creating a toast. This function will be triggered when the content of the toast is expanded (e.g., the user clicks to view more details). This can be useful for tracking the expansion event, such as logging or analytics, as it shows which toast was expanded.
-                    </p>
-                    <p className="mb-2">
-                        The <code>onExpandContent</code> callback accepts two parameters:
-                    </p>
-                    <ul className="list-disc list-inside mb-4">
-                        <li><code>id</code>: The ID of the expanded toast. This can be helpful for tracking which specific toast was expanded.</li>
-                        <li><code>message</code>: The message content of the toast. If the message is a string, it will be passed directly. If the message is a <code>React.node</code> (i.e., JSX), you can access the content via the <code>children</code> prop.</li>
-                        </ul>
+        <Separator />
+        {/* Using the `onExpandContent` Callback */}
+        <div id="on-expand-callback">
+          <h3 className="text-lg font-semibold mb-2">
+            Using the `onExpandContent` Callback
+          </h3>
+          <p className="mb-2">
+            You can provide an <code>onExpandContent</code> callback function
+            when creating a toast. This function will be triggered when the
+            content of the toast is expanded (e.g., the user clicks to view more
+            details). This can be useful for tracking the expansion event, such
+            as logging or analytics, as it shows which toast was expanded.
+          </p>
+          <p className="mb-2">
+            The <code>onExpandContent</code> callback accepts two parameters:
+          </p>
+          <ul className="list-disc list-inside mb-4">
+            <li>
+              <code>id</code>: The ID of the expanded toast. This can be helpful
+              for tracking which specific toast was expanded.
+            </li>
+            <li>
+              <code>message</code>: The message content of the toast. If the
+              message is a string, it will be passed directly. If the message is
+              a <code>React.node</code> (i.e., JSX), you can access the content
+              via the <code>children</code> prop.
+            </li>
+          </ul>
 
-                    <p className="mb-2">
-                        Here's an example of using the <code>onExpandContent</code> callback:
-                    </p>
+          <p className="mb-2">
+            Here's an example of using the <code>onExpandContent</code>{' '}
+            callback:
+          </p>
 
-                    <CustomSyntaxHighlighter
-                        className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
-                        tabs={{
-                            'jsx': {
-                                syntax: `const toastId = toast.success("Success Toast", {
+          <CustomSyntaxHighlighter
+            className="w-full border rounded-lg overflow-x-auto shadow-lg mb-4"
+            tabs={{
+              jsx: {
+                syntax: `const toastId = toast.success("Success Toast", {
   onExpandContent: (id, message) => {
     console.log('Toast expanded:', id, message);
   },
 });`,
-                                language: 'jsx'
-                            }
-                        }}
-                    />
-                    <p className="mb-2">
-                        In this example, when the toast is expanded, the <code>onExpandContent</code> handler logs the ID and the message of the expanded toast.
-                    </p>
-                </div>
-            </CardContent>
-        </Card>
-    )
+                language: 'jsx',
+              },
+            }}
+          />
+          <p className="mb-2">
+            In this example, when the toast is expanded, the{' '}
+            <code>onExpandContent</code> handler logs the ID and the message of
+            the expanded toast.
+          </p>
+        </div>
+      </CardContent>
+    </Card>
+  );
 }

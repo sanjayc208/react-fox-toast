@@ -1,25 +1,19 @@
 {
-    "compilerOptions": {
-      "target": "ES2017",
-      "module": "CommonJS",               // Use ES Modules
-      "moduleResolution": "node",       // Resolves imports from node_modules
-      "forceConsistentCasingInFileNames": true,
-      "esModuleInterop": true,          // Allows compatibility with commonjs
-      "skipLibCheck": true,             // Skip checking of declaration files
-      "jsx": "preserve",                   // Enable JSX support
-      "declaration": true,              // Enable declaration files
-      "declarationMap": true,           // Optional: for easier debugging
-      "outDir": "./dist",               // Output directory for compiled files
-      "strict": true,                   // Enable strict type checking
-      "allowJs": true,                  // Allow JS files in the project
-      "resolveJsonModule": true         // Enable JSON imports
-    },
-    "include": [
-      "src/**/*",
-      "**/*.tsx",
-    ],
-    "exclude": [
-      "node_modules"
-    ]
-  }
-  
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "CommonJS", // Use ES Modules
+    "moduleResolution": "node", // Resolves imports from node_modules
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true, // Allows compatibility with commonjs
+    "skipLibCheck": true, // Skip checking of declaration files
+    "jsx": "preserve", // Enable JSX support
+    "declaration": true, // Enable declaration files
+    "declarationMap": true, // Optional: for easier debugging
+    "outDir": "./dist", // Output directory for compiled files
+    "strict": true, // Enable strict type checking
+    "allowJs": true, // Allow JS files in the project
+    "resolveJsonModule": true // Enable JSON imports
+  },
+  "include": ["src/**/*", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

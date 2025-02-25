@@ -5,11 +5,11 @@ import { NextResponse } from 'next/server';
 
 const getAllMdxFiles = (dir: string): string[] => {
   const files: string[] = [];
-  
+
   // Get all files and directories in the current directory
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     const fullPath = path.join(dir, entry.name);
 
     if (entry.isDirectory()) {
@@ -26,7 +26,7 @@ const getAllMdxFiles = (dir: string): string[] => {
 
 export async function GET() {
   try {
-    const suffixPath = "/src/contents/docs/";
+    const suffixPath = '/src/contents/docs/';
     const docsDir = path.join(process.cwd(), suffixPath);
 
     // Get all .mdx files recursively
@@ -54,6 +54,9 @@ export async function GET() {
     return NextResponse.json(docsContent, { status: 200 });
   } catch (error) {
     console.error('Error reading files:', error);
-    return NextResponse.json({ error: 'Failed to read .mdx files' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Failed to read .mdx files' },
+      { status: 500 }
+    );
   }
 }

@@ -7,7 +7,11 @@ const QuickLinkSidebar = ({ sections }: any) => {
       <ul className="space-y-2">
         {sections.map((section: any) => (
           <li key={section.id}>
-            <Link href={`#${section.id}`} scroll={false} className="text-blue-600 hover:text-blue-800">
+            <Link
+              href={`#${section.id}`}
+              scroll={false}
+              className="text-blue-600 hover:text-blue-800"
+            >
               {section.title}
             </Link>
           </li>

@@ -1,19 +1,19 @@
 // src/component/toast-store.ts
 'use client';
-import { ToastPosition, ToastType, Aria } from './types'
+import { ToastPosition, ToastType, Aria } from './types';
 
 export interface Toast {
   id: string;
   message: React.ReactNode;
   type: ToastType;
-  duration?: number;  // Custom duration before auto-dismiss (in ms)
+  duration?: number; // Custom duration before auto-dismiss (in ms)
   position?: ToastPosition;
   isClosing?: boolean;
   isVisible?: boolean;
   expandedContent?: React.ReactNode;
   isExpanded?: boolean;
   icon?: React.ReactNode;
-  promise?: Promise<any>;  // For promise support
+  promise?: Promise<any>; // For promise support
   status?: 'pending' | 'resolved' | 'rejected'; // For promise states
   timerId?: NodeJS.Timeout; // Store the timer ID for each toast
   startTime?: number; // Time when toast was first displayed
@@ -28,11 +28,14 @@ export interface Toast {
 const toastSubscribers: Array<(toasts: Toast[]) => void> = [];
 let toastList: Toast[] = [];
 
-let defaultDuration: number
-let defaultPosition: ToastPosition
+let defaultDuration: number;
+let defaultPosition: ToastPosition;
 
 // Setter functions to modify default values
-export const setToastDefaults = (duration?: number, position?: ToastPosition) => {
+export const setToastDefaults = (
+  duration?: number,
+  position?: ToastPosition
+) => {
   if (duration !== undefined) {
     defaultDuration = duration;
   }
@@ -49,15 +52,21 @@ export const getToastDefaults = () => ({
 
 export const addToast = (toast: Omit<Toast, 'id'>): string => {
   const id = Math.random().toString(36).substr(2, 9);
-  toast.position ??= (defaultPosition); // Default to 'bottom-right' if not provided
+  toast.position ??= defaultPosition; // Default to 'bottom-right' if not provided
   const newToast = {
-    ...toast, id, isClosing: false, isVisible: true, isExpanded: false,
-    isPausedOnHover: toast.isPausedOnHover ?? true  // Default to true for pausing
+    ...toast,
+    id,
+    isClosing: false,
+    isVisible: true,
+    isExpanded: false,
+    isPausedOnHover: toast.isPausedOnHover ?? true, // Default to true for pausing
   };
 
-  toastList = toast.position?.includes('top') ? [newToast, ...toastList] : [...toastList, newToast];
+  toastList = toast.position?.includes('top')
+    ? [newToast, ...toastList]
+    : [...toastList, newToast];
   notifySubscribers();
-  newToast.duration = newToast.duration || defaultDuration //if there is no duration default is 5 second
+  newToast.duration = newToast.duration || defaultDuration; //if there is no duration default is 5 second
 
   // If a duration is set and not 'Infinity', auto-dismiss the toast after the duration
   if (newToast.duration && newToast.duration !== Infinity) {
@@ -89,14 +98,14 @@ const startToastTimer = (id: string, duration: number) => {
   }
 };
 
-export const onExpandToast = (id:string) => {
+export const onExpandToast = (id: string) => {
   //findinf the details of taost with the id
   const toast = toastList.find((t) => t.id === id);
   //if onDimiss callback is sent then return callback with toast data
   if (toast?.onExpandContent) {
     toast.onExpandContent(toast.id, toast.message); // Invoke the onDismiss callback
   }
-}
+};
 
 export const removeToast = (id: string) => {
   //findinf the details of taost with the id
@@ -156,7 +165,8 @@ export const pauseToastTimer = (id: string) => {
     const elapsedTime = Date.now() - (toast.startTime || 0);
 
     // Update remainingTime: use existing remainingTime or subtract from duration
-    const remainingTime = (toast.remainingTime ?? toast.duration!) - elapsedTime;
+    const remainingTime =
+      (toast.remainingTime ?? toast.duration!) - elapsedTime;
 
     // Update the toast object with new remainingTime and mark as paused
     toastList = toastList.map((t) =>

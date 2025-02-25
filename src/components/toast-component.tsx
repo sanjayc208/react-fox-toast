@@ -4,14 +4,25 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ToastProps } from './types';
 import { defaultIcons } from './default-icons';
-import { removeToast, updateToast, removeAllToast, pauseToastTimer, resumeToastTimer, onExpandToast } from './toast-store';
+import {
+  removeToast,
+  updateToast,
+  removeAllToast,
+  pauseToastTimer,
+  resumeToastTimer,
+  onExpandToast,
+} from './toast-store';
 import { styled, keyframes } from 'goober';
 
 // Enter Animation (Zoom out to Zoom in)
 const fadeIn = (position: string) => keyframes`
   0% { 
     opacity: 0; 
-    transform: ${position.includes('top') ? 'translateY(-200%) scale(0.8)' : 'translateY(200%) scale(0.8)'};
+    transform: ${
+      position.includes('top')
+        ? 'translateY(-200%) scale(0.8)'
+        : 'translateY(200%) scale(0.8)'
+    };
   }
   100% { 
     opacity: 1; 
@@ -27,17 +38,22 @@ const fadeOut = (position: string) => keyframes`
   }
   100% { 
     opacity: 0; 
-    transform: ${position.includes('top') ? 'translateY(-30%) scale(0.8)' : 'translateY(30%) scale(0.8)'};
+    transform: ${
+      position.includes('top')
+        ? 'translateY(-30%) scale(0.8)'
+        : 'translateY(30%) scale(0.8)'
+    };
   }
 `;
 
 // Styled Components for Toast
-const ToastContainer = styled('div')(
-  (props: any) => {
-    const { isclosing, position, direction, style, type } = props;
-    return `
+const ToastContainer = styled('div')((props: any) => {
+  const { isclosing, position, direction, style, type } = props;
+  return `
       will-change: transform;
-      animation: ${isclosing === "false" ? fadeIn(position) : fadeOut(position)} 0.35s ease-in-out;
+      animation: ${
+        isclosing === 'false' ? fadeIn(position) : fadeOut(position)
+      } 0.35s ease-in-out;
       direction: ${direction};
 
       /* Using :where() to apply low specificity styles */
@@ -56,8 +72,7 @@ const ToastContainer = styled('div')(
       }
       ${style}
     `;
-  }
-);
+});
 
 // Function to create a CSS class dynamically with :where() for low specificity
 // function createDynamicWhereClass(className: any, styles: any) {
@@ -96,7 +111,7 @@ const ExpandedContent = styled('div')(
     color: black;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    max-height: ${props.isexpanded === "true" ? props.expandedheight : '0px'};
+    max-height: ${props.isexpanded === 'true' ? props.expandedheight : '0px'};
   `
 );
 
@@ -164,164 +179,166 @@ const CloseButton = styled('button')(
   `
 );
 
-const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(({
-  id,
-  message,
-  type = 'custom',
-  position = 'bottom-center',
-  isCloseBtn = false,
-  onClose,
-  icon,
-  className,
-  style,
-  iconStyle,
-  expandedContent,
-  onExpand,
-  isClosing,
-  expandedClassName,
-  closeBtnStyle,
-  toastTypeTheming = {},
-  isPausedOnHover = true,
-  direction = 'ltr',
-  aria // Expected to be an object like { role: 'status', 'label': 'Custom notification' }
-}) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const toastRef = useRef<HTMLDivElement>(null);
-  const expandedContentRef = useRef<HTMLDivElement>(null);
-  const [fadeOutMessage, setFadeOutMessage] = useState(false);
+const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(
+  ({
+    id,
+    message,
+    type = 'custom',
+    position = 'bottom-center',
+    isCloseBtn = false,
+    onClose,
+    icon,
+    className,
+    style,
+    iconStyle,
+    expandedContent,
+    onExpand,
+    isClosing,
+    expandedClassName,
+    closeBtnStyle,
+    toastTypeTheming = {},
+    isPausedOnHover = true,
+    direction = 'ltr',
+    aria, // Expected to be an object like { role: 'status', 'label': 'Custom notification' }
+  }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const toastRef = useRef<HTMLDivElement>(null);
+    const expandedContentRef = useRef<HTMLDivElement>(null);
+    const [fadeOutMessage, setFadeOutMessage] = useState(false);
 
-  useEffect(() => {
-    const toastContainerClassName = `toast-container-default-${id}`;
-    // createDynamicWhereClass(toastContainerClassName, `
-    //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    //   padding: 0.55rem 0.85rem;
-    //   border-radius: 0.5rem;
-    //   background-color: ${backgroundColors[type] || backgroundColors.custom};
-    //   color: black;
-    //   max-width: 50vw;
-    // `);
-  }, [id, type]);
+    useEffect(() => {
+      const toastContainerClassName = `toast-container-default-${id}`;
+      // createDynamicWhereClass(toastContainerClassName, `
+      //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      //   padding: 0.55rem 0.85rem;
+      //   border-radius: 0.5rem;
+      //   background-color: ${backgroundColors[type] || backgroundColors.custom};
+      //   color: black;
+      //   max-width: 50vw;
+      // `);
+    }, [id, type]);
 
-  const handleClick = (e: any) => {
-    if (e.target.closest("button") || e.target.closest("[data-action]")) return;
-    if (expandedContent) {
-      if (type === 'envelope') {
-        if (!isExpanded) {
-          setFadeOutMessage(true);
-          setTimeout(() => {
-            setIsExpanded(true);
-            onExpand(true);
-          }, 150);
-          onExpandToast(id);
-        }
-      } else if (type === 'drawer') {
-        if (!isExpanded) {
-          setFadeOutMessage((p) => !p);
-          setTimeout(() => {
+    const handleClick = (e: any) => {
+      if (e.target.closest('button') || e.target.closest('[data-action]'))
+        return;
+      if (expandedContent) {
+        if (type === 'envelope') {
+          if (!isExpanded) {
+            setFadeOutMessage(true);
+            setTimeout(() => {
+              setIsExpanded(true);
+              onExpand(true);
+            }, 150);
+            onExpandToast(id);
+          }
+        } else if (type === 'drawer') {
+          if (!isExpanded) {
+            setFadeOutMessage((p) => !p);
+            setTimeout(() => {
+              setIsExpanded((p) => !p);
+              onExpand(!isExpanded);
+            }, 150);
+          } else {
             setIsExpanded((p) => !p);
             onExpand(!isExpanded);
-          }, 150);
+            setFadeOutMessage(!isExpanded);
+          }
+          onExpandToast(id);
         } else {
-          setIsExpanded((p) => !p);
+          if (!isExpanded) onExpandToast(id);
+          setIsExpanded((prev) => !prev);
           onExpand(!isExpanded);
-          setFadeOutMessage(!isExpanded);
         }
-        onExpandToast(id);
-      } else {
-        if (!isExpanded) onExpandToast(id);
-        setIsExpanded((prev) => !prev);
-        onExpand(!isExpanded);
       }
-    }
-  };
+    };
 
-  const handleMouseEnter = () => {
-    if (isPausedOnHover) {
-      pauseToastTimer(id);
-    }
-  };
+    const handleMouseEnter = () => {
+      if (isPausedOnHover) {
+        pauseToastTimer(id);
+      }
+    };
 
-  const handleMouseLeave = () => {
-    if (isPausedOnHover) {
-      resumeToastTimer(id);
-    }
-  };
+    const handleMouseLeave = () => {
+      if (isPausedOnHover) {
+        resumeToastTimer(id);
+      }
+    };
 
+    const toastFunctions = {
+      update: (updates: Partial<any>) => updateToast(id, updates),
+      remove: () => removeToast(id),
+      removeAll: () => removeAllToast(),
+    };
 
-  const toastFunctions = {
-    update: (updates: Partial<any>) => updateToast(id, updates),
-    remove: () => removeToast(id),
-    removeAll: () => removeAllToast(),
-  };
+    const expandedHeight = expandedContentRef.current?.scrollHeight + 'px';
 
-  const expandedHeight = expandedContentRef.current?.scrollHeight + 'px';
+    const typeThemeStyle = toastTypeTheming[type]?.style || {};
+    const typeThemeClass = `${toastTypeTheming[type]?.className || ''}`;
+    icon = toastTypeTheming[type]?.icon || icon || defaultIcons[type];
 
-  const typeThemeStyle = toastTypeTheming[type]?.style || {};
-  const typeThemeClass = `${toastTypeTheming[type]?.className || ''}`;
-  icon = toastTypeTheming[type]?.icon || icon || defaultIcons[type];
+    // Default ARIA properties for the container
+    const defaultAriaProps = {
+      role: 'alert',
+      label: 'Notification',
+    };
 
-  // Default ARIA properties for the container
-  const defaultAriaProps = {
-    role: 'alert',
-    'label': 'Notification'
-  };
+    // Merge any custom ARIA attributes provided via the `aria` prop.
+    const ariaProps = { ...defaultAriaProps, ...aria };
 
-  // Merge any custom ARIA attributes provided via the `aria` prop.
-  const ariaProps = { ...defaultAriaProps, ...aria };
-
-  return (
-    <ToastContainer
-      ref={toastRef}
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className={`toast-container-default-${id} ${className} ${typeThemeClass}`}
-      type={type}
-      position={position}
-      isclosing={isClosing.toString()}
-      direction={direction}
-      style={{ ...style, ...typeThemeStyle }}
-      {...ariaProps}
-    >
-      {typeof message === 'function' ? (
-        <>{message(toastFunctions)}</>
-      ) : (
-        <FlexContainer>
-          <FlexItems>
-            <IconContainer
-              type={type}
-              fadeout={fadeOutMessage.toString()}
-              style={{ flexShrink: 0, ...iconStyle }}
-            >
-              {icon}
-            </IconContainer>
-            <MessageContainer type={type} fadeout={fadeOutMessage.toString()}>
-              {message}
-            </MessageContainer>
-          </FlexItems>
-          {isCloseBtn && (
-            <CloseButton
-              onClick={onClose}
-              position={position.includes('right') ? 'right' : 'left'}
-              style={closeBtnStyle}
-            >
-              &#x2715;
-            </CloseButton>
-          )}
-        </FlexContainer>
-      )}
-      {expandedContent && (
-        <ExpandedContent
-          ref={expandedContentRef}
-          isexpanded={isExpanded.toString()}
-          expandedheight={expandedHeight}
-          className={expandedClassName}
-        >
-          {expandedContent}
-        </ExpandedContent>
-      )}
-    </ToastContainer>
-  );
-});
+    return (
+      <ToastContainer
+        ref={toastRef}
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={`toast-container-default-${id} ${className} ${typeThemeClass}`}
+        type={type}
+        position={position}
+        isclosing={isClosing.toString()}
+        direction={direction}
+        style={{ ...style, ...typeThemeStyle }}
+        {...ariaProps}
+      >
+        {typeof message === 'function' ? (
+          <>{message(toastFunctions)}</>
+        ) : (
+          <FlexContainer>
+            <FlexItems>
+              <IconContainer
+                type={type}
+                fadeout={fadeOutMessage.toString()}
+                style={{ flexShrink: 0, ...iconStyle }}
+              >
+                {icon}
+              </IconContainer>
+              <MessageContainer type={type} fadeout={fadeOutMessage.toString()}>
+                {message}
+              </MessageContainer>
+            </FlexItems>
+            {isCloseBtn && (
+              <CloseButton
+                onClick={onClose}
+                position={position.includes('right') ? 'right' : 'left'}
+                style={closeBtnStyle}
+              >
+                &#x2715;
+              </CloseButton>
+            )}
+          </FlexContainer>
+        )}
+        {expandedContent && (
+          <ExpandedContent
+            ref={expandedContentRef}
+            isexpanded={isExpanded.toString()}
+            expandedheight={expandedHeight}
+            className={expandedClassName}
+          >
+            {expandedContent}
+          </ExpandedContent>
+        )}
+      </ToastContainer>
+    );
+  }
+);
 
 export default Toast;

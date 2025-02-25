@@ -23,15 +23,15 @@
 <div align="center">
 <h3 style="font-size: 20px"><strong>
 
-<a href="https://react-fox-toast.com/">🌏 Website</a> 
+<a href="https://react-fox-toast.com/">🌏 Website</a>
 <span> &nbsp;|&nbsp; </span>
-<a href="https://react-fox-toast.com//documentation/getting-started">📚 Documentation</a> 
+<a href="https://react-fox-toast.com//documentation/getting-started">📚 Documentation</a>
 <span> &nbsp;|&nbsp; </span>
-<a href="https://github.com/sanjayc208/react-fox-toast">🗄️ Github</a> 
+<a href="https://github.com/sanjayc208/react-fox-toast">🗄️ Github</a>
 </strong>
+
 </h3 >
 </div>
-
 
 <div align="center">
   <p>Preview</p>
@@ -45,6 +45,7 @@
 > **_NOTE:_** Works only on the client side. For SSR frameworks like Next.js, include `'use client';` at the top of your component.
 
 ## Features
+
 - **Customizable**: Adjust position, duration, content, icons, and more.
 - **Promise Support**: Display success/error messages based on promise results.
 - **Custom Content**: Render components inside toasts.
@@ -69,11 +70,12 @@ pnpm add react-fox-toast
 ## Usage
 
 ### 1. Add `ToastContainer`
+
 Wrap your root component with `ToastContainer` to enable toasts.
 
 ```typescript
 'use client'; // Add if using Next.js
-import { ToastContainer } from "react-fox-toast";
+import { ToastContainer } from 'react-fox-toast';
 
 function App() {
   return (
@@ -87,15 +89,16 @@ export default App;
 ```
 
 ### 2. Use the `toast` Hook
+
 Call `toast` functions like `toast.success()` in your components.
 
 ```typescript
 'use client'; // Add if using Next.js
-import { toast } from "react-fox-toast";
+import { toast } from 'react-fox-toast';
 
 function MyComponent() {
   const showToast = () => {
-    toast.success("Success! The action was completed.");
+    toast.success('Success! The action was completed.');
   };
 
   return <button onClick={showToast}>Show Success Toast</button>;
@@ -103,9 +106,11 @@ function MyComponent() {
 ```
 
 ## Learn More
+
 - Detailed usage and examples are available in the [Documentation](https://react-fox-toast.com/documentation/getting-started).
 
 ## License
+
 MIT License
 
 For questions or feedback, open an issue or contribute on GitHub!

@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import React, { useState, useRef, useEffect } from 'react'
-import { Button } from "@/components/ui/button"
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { Check, Copy } from 'lucide-react'
-import { cn } from "@/lib/utils"
+import React, { useState, useRef, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Check, Copy } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface TabInfo {
   syntax: string;
@@ -17,8 +17,13 @@ interface CustomSyntaxHighlighterProps {
   className?: string;
 }
 
-const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs, className }) => {
-  const [activeTabKey, setActiveTabKey] = useState<string>(Object.keys(tabs)[0]);
+const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({
+  tabs,
+  className,
+}) => {
+  const [activeTabKey, setActiveTabKey] = useState<string>(
+    Object.keys(tabs)[0]
+  );
   const [copied, setCopied] = useState(false);
   const [indicatorStyle, setIndicatorStyle] = useState({});
   const tabRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
@@ -31,7 +36,7 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
       const leftOffset = activeTab.offsetLeft + (tabWidth - indicatorWidth) / 2;
       setIndicatorStyle({
         left: `${leftOffset}px`,
-        width: `${indicatorWidth}px`
+        width: `${indicatorWidth}px`,
       });
     }
   }, [activeTabKey]);
@@ -49,9 +54,9 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
   };
 
   return (
-    <div className={cn("", className)}>
+    <div className={cn('', className)}>
       <div className="bg-[#1c1c1c] text-white p-2 rounded-t-lg">
-        <div className='flex items-center h-6'>
+        <div className="flex items-center h-6">
           {/* Window controls */}
           <div className="flex space-x-2 items-center mr-6">
             <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"></div>
@@ -61,21 +66,20 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
 
           {/* Tabs */}
           <div className="flex items-center relative">
-
             {Object.keys(tabs).map((key) => (
               <div
                 key={key}
-                ref={el => {
+                ref={(el) => {
                   tabRefs.current[key] = el;
                 }}
                 onClick={() => setActiveTabKey(key)}
                 className={cn(
-                  "group relative flex items-center h-7 px-3 text-xs select-none cursor-pointer",
-                  "transition-all duration-200",
-                  "mx-0.5 max-w-[200px] min-w-[60px]",
+                  'group relative flex items-center h-7 px-3 text-xs select-none cursor-pointer',
+                  'transition-all duration-200',
+                  'mx-0.5 max-w-[200px] min-w-[60px]',
                   key === activeTabKey
-                    ? "text-white"
-                    : "bg-transparent text-gray-400 hover:bg-[#252525]"
+                    ? 'text-white'
+                    : 'bg-transparent text-gray-400 hover:bg-[#252525]'
                 )}
               >
                 {/* Background with curved edges */}
@@ -90,9 +94,8 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
               </div>
             ))}
 
-
             {/* Animated yellow indicator */}
-            <div 
+            <div
               className="absolute bottom-0 h-[2px] bg-yellow-500 transition-all duration-300 ease-in-out"
               style={indicatorStyle}
             />
@@ -104,10 +107,18 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
             onClick={copyToClipboard}
             className="w-8 h-8 relative bg-[#1F2937] hover:bg-[#374151] focus:ring-0 focus:outline-none ml-auto"
           >
-            <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out ${copied ? 'opacity-0 scale-50' : 'opacity-100 scale-100'}`}>
+            <span
+              className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out ${
+                copied ? 'opacity-0 scale-50' : 'opacity-100 scale-100'
+              }`}
+            >
               <Copy className="h-4 w-4" />
             </span>
-            <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out ${copied ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+            <span
+              className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out ${
+                copied ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+              }`}
+            >
               <Check className="h-4 w-4" />
             </span>
             <span className="sr-only">{copied ? 'Copied' : 'Copy'}</span>
@@ -129,9 +140,7 @@ const CustomSyntaxHighlighter: React.FC<CustomSyntaxHighlighterProps> = ({ tabs,
         </SyntaxHighlighter>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CustomSyntaxHighlighter
-
-
+export default CustomSyntaxHighlighter;
