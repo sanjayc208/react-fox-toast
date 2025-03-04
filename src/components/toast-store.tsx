@@ -51,7 +51,7 @@ export const getToastDefaults = () => ({
 });
 
 export const addToast = (toast: Omit<Toast, 'id'>): string => {
-  const id = Math.random().toString(36).substr(2, 9);
+  const id = Math.random().toString(36).substring(2, 9);
   toast.position ??= defaultPosition; // Default to 'bottom-right' if not provided
   const newToast = {
     ...toast,
