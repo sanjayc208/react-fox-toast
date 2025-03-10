@@ -10,7 +10,7 @@ import {
 
 export const toast = Object.assign(
   (message: React.ReactNode, options?: Partial<any>) => {
-    return toast.custom(message, options); // Default to custom toast
+   return addToast({ ...options, message, type: 'custom' }); // Default to custom toast
   },
   {
     success: (message: React.ReactNode, options?: Partial<any>) =>
