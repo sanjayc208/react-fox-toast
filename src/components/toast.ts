@@ -39,9 +39,8 @@ export const toast = Object.assign(
         loading,
         success,
         error,
-        duration = 3000,
         position,
-        toastOptions,
+        toastOptions = {},
       }: {
         loading: string;
         success: string;
@@ -51,27 +50,28 @@ export const toast = Object.assign(
         toastOptions?: Partial<any>;
       }
     ) => {
+      // Show the loading toast indefinitely
       const loadingToastId = addToast({
         message: loading,
-        type: 'promise',
-        duration,
+        type: "promise",
         position,
         ...toastOptions,
+        duration: Infinity, // Ensure loading toast doesn't disappear
       });
-
+    
       promise
         .then((res) => {
           updateToast(loadingToastId, {
             message: success,
-            type: 'success',
-            duration,
+            type: "success",
+            duration: toastOptions.duration ?? 3000, // Use toastOptions.duration
           });
         })
         .catch((err) => {
           updateToast(loadingToastId, {
             message: error,
-            type: 'error',
-            duration,
+            type: "error",
+            duration: toastOptions.duration ?? 3000, // Use toastOptions.duration
           });
         });
     },
