@@ -1,3 +1,10 @@
+## [1.10.16](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.15...v1.10.16) (2025-03-20)
+
+
+### Bug Fixes
+
+* Promises remain in loading state until success or error ([4968b55](https://github.com/sanjayc208/react-fox-toast/commit/4968b55d27bb3c106419d769abb6b4198aed8c2c))
+
 ## [1.10.15](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.14...v1.10.15) (2025-02-23)
 
 ### Bug Fixes
