@@ -6,6 +6,7 @@ import {
   resumeToastTimer,
   removeAllToast,
   getRemainingTimeForToast,
+  Toast,
 } from './toast-store';
 import { ToastProps } from './types';
 
@@ -47,12 +48,12 @@ export const toast = Object.assign(
     ) => addToast({ ...options, message, type: 'custom' }),
     remove: (id: string) => removeToast(id),
     removeAll: () => removeAllToast(),
-    update: (id: string, updates: Partial<any>) => updateToast(id, updates),
+    update: (id: string, updates: Partial<Toast>) => updateToast(id, updates),
     pause: (id: string) => pauseToastTimer(id),
     remainingTime: (id: string) => getRemainingTimeForToast(id),
     resume: (id: string) => resumeToastTimer(id),
-    promise: (
-      promise: Promise<void>,
+    promise: <T = void>(
+      promise: Promise<T>,
       {
         loading,
         success,
@@ -65,7 +66,7 @@ export const toast = Object.assign(
         error: string;
         duration?: number;
         position?: any;
-        toastOptions?: Partial<any>;
+        toastOptions?: Partial<ToastProps>;
       }
     ) => {
       // Show the loading toast indefinitely
