@@ -1,7 +1,7 @@
 // src/components/toast-component.tsx
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { ToastProps } from './types';
 import { defaultIcons } from './default-icons';
 import {
@@ -202,21 +202,20 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(
     aria, // Expected to be an object like { role: 'status', 'label': 'Custom notification' }
   }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const toastRef = useRef<HTMLDivElement>(null);
     const expandedContentRef = useRef<HTMLDivElement>(null);
     const [fadeOutMessage, setFadeOutMessage] = useState(false);
 
-    useEffect(() => {
-      const toastContainerClassName = `toast-container-default-${id}`;
-      // createDynamicWhereClass(toastContainerClassName, `
-      //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      //   padding: 0.55rem 0.85rem;
-      //   border-radius: 0.5rem;
-      //   background-color: ${backgroundColors[type] || backgroundColors.custom};
-      //   color: black;
-      //   max-width: 50vw;
-      // `);
-    }, [id, type]);
+    // useEffect(() => {
+    //   const toastContainerClassName = `toast-container-default-${id}`;
+    //   createDynamicWhereClass(toastContainerClassName, `
+    //     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    //     padding: 0.55rem 0.85rem;
+    //     border-radius: 0.5rem;
+    //     background-color: ${backgroundColors[type] || backgroundColors.custom};
+    //     color: black;
+    //     max-width: 50vw;
+    //   `);
+    // }, [id, type]);
 
     const handleClick = (e: any) => {
       if (e.target.closest('button') || e.target.closest('[data-action]'))
@@ -287,7 +286,6 @@ const Toast: React.FC<ToastProps & { onClose: () => void }> = React.memo(
 
     return (
       <ToastContainer
-        ref={toastRef}
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
