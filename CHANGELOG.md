@@ -1,3 +1,10 @@
+## [1.10.17](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.16...v1.10.17) (2025-03-23)
+
+
+### Bug Fixes
+
+* Define types to replace 'any' in options param for toast functions, additional type support. ([08e94d1](https://github.com/sanjayc208/react-fox-toast/commit/08e94d14824d4852aec0eab5f3b5973aec4965ec))
+
 ## [1.10.16](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.15...v1.10.16) (2025-03-20)
 
 
