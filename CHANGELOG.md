@@ -1,3 +1,10 @@
+## [1.10.18](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.17...v1.10.18) (2025-03-23)
+
+
+### Bug Fixes
+
+* remove unused FC ref and comment out an unused useEffect right below it ([3221fd2](https://github.com/sanjayc208/react-fox-toast/commit/3221fd2ab80723b98ad7b0a3f7aabb3f6fba8918))
+
 ## [1.10.17](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.16...v1.10.17) (2025-03-23)
 
 
