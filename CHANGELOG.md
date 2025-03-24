@@ -1,23 +1,20 @@
 ## [1.10.18](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.17...v1.10.18) (2025-03-23)
 
-
 ### Bug Fixes
 
-* remove unused FC ref and comment out an unused useEffect right below it ([3221fd2](https://github.com/sanjayc208/react-fox-toast/commit/3221fd2ab80723b98ad7b0a3f7aabb3f6fba8918))
+- remove unused FC ref and comment out an unused useEffect right below it ([3221fd2](https://github.com/sanjayc208/react-fox-toast/commit/3221fd2ab80723b98ad7b0a3f7aabb3f6fba8918))
 
 ## [1.10.17](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.16...v1.10.17) (2025-03-23)
 
-
 ### Bug Fixes
 
-* Define types to replace 'any' in options param for toast functions, additional type support. ([08e94d1](https://github.com/sanjayc208/react-fox-toast/commit/08e94d14824d4852aec0eab5f3b5973aec4965ec))
+- Define types to replace 'any' in options param for toast functions, additional type support. ([08e94d1](https://github.com/sanjayc208/react-fox-toast/commit/08e94d14824d4852aec0eab5f3b5973aec4965ec))
 
 ## [1.10.16](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.15...v1.10.16) (2025-03-20)
 
-
 ### Bug Fixes
 
-* Promises remain in loading state until success or error ([4968b55](https://github.com/sanjayc208/react-fox-toast/commit/4968b55d27bb3c106419d769abb6b4198aed8c2c))
+- Promises remain in loading state until success or error ([4968b55](https://github.com/sanjayc208/react-fox-toast/commit/4968b55d27bb3c106419d769abb6b4198aed8c2c))
 
 ## [1.10.15](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.14...v1.10.15) (2025-02-23)
 

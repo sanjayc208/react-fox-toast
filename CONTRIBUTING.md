@@ -58,20 +58,25 @@ To contribute code, follow these steps:
 ### 🔍 Testing Locally
 
 If you want to test changes locally within the website, modify the dependency in `website/package.json`:
+
 ```json
 "react-fox-toast": "file:../"
 ```
+
 Then, install dependencies:
+
 ```sh
 npm install
 ```
 
 To run the website locally:
+
 ```sh
 cd website/
 npm install
 npm run dev
 ```
+
 This will start the website, allowing you to verify if everything is working as expected.
 
 ## ✅ Code Guidelines
@@ -89,4 +94,3 @@ This will start the website, allowing you to verify if everything is working as 
 ---
 
 **🚀 Let’s build an awesome toast notification library together!**
-

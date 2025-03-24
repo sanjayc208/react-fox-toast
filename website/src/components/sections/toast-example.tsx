@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { toast } from 'react-fox-toast';
+import { toast, ToastPosition } from 'react-fox-toast';
 import {
   CheckCircle,
   Smile,
@@ -35,7 +35,7 @@ const ToastDemo = () => {
     "\ntoast.success('Successfully Generated Toast,'{\n    position:'bottom-center'\n})"
   );
   const [selectedPosition, setSelectedPosition] =
-    useState<string>('top-center');
+    useState<ToastPosition>('top-center');
 
   const showSuccess = () => {
     toast.success('Successfully Generated Toast', {
