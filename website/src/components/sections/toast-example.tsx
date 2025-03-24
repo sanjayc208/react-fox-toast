@@ -357,7 +357,7 @@ toast.success('Success data with Tailwind Css',{
           </h2>
           <RadioGroup
             value={selectedPosition}
-            onValueChange={setSelectedPosition}
+            onValueChange={(value:ToastPosition) => setSelectedPosition(value)}
             className="flex flex-wrap justify-center gap-4"
           >
             {positions.map((position) => (
