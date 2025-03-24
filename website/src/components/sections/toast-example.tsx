@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { toast } from 'react-fox-toast';
+import { toast, ToastPosition } from 'react-fox-toast';
 import {
   CheckCircle,
   Smile,
@@ -35,7 +35,7 @@ const ToastDemo = () => {
     "\ntoast.success('Successfully Generated Toast,'{\n    position:'bottom-center'\n})"
   );
   const [selectedPosition, setSelectedPosition] =
-    useState<string>('top-center');
+    useState<ToastPosition>('top-center');
 
   const showSuccess = () => {
     toast.success('Successfully Generated Toast', {
@@ -357,7 +357,7 @@ toast.success('Success data with Tailwind Css',{
           </h2>
           <RadioGroup
             value={selectedPosition}
-            onValueChange={setSelectedPosition}
+            onValueChange={(value:ToastPosition) => setSelectedPosition(value)}
             className="flex flex-wrap justify-center gap-4"
           >
             {positions.map((position) => (
