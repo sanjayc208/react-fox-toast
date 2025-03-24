@@ -68,7 +68,7 @@ export const toast = Object.assign(
         position?: any;
         toastOptions?: Partial<ToastProps>;
       }
-    ) => {
+    ): Promise<T> => {
       // Show the loading toast indefinitely
       const loadingToastId = addToast({
         message: loading,
@@ -78,20 +78,22 @@ export const toast = Object.assign(
         duration: Infinity, // Ensure loading toast doesn't disappear
       });
 
-      promise
-        .then(() => {
+      return promise
+        .then((result) => {
           updateToast(loadingToastId, {
             message: success,
             type: 'success',
             duration: toastOptions.duration ?? 3000, // Use toastOptions.duration
           });
+          return result;
         })
-        .catch(() => {
+        .catch((catchErr) => {
           updateToast(loadingToastId, {
             message: error,
             type: 'error',
             duration: toastOptions.duration ?? 3000, // Use toastOptions.duration
           });
+          return catchErr;
         });
     },
   }
