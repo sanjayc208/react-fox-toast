@@ -1,3 +1,10 @@
+## [1.10.19](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.18...v1.10.19) (2025-03-24)
+
+
+### Bug Fixes
+
+* Now toast.promise can also be awaited ([2c40bde](https://github.com/sanjayc208/react-fox-toast/commit/2c40bde4dc472a3b1d8abcddb80c16554e5e8793))
+
 ## [1.10.18](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.17...v1.10.18) (2025-03-23)
 
 ### Bug Fixes
