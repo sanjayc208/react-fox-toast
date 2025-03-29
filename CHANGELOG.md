@@ -1,3 +1,10 @@
+## [1.10.20](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.19...v1.10.20) (2025-03-29)
+
+
+### Bug Fixes
+
+* updated new og image ([b10faff](https://github.com/sanjayc208/react-fox-toast/commit/b10fafffc2c15a8b428da810946010c33cb51cde))
+
 ## [1.10.19](https://github.com/sanjayc208/react-fox-toast/compare/v1.10.18...v1.10.19) (2025-03-24)
 
 
